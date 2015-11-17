@@ -16,6 +16,10 @@ public class HHSSAdventure {
      */
     public static void main(String[] args) {
         // I changed the comment!!!!
+        //currentDir
+        //Locations[]
+        //currentLocation
+        //switchLocation(name,direction)
     }
     
 }
