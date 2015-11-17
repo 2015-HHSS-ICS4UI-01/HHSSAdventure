@@ -10,4 +10,29 @@ package hhssadventure;
  */
 public class Scene {
     
+    public void picture(){
+        direction();
+    }
+    
+    public void direction(){
+        
+    }
+    
+    public boolean frontBlocked(){
+        
+    }
+    
+    public String nextLocation(){
+        
+    }
+    
+    public String description(){
+        
+    }
+    
+    public void nextDirection(){
+        
+    }
+    
+    
 }
