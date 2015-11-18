@@ -8,6 +8,6 @@ package hhssadventure;
  *
  * @author janaj4926
  */
-public class NewClass {
+public class Interface {
     
 }
