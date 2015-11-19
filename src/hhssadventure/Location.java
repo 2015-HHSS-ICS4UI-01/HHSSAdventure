@@ -20,6 +20,14 @@ public class Location {
     public Location(Scanner input){
         currentLocation = input.next();
         currentDirection = input.next();
+        scenes = new Scene[4];
+        
+        for(int i = 0; i < scenes.length; i++){
+            //creates a scene
+            Scene s = new Scene(input);
+            //add scene to the list
+            scenes[i] = s;
+        }
         
         
     }

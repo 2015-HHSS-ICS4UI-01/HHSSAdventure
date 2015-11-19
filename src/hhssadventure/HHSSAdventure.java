@@ -27,15 +27,16 @@ public class HHSSAdventure {
         
         try{
             file = new FileReader("images/pics.txt");
-            Scanner input = new Scanner(file);
-            while(input.hasNext()){
-                
-            }
         }catch(Exception e){
             e.printStackTrace();
         }
         
+        Scanner input = new Scanner(file);
         
+        while(input.hasNext()){
+            Location l = new Location(input);
+            locations.add(l);
+        }
         
     }
     
