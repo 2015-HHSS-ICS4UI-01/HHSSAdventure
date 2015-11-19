@@ -8,6 +8,12 @@ package hhssadventure;
  *
  * @author janaj4926
  */
-public class Interface {
-    
+public class Game {
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) {
+        
+    }
 }
