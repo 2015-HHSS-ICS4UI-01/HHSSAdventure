@@ -33,7 +33,6 @@ public class UserInterface extends JComponent implements MouseListener, MouseMot
         this.setPreferredSize(new Dimension(WIDTH, HIEGHT));
         window.pack();
         window.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        // add the mouse mouse listener
         this.addMouseListener(this);
     }
     
