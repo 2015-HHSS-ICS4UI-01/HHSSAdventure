@@ -18,14 +18,13 @@ import javax.swing.JFrame;
  */
 public class Scene extends Panel {
     
-    //picture
     private char direction;
     private boolean frontBlocked;
     private Location nextLocation;
     private String Description;
     private char nextDirection;
+    private BufferedImage  image;
     
-    BufferedImage  image;
   public Scene() {
   try {
 //  System.out.println("Enter image name\n");
@@ -51,11 +50,16 @@ Exception {
   frame.setSize(1200, 800);
   frame.setVisible(true);
   }
-} 
-    
-    
-    
-    
-    
-    
   
+      public BufferedImage getPhoto(){
+        return this.image;
+}
+      
+      public char getDirection(){
+          return this.direction;
+      }
+  
+      public String getDescription
+      
+      
+} 
