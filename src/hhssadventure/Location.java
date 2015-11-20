@@ -28,7 +28,7 @@ public class Location {
         return true;
     }
     public String getDescription(Scene dir){
-        
+        return dir.getDescription();
     }
     public Location getNextLocation(Scene dir){
         

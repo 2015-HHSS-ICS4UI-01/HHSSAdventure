@@ -21,7 +21,7 @@ public class Scene extends Panel {
     private char direction;
     private boolean frontBlocked;
     private Location nextLocation;
-    private String Description;
+    private String description;
     private char nextDirection;
     private BufferedImage  image;
     
@@ -59,7 +59,9 @@ Exception {
           return this.direction;
       }
   
-      public String getDescription
+      public String getDescription(){
+          return this.description;
+      }
       
       
 } 
