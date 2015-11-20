@@ -11,9 +11,4 @@
 public class Scene {
 private String direction;
 
-
-public void FrontBlocked(){
-
-    
-}
 }
