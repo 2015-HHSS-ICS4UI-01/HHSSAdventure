@@ -60,6 +60,7 @@ public class FileInputExample {
         }
         //set the text for the next class name
         Class c = classes.get(classNum);
+        
         gui.setClassName(c.getCourseCode());
     }
     
