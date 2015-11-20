@@ -13,8 +13,8 @@ public class Scene {
     //picture
     private char direction;
     private boolean frontBlocked;
-    //nextLocation
-    //Description
+    private Location nextLocation;
+    private String Description;
     private char nextDirection;
     
 }

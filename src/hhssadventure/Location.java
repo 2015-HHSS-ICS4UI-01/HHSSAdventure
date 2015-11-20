@@ -4,18 +4,28 @@
  */
 package hhssadventure;
 
+import java.util.ArrayList;
+
 /**
  *
  * @author naylj6470
  */
 public class Location {
     
-    //Scenes[]
-    //name
-    //getImage(dir)
-    //isFrontBlocked(dir)
-    //getDescription(dir)
-    //get NextLocation(dir)
+    private ArrayList<Scene> scenes = new ArrayList<>();
+    private String name;
+    
+    //public getImage(dir)
+    
+    public boolean isFrontBlocked(char dir){
+        return true;
+    }
+    public String getDescription(Scene dir){
+        
+    }
+    public Location getNextLocation(Scene dir){
+        
+    }
     
     
 }
