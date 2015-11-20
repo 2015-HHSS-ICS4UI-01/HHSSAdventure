@@ -4,32 +4,51 @@
  */
 package hhssadventure;
 
+import java.util.Scanner;
+
 /**
  *
  * @author paulm6438
  */
 public class Scene {
-    
-    
-    
-    public location(){
-        
+
+    private String pichure;
+    private String direction;
+    private boolean isFrontBlocked;
+    private String nextLocation;
+    private String nextDirection;
+
+    public Scene(Scanner input) {
+        direction = input.next();
+        pichure = input.next();
+        String check = input.next();
+        if (check.equals("false")) {
+            isFrontBlocked = false;
+            nextLocation = input.next();
+            nextDirection = input.nextLine();
+        } else {
+            isFrontBlocked = true;
+            input.nextLine();
+        }
     }
-    
-    
-    
-    
-    public nextLocation(){
-        
+
+    public String getDirection() {
+        return this.direction;
     }
-    
-    public nextDirection(){
-        
+
+    public String getPichure() {
+        return this.pichure;
     }
-    
-    public string Description(){
-        
-        
+
+    public boolean isFrontBlocked() {
+        return this.isFrontBlocked;
     }
-    
+
+    public String getNextLocation() {
+        return this.nextLocation;
+    }
+
+    public String getNextDirection() {
+        return this.nextDirection;
+    }
 }
