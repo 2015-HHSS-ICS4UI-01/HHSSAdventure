@@ -10,7 +10,10 @@ package hhssadventure;
  * @author lamon
  */
 public class HHSSAdventure {
-
+    
+    private AdventureInterface gui;
+    private
+    
     /**
      * @param args the command line arguments
      */

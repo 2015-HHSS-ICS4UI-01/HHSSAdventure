@@ -4,11 +4,32 @@
  */
 package hhssadventure;
 
+import java.awt.image.BufferedImage;
+
 /**
  *
  * @author janaj4926
  */
 public class Locations {
+    private String name;
+    private Scenes[] scenes;
     
+    
+    
+    public BufferedImage getImage(int dir){
+        
+    }
+    
+    public boolean isFrontBlocked(int dir){
+        
+    }
+    
+    public String getDescription(int dir){
+        
+    }
+    
+    public String nextLocation(int dir){
+        
+    }
 }
 
