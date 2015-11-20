@@ -33,6 +33,9 @@ public class HHSSAdventure {
         
         Scanner input = new Scanner(file);
         
+        String currentLocation = input.next();
+        String currentDirection = input.next();
+        
         while(input.hasNext()){
             Location l = new Location(input);
             locations.add(l);

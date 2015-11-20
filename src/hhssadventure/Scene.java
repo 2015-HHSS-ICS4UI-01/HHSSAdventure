@@ -13,53 +13,74 @@ import java.util.Scanner;
  */
 public class Scene {
     private String sceneDirection;
-    private Image sceneImage;
+    private String scenePicture;
     private boolean isBlocked;
     private String nextLocation;
     private String nextDirection;
+    private String description;
     
     public Scene(Scanner input){
+        sceneDirection = input.next();
+        //figure out images, this is temp
+        scenePicture = input.next();
+        isBlocked = input.nextBoolean();
+        if(isBlocked){
+            input.nextLine();
+        }else if(!isBlocked){
+            nextLocation = input.next();
+            nextDirection = input.nextLine();
+        }
+        description = input.nextLine();
+        
         
     }
     
     /**
-     * Returns the faced direction in the current scene 
-     * @return the current direction
+     * Returns the faced direction in the current scene.
+     * @return the current direction.
      */
-    public String sceneDirection(){
+    public String getDirection(){
         return this.sceneDirection;
     }
     
     /**
-     * Returns the image associated with the current scene.
-     * @return the image of the scene.
+     * Returns the picture associated with the scene.
+     * @return the scene's image.
      */
-    public Image sceneImage(){
-        return this.sceneImage;
+    public String getPicture(){
+        return this.scenePicture;
     }
     
     /**
-     * Returns whether the player is able to move forward to another location.
-     * @return whether or not the player can move forward.
+     * Returns whether the player can move forward to another location.
+     * @return whether or not the player is blocked from moving forward.
      */
     public boolean isBlocked(){
         return this.isBlocked;
     }
     
     /**
-     * Returns the location that the player can move to from this scene.
-     * @return the name of the location
+     * Returns the location that will be entered if the player moves forward. 
+     * @return the new location.
      */
-    public String nextLocation(){
+    public String getNextLocation(){
         return this.nextLocation;
     }
     
     /**
-     * Returns the starting scene of the next location
-     * @return the scene the player will start from in the next location
+     * Returns the scene the player will start from in the next location
+     * @return the starting scene of the next location
      */
-    public String nextDirection(){
+    public String getNextDirection(){
         return this.nextDirection;
+    }
+    
+    /**
+     * Returns the description associated with the scene.
+     * @return the scene's description.
+     */
+    public String getDescription(){
+        return this.description;
     }
     
     
