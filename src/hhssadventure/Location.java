@@ -9,4 +9,5 @@ package hhssadventure;
  * @author simma1980
  */
 public class Location {
+    
 }
