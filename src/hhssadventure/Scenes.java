@@ -16,7 +16,7 @@ public class Scenes {
 
     public void getpic(String picName) {
         try{
-            img = ImageIO.read(picName);
+            
         }catch(Exception e){
             e.printStackTrace();
             System.exit(0);
