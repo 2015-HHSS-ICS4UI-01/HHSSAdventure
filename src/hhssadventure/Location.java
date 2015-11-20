@@ -4,6 +4,7 @@
  */
 package hhssadventure;
 
+import java.awt.image.BufferedImage;
 import java.util.ArrayList;
 
 /**
@@ -12,10 +13,16 @@ import java.util.ArrayList;
  */
 public class Location {
     
-    private ArrayList<Scene> scenes = new ArrayList<>();
+    private Scene[] scenes = new Scene[3];
     private String name;
     
-    //public getImage(dir)
+    public BufferedImage getImage(char dir){
+        for(int i = 0; i < 4; i++){
+            if(dir == scenes[i].getDirection()){
+                return scenes[i].getPhoto();
+            }
+        }
+    }
     
     public boolean isFrontBlocked(char dir){
         return true;
