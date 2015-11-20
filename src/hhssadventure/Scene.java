@@ -17,6 +17,7 @@ public class Scene {
     private boolean isFrontBlocked;
     private String nextLocation;
     private String nextDirection;
+    private String description;
 
     public Scene(Scanner input) {
         direction = input.next();
@@ -25,11 +26,13 @@ public class Scene {
         if (check.equals("false")) {
             isFrontBlocked = false;
             nextLocation = input.next();
-            nextDirection = input.nextLine();
+            nextDirection = input.next();
         } else {
             isFrontBlocked = true;
-            input.nextLine();
+            input.next();
         }
+        description = input.next();
+        
     }
 
     public String getDirection() {
@@ -50,5 +53,9 @@ public class Scene {
 
     public String getNextDirection() {
         return this.nextDirection;
+    }
+    
+    public String getDescription(){
+        return this.description;
     }
 }

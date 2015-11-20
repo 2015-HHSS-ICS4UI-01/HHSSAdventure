@@ -10,4 +10,5 @@ package hhssadventure;
  */
 public class Location {
     
+    
 }
