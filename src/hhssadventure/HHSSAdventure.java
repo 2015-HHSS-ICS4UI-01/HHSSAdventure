@@ -5,7 +5,9 @@
  */
 package hhssadventure;
 
+import java.io.FileReader;
 import java.util.ArrayList;
+import java.util.Scanner;
 
 /**
  *
@@ -14,11 +16,23 @@ import java.util.ArrayList;
 public class HHSSAdventure {
 
     private ArrayList<Class> locations = new ArrayList<>();
-    
-    
+    private Interface GUI;
+    private String locName;
+
+    public HHSSAdventure() {
+        FileReader file = null;
+        try {
+            file = new FileReader("images/pics.txt");
+        } catch (Exception e) {
+            e.printStackTrace();
+            System.exit(0);
+        }
+        Scanner in = new Scanner(file);
+    }
+
     /**
      * @param args the command line arguments
      */
-    public static void main(String[] args) { 
+    public static void main(String[] args) {
     }
 }
