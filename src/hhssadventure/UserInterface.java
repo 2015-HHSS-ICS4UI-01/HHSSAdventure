@@ -8,6 +8,7 @@ import java.awt.AWTException;
 import java.awt.Dimension;
 import java.awt.Graphics;
 import java.awt.Robot;
+import java.awt.event.KeyEvent;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.awt.event.MouseMotionListener;
@@ -28,6 +29,8 @@ public class UserInterface extends JComponent implements MouseListener, MouseMot
     private final int HIEGHT = 945;
     private final int WIDTH = 1265;
     
+    private boolean moveForward = false;
+    
     private BufferedImage picture;
     
     private String image;
@@ -40,6 +43,8 @@ public class UserInterface extends JComponent implements MouseListener, MouseMot
         picture = ImageIO.read(new File("images\\" + image));
         
         this.robot = new Robot();
+        
+        //sets JFrame settings
         window = new JFrame("HHSS Adventure");
         window.add(this);
         window.setVisible(true);
@@ -50,10 +55,15 @@ public class UserInterface extends JComponent implements MouseListener, MouseMot
     }
     
     public void paintComponent(Graphics g) {
+        //draws the image is being stored
         g.drawImage(picture, 0, 0, WIDTH, HIEGHT, this);
     }
     
-    
+    /**
+     * Finds picture in new scene and sets it as the picture to display
+     * @param s scene to change to
+     * @throws IOException 
+     */
     public void setImage(Scene s) throws IOException {
         //sets image to new scene's image
         image = s.getPicture();
@@ -69,12 +79,17 @@ public class UserInterface extends JComponent implements MouseListener, MouseMot
 
     @Override
     public void mousePressed(MouseEvent e) {
+        if (e.getButton() == MouseEvent.BUTTON1) {
+            moveForward = true;
+        }
         
     }
 
     @Override
     public void mouseReleased(MouseEvent e) {
-        
+        if (e.getButton() == MouseEvent.BUTTON1) {
+            moveForward = false;
+        }
     }
 
     @Override
