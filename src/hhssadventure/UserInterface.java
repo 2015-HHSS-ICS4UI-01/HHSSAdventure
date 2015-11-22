@@ -30,10 +30,12 @@ public class UserInterface extends JComponent implements MouseListener, MouseMot
     
     private BufferedImage picture;
     
+    private String image;
     private Robot robot;
     
     public UserInterface() throws AWTException, IOException {
-        picture = ImageIO.read(new File("images\\IMG_0045.jpg"));
+        image = "IMG_0045.jpg";
+        picture = ImageIO.read(new File("images\\" + image));
         this.robot = new Robot();
         window = new JFrame("HHSS Adventure");
         window.add(this);
@@ -48,6 +50,12 @@ public class UserInterface extends JComponent implements MouseListener, MouseMot
         g.drawImage(picture, 0, 0, WIDTH, HIEGHT, this);
     }
     
+    
+    public void setImage(Scene s) throws IOException {
+        image = s.getPicture();
+        picture = ImageIO.read(new File("images\\" + image));
+        repaint();
+    }
     
     @Override
     public void mouseClicked(MouseEvent e) {
