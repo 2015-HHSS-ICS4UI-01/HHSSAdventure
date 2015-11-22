@@ -33,6 +33,7 @@ public class UI_Test {
             e.printStackTrace();
         }
         UI.setImage(scene2);
+        
     }
 
 }
