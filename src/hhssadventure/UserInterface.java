@@ -6,10 +6,15 @@ package hhssadventure;
 
 import java.awt.AWTException;
 import java.awt.Dimension;
+import java.awt.Graphics;
 import java.awt.Robot;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.awt.event.MouseMotionListener;
+import java.awt.image.BufferedImage;
+import java.io.File;
+import java.io.IOException;
+import javax.imageio.ImageIO;
 import javax.swing.JComponent;
 import javax.swing.JFrame;
 
@@ -23,9 +28,12 @@ public class UserInterface extends JComponent implements MouseListener, MouseMot
     private final int HIEGHT = 945;
     private final int WIDTH = 1265;
     
+    private BufferedImage picture;
+    
     private Robot robot;
     
-    public UserInterface() throws AWTException {
+    public UserInterface() throws AWTException, IOException {
+        picture = ImageIO.read(new File("images\\IMG_0045.jpg"));
         this.robot = new Robot();
         window = new JFrame("HHSS Adventure");
         window.add(this);
@@ -36,7 +44,9 @@ public class UserInterface extends JComponent implements MouseListener, MouseMot
         this.addMouseListener(this);
     }
     
-    
+    public void paintComponent(Graphics g) {
+        g.drawImage(picture, 0, 0, WIDTH, HIEGHT, this);
+    }
     
     
     @Override
