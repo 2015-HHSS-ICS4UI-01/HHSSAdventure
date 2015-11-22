@@ -33,10 +33,10 @@ public class UserInterface extends JComponent implements MouseListener, MouseMot
     private String image;
     private Robot robot;
     
-    public UserInterface() throws AWTException, IOException {
-        image = "IMG_0045.jpg";
-        
+    public UserInterface(Scene s) throws AWTException, IOException {
+        image = s.getPicture();
         picture = ImageIO.read(new File("images\\" + image));
+        
         this.robot = new Robot();
         window = new JFrame("HHSS Adventure");
         window.add(this);

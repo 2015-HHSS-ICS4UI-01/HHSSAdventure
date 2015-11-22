@@ -7,8 +7,6 @@ package hhssadventure;
 
 import java.awt.AWTException;
 import java.io.IOException;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
 /**
  *
@@ -24,15 +22,17 @@ public class UI_Test {
     public static void main(String[] args) throws AWTException, IOException {
         //String location, String picture, boolean frontBlocked, char direction
 
-        Scene scene = new Scene("n", "IMG_0046.jpg", false, 'n');
+        Scene scene = new Scene("Doesn't matter whatever", "IMG_0046.jpg", false, 'n');
+        Scene scene2 = new Scene("Doesn't matter whatever", "IMG_0045.jpg", false, 'n');
         
-        UserInterface UI = new UserInterface();
+        UserInterface UI = new UserInterface(scene);
+        
         try {
             Thread.sleep(1000);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
-        UI.setImage(scene);
+        UI.setImage(scene2);
     }
 
 }
