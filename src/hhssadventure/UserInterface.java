@@ -34,7 +34,9 @@ public class UserInterface extends JComponent implements MouseListener, MouseMot
     private Robot robot;
     
     public UserInterface(Scene s) throws AWTException, IOException {
+        //sets image to scene's image
         image = s.getPicture();
+        //gets picture from location
         picture = ImageIO.read(new File("images\\" + image));
         
         this.robot = new Robot();
@@ -53,7 +55,9 @@ public class UserInterface extends JComponent implements MouseListener, MouseMot
     
     
     public void setImage(Scene s) throws IOException {
+        //sets image to new scene's image
         image = s.getPicture();
+        //gets picture with new location
         picture = ImageIO.read(new File("images\\" + image));
         repaint();
     }
