@@ -83,6 +83,7 @@ public class UserInterface extends JComponent implements MouseListener, MouseMot
             moveForward = true;
         }
         
+        
     }
 
     @Override
@@ -90,6 +91,7 @@ public class UserInterface extends JComponent implements MouseListener, MouseMot
         if (e.getButton() == MouseEvent.BUTTON1) {
             moveForward = false;
         }
+        
     }
 
     @Override
