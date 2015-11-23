@@ -35,8 +35,9 @@ public class Scene extends Panel {
           nextLocation = constructor.nextLine();
           nextDirection = constructor.nextLine();
       }
-      
-      
+  }   
+     
+  public Scene(){
   try {
 //  System.out.println("Enter image name\n");
 //  BufferedReader bf=new BufferedReader(new 
