@@ -6,6 +6,8 @@ package hhssadventure;
 
 import java.awt.Dimension;
 import java.awt.Graphics;
+import java.awt.event.KeyEvent;
+import java.awt.event.KeyListener;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.awt.event.MouseMotionListener;
@@ -19,21 +21,31 @@ import javax.swing.JFrame;
  *
  * @author johns6971
  */
-public class UserInterface extends JComponent implements MouseListener, MouseMotionListener {
-    
+public class UserInterface extends JComponent implements MouseMotionListener {
+
     private JFrame window;
-    private final int HIEGHT = 945;
-    private final int WIDTH = 1265;
-    
-    private boolean moveForward = false;
-    
+    private int HIEGHT;
+    private int WIDTH;
+    private boolean moveForward;
     private Scene currentScene;
-    
-    
+    //create variables for centre of the screen
+    int centerX;
+    int centerY;
+    int hDisplacement;
+
     public UserInterface(Scene s) {
         //sets the current scene to display
         currentScene = s;
-        
+
+        moveForward = false;
+
+        HIEGHT = 945;
+        WIDTH = 1265;
+
+        centerX = WIDTH / 2;
+        centerY = HIEGHT / 2;
+        hDisplacement = 0;
+
         //sets JFrame settings
         window = new JFrame("HHSS Adventure");
         window.add(this);
@@ -41,10 +53,9 @@ public class UserInterface extends JComponent implements MouseListener, MouseMot
         this.setPreferredSize(new Dimension(WIDTH, HIEGHT));
         window.pack();
         window.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        this.addMouseListener(this);
+        this.addMouseMotionListener(this);
     }
-    
-    
+
     @Override
     public void paintComponent(Graphics g) {
         try {
@@ -53,45 +64,14 @@ public class UserInterface extends JComponent implements MouseListener, MouseMot
             Logger.getLogger(UserInterface.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
-    
+
     /**
      * Finds picture in new scene and sets it as the picture to display
-     * @param s scene to change to 
+     *
+     * @param s scene to change to
      */
     public void setScene(Scene s) {
         currentScene = s;
-    }
-    
-    @Override
-    public void mouseClicked(MouseEvent e) {
-        
-    }
-
-    @Override
-    public void mousePressed(MouseEvent e) {
-        if (e.getButton() == MouseEvent.BUTTON1) {
-            moveForward = true;
-        }
-        
-        
-    }
-
-    @Override
-    public void mouseReleased(MouseEvent e) {
-        if (e.getButton() == MouseEvent.BUTTON1) {
-            moveForward = false;
-        }
-        
-    }
-
-    @Override
-    public void mouseEntered(MouseEvent e) {
-        
-    }
-
-    @Override
-    public void mouseExited(MouseEvent e) {
-        
     }
 
     @Override
@@ -101,7 +81,8 @@ public class UserInterface extends JComponent implements MouseListener, MouseMot
 
     @Override
     public void mouseMoved(MouseEvent e) {
-        
+        hDisplacement = e.getX() - centerX;
+
     }
-    
+
 }
