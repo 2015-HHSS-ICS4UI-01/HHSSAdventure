@@ -19,15 +19,18 @@ public class Scene {
 
     public Scene(Scanner input) {
         direction = input.next();
+
         image = input.next();
+
         String f = input.next();
         if (f.equals("false")) {
             moveForward = true;
             nextLocation = input.next();
             nextDirection = input.next();
-       } else {
-           moveForward = false;
-       }
+
+        } else {
+            moveForward = false;
+        }
 
         input.nextLine();
     }
@@ -49,8 +52,8 @@ public class Scene {
         return this.nextLocation;
 
     }
-    
-    public String getnextDirection(){
+
+    public String getnextDirection() {
         return this.nextDirection;
     }
 }
