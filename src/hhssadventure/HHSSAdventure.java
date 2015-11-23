@@ -16,7 +16,7 @@ import java.util.Scanner;
 public class HHSSAdventure {
 
     private ArrayList<Class> locations = new ArrayList<>();
-    private Interface gui;
+    private InterfaceGame gui;
 
     public HHSSAdventure() {
         //help file read
@@ -41,7 +41,7 @@ public class HHSSAdventure {
             locations.add(c);
         }
 
-        gui = new Interface(this);
+        gui = new InterfaceGame(this);
         //set the text for the next class
         Class c = locations.get(classNum);
         gui.setClassName(c.getCourseCode());
@@ -59,12 +59,12 @@ public class HHSSAdventure {
         Class c = classes.get(classNum);
         gui.setClassName(c.getCourseCode());
     }
-}
-/**
- * @param args the command line arguments
- */
-public static void main(String[] args) {
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) {
         // TODO code application logic here
+        HHSSAdventure f = new HHSSAdventure();
     }
-    
 }
