@@ -11,8 +11,9 @@ import java.awt.Graphics;
 import java.awt.Point;
 import java.awt.Robot;
 import java.awt.Toolkit;
+import java.awt.event.KeyEvent;
+import java.awt.event.KeyListener;
 import java.awt.event.MouseEvent;
-import java.awt.event.MouseListener;
 import java.awt.event.MouseMotionListener;
 import java.io.IOException;
 import java.util.logging.Level;
@@ -24,7 +25,7 @@ import javax.swing.JFrame;
  *
  * @author johns6971
  */
-public class UserInterface extends JComponent implements MouseMotionListener {
+public class UserInterface extends JComponent implements MouseMotionListener, KeyListener {
 
     private JFrame window;
     private int HIEGHT;
@@ -130,6 +131,18 @@ public class UserInterface extends JComponent implements MouseMotionListener {
     public void mouseMoved(MouseEvent e) {
         hDisplacement = e.getX() - centerX;
 
+    }
+
+    @Override
+    public void keyTyped(KeyEvent ke) {
+    }
+
+    @Override
+    public void keyPressed(KeyEvent ke) {
+    }
+
+    @Override
+    public void keyReleased(KeyEvent ke) {
     }
 
 }
