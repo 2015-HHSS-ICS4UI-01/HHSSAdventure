@@ -4,12 +4,18 @@
  */
 package hhssadventure;
 
+import java.awt.image.BufferedImage;
+import java.io.File;
+import java.io.IOException;
+import javax.imageio.ImageIO;
+
 /**
  *
  * @author johns6971
  */
 public class Scene {
-    private String picture;
+    private String imagePath;
+    private BufferedImage image;
     private char direction;
     private String location;
     private boolean frontBlocked;
@@ -19,7 +25,7 @@ public class Scene {
     private Scene forward;
     
     public Scene(String location, String picture, boolean frontBlocked, char direction) {
-        this.picture = picture;
+        this.imagePath = picture;
         this.direction = direction;
         this.frontBlocked = frontBlocked;
         this.location = location;
@@ -52,11 +58,19 @@ public class Scene {
         return left;
     }
     
-    public String getPicture()
+    public BufferedImage getPicture() throws IOException
     {
-        return picture;
+        if (image == null)
+        {
+            image = ImageIO.read(new File("images\\" + imagePath));
+        }
+        return image;
     }
     
+    public String getImagePath()
+    {
+        return imagePath;
+    }
     
     
     

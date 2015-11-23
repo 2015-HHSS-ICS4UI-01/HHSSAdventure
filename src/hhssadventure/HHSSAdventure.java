@@ -122,6 +122,7 @@ public class HHSSAdventure {
         }
         
         currentScene = scenes.get(locationScenes.get(curLocationName)[curLocationIndex]);
+        System.out.println(currentScene.getImagePath());
     }
     
     public static int modifyIndex(int index, int arrLength)
