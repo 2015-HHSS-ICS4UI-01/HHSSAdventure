@@ -7,8 +7,6 @@ package hhssadventure;
 import java.awt.AWTException;
 import java.awt.Dimension;
 import java.awt.Graphics;
-import java.awt.Robot;
-import java.awt.event.KeyEvent;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.awt.event.MouseMotionListener;
@@ -31,18 +29,19 @@ public class UserInterface extends JComponent implements MouseListener, MouseMot
     
     private boolean moveForward = false;
     
-    private BufferedImage picture;
+    private Scene currentScene;
     
-    private String image;
-    private Robot robot;
+//    private BufferedImage picture;
+//    
+//    private String image;
     
     public UserInterface(Scene s) throws AWTException, IOException {
-        //sets image to scene's image
-        image = s.getPicture();
-        //gets picture from location
-        picture = ImageIO.read(new File("images\\" + image));
+//        //sets image to scene's image
+//        image = s.getPicture();
+//        //gets picture from location
+//        picture = ImageIO.read(new File("images\\" + image));
         
-        this.robot = new Robot();
+        currentScene = s;
         
         //sets JFrame settings
         window = new JFrame("HHSS Adventure");
@@ -54,9 +53,11 @@ public class UserInterface extends JComponent implements MouseListener, MouseMot
         this.addMouseListener(this);
     }
     
+    
+    @Override
     public void paintComponent(Graphics g) {
         //draws the image is being stored
-        g.drawImage(picture, 0, 0, WIDTH, HIEGHT, this);
+        g.drawImage(currentScene.getImage(), 0, 0, WIDTH, HIEGHT, this);
     }
     
     /**
@@ -64,12 +65,13 @@ public class UserInterface extends JComponent implements MouseListener, MouseMot
      * @param s scene to change to
      * @throws IOException 
      */
-    public void setImage(Scene s) throws IOException {
-        //sets image to new scene's image
-        image = s.getPicture();
-        //gets picture with new location
-        picture = ImageIO.read(new File("images\\" + image));
-        repaint();
+    public void setScene(Scene s) throws IOException {
+//        //sets image to new scene's image
+//        image = s.getPicture();
+//        //gets picture with new location
+//        picture = ImageIO.read(new File("images\\" + image));
+//        repaint();
+        currentScene = s;
     }
     
     @Override
