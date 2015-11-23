@@ -84,6 +84,7 @@ public class UserInterface extends JComponent implements MouseMotionListener {
     }
     
     /**
+
      * Makes the mouse cursor visible
      */
     private void showCursor()
