@@ -16,7 +16,7 @@ public class Locations {
     
     
     
-    public BufferedImage getImage(int dir){
+    public void getImage(int dir){
         
     }
     

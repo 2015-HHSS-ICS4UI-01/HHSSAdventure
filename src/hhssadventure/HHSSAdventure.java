@@ -39,5 +39,13 @@ public class HHSSAdventure {
 //        while (input.hasNext()) {
 //            System.out.println(input.nextLine());
 //        }
+        int c = 0;
+        String[] locations = new String[1];
+        input.nextLine();
+        input.nextLine();
+        while(input.hasNext()){
+            locations[c] = input.nextLine();
+            input.
+        }
     }
 }
