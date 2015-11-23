@@ -23,7 +23,7 @@ public class HHSSAdventure {
     private int classNum = 0;
     
     public String startingLocation = null;
-    public String startingDir = null;
+    public String startingDirection = null;
     
 
     public HHSSAdventure() {
@@ -42,7 +42,7 @@ public class HHSSAdventure {
         Scanner input = new Scanner(file);
         
         startingLocation = input.nextLine();
-        startingDir = input.nextLine();
+        startingDirection = input.nextLine();
         
         
         
