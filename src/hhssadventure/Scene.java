@@ -35,6 +35,7 @@ public class Scene extends Panel {
           nextLocation = constructor.nextLine();
           nextDirection = constructor.nextLine();
       }
+      
   }   
      
   public Scene(){
@@ -71,8 +72,8 @@ Exception {
           return this.direction;
       }
   
-      public String getDescription(){
-          return this.description;
+      public void setDescription(String temp){
+          description = temp;
       }
       
       

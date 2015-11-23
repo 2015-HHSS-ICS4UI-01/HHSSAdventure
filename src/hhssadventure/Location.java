@@ -22,6 +22,7 @@ public class Location {
         for(int i = 0; i < 4; i++){
             Scene s = new Scene(constructor);
             scenes[i] = s;
+            s.setDescription(name + s.getDirection());
         }
     }
     
@@ -36,9 +37,7 @@ public class Location {
     public boolean isFrontBlocked(char dir){
         return true;
     }
-    public String getDescription(Scene dir){
-        return dir.getDescription();
-    }
+    
 
     
     
