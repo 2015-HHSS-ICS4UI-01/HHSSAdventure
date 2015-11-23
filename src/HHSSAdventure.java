@@ -14,13 +14,10 @@ import java.util.Scanner;
  */
 public class HHSSAdventure {
 
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String[] args) {
-        // TODO code application logic here
-
-        ArrayList<Location> locations = new ArrayList<>();
+    private AdventureFrame frame;
+    
+    public HHSSAdventure(){
+         ArrayList<Location> locations = new ArrayList<>();
 
         FileReader file = null;
         try {
@@ -46,6 +43,15 @@ public class HHSSAdventure {
 //        }
 
 
+    }
+    
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) {
+        // TODO code application logic here
+
+       HHSSAdventure game = new HHSSAdventure();
 
 
     }
