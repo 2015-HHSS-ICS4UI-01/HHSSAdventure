@@ -5,7 +5,9 @@
  */
 package hhssadventure;
 
+import java.awt.AWTException;
 import java.io.FileReader;
+import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Scanner;
@@ -19,13 +21,22 @@ public class HHSSAdventure {
     /**
      * @param args the command line arguments
      */
+    Scene currentScene = null;
+    HashMap<String, Scene> scenes = new HashMap<>();
+    
+    private void run()
+    {
+        UserInterface UI = new UserInterface(currentScene);
+    }
+    
     public static void main(String[] args) {
-        
-        
-        Scene currentScene = null;
-        
-        
-        HashMap<String, Scene> scenes = new HashMap<>();
+        HHSSAdventure main = new HHSSAdventure();
+        main.readFile();
+        main.run();
+    }
+    
+    private void readFile()
+    {
         HashMap<String, String[]> locationScenes = new HashMap<>();
         // scene, nextLocation nextDirection (index of above array)
         HashMap<String, HashMap<String, Integer>> sceneForwards = new HashMap<>();
@@ -125,7 +136,7 @@ public class HHSSAdventure {
         System.out.println(currentScene.getImagePath());
     }
     
-    public static int modifyIndex(int index, int arrLength)
+    public int modifyIndex(int index, int arrLength)
     {
         if (index < 0)
         {
@@ -139,7 +150,7 @@ public class HHSSAdventure {
         return index;
     }
     
-    public static int convertDirectionToIndex(char direction)
+    public int convertDirectionToIndex(char direction)
     {
         switch(direction)
         {
