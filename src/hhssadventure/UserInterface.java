@@ -10,12 +10,7 @@ import java.awt.Graphics;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.awt.event.MouseMotionListener;
-import java.awt.image.BufferedImage;
-import java.io.File;
 import java.io.IOException;
-import java.util.logging.Level;
-import java.util.logging.Logger;
-import javax.imageio.ImageIO;
 import javax.swing.JComponent;
 import javax.swing.JFrame;
 
@@ -33,16 +28,9 @@ public class UserInterface extends JComponent implements MouseListener, MouseMot
     
     private Scene currentScene;
     
-//    private BufferedImage picture;
-//    
-//    private String image;
     
     public UserInterface(Scene s) throws AWTException, IOException {
-//        //sets image to scene's image
-//        image = s.getPicture();
-//        //gets picture from location
-//        picture = ImageIO.read(new File("images\\" + image));
-        
+        //sets the current scene to display
         currentScene = s;
         
         //sets JFrame settings
@@ -72,11 +60,6 @@ public class UserInterface extends JComponent implements MouseListener, MouseMot
      * @throws IOException 
      */
     public void setScene(Scene s) throws IOException {
-//        //sets image to new scene's image
-//        image = s.getPicture();
-//        //gets picture with new location
-//        picture = ImageIO.read(new File("images\\" + image));
-//        repaint();
         currentScene = s;
     }
     
