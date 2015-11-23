@@ -20,7 +20,6 @@ public class HHSSAdventure {
 
     private ArrayList<Location> locations = new ArrayList<>();
     private Interface gui;
-    private int classNum = 0;
     
     public String startingLocation = null;
     public String startingDirection = null;
@@ -54,7 +53,7 @@ public class HHSSAdventure {
             
             locations.add(l);
             
-        }    
+        }
         
     
     /**
