@@ -24,12 +24,12 @@ public class HHSSAdventure {
     Scene currentScene = null;
     HashMap<String, Scene> scenes = new HashMap<>();
     
-    private void run()
+    private void run() throws AWTException
     {
         UserInterface UI = new UserInterface(currentScene);
     }
     
-    public static void main(String[] args) {
+    public static void main(String[] args) throws AWTException {
         HHSSAdventure main = new HHSSAdventure();
         main.readFile();
         main.run();
