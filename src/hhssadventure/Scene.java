@@ -58,7 +58,7 @@ public class Scene {
         return left;
     }
     
-    public BufferedImage getPicture() throws IOException
+    public BufferedImage getImage() throws IOException
     {
         if (image == null)
         {
