@@ -4,10 +4,13 @@
  */
 package hhssadventure;
 
+import java.awt.AWTException;
+import java.awt.Cursor;
 import java.awt.Dimension;
 import java.awt.Graphics;
-import java.awt.event.KeyEvent;
-import java.awt.event.KeyListener;
+import java.awt.Point;
+import java.awt.Robot;
+import java.awt.Toolkit;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.awt.event.MouseMotionListener;
@@ -26,18 +29,26 @@ public class UserInterface extends JComponent implements MouseMotionListener {
     private JFrame window;
     private int HIEGHT;
     private int WIDTH;
-    private boolean moveForward;
     private Scene currentScene;
     //create variables for centre of the screen
     int centerX;
     int centerY;
     int hDisplacement;
 
-    public UserInterface(Scene s) {
+    
+
+    
+    // To keep the mouse in the center of the screen
+    private Robot robot;
+    // an invisible cursor image
+    private Cursor invisibleCursor = Toolkit.getDefaultToolkit().createCustomCursor(
+            Toolkit.getDefaultToolkit().getImage(""),
+            new Point(0, 0),
+            "invisible");
+    public UserInterface(Scene s) throws AWTException {
         //sets the current scene to display
         currentScene = s;
 
-        moveForward = false;
 
         HIEGHT = 945;
         WIDTH = 1265;
@@ -46,6 +57,12 @@ public class UserInterface extends JComponent implements MouseMotionListener {
         centerY = HIEGHT / 2;
         hDisplacement = 0;
 
+        
+        // sets up the mouse
+        robot = new Robot();
+        hideCursor();
+        centerMouse();
+        
         //sets JFrame settings
         window = new JFrame("HHSS Adventure");
         window.add(this);
@@ -56,6 +73,35 @@ public class UserInterface extends JComponent implements MouseMotionListener {
         this.addMouseMotionListener(this);
     }
 
+    
+    /**
+     * Hides the mouse cursor
+     */
+    private void hideCursor()
+    {
+        // set the current cursor to the invisible cursor image, which is simply an invisible image
+        this.setCursor(invisibleCursor);
+    }
+    
+    /**
+     * Makes the mouse cursor visible
+     */
+    private void showCursor()
+    {
+        // sets the cursor to the default cursor image (probably the white arrow)
+        this.setCursor(Cursor.getDefaultCursor());
+    }
+    
+    /**
+     * Puts the mouse cursor to the center of the screen
+     */
+    public void centerMouse()
+    {
+        // sets the mouse location to the middle of the screen but offset due to the actual
+            // screen picture being slightly offset due to the window border and actual physical location on the screen
+        robot.mouseMove((int)this.getLocationOnScreen().getX() + centerX, (int)this.getLocationOnScreen().getY() + centerY);
+    }
+    
     @Override
     public void paintComponent(Graphics g) {
         try {
