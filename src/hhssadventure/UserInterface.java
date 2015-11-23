@@ -29,7 +29,7 @@ public class UserInterface extends JComponent implements MouseListener, MouseMot
     private Scene currentScene;
     
     
-    public UserInterface(Scene s) throws AWTException, IOException {
+    public UserInterface(Scene s) {
         //sets the current scene to display
         currentScene = s;
         
@@ -56,10 +56,9 @@ public class UserInterface extends JComponent implements MouseListener, MouseMot
     
     /**
      * Finds picture in new scene and sets it as the picture to display
-     * @param s scene to change to
-     * @throws IOException 
+     * @param s scene to change to 
      */
-    public void setScene(Scene s) throws IOException {
+    public void setScene(Scene s) {
         currentScene = s;
     }
     
