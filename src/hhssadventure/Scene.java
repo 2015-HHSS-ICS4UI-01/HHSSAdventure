@@ -9,6 +9,7 @@ import java.awt.Panel;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
+import java.util.Scanner;
 import javax.imageio.ImageIO;
 import javax.swing.JFrame;
 
@@ -18,20 +19,30 @@ import javax.swing.JFrame;
  */
 public class Scene extends Panel {
     
-    private char direction;
+    private String direction;
     private boolean frontBlocked;
-    private Location nextLocation;
+    private String nextLocation;
     private String description;
-    private char nextDirection;
+    private String nextDirection;
+    private String imageName;
     private BufferedImage  image;
     
-  public Scene() {
+  public Scene(Scanner constructor) {
+      direction = constructor.nextLine();
+      imageName = constructor.nextLine();
+      frontBlocked = constructor.nextBoolean();
+      if(frontBlocked == false){
+          nextLocation = constructor.nextLine();
+          nextDirection = constructor.nextLine();
+      }
+      
+      
   try {
 //  System.out.println("Enter image name\n");
 //  BufferedReader bf=new BufferedReader(new 
 // InputStreamReader(System.in));
 // String imageName=bf.readLine();
-  File input = new File("images/IMG_0047.JPG");
+  File input = new File("images/" + imageName);
   image = ImageIO.read(input);
   } catch (IOException ie) {
   System.out.println("Error:"+ie.getMessage());
@@ -55,7 +66,7 @@ Exception {
         return this.image;
 }
       
-      public char getDirection(){
+      public String getDirection(){
           return this.direction;
       }
   
