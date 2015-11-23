@@ -4,45 +4,62 @@
  */
 package hhssadventure;
 
+import java.awt.image.BufferedImage;
+import java.io.File;
 import java.util.Scanner;
+import javax.imageio.ImageIO;
 
 /**
  *
  * @author yaol9270
  */
+
+            
+
 public class Scene {
     private String direction;
     private String name;
-    private String place;
     private String picture;
-    private String next;
+    private String nextPicture;
     private String nextDirection;
+    private BufferedImage img;
     private boolean blocked;
     
     
+    
+    
     public Scene(Scanner input){
-        name = input.nextLine();
-        place = input.nextLine();
+        input.nextLine();
+        input.nextLine();
+        while(input.next()!=null){
         for(int i = 0; i < 4; i++){
+            name = input.nextLine();
             direction = input.next();
             picture = input.next();
+             img = null;
+                try{
+                img = ImageIO.read(new File(picture));
+                    }catch(Exception e){
+                e.printStackTrace();
+                System.exit(0);
+            }   
             blocked = input.nextBoolean();
             if(blocked == false){
-                next = input.next();
+                nextPicture = input.next();
                 nextDirection = input.next();
             }
         }
-        
+        }
         
     }
     
     
-    public void picture(){
-        direction();
+    public BufferedImage picture(){
+        return this.img;
     }
     
-    public void direction(){
-        
+    public String direction(){
+        return this.direction;
     }
     
     public boolean frontBlocked(){
@@ -50,15 +67,15 @@ public class Scene {
     }
     
     public String nextLocation(){
-        
+        return this.nextPicture;
     }
     
     public String description(){
         return this.name;
     }
     
-    public void nextDirection(){
-        
+    public String nextDirection(){
+        return this.nextDirection;
     }
     
     
