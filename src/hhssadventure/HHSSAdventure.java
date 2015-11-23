@@ -29,29 +29,29 @@ public class HHSSAdventure {
             //stops program
             System.exit(0);
         }
-    
-    //creates a scanner to read file
+
+        //creates a scanner to read file
         Scanner input = new Scanner(file);
 
         //keep scanning as long as there is somthing to scan
         while (input.hasNext()) {
             //creating a class from a file
-            Class c = new Class(input);
+            Locations c = new Locations(input);
             //adding the class to the list
-            classes.add(c);
+            locations.add(c);
         }
-        
+
         gui = new Interface(this);
         //set the text for the next class
-        Class c = classes.get(classNum);
+        Class c = locations.get(classNum);
         gui.setClassName(c.getCourseCode());
         //show it
         gui.setVisible(true);
     }
-    
-    public void nextClass(){
+
+    public void nextLocation() {
         //if classNum  is less than numClasses -1
-        if(classNum < classes.size()-1){
+        if (classNum < classes.size() - 1) {
             //advance to next class
             classNum++;
         }
@@ -59,35 +59,11 @@ public class HHSSAdventure {
         Class c = classes.get(classNum);
         gui.setClassName(c.getCourseCode());
     }
-    
-    
-    public void prevClass(){
-        //if classNum is >0
-        if(classNum > 0){
-            //decrease class
-            classNum--;
-        }
-        //set the text for the class name
-        Class c = classes.get(classNum);
-        gui.setClassName(c.getCourseCode());
-        
-    }
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String[] args) {
+}
+/**
+ * @param args the command line arguments
+ */
+public static void main(String[] args) {
         // TODO code application logic here
     }
     
