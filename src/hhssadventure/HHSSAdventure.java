@@ -14,14 +14,21 @@ import java.util.Scanner;
  *
  * @author lamon
  */
+
 public class HHSSAdventure {
 
+    public void switchLocation(String name, String direction){
+        
+    }
+        
     /**
      * @param args the command line arguments
      */
     public static void main(String[] args) {
         
         ArrayList<Location> locations = new ArrayList<>();
+        String currentLocation;
+        String currentDirection;
         
         FileReader file = null;
         
@@ -29,16 +36,21 @@ public class HHSSAdventure {
             file = new FileReader("images/pics.txt");
         }catch(Exception e){
             e.printStackTrace();
+            System.exit(0);
         }
         
         Scanner input = new Scanner(file);
         
-        String currentLocation = input.next();
-        String currentDirection = input.next();
+        currentLocation = input.next();
+        currentDirection = input.next();
         
         while(input.hasNext()){
             Location l = new Location(input);
             locations.add(l);
+        }
+        
+        for(int i = 0; i < locations.size(); i++){
+            System.out.println(locations.get(i).getName());
         }
         
     }

@@ -4,7 +4,6 @@
  */
 package hhssadventure;
 
-import java.awt.Image;
 import java.util.Scanner;
 
 /**
@@ -26,9 +25,16 @@ public class Location {
             Scene s = new Scene(input);
             //add scene to the list
             scenes[i] = s;
-        }
+        } 
         
-        
+    }
+    
+    /**
+     * Returns the name of the location.
+     * @return the location's name.
+     */
+    public String getName(){
+        return this.locationName;
     }
     
     /**

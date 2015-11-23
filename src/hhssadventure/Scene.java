@@ -4,7 +4,6 @@
  */
 package hhssadventure;
 
-import java.awt.Image;
 import java.util.Scanner;
 
 /**
@@ -23,14 +22,16 @@ public class Scene {
         sceneDirection = input.next();
         //figure out images, this is temp
         scenePicture = input.next();
-        isBlocked = input.nextBoolean();
-        if(isBlocked){
+        String check = input.next();
+        if(check.equals("true")){
+            isBlocked = true;
             input.nextLine();
-        }else if(!isBlocked){
+        }else{
+            isBlocked = false;
             nextLocation = input.next();
             nextDirection = input.nextLine();
         }
-        description = input.nextLine();
+        //description = input.nextLine();
         
         
     }
@@ -69,7 +70,7 @@ public class Scene {
     
     /**
      * Returns the scene the player will start from in the next location
-     * @return the starting scene of the next location
+     * @return the starting scene of the next location.
      */
     public String getNextDirection(){
         return this.nextDirection;
