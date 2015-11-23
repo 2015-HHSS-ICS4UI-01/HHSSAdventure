@@ -18,6 +18,8 @@ public class AdventureFrame extends javax.swing.JFrame {
         this.controller = controller;
         initComponents();
     }
+
+
     
     public void setSceneName(String name){
         
@@ -122,7 +124,7 @@ public class AdventureFrame extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
-       
+     
     }//GEN-LAST:event_jButton4ActionPerformed
 
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
@@ -163,6 +165,7 @@ public class AdventureFrame extends javax.swing.JFrame {
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
+            
             public void run() {
                 new AdventureFrame().setVisible(true);
             }
