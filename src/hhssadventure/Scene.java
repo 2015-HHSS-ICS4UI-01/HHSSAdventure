@@ -13,23 +13,53 @@ import java.util.Scanner;
 public class Scene {
     private String name;
     private String direction;
-    private String decrip;
+    private String image;
     private boolean blocked;
     private String nextLocation;
     private String nextDirection;
     
     public Scene(Scanner input){
+        input.nextLine();
+        input.nextLine();
+                
         name = input.nextLine();
-        direction = input.nextLine();
-        
-        if(input.nextLine() == "true"){
+        input.nextLine();
+        direction = input.next();
+        image = input.next();
+        if(direction.equals("true")){
             blocked = true;
+            input.nextLine();
+        }else{
+        nextLocation = input.next();
+        nextDirection = input.next();
+        input.nextLine();
+      }
+  
+   }
+     
+    public String getDirection(){
+            return this.direction;
         }
-        nextLocation = input.nextLine();
-        nextDirection = input.nextLine();
-        
+    
+    public String getName(){
+        return this.name;
     }
     
-                
+    public String getImage(){
+        return this.image;
+    }
+    
+    public boolean isBlocked(){
+        return this.blocked;
+    }
+    
+    public String getNextLocation(){
+        return this.nextLocation;
+    }
+    
+    public String getNextDirection(){
+        return this.nextDirection;
+    }
+    
     
 }

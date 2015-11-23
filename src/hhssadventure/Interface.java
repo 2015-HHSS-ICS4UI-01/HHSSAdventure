@@ -10,6 +10,8 @@ package hhssadventure;
  */
 public class Interface extends javax.swing.JFrame {
 
+    
+     private HHSSAdventure controller;
     /**
      * Creates new form Interface
      */
@@ -39,6 +41,11 @@ public class Interface extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         TurnLeft.setText("Turn Left");
+        TurnLeft.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                TurnLeftActionPerformed(evt);
+            }
+        });
 
         GoForward.setText("Go Forward");
         GoForward.addActionListener(new java.awt.event.ActionListener() {
@@ -107,6 +114,10 @@ public class Interface extends javax.swing.JFrame {
     private void GoForwardActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_GoForwardActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_GoForwardActionPerformed
+
+    private void TurnLeftActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TurnLeftActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_TurnLeftActionPerformed
 
     /**
      * @param args the command line arguments
