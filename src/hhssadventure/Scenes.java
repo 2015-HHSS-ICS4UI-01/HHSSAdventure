@@ -12,11 +12,12 @@ import javax.imageio.ImageIO;
  * @author janaj4926
  */
 public class Scenes {
-    BufferedImage img = null;
+    
 
     public void getpic(String picName) {
+        BufferedImage img = null;
         try{
-            
+            ImageIO.read(new file("picName"));
         }catch(Exception e){
             e.printStackTrace();
             System.exit(0);

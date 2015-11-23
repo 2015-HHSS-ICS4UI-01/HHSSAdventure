@@ -13,9 +13,9 @@ import java.util.Scanner;
  * @author lamon
  */
 public class HHSSAdventure {
-    
+
     private AdventureInterface gui;
-    
+
     /**
      * @param args the command line arguments
      */
@@ -23,20 +23,21 @@ public class HHSSAdventure {
         //current direction
         //current location
         //locations[]
-        
+
         FileReader file = null;
-        try{
+        try {
             file = new FileReader("images/pics.txt");
-        }catch(Exception e){
+        } catch (Exception e) {
             //prints out the error message
             e.printStackTrace();
             //stops the program
             System.exit(0);
         }
-        
+
         //creates a scanner to read a file
         Scanner input = new Scanner(file);
-        System.out.println(file);
+//        while (input.hasNext()) {
+//            System.out.println(input.nextLine());
+//        }
     }
-    
 }
