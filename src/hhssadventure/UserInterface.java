@@ -72,6 +72,7 @@ public class UserInterface extends JComponent implements MouseMotionListener, Ke
         window.pack();
         window.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.addMouseMotionListener(this);
+        this.addKeyListener(this);
     }
 
     
@@ -134,15 +135,25 @@ public class UserInterface extends JComponent implements MouseMotionListener, Ke
     }
 
     @Override
-    public void keyTyped(KeyEvent ke) {
+    public void keyTyped(KeyEvent k) {
     }
 
     @Override
-    public void keyPressed(KeyEvent ke) {
+    public void keyPressed(KeyEvent k) {
+        int KeyCode = k.getKeyCode();
+        if(KeyCode == KeyEvent.VK_W) {
+            setScene(currentScene.getForward());
+        } else if (KeyCode == KeyEvent.VK_A) {
+            setScene(currentScene.getLeft());
+        } else if (KeyCode == KeyEvent.VK_S) {
+            
+        } else if (KeyCode == KeyEvent.VK_D) {
+            setScene(currentScene.getRight());
+        }
     }
 
     @Override
-    public void keyReleased(KeyEvent ke) {
+    public void keyReleased(KeyEvent k) {
     }
 
 }
