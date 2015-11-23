@@ -11,6 +11,8 @@ import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.awt.event.MouseMotionListener;
 import java.io.IOException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JComponent;
 import javax.swing.JFrame;
 
@@ -47,7 +49,6 @@ public class UserInterface extends JComponent implements MouseListener, MouseMot
     @Override
     public void paintComponent(Graphics g) {
         try {
-            //draws the image is being stored
             g.drawImage(currentScene.getImage(), 0, 0, WIDTH, HIEGHT, this);
         } catch (IOException ex) {
             Logger.getLogger(UserInterface.class.getName()).log(Level.SEVERE, null, ex);
