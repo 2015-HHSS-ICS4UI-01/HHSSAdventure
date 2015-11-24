@@ -21,6 +21,10 @@ public class AdventureFrame extends javax.swing.JFrame {
      */
     public AdventureFrame(HHSSAdventure Controller) {
         this.Controller = Controller;
+        
+    }
+
+    private AdventureFrame() {
         initComponents();
     }
 
@@ -130,7 +134,7 @@ public class AdventureFrame extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
-     Controller.
+     Controller.getLocation(null);
     }//GEN-LAST:event_jButton4ActionPerformed
 
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
@@ -172,6 +176,7 @@ public class AdventureFrame extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             
+            @Override
             public void run() {
                 new AdventureFrame().setVisible(true);
             }
