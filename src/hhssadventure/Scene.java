@@ -11,4 +11,29 @@ package hhssadventure;
  */
 public class Scene {
     
+    private boolean frontBlocked;
+    private boolean north;
+    private boolean east;
+    private boolean south;
+    private boolean west;
+    
+    public void getDirection(){
+        
+    }
+    
+    public void getDescription(){
+        
+    }
+    
+    public boolean frontBlocked(){
+    return frontBlocked;
+}
+    
+    
+    
+    
+    
+    
+    
+    
 }
