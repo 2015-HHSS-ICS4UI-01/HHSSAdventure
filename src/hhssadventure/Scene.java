@@ -19,8 +19,7 @@ public class Scene {
     private String nextDirection;
     
     public Scene(Scanner input){
-        input.nextLine();
-        input.nextLine();
+      
                 
         name = input.nextLine();
         input.nextLine();

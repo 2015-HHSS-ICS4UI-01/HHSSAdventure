@@ -37,7 +37,7 @@ public class HHSSAdventure {
           
            
            Scene c = new Scene(s);
-           System.out.println(c.isBlocked());
+           System.out.println(c.getDirection());
         
     }
 }
