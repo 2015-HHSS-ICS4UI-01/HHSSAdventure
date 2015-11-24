@@ -6,6 +6,7 @@
 package hhssadventure;
 
 import java.io.FileReader;
+import java.util.ArrayList;
 import java.util.Scanner;
 
 /**
@@ -13,18 +14,10 @@ import java.util.Scanner;
  * @author lamon
  */
 public class HHSSAdventure {
-
+    ArrayList<Locations> locations = new ArrayList<>();
     private AdventureInterface gui;
 
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String[] args) {
-        Locations[] locations = new Locations[0];
-        //current direction
-        //current location
-        //locations[]
-
+    public HHSSAdventure(){
         FileReader file = null;
         try {
             file = new FileReader("images/pics.txt");
@@ -37,10 +30,42 @@ public class HHSSAdventure {
 
         //creates a scanner to read a file
         Scanner input = new Scanner(file);
+
         while (input.hasNext()) {
-            Locations local = new Locations(input);
+            Locations l = new Locations(input);
             
-            locations.add(local);
+            locations.add(l);
         }
+        
+        gui = new AdventureInterface(this);
+                
+        
+            
+
+    }
+    
+    
+    
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) {
+        //current direction
+        //current location
+        //locations[]
+        
+//        while (input.hasNext()) {
+//            System.out.println(input.nextLine());
+//        }
+//        int c = 0;
+//        String[] locations = new String[1];
+//        input.nextLine();
+//        input.nextLine();
+//        while(input.hasNext()){
+//            locations[c] = input.nextLine();
+//            input.
+
+        
+        
     }
 }

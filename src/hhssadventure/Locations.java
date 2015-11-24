@@ -19,11 +19,10 @@ public class Locations {
         
     }
     
-
     public BufferedImage getImage(int dir){
-        
+
     }
-    
+            
     public boolean isFrontBlocked(int dir){
         
     }

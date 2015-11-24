@@ -15,9 +15,7 @@ import javax.imageio.ImageIO;
 public class Scenes {
     
 
-    public Scenes()
-    
-    public void getpic(String picName) {
+    public String getpic(String picName) {
         BufferedImage img = null;
         try{
             ImageIO.read(new File("picName"));
@@ -25,6 +23,7 @@ public class Scenes {
             e.printStackTrace();
             System.exit(0);
         }
+        return 
     }
 
     //waiting for the interface
