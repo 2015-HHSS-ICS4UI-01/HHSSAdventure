@@ -52,8 +52,14 @@ public class HHSSAdventure {
         }
         
         gui = new Interface(this);
-        Location l = locations.get(num);
-        gui.setDescription(l.getSceneDescription(this.startingDirection));
+        for(int i = 0; i < locations.size(); i++){
+            if(startingLocation.equals(locations.get(i).getName())){
+                Location l = locations.get(i);
+                gui.setDescription(l.getSceneDescription(this.startingDirection));
+            }
+        }
+        
+        
         gui.setVisible(true);
         
     }

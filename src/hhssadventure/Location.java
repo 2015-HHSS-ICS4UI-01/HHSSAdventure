@@ -26,6 +26,10 @@ public class Location {
         }
     }
     
+    public String getName(){
+        return name;
+    }
+    
     public BufferedImage getSceneImage(Scene c){
         return c.getImage();
     }
@@ -36,7 +40,7 @@ public class Location {
     
     public String getSceneDescription(String dir){
         for(int i = 0; i < 4; i++){
-            if(dir == scenes[i].getDirection()){
+            if(dir.equals(scenes[i].getDirection())){
                 return scenes[i].getDescription();
             }
         }
