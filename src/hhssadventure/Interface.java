@@ -9,12 +9,22 @@ package hhssadventure;
  * @author donet6376
  */
 public class Interface extends javax.swing.JFrame {
-
+    private HHSSAdventure controller;
+    
+    public Interface(HHSSAdventure l){
+        this(); // calling the old constructor (below)
+        controller = l;
+    }
+    
     /**
      * Creates new form Interface
      */
     public Interface() {
         initComponents();
+    }
+    
+    public void setDescription(String name){
+        description.setText(name);
     }
 
     /**
@@ -46,6 +56,11 @@ public class Interface extends javax.swing.JFrame {
         );
 
         leftTurn.setText("Turn Left");
+        leftTurn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                leftTurnActionPerformed(evt);
+            }
+        });
 
         forward.setText("Go Forward");
         forward.addActionListener(new java.awt.event.ActionListener() {
@@ -55,6 +70,11 @@ public class Interface extends javax.swing.JFrame {
         });
 
         rightTurn.setText("Turn Right");
+        rightTurn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                rightTurnActionPerformed(evt);
+            }
+        });
 
         description.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         description.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -97,7 +117,18 @@ public class Interface extends javax.swing.JFrame {
 
     private void forwardActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_forwardActionPerformed
         // TODO add your handling code here:
+        controller.advance();
     }//GEN-LAST:event_forwardActionPerformed
+
+    private void leftTurnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_leftTurnActionPerformed
+        // TODO add your handling code here:
+        controller.previousRoom();
+    }//GEN-LAST:event_leftTurnActionPerformed
+
+    private void rightTurnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rightTurnActionPerformed
+        // TODO add your handling code here:
+        controller.nextRoom();
+    }//GEN-LAST:event_rightTurnActionPerformed
 
     /**
      * @param args the command line arguments

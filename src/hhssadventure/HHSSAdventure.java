@@ -20,6 +20,7 @@ public class HHSSAdventure {
 
     private ArrayList<Location> locations = new ArrayList<>();
     private Interface gui;
+    private int num = 0;
     
     public String startingLocation = null;
     public String startingDirection = null;
@@ -39,21 +40,46 @@ public class HHSSAdventure {
 
         //creates a scanner to read the file
         Scanner input = new Scanner(file);
-        
+       
+        //read the starting location and direction
         startingLocation = input.nextLine();
         startingDirection = input.nextLine();
-        
-        
-        
-        
-        
-        
+
         while(input.hasNext()){
             Location l = new Location(input);
             
             locations.add(l);
-            
         }
+        
+        gui = new Interface(this);
+        Location l = locations.get(num);
+        gui.setDescription(l.getSceneDescription(this.startingDirection));
+        gui.setVisible(true);
+        
+    }
+    
+    
+    public void nextRoom(){
+        if(num < locations.size() - 1){
+            num++;
+        }
+        Location l = locations.get(num);
+        gui.setDescription(l.getSceneDescription(this.startingDirection));
+    }
+    
+    public void previousRoom(){
+        if(num > 0){
+            num--;
+        }
+        Location l = locations.get(num);
+        gui.setDescription(l.getSceneDescription(this.startingDirection));
+    }
+    
+    public void advance(){
+        //move to the next location
+    }
+    
+    
         
     
     /**

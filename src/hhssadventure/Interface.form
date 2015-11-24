@@ -77,6 +77,9 @@
       <Properties>
         <Property name="text" type="java.lang.String" value="Turn Left"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="leftTurnActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="forward">
       <Properties>
@@ -90,6 +93,9 @@
       <Properties>
         <Property name="text" type="java.lang.String" value="Turn Right"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="rightTurnActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JLabel" name="description">
       <Properties>
