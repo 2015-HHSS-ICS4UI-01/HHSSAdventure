@@ -18,21 +18,17 @@ public class Location {
     public Location(Scanner input) {
         name = input.nextLine();
         scenes = new Scene[4];
-        
-        
+
+
         for (int i = 0; i < 4; i++) {
             Scene s = new Scene(input);
             scenes[i] = s;
         }
     }
-    
-    
-    
 
     public String getImage() {
         return scenes[position].getPicture();
     }
-    
 
     public boolean isFrontBlocked() {
         return n.getClass;
@@ -41,8 +37,6 @@ public class Location {
     public String getDescription() {
         return this.name;
     }
-    
-    
 
     public String getNextLocation() {
         return Scene.getClass(getNextLocation);
