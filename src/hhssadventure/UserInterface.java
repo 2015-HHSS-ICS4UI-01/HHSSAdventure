@@ -36,8 +36,8 @@ public class UserInterface extends JComponent implements MouseMotionListener, Ke
     int centerY;
     int hDisplacement;
 
-    
-
+    boolean inGame;
+    boolean escapeDown;
     
     // To keep the mouse in the center of the screen
     private Robot robot;
@@ -121,6 +121,12 @@ public class UserInterface extends JComponent implements MouseMotionListener, Ke
     public void setScene(Scene s) {
         currentScene = s;
     }
+    
+    public void displayMouse() {
+        if(inGame) {
+            centerMouse();
+        }
+    }
 
     @Override
     public void mouseDragged(MouseEvent e) {
@@ -139,7 +145,6 @@ public class UserInterface extends JComponent implements MouseMotionListener, Ke
 
     @Override
     public void keyPressed(KeyEvent k) {
-        System.out.println("Hi");
         int KeyCode = k.getKeyCode();
         if(KeyCode == KeyEvent.VK_W) {
             if (!currentScene.isBlocked())
@@ -162,11 +167,26 @@ public class UserInterface extends JComponent implements MouseMotionListener, Ke
             {
                 setScene(currentScene.getRight().getForward().getLeft());
             }
-        }
+        } else if(KeyCode == KeyEvent.VK_ESCAPE) {
+            if(!escapeDown) 
+            {
+                inGame = inGame ? false: true;
+                if(inGame) {
+                    hideCursor();
+                } else {
+                    showCursor();
+                }
+            }
+            escapeDown = true;
+        } 
     }
 
     @Override
     public void keyReleased(KeyEvent k) {
+        int KeyCode = k.getKeyCode();
+        if(KeyCode == KeyEvent.VK_ESCAPE) {
+            escapeDown = false;
+        } 
     }
 
 }
