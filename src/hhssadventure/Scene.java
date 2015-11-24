@@ -19,19 +19,22 @@ public class Scene{
     private String blocked;
     private String nextLocation;
     private String nextDirection;
-    
+    private boolean block = false;
     
     
     
     //constructor 
     public Scene(Scanner input){
+        
           direction = input.next();
           imageName = input.next();
           blocked = input.next();
           if (blocked.equals("false")) {
+              block = false;
             nextLocation = input.next();
             nextDirection = input.next();
           }else{
+              block = true;
               input.nextLine();
           }
 
@@ -39,25 +42,23 @@ public class Scene{
     
     
     public boolean frontBlocked( ){
-
+        return this.block;
     }
     
     
     
-    public boolean nextLocation( ){
-        //
+    public String nextLocation( ){
+        return this.nextLocation;
     }
     
     
     
-    public int getDirection(){
-        //give the direction youre currently in
-        //get the first letter in the file somehow
-        return this.direction;
+    public String getDirection(){
+        return this.nextDirection;
     }
     
-    public void nextDirection(){
-        //the fifth part of the line in the picture
+    public String nextDirection(){
+       return this.nextDirection;
     }
     
 }

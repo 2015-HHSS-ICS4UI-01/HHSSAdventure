@@ -6,6 +6,7 @@
 package hhssadventure;
 
 import java.io.FileReader;
+import java.util.ArrayList;
 import java.util.Scanner;
 
 /**
@@ -13,7 +14,7 @@ import java.util.Scanner;
  * @author lamon
  */
 public class HHSSAdventure {
-    private Locations[] location;
+    private ArrayList<Location> locations = new ArrayList<Location>();
     private String startingLocation;
     private String startingDirection;
     private String currentLocation;
@@ -51,7 +52,7 @@ public class HHSSAdventure {
             //adding a class from the file
             Location a = new Location(reader);
             //addint the class to the list
-            Locations.add(a);
+            locations.add(a);
         }
         
         
