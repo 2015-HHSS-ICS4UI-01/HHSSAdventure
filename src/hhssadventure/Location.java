@@ -26,15 +26,22 @@ public class Location {
         }
     }
     
-    public BufferedImage getImage(Scene c){
-        return c.getPhoto();
+    public BufferedImage getSceneImage(Scene c){
+        return c.getImage();
     }
     
-    public boolean isFrontBlocked(char dir){
+    public boolean isFrontBlocked(String dir){
         return true;
     }
     
-
+    public String getSceneDescription(String dir){
+        for(int i = 0; int < 4; i++){
+            if(dir == scenes[i].getDirection()){
+                return scenes[i].getImage();
+            }
+        }
+    }
+    
     
     
 }
