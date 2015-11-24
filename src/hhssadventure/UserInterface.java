@@ -66,7 +66,7 @@ public class UserInterface extends JComponent implements MouseMotionListener, Ke
         window.pack();
         window.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.addMouseMotionListener(this);
-        this.addKeyListener(this);
+        window.addKeyListener(this);
         // center cursor
         robot = new Robot();
         hideCursor();
@@ -139,6 +139,7 @@ public class UserInterface extends JComponent implements MouseMotionListener, Ke
 
     @Override
     public void keyPressed(KeyEvent k) {
+        System.out.println("Hi");
         int KeyCode = k.getKeyCode();
         if(KeyCode == KeyEvent.VK_W) {
             if (!currentScene.isBlocked())
