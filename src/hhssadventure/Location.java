@@ -11,8 +11,8 @@ import java.util.Scanner;
  * @author yaol9270
  */
 public class Location {
-    private int numLocation;
-    private Location[] locationlocation;
+
+    private Scene[] scenes;
     private String name;
     private String direction;
     
@@ -20,11 +20,12 @@ public class Location {
     public Location(Scanner input){
         name = input.nextLine();
         direction = input.nextLine();
+        scenes = new Scene[4];
         
-        for(int i = 0; i < numLocation; i ++){
-            Location l = new Location(input);
+        for(int i = 0; i < 4; i ++){
+            Scene s = new Scene(input);
             
-            locationlocation[i] = l;
+            scenes[i] = s;
         }
         
     }
