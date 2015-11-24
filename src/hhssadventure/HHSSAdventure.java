@@ -5,6 +5,7 @@
  */
 package hhssadventure;
 
+
 import java.io.FileReader;
 import java.util.Scanner;
 
@@ -31,5 +32,6 @@ public class HHSSAdventure {
       e.printStackTrace();
  }
     }
+   
     
 }
