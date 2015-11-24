@@ -22,6 +22,7 @@ public class Scenes {
     }
 
     //waiting for the interface
+
     public int direction(Scanner input) {
         int c = 0;
         return c;

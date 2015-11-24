@@ -17,12 +17,22 @@ public class Locations {
     private String name;
     private Scenes[] scenes;
     
+
+    Locations(Scanner input) {
+        for(int i = 0; i < scenes.length; i++){
+            scenes[i] = input.next();
+        }
+    }
     
     
     public void getImage(){
         
     }
     
+    public BufferedImage getImage(int dir){
+        
+    }
+            
     public boolean isFrontBlocked(int dir){
         
     }
