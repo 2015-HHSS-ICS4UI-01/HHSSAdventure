@@ -18,24 +18,13 @@ public class Location {
     
     
     public Location(Scanner input){
-        input.nextLine();
-        input.nextLine();
-        name = input.nextLine();
-        input.nextLine();
-        String check = input.next();
-        if (check.equals("false")){
-            isFrontBlocked = false;
-            getNextLocation = input.nextLine();
-        } else {
-            isFrontBlocked = true;
-            input.nextLine();
-        }
         
         scenes = new Scene[3];
-        for (int i = 0; i < 3; i++){
+        name = input.nextLine();
+        for (int i = 0; i < 4; i++){
          Scene s = new Scene(input);
          scenes[i] = s;
-        }
+        } input.next();
         
         
     }
