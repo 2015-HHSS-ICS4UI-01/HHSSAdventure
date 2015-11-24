@@ -5,6 +5,7 @@
 package hhssadventure;
 
 import java.awt.image.BufferedImage;
+import java.io.File;
 import javax.imageio.ImageIO;
 
 /**
@@ -14,10 +15,12 @@ import javax.imageio.ImageIO;
 public class Scenes {
     
 
+    public Scenes()
+    
     public void getpic(String picName) {
         BufferedImage img = null;
         try{
-            ImageIO.read(new file("picName"));
+            ImageIO.read(new File("picName"));
         }catch(Exception e){
             e.printStackTrace();
             System.exit(0);
@@ -26,7 +29,8 @@ public class Scenes {
 
     //waiting for the interface
     public int direction(String d) {
-        int c = 0;
+        direction
+        if
         return c;
     }
     

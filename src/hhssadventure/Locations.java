@@ -5,6 +5,7 @@
 package hhssadventure;
 
 import java.awt.image.BufferedImage;
+import java.util.Scanner;
 
 /**
  *
@@ -13,9 +14,12 @@ import java.awt.image.BufferedImage;
 public class Locations {
     private String name;
     private Scenes[] scenes;
+
+    Locations(Scanner input) {
+        
+    }
     
-    
-    
+
     public BufferedImage getImage(int dir){
         
     }

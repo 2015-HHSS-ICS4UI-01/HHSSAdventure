@@ -20,6 +20,7 @@ public class HHSSAdventure {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
+        Locations[] locations = new Locations[0];
         //current direction
         //current location
         //locations[]
@@ -36,8 +37,10 @@ public class HHSSAdventure {
 
         //creates a scanner to read a file
         Scanner input = new Scanner(file);
-//        while (input.hasNext()) {
-//            System.out.println(input.nextLine());
-//        }
+        while (input.hasNext()) {
+            Locations local = new Locations(input);
+            
+            locations.add(local);
+        }
     }
 }
