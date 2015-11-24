@@ -13,41 +13,29 @@ import java.util.Scanner;
  * @author rayan4858
  */
 public class Scene{
-    private int direction;
+    private String direction;
     private Scene[] Scenes;
+    private String imageName;
+    private String blocked;
+    private String nextLocation;
+    private String nextDirection;
+    
+    
+    
+    
     //constructor 
     public Scene(Scanner input){
-        FileReader file = null;
-        try {
-            file = new FileReader("images/pics.txt");
-        } catch (Exception e) {
-            //prints out error message
-            e.printStackTrace();
-            //stops the program
-            System.exit(0);
+          direction = input.next();
+          imageName = input.next();
+          blocked = input.next();
+          if (blocked.equals("false")) {
+            nextLocation = input.next();
+            nextDirection = input.next();
+          }else{
+              input.nextLine();
+          }
+
     } 
-    
-    public void getScene(){
-        FileReader file = null;
-        try {
-            file = new FileReader("images/pics.txt");
-        } catch (Exception e) {
-            //prints out error message
-            e.printStackTrace();
-            //stops the program
-            System.exit(0);
-        }
-        
-        //getting the scene
-        Scanner scene = new Scanner(file);
-        for (int i = 0; i < 4; i++) {
-            scenes[i] = scene.next();
-        }
-        
-        
-        
-    }
-    
     
     
     public boolean frontBlocked( ){

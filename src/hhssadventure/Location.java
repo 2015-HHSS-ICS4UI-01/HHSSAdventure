@@ -4,35 +4,43 @@
  */
 package hhssadventure;
 
+import java.util.Scanner;
+
 /**
  *
  * @author rayan4858
  */
 public class Location {
-    //private variables
-    //private String sceneName;    
-    //private Location[] Location;
-    //constructor
-    public Location(){
-    //pass in the direction to use
+    private String locationName;
+    private Scene[] scenes; 
+    
+    
+    
+    public Location(Scanner input){
+        locationName = input.nextLine();
+        
+        scenes = new Scene[3];
+        for (int i = 0; i < 4; i++) {
+            Scene s = new Scene(input);
+            s[i] = input.next();
+        }
         
     }
     
-    //pass in something for the parameters as per the photo
-    //not sure if void
+
     public void getImage(){
         
     }
     
     public boolean isFrontBlocked(){
-        //is it blocked
+        
     }
     
     public String getDesciption(){
-        //get description of the image ex. where it is
+       
     }
     
     public void getNextDirection(){
-        //get the next direction it will move to
+        
     }
 }

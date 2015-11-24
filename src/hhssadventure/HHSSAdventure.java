@@ -13,52 +13,47 @@ import java.util.Scanner;
  * @author lamon
  */
 public class HHSSAdventure {
-
+    private Locations[] location;
+    private String startingLocation;
+    private String startingDirection;
+    private String currentLocation;
+    private String currentDirection;
+    
     /**
      * @param args the command line arguments
      */
     public static void main(String[] args) {
         HHSSAdventure f = new HHSSAdventure();
-        //make an array of scenes 
-//        Locations[] = new Locations[];
+        
     }
-    
-    public void getScene(){
-       //used to help read a file
+
+    public HHSSAdventure(){
+
+        //used to help read a file
         FileReader file = null;
         try {
-            file = new FileReader("pics/pics.txt");
+            file = new FileReader("images/pics.txt");
         } catch (Exception e) {
             //prints out error message
             e.printStackTrace();
             //stops the program
             System.exit(0);
         }
-
-        //creates a scanner to read the file
-        //Scanner input = new Scanner(file);
-
+        
+        Scanner reader = new Scanner(file); 
+        
+        startingLocation = reader.nextLine();
+        startingDirection = reader.nextLine();
+        
+        
         //keep scanning as long as theres something to scan
-        //left blank to fill in later
-//        while (input.hasNext()) {
-//            //adding a class from the file
-//            Class c = new Class();
-//            //addint the clas to the list
-//            classes.add(c);
-//        }
-//        
-//        gui = new Interface(this);
-//        //set the text for the next class name
-//        Class c = classes.get(classNum);
-//        gui.setClassName(c.getCourseCode());
-//        //show it
-//        gui.setVisible(true);
-//    }
+        while (reader.hasNext()) {
+            //adding a class from the file
+            Location a = new Location(reader);
+            //addint the class to the list
+            Locations.add(a);
+        }
+        
+        
     }
-    
-    
-//    public void switchLocation(name, direction){
-//        method to switch the locations
-//    }
-//    
 }
