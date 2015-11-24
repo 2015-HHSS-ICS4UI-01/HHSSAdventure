@@ -2,17 +2,27 @@ Caf1
 N
 Upstairs1
 N IMG_0045.JPG false Dowstairs S
+A stairway leading downwards. You can see the outside of the school, and the swamp beyond, through the window.
 E IMG_0046.JPG true
+A white wall and a garbage can. Nothing special.
 S IMG_0047.JPG false Upstairs2 S
+A hallway lined with lockers. There is a garbage can and a classroom at the end of the hallway.
 W IMG_0049.JPG true
+A white wall with a sign that reads "SECOND FLOOR". Good to know.
 Upstairs2
 N IMG_0050.JPG false Upstairs1 N
+A hallway lined with lockers. Up ahead, there is a classroom on the left, another hallway on the right, and a stairway straight ahead.
 E IMG_0051.JPG true
+A row of lockers. Nothing special, unless you know how to crack locks. Don't do that.
 S IMG_0052.JPG false Upstairs3 S
+A hallway lined with lockers. There is a garbage can and a classroom at the end of the hallway. The end of the hallway also branches out to the left and the right.
 W IMG_0053.JPG true
+A row of lockers. Breaking into them would be a bad idea.
 Upstairs3
 N IMG_0054.JPG false Upstairs2 N
+A hallway lined with lockers. There are two doorways along the left wall
 E IMG_0055.JPG false Glass E
+A hallway lined with many lockers and doorways. A few students inhabit this hallway. There are restrooms to the left of you
 S IMG_0056.JPG true
 W IMG_0057.JPG false Math1 W
 Math1 

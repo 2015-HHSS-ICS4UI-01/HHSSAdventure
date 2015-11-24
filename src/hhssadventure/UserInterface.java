@@ -30,59 +30,79 @@ public class UserInterface extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        backwardScene = new javax.swing.JButton();
         forwardScene = new javax.swing.JButton();
         leftScene = new javax.swing.JButton();
         rightScene = new javax.swing.JButton();
         sceneImage = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        backwardScene.setText("jButton1");
+        forwardScene.setText("Forward");
+        forwardScene.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                forwardSceneActionPerformed(evt);
+            }
+        });
 
-        forwardScene.setText("jButton2");
+        leftScene.setText("Left");
+        leftScene.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                leftSceneActionPerformed(evt);
+            }
+        });
 
-        leftScene.setText("jButton3");
+        rightScene.setText("Right");
 
-        rightScene.setText("jButton4");
+        jLabel1.setText("DESCRIPTION");
 
         org.jdesktop.layout.GroupLayout layout = new org.jdesktop.layout.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
             .add(layout.createSequentialGroup()
-                .add(148, 148, 148)
-                .add(leftScene)
-                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
                 .add(layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
                     .add(layout.createSequentialGroup()
-                        .add(forwardScene)
-                        .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
-                        .add(rightScene))
-                    .add(backwardScene))
-                .addContainerGap(148, Short.MAX_VALUE))
-            .add(layout.createSequentialGroup()
-                .addContainerGap()
-                .add(sceneImage, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addContainerGap()
+                        .add(sceneImage, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .add(layout.createSequentialGroup()
+                        .add(163, 163, 163)
+                        .add(layout.createParallelGroup(org.jdesktop.layout.GroupLayout.TRAILING)
+                            .add(jLabel1)
+                            .add(layout.createSequentialGroup()
+                                .add(leftScene)
+                                .addPreferredGap(org.jdesktop.layout.LayoutStyle.UNRELATED)
+                                .add(forwardScene)))
+                        .addPreferredGap(org.jdesktop.layout.LayoutStyle.UNRELATED)
+                        .add(rightScene)
+                        .add(0, 153, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
             .add(org.jdesktop.layout.GroupLayout.TRAILING, layout.createSequentialGroup()
                 .addContainerGap()
-                .add(sceneImage, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 372, Short.MAX_VALUE)
-                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
+                .add(sceneImage, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 385, Short.MAX_VALUE)
+                .addPreferredGap(org.jdesktop.layout.LayoutStyle.UNRELATED)
+                .add(jLabel1, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 14, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                .add(10, 10, 10)
                 .add(layout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
-                    .add(forwardScene)
                     .add(leftScene)
+                    .add(forwardScene)
                     .add(rightScene))
-                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
-                .add(backwardScene)
                 .addContainerGap())
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void leftSceneActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_leftSceneActionPerformed
+        
+    }//GEN-LAST:event_leftSceneActionPerformed
+
+    private void forwardSceneActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_forwardSceneActionPerformed
+        
+    }//GEN-LAST:event_forwardSceneActionPerformed
 
     /**
      * @param args the command line arguments
@@ -120,8 +140,8 @@ public class UserInterface extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton backwardScene;
     private javax.swing.JButton forwardScene;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JButton leftScene;
     private javax.swing.JButton rightScene;
     private javax.swing.JLabel sceneImage;

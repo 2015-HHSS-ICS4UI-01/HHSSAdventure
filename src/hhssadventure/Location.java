@@ -41,32 +41,88 @@ public class Location {
      * Returns the picture associated with the current scene.
      * @return the scene's image.
      */
-    public String getImage(int direction){
-        return scenes[direction].getPicture();
+    public String getImage(String direction){
+        int dir = 0;
+        if(direction.equals("N")){
+            dir = 0;
+        }
+        if(direction.equals("E")){
+            dir = 1;
+        }
+        if(direction.equals("S")){
+            dir = 2;
+        }
+        if(direction.equals("W")){
+            dir = 3;
+        }
+        
+        return scenes[dir].getPicture();
     }
     
     /**
      * Returns whether the player is able to move forward to another location.
      * @return whether or not the player can move forward.
      */
-    public boolean isBlocked(int direction){
-         return scenes[direction].isBlocked();
+    public boolean isBlocked(String direction){
+        int dir = 0;
+        if(direction.equals("N")){
+            dir = 0;
+        }
+        if(direction.equals("E")){
+            dir = 1;
+        }
+        if(direction.equals("S")){
+            dir = 2;
+        }
+        if(direction.equals("W")){
+            dir = 3;
+        }
+        
+        return scenes[dir].isBlocked();
     }
     
     /**
      * Returns the description associated of the current scene
      * @return the scene description.
      */
-    public String getDescription(int direction){
-        return scenes[direction].getDescription();
+    public String getDescription(String direction){
+        int dir = 0;
+        if(direction.equals("N")){
+            dir = 0;
+        }
+        if(direction.equals("E")){
+            dir = 1;
+        }
+        if(direction.equals("S")){
+            dir = 2;
+        }
+        if(direction.equals("W")){
+            dir = 3;
+        }
+        
+        return scenes[dir].getDescription();
     }
     
     /**
      * Returns the location that the player can move to from this scene.
      * @return the name of the location.
      */
-    public String getNextLocation(int direction){
-        return scenes[direction].getNextLocation();
+    public String getNextLocation(String direction){
+        int dir = 0;
+        if(direction.equals("N")){
+            dir = 0;
+        }
+        if(direction.equals("E")){
+            dir = 1;
+        }
+        if(direction.equals("S")){
+            dir = 2;
+        }
+        if(direction.equals("W")){
+            dir = 3;
+        }
+        
+        return scenes[dir].getNextLocation();
     }
     
 }

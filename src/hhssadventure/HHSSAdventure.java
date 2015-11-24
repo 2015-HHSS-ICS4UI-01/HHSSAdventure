@@ -17,19 +17,12 @@ import java.util.Scanner;
 
 public class HHSSAdventure {
 
-    public void switchLocation(String name, String direction){
-        
-    }
-        
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String[] args) {
-        
-        ArrayList<Location> locations = new ArrayList<>();
-        String currentLocation;
-        String currentDirection;
-        
+    private ArrayList<Location> locations = new ArrayList<>();
+    private UserInterface gui;
+    private String currentLocation;
+    private String currentDirection;
+    
+    public HHSSAdventure(){        
         FileReader file = null;
         
         try{
@@ -49,9 +42,41 @@ public class HHSSAdventure {
             locations.add(l);
         }
         
-        for(int i = 0; i < locations.size(); i++){
-            System.out.println(locations.get(i).getName());
+        gui = new UserInterface(this);
+        
+        
+    }
+    
+    /**
+     * Moves the user to the scene left of their current direction.
+     */
+    public void prevScene(){
+        if(currentDirection.equals("N")){
+            currentDirection = "W";
         }
+    }
+    
+    /**
+     * Moves the user to the scene right of their current direction.
+     */
+    public void nextScene(){
+        
+    }
+    
+    /**
+     * Moves the user to the location forward of their current direction.
+     * @param name the name of the new location.
+     * @param direction the direction the user will face in the new location.
+     */
+    public void switchLocation(String name, String direction){
+        
+    }
+        
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) {
+        HHSSAdventure game = new HHSSAdventure();
         
     }
     
