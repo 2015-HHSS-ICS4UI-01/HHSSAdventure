@@ -61,7 +61,7 @@ Exception {
   frame.setVisible(true);
   }
   
-      public BufferedImage getPhoto(){
+      public BufferedImage getImage(){
         return this.image;
 }
       

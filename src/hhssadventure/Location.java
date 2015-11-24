@@ -35,11 +35,12 @@ public class Location {
     }
     
     public String getSceneDescription(String dir){
-        for(int i = 0; int < 4; i++){
+        for(int i = 0; i < 4; i++){
             if(dir == scenes[i].getDirection()){
-                return scenes[i].getImage();
+                return scenes[i].getDescription();
             }
         }
+        return null;
     }
     
     
