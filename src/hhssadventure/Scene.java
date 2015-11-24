@@ -30,43 +30,50 @@ public class Scene {
             frontBlocked = true;
             in.nextLine();
         }
-        
     }
+
     /**
      * gets the current direction
+     *
      * @return direction
      */
-    public String getDir(){
+    public String getDir() {
         return dir;
     }
+
     /**
      * gets the current image name
+     *
      * @return image name
      */
-    public String getImage(){
+    public String getImage() {
         return image;
     }
+
     /**
      * gets whether or not the front passage is blocked or not
+     *
      * @return true or false
      */
-    public boolean getFrontBlocked(){
+    public boolean getFrontBlocked() {
         return frontBlocked;
     }
+
     /**
      * gets the next location
+     *
      * @return the next location
      */
-    public String getNextLocation(){
+    public String getNextLocation() {
         return nextLocation;
     }
+
     /**
      * gets next direction
+     *
      * @return next direction
      */
-    public String getNextDir(){
+    public String getNextDir() {
         return nextDir;
     }
-    
-    
 }
