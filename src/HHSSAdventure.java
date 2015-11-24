@@ -1,4 +1,5 @@
 
+import Example.Interface;
 import java.io.FileReader;
 import java.util.ArrayList;
 import java.util.Scanner;
@@ -19,6 +20,7 @@ public class HHSSAdventure {
     private String startDirection;
     private Location currentLocation;
     private ArrayList<Location> locations;
+    private AdventureFrame gui;
     public HHSSAdventure(){
         locations = new ArrayList<>();
 
@@ -40,11 +42,13 @@ public class HHSSAdventure {
             Location c = new Location(input);
             locations.add(c);
         }
-//        for (int i = 0; i < locations.size(); i++) {
-//            Location c = locations.get(i);
-//            System.out.println(c.getName());
-//        }
-
+        gui = new AdventureFrame(this);
+        gui.setVisible(true);
+        
+        currentLocation = this.getLocation(startLocation);
+        
+        gui.setLocationName(startLocation);
+        
 
     }
     
@@ -55,7 +59,9 @@ public class HHSSAdventure {
         // TODO code application logic here
 
        HHSSAdventure game = new HHSSAdventure();
-
+       
+        
+        
 
     }
     
