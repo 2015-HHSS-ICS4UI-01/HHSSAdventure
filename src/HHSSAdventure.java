@@ -46,7 +46,7 @@ public class HHSSAdventure {
         gui.setVisible(true);
         
         currentLocation = this.getLocation(startLocation);
-        
+  
         gui.setLocationName(startLocation);
         
 
