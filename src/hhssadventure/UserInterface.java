@@ -11,8 +11,9 @@ import java.awt.Graphics;
 import java.awt.Point;
 import java.awt.Robot;
 import java.awt.Toolkit;
+import java.awt.event.KeyEvent;
+import java.awt.event.KeyListener;
 import java.awt.event.MouseEvent;
-import java.awt.event.MouseListener;
 import java.awt.event.MouseMotionListener;
 import java.io.IOException;
 import java.util.logging.Level;
@@ -24,7 +25,7 @@ import javax.swing.JFrame;
  *
  * @author johns6971
  */
-public class UserInterface extends JComponent implements MouseMotionListener {
+public class UserInterface extends JComponent implements MouseMotionListener, KeyListener {
 
     private JFrame window;
     private int HIEGHT;
@@ -65,10 +66,12 @@ public class UserInterface extends JComponent implements MouseMotionListener {
         window.pack();
         window.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.addMouseMotionListener(this);
+        this.addKeyListener(this);
         // center cursor
         robot = new Robot();
         hideCursor();
         centerMouse();
+        
     }
 
     
@@ -128,6 +131,28 @@ public class UserInterface extends JComponent implements MouseMotionListener {
     public void mouseMoved(MouseEvent e) {
         hDisplacement = e.getX() - centerX;
 
+    }
+
+    @Override
+    public void keyTyped(KeyEvent k) {
+    }
+
+    @Override
+    public void keyPressed(KeyEvent k) {
+        int KeyCode = k.getKeyCode();
+        if(KeyCode == KeyEvent.VK_W) {
+            setScene(currentScene.getForward());
+        } else if (KeyCode == KeyEvent.VK_A) {
+            setScene(currentScene.getLeft());
+        } else if (KeyCode == KeyEvent.VK_S) {
+            
+        } else if (KeyCode == KeyEvent.VK_D) {
+            setScene(currentScene.getRight());
+        }
+    }
+
+    @Override
+    public void keyReleased(KeyEvent k) {
     }
 
 }
