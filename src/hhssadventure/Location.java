@@ -18,9 +18,9 @@ public class Location {
     public Location(Scanner input) {
         name = input.nextLine();
         
-        scenes = new Scene[3];
+        scenes = new Scene[4];
         
-        for (int i = 0; i < 3; i++) {
+        for (int i = 0; i < 4; i++) {
 
             Scene s = new Scene(input);
 
@@ -29,9 +29,24 @@ public class Location {
 
     }
     
-    public String getImage(){
-        return this.image;
+    public String getImage(int position){
+        return picture[position].getPicture();
+        
+        public String getPicture() {
+        return this.picture;
     }
+
+        
+    }
+//    public String getStudentName(int position){
+//        return students[position].getName();
+//    }
+    
+//     public String getName(){
+//        return this.name;
+//    }
+    
+  
    
     public boolean getIsFrontBlocked(){
         return this.isFrontBlocked;
@@ -46,3 +61,8 @@ public class Location {
     }
     
 }
+
+
+public String getNextLocation() {
+        return this.nextLocation;
+    }

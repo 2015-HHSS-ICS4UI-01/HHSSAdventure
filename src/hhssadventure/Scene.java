@@ -12,7 +12,7 @@ import java.util.Scanner;
  */
 public class Scene {
 
-    private String pichure;
+    private String picture;
     private String direction;
     private boolean isFrontBlocked;
     private String nextLocation;
@@ -21,7 +21,7 @@ public class Scene {
 
     public Scene(Scanner input) {
         direction = input.next();
-        pichure = input.next();
+        picture = input.next();
         String check = input.next();
         if (check.equals("false")) {
             isFrontBlocked = false;
@@ -39,8 +39,8 @@ public class Scene {
         return this.direction;
     }
 
-    public String getPichure() {
-        return this.pichure;
+    public String getPicture() {
+        return this.picture;
     }
 
     public boolean isFrontBlocked() {
