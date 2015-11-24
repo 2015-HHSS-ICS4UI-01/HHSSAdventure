@@ -10,4 +10,26 @@ package hhssadventure;
  */
 public class Location {
     
+    int[] Scene;
+    
+    Scene[] = new int[4];
+    
+    
+    
+    
+     public void getImage(direction){
+        
+    }
+    
+    public boolean isFontBlocked(direction){
+        
+    }
+    
+    public void getDescription(direction){
+        
+    }
+    
+    public void getNextLocation(direction){
+        
+    }
 }
