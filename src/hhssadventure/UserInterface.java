@@ -56,21 +56,19 @@ public class UserInterface extends JComponent implements MouseMotionListener {
         centerX = WIDTH / 2;
         centerY = HIEGHT / 2;
         hDisplacement = 0;
-
-        
-        // sets up the mouse
-        robot = new Robot();
-        hideCursor();
-        centerMouse();
-        
-        //sets JFrame settings
+        // initialize window stuff
         window = new JFrame("HHSS Adventure");
         window.add(this);
+        
         window.setVisible(true);
         this.setPreferredSize(new Dimension(WIDTH, HIEGHT));
         window.pack();
         window.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.addMouseMotionListener(this);
+        // center cursor
+        robot = new Robot();
+        hideCursor();
+        centerMouse();
     }
 
     
