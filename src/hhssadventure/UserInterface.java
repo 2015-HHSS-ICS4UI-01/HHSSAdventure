@@ -86,7 +86,7 @@ public class UserInterface extends JComponent implements MouseMotionListener, Ke
     
     /**
 
-     * Makes the mouse cursor visible
+     * Makes the mouse cursor visible.
      */
     private void showCursor()
     {
@@ -95,7 +95,7 @@ public class UserInterface extends JComponent implements MouseMotionListener, Ke
     }
     
     /**
-     * Puts the mouse cursor to the center of the screen
+     * Puts the mouse cursor to the center of the screen.
      */
     public void centerMouse()
     {
@@ -114,7 +114,7 @@ public class UserInterface extends JComponent implements MouseMotionListener, Ke
     }
 
     /**
-     * Finds picture in new scene and sets it as the picture to display
+     * Finds picture in new scene and sets it as the picture to display.
      *
      * @param s scene to change to
      */
@@ -122,6 +122,9 @@ public class UserInterface extends JComponent implements MouseMotionListener, Ke
         currentScene = s;
     }
     
+    /**
+     * Displays the mouse.
+     */
     public void displayMouse() {
         if(inGame) {
             centerMouse();
