@@ -30,11 +30,11 @@ public class Scene {
     
     public Scene(Scanner input){
         
-        while(input.next()!=null){
+        
             
            
             
-        for(int i = 0; i < 4; i++){
+        
             
             direction = input.next();
             picture = input.next();
@@ -52,8 +52,8 @@ public class Scene {
             }
             input.nextLine();
             
-        }
-        }
+        
+        
         
     }
     

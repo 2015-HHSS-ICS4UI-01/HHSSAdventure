@@ -26,9 +26,8 @@ public class HHSSAdventure {
     private int locationNum = 0;
     
     
-    
-    public static void main(String[] args) {
-        FileReader file = null;
+    public HHSSAdventure(){
+    FileReader file = null;
             try
             {
                   file = new FileReader("images/pics.txt");
@@ -45,7 +44,12 @@ public class HHSSAdventure {
                      Location l = new Location(input);
                      location.add(l);
                   }
+}
+    
+    
+    public static void main(String[] args) {
         
+        HHSSAdventure game = new HHSSAdventure();
              
             
     }
