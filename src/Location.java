@@ -31,4 +31,13 @@ public class Location {
     public String getName() {
         return this.name;
     }
+    
+    public Scene getScene(String direction) {
+        int i = 0;
+        while(!Scenes[i].getDirection().equals(direction)&&i<Scenes.length){
+            i++;
+        }
+        return Scenes[i];
+    }
+    
 }
