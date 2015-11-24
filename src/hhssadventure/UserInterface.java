@@ -141,13 +141,26 @@ public class UserInterface extends JComponent implements MouseMotionListener, Ke
     public void keyPressed(KeyEvent k) {
         int KeyCode = k.getKeyCode();
         if(KeyCode == KeyEvent.VK_W) {
-            setScene(currentScene.getForward());
+            if (!currentScene.isBlocked())
+            {
+                setScene(currentScene.getForward());
+            }
         } else if (KeyCode == KeyEvent.VK_A) {
-            setScene(currentScene.getLeft());
+            if (!currentScene.getLeft().isBlocked())
+            {
+                setScene(currentScene.getLeft().getForward().getRight());
+            }
         } else if (KeyCode == KeyEvent.VK_S) {
+            if (!currentScene.getLeft().getLeft().isBlocked())
+            {
+                setScene(currentScene.getLeft().getLeft().getForward().getRight().getRight());
+            }
             
         } else if (KeyCode == KeyEvent.VK_D) {
-            setScene(currentScene.getRight());
+            if (!currentScene.getRight().isBlocked())
+            {
+                setScene(currentScene.getRight().getForward().getLeft());
+            }
         }
     }
 
