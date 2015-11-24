@@ -26,6 +26,7 @@ public class Scene extends Panel {
     private String nextDirection;
     private String imageName;
     private BufferedImage  image;
+    private String[] compass = {"N","S","E","W"};
     
   public Scene(Scanner constructor) {
       direction = constructor.nextLine();
@@ -40,10 +41,6 @@ public class Scene extends Panel {
      
   public Scene(){
   try {
-//  System.out.println("Enter image name\n");
-//  BufferedReader bf=new BufferedReader(new 
-// InputStreamReader(System.in));
-// String imageName=bf.readLine();
   File input = new File("images/" + imageName);
   image = ImageIO.read(input);
   } catch (IOException ie) {
@@ -76,5 +73,8 @@ Exception {
           description = temp;
       }
       
+      public String getDescription(){
+          return description;
+      }
       
 } 

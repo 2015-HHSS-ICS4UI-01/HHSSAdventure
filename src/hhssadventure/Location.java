@@ -26,12 +26,8 @@ public class Location {
         }
     }
     
-    public BufferedImage getImage(char dir){
-        for(int i = 0; i < 4; i++){
-            if(dir == scenes[i].getDirection()){
-                return scenes[i].getPhoto();
-            }
-        }
+    public BufferedImage getImage(Scene c){
+        return c.getPhoto();
     }
     
     public boolean isFrontBlocked(char dir){
