@@ -11,6 +11,8 @@ import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Scanner;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
@@ -27,6 +29,18 @@ public class HHSSAdventure {
     private void run() throws AWTException
     {
         UserInterface UI = new UserInterface(currentScene);
+        
+        boolean done = false;
+        
+        while(!done) {
+            UI.centerMouse();
+            UI.repaint();
+            try {
+                Thread.sleep(1);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+        }
     }
     
     public static void main(String[] args) throws AWTException {

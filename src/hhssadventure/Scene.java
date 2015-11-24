@@ -72,6 +72,10 @@ public class Scene {
         return imagePath;
     }
     
+    public boolean isBlocked() {
+        return frontBlocked;
+    }
+    
     
     
     
