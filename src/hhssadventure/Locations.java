@@ -13,10 +13,14 @@ import java.util.Scanner;
  */
 public class Locations {
     private String name;
-    private Scenes[] scenes;
+    private Scenes[] scenes = new Scenes[4];
 
-    Locations(Scanner input) {
-        
+    public Locations(Scanner input) {
+        name = input.nextLine();
+        for (int i = 0; i < 4; i++) {
+            Scenes s = new Scenes(input);
+            scenes[i] = s;
+        }
     }
     
     public BufferedImage getImage(int dir){

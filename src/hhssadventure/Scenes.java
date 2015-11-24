@@ -6,6 +6,7 @@ package hhssadventure;
 
 import java.awt.image.BufferedImage;
 import java.io.File;
+import java.util.Scanner;
 import javax.imageio.ImageIO;
 
 /**
@@ -13,6 +14,10 @@ import javax.imageio.ImageIO;
  * @author janaj4926
  */
 public class Scenes {
+
+    Scenes(Scanner input) {
+        
+    }
     
 
     public String getpic(String picName) {
@@ -28,7 +33,6 @@ public class Scenes {
 
     //waiting for the interface
     public int direction(String d) {
-        direction
         if
         return c;
     }

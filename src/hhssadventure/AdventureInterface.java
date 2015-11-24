@@ -12,6 +12,12 @@ import java.awt.image.BufferedImage;
  */
 public class AdventureInterface extends javax.swing.JFrame {
 
+    
+    public AdventureInterface(HHSSAdventure c){
+        this();
+        controller = c;
+    }
+    
     /**
      * Creates new form AdventureInterface
      */
