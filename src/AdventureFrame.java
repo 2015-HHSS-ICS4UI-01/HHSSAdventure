@@ -1,3 +1,8 @@
+
+import java.awt.Graphics;
+import java.awt.image.BufferedImage;
+import javax.swing.JComponent;
+
 /*
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
@@ -9,13 +14,13 @@
  */
 public class AdventureFrame extends javax.swing.JFrame {
 
-    private HHSSAdventure controller;
+    private HHSSAdventure Controller;
     
     /**
      * Creates new form AdventureFrame
      */
-    public AdventureFrame(HHSSAdventure controller) {
-        this.controller = controller;
+    public AdventureFrame(HHSSAdventure Controller) {
+        this.Controller = Controller;
         initComponents();
     }
 
@@ -24,6 +29,7 @@ public class AdventureFrame extends javax.swing.JFrame {
     public void setSceneName(String name){
         
     }
+    
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -124,7 +130,7 @@ public class AdventureFrame extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
-     
+     Controller.
     }//GEN-LAST:event_jButton4ActionPerformed
 
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
