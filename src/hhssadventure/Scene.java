@@ -43,7 +43,7 @@ public class Scene {
         return this.picture;
     }
 
-    public boolean isFrontBlocked() {
+    public boolean getIsFrontBlocked() {
         return this.isFrontBlocked;
     }
 
