@@ -36,14 +36,10 @@ public class HHSSAdventure {
 
         while (input.hasNext()) {
             Locations l = new Locations(input);
-            
             locations.add(l);
         }
         
         gui = new AdventureInterface(this);
-                
-        
-            
 
     }
     
@@ -53,23 +49,6 @@ public class HHSSAdventure {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        //current direction
-        //current location
-        //locations[]
-        
-//        while (input.hasNext()) {
-//            System.out.println(input.nextLine());
-//        }
-//        int c = 0;
-//        String[] locations = new String[1];
-//        input.nextLine();
-//        input.nextLine();
-//        while(input.hasNext()){
-//            locations[c] = input.nextLine();
-//            input.
-
-        
-        
 
     }
 }
