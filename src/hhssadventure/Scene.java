@@ -29,11 +29,13 @@ public class Scene {
     
     
     public Scene(Scanner input){
-        input.nextLine();
-        input.nextLine();
+        
         while(input.next()!=null){
+            
+           
+            
         for(int i = 0; i < 4; i++){
-            name = input.nextLine();
+            
             direction = input.next();
             picture = input.next();
              img = null;
@@ -48,6 +50,8 @@ public class Scene {
                 nextPicture = input.next();
                 nextDirection = input.next();
             }
+            input.nextLine();
+            
         }
         }
         
