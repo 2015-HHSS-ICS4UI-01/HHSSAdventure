@@ -4,6 +4,7 @@
  */
 package hhssadventure;
 
+import java.awt.image.BufferedImage;
 import java.util.Scanner;
 
 /**
@@ -15,6 +16,7 @@ public class Location {
     private Scene[] scenes;
     private String name;
     private String direction;
+    private int dirNum;
     
     
     public Location(Scanner input){
@@ -31,19 +33,67 @@ public class Location {
     }
     
     
-    public void getImage(String dir){
-        return Scene.picture();
+    public BufferedImage getImage(String dir){
+        if(dir == "N"){
+            dirNum = 0;
+        }
+        else if(dir == "E"){
+            dirNum = 1;
+        }
+        else if(dir == "S"){
+            dirNum = 2;
+        }
+        else if(dir == "W"){
+            dirNum = 3;
+        }
+        return scenes[dirNum].picture();
     }
     
-    public void isFrontBlocked(String dir){
-        
+    public boolean isFrontBlocked(String dir){
+        if(dir == "N"){
+            dirNum = 0;
+        }
+        else if(dir == "E"){
+            dirNum = 1;
+        }
+        else if(dir == "S"){
+            dirNum = 2;
+        }
+        else if(dir == "W"){
+            dirNum = 3;
+        }
+        return scenes[dirNum].frontBlocked();
     }
     
-    public void getDescription(String dir){
-        
+    public String getDescription(String dir){
+        if(dir == "N"){
+            dirNum = 0;
+        }
+        else if(dir == "E"){
+            dirNum = 1;
+        }
+        else if(dir == "S"){
+            dirNum = 2;
+        }
+        else if(dir == "W"){
+            dirNum = 3;
+        }
+        return scenes[dirNum].description();
     }
     
-    public void NextLocation(String dir){
-        
+    public String NextLocation(String dir){
+        if(dir == "N"){
+            dirNum = 0;
+        }
+        else if(dir == "E"){
+            dirNum = 1;
+        }
+        else if(dir == "S"){
+            dirNum = 2;
+        }
+        else if(dir == "W"){
+            dirNum = 3;
+        }
+        return scenes[dirNum].nextLocation();
     }
 }
