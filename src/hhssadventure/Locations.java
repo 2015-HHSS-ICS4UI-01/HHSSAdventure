@@ -5,6 +5,9 @@
 package hhssadventure;
 
 import java.awt.image.BufferedImage;
+import java.io.File;
+import javax.imageio.ImageIO;
+import java.util.Scanner;
 
 /**
  *
@@ -16,7 +19,7 @@ public class Locations {
     
     
     
-    public void getImage(int dir){
+    public void getImage(){
         
     }
     

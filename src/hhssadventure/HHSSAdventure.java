@@ -36,9 +36,11 @@ public class HHSSAdventure {
 
         //creates a scanner to read a file
         Scanner input = new Scanner(file);
-//        while (input.hasNext()) {
-//            System.out.println(input.nextLine());
-//        }
-        
+        //
+        while(input.hasNext()){
+            
+            
+            
+        }
     }
 }

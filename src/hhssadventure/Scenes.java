@@ -6,37 +6,32 @@ package hhssadventure;
 
 import java.awt.image.BufferedImage;
 import java.io.File;
-import javax.imageio.ImageIO;
+import java.util.Scanner;
+
 
 /**
  *
  * @author janaj4926
  */
 public class Scenes {
-    
+    private String currentDirection;
+    private BufferedImage image = null;
 
-    public String getpic(String picName) {
-        BufferedImage img = null;
-        try{
-            ImageIO.read(new File("picName"));
-        }catch(Exception e){
-            e.printStackTrace();
-            System.exit(0);
-        }
-        return 
+    public BufferedImage getPic() {
+        return image;
     }
 
     //waiting for the interface
-    public int direction(String d) {
+    public int direction(Scanner input) {
         int c = 0;
         return c;
     }
     
-    public boolean isFrontBlocked(){
+    public boolean isFrontBlocked(Scanner input){
         return true;
     }
     
-    public void getNextLocation(){
+    public void getNextLocation(Scanner input){
         
     }
     
@@ -44,7 +39,7 @@ public class Scenes {
         
     }
     
-    public void getNextDirection(){
+    public void getNextDirection(Scanner input){
         
     }
 }
