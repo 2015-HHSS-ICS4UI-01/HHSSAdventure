@@ -15,9 +15,12 @@ import java.util.Scanner;
 public class HHSSAdventure {
 
     private AdventureFrame frame;
-    
+    private String startLocation;
+    private String startDirection;
+    private Location currentLocation;
+    private ArrayList<Location> locations;
     public HHSSAdventure(){
-         ArrayList<Location> locations = new ArrayList<>();
+        locations = new ArrayList<>();
 
         FileReader file = null;
         try {
@@ -28,8 +31,8 @@ public class HHSSAdventure {
         }
 
         Scanner input = new Scanner(file);
-        String startLocation = input.nextLine();
-        String startDirection = input.nextLine();
+        startLocation = input.nextLine();
+        startDirection = input.nextLine();
 
 
         while (input.hasNext()) {
@@ -55,4 +58,18 @@ public class HHSSAdventure {
 
 
     }
-}
+    
+    public Location getLocation(String name){
+        int i = 0;
+        
+        while(!name.equals(locations.get(i).getName())&&i<locations.size()){
+         i++;
+        }
+        
+        return locations.get(i);
+       
+    }
+    
+    
+    }
+
