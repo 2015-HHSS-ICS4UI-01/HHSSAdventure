@@ -35,8 +35,9 @@ public class HHSSAdventure {
 //             System.out.println(s.nextLine());
 //          }
           
-           
+           Location v = new Location(s);
            Scene c = new Scene(s);
+           
            System.out.println(c.getDirection());
         
     }
