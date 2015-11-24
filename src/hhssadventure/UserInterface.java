@@ -36,7 +36,7 @@ public class UserInterface extends JComponent implements MouseMotionListener, Ke
     int centerY;
     int hDisplacement;
 
-    boolean inGame;
+    boolean inGame = true;
     boolean escapeDown;
     
     // To keep the mouse in the center of the screen
@@ -107,7 +107,7 @@ public class UserInterface extends JComponent implements MouseMotionListener, Ke
     @Override
     public void paintComponent(Graphics g) {
         try {
-            g.drawImage(currentScene.getImage(), 0, 0, WIDTH, HIEGHT, this);
+            g.drawImage(currentScene.getImage(), -hDisplacement, 0, WIDTH, HIEGHT, this);
         } catch (IOException ex) {
             Logger.getLogger(UserInterface.class.getName()).log(Level.SEVERE, null, ex);
         }
@@ -122,15 +122,6 @@ public class UserInterface extends JComponent implements MouseMotionListener, Ke
         currentScene = s;
     }
     
-    /**
-     * Displays the mouse.
-     */
-    public void displayMouse() {
-        if(inGame) {
-            centerMouse();
-        }
-    }
-
     @Override
     public void mouseDragged(MouseEvent e) {
         
@@ -138,8 +129,11 @@ public class UserInterface extends JComponent implements MouseMotionListener, Ke
 
     @Override
     public void mouseMoved(MouseEvent e) {
-        hDisplacement = e.getX() - centerX;
-
+        if (inGame)
+        {
+            hDisplacement += e.getX() - centerX;
+            centerMouse();
+        }
     }
 
     @Override
