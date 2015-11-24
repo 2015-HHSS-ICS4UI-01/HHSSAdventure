@@ -17,7 +17,7 @@ public class HHSSAdventure {
 
     private ArrayList<Location> locations = new ArrayList<>();
     private String location, dir;
-    private int locNum = 0
+    private int locNum = 0;
 
     public HHSSAdventure() {
         FileReader file = null;
