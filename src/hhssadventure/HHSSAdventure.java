@@ -15,7 +15,7 @@ import java.util.Scanner;
  */
 public class HHSSAdventure {
 
-    private ArrayList<Class> locations = new ArrayList<>();
+    private ArrayList<Location> locations = new ArrayList<>();
     private InterfaceGame gui;
 
     public HHSSAdventure() {
@@ -36,14 +36,14 @@ public class HHSSAdventure {
         //keep scanning as long as there is somthing to scan
         while (input.hasNext()) {
             //creating a class from a file
-            Class c = new Class(input);
+            Location c = new Location(input);
             //adding the class to the list
-            classes.add(c);
+            locations.add(c);
         }
         
-        gui = new Interface(this);
+        gui = new InterfaceGame(this);
         //set the text for the next class
-        Location c = classes.get(classNum);
+        Location c = locations.get(numOfPictures);
         gui.setPictureName(c.getDescription());
         //show it
         gui.setVisible(true);
@@ -51,31 +51,35 @@ public class HHSSAdventure {
 
     public void nextLocation() {
         //set the text for the next class
-        Class c = classes.get(classNum);
+        Location c = locations.get(getNextLocation);
         gui.setClassName(c.getCourseCode());
     }
     
     public void turnLeft(){
         //if classNum  is less than numClasses -1
-        if(classNum < classes.size()-1){
-            //advance to next class
-            classNum++;
+        if(numOfPictures > 0 && numOfPictures <= 4){
+            //decrease class
+            numOfPictures--;
+        }else{
+            numOfPictures = 4;
         }
         //set the text for the next class
-        Class c = classes.get(classNum);
+        Class c = locations.get(numOfPictures);
         gui.setClassName(c.getCourseCode());
     }
     
     
     public void turnRight(){
         //if classNum is >0
-        if(classNum > 0){
+        if(numOfPictures >= 0 && numOfPictures < 4){
             //decrease class
-            classNum--;
+            numOfPictures++;
+        }else{
+            numOfPictures = 0;
         }
         //set the text for the class name
-        Class c = classes.get(classNum);
-        gui.setClassName(c.getCourseCode());
+        Class c = locations.get(numOfPictures);
+        gui.setClassName(c.getDescription());
         
     }
 
