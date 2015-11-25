@@ -36,6 +36,10 @@ public class AdventureFrame extends javax.swing.JFrame {
         Direction.setText(D);
     }
     
+    public void setPicture(BufferedImage i){
+        picturePaint1.setImage(i);
+    }
+    
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -52,6 +56,7 @@ public class AdventureFrame extends javax.swing.JFrame {
         Left = new javax.swing.JButton();
         locationName = new javax.swing.JLabel();
         Direction = new javax.swing.JLabel();
+        picturePaint1 = new PicturePaint();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -90,10 +95,14 @@ public class AdventureFrame extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(locationName, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(Advance))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 138, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(Right, javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(Direction, javax.swing.GroupLayout.Alignment.TRAILING)))
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(28, 28, 28)
+                .addComponent(picturePaint1, javax.swing.GroupLayout.PREFERRED_SIZE, 366, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(45, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -102,7 +111,9 @@ public class AdventureFrame extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(locationName, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(Direction))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 211, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(picturePaint1, javax.swing.GroupLayout.PREFERRED_SIZE, 202, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(Advance)
                     .addComponent(Right)
@@ -134,11 +145,12 @@ public class AdventureFrame extends javax.swing.JFrame {
     }//GEN-LAST:event_LeftActionPerformed
 
     private void AdvanceActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AdvanceActionPerformed
-
+    Controller.Advance();
     }//GEN-LAST:event_AdvanceActionPerformed
 
     private void RightActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RightActionPerformed
     Controller.turnRight();
+       
     }//GEN-LAST:event_RightActionPerformed
 
    
@@ -149,5 +161,6 @@ public class AdventureFrame extends javax.swing.JFrame {
     private javax.swing.JButton Right;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JLabel locationName;
+    private PicturePaint picturePaint1;
     // End of variables declaration//GEN-END:variables
 }

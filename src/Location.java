@@ -34,7 +34,7 @@ public class Location {
     
     public Scene getScene(String direction) {
         int i = 0;
-        while(!Scenes[i].getDirection().equals(direction)&&i<Scenes.length){
+        while(i<Scenes.length-1 && !Scenes[i].getDirection().equals(direction)){
             i++;
         }
         return Scenes[i];

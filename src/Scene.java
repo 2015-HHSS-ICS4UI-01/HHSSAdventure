@@ -1,5 +1,8 @@
 
+import java.awt.image.BufferedImage;
+import java.io.File;
 import java.util.Scanner;
+import javax.imageio.ImageIO;
 
 /*
  * To change this template, choose Tools | Templates
@@ -16,11 +19,19 @@ public class Scene {
     private boolean moveForward;
     private String nextLocation;
     private String nextDirection;
+    private BufferedImage picture;
 
     public Scene(Scanner input) {
         direction = input.next();
 
         image = input.next();
+       
+        try{
+            picture = ImageIO.read(new File("images/" + image));
+        }catch(Exception e){
+            e.printStackTrace();
+            System.exit(0);
+        }
 
         String f = input.next();
         if (f.equals("false")) {
@@ -39,8 +50,8 @@ public class Scene {
         return this.direction;
     }
 
-    public String getImage() {
-        return this.image;
+    public BufferedImage getImage() {
+        return this.picture;
     }
 
     public boolean getForward() {

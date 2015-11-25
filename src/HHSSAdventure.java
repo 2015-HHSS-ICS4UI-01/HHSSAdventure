@@ -48,7 +48,7 @@ public class HHSSAdventure {
         
         gui.setDirection(currentDirection);
         gui.setLocationName(currentLocation);
-        
+        gui.setPicture(this.getLocation(currentLocation).getScene(currentDirection).getImage());
 
     }
     
@@ -68,7 +68,7 @@ public class HHSSAdventure {
     public Location getLocation(String name){
         int i = 0;
         
-        while(!name.equals(locations.get(i).getName())&&i<locations.size()){
+        while(i<locations.size()-1&&!name.equals(locations.get(i).getName())){
          i++;
         }
         
@@ -77,31 +77,42 @@ public class HHSSAdventure {
     }
     
     public void turnRight(){
-        if(currentDirection == "N"){
+        if(currentDirection.equals("N") ){
            currentDirection = "E" ;
-        }else if(currentDirection == "E"){
+        }else if(currentDirection.equals("E")){
            currentDirection = "S" ;
-        }else if(currentDirection == "S"){
+        }else if(currentDirection.equals("S")){
            currentDirection = "W" ;
-        }else if(currentDirection == "W"){
+        }else if(currentDirection.equals("W")){
            currentDirection = "N" ;
         }
         gui.setDirection(currentDirection);
+        gui.setPicture(this.getLocation(currentLocation).getScene(currentDirection).getImage());
     }
     
     public void turnLeft(){
-    if(currentDirection == "N"){
+    if(currentDirection.equals("N")){
            currentDirection = "W" ;
-        }else if(currentDirection == "E"){
+        }else if(currentDirection.equals("E")){
            currentDirection = "N" ;
-        }else if(currentDirection == "S"){
+        }else if(currentDirection.equals("S")){
            currentDirection = "E" ;
-        }else if(currentDirection == "W"){
+        }else if(currentDirection.equals("W")){
            currentDirection = "S" ;
         }
     gui.setDirection(currentDirection);
+    gui.setPicture(this.getLocation(currentLocation).getScene(currentDirection).getImage());
 }
-    
+    public void Advance(){
+     if(this.getLocation(currentLocation).getScene(currentDirection).getForward()){
+         currentLocation = this.getLocation(currentLocation).getScene(currentDirection).getnextLocation();
+         currentDirection = this.getLocation(currentLocation).getScene(currentDirection).getnextDirection();
+         System.out.println(currentDirection);
+         gui.setDirection(currentDirection);
+         gui.setLocationName(currentLocation);
+         gui.setPicture(this.getLocation(currentLocation).getScene(currentDirection).getImage());
+     }   
+    }
     
     }
 

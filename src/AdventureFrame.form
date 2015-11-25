@@ -53,11 +53,16 @@
                       <Component id="locationName" min="-2" pref="53" max="-2" attributes="0"/>
                       <Component id="Advance" min="-2" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace pref="138" max="32767" attributes="0"/>
+                  <EmptySpace max="32767" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Component id="Right" alignment="1" min="-2" max="-2" attributes="0"/>
                       <Component id="Direction" alignment="1" min="-2" max="-2" attributes="0"/>
                   </Group>
+              </Group>
+              <Group type="102" alignment="0" attributes="0">
+                  <EmptySpace min="-2" pref="28" max="-2" attributes="0"/>
+                  <Component id="picturePaint1" min="-2" pref="366" max="-2" attributes="0"/>
+                  <EmptySpace pref="45" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -69,7 +74,9 @@
                       <Component id="locationName" alignment="3" min="-2" pref="33" max="-2" attributes="0"/>
                       <Component id="Direction" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace pref="211" max="32767" attributes="0"/>
+                  <EmptySpace max="32767" attributes="0"/>
+                  <Component id="picturePaint1" min="-2" pref="202" max="-2" attributes="0"/>
+                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="Advance" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="Right" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -114,6 +121,12 @@
             <Property name="text" type="java.lang.String" value="jLabel1"/>
           </Properties>
         </Component>
+        <Container class="PicturePaint" name="picturePaint1">
+
+          <Layout class="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout">
+            <Property name="useNullLayout" type="boolean" value="true"/>
+          </Layout>
+        </Container>
       </SubComponents>
     </Container>
   </SubComponents>
