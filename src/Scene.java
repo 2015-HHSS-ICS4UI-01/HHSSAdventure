@@ -34,14 +34,18 @@ public class Scene {
         }
 
         String f = input.next();
+        if(input.hasNext()){
         if (f.equals("false")) {
             moveForward = true;
             nextLocation = input.next();
             nextDirection = input.next();
-
+          
         } else {
             moveForward = false;
         }
+        }
+            
+        
 
         input.nextLine();
     }

@@ -49,6 +49,7 @@ public class HHSSAdventure {
         gui.setDirection(currentDirection);
         gui.setLocationName(currentLocation);
         gui.setPicture(this.getLocation(currentLocation).getScene(currentDirection).getImage());
+        
 
     }
     
@@ -60,7 +61,7 @@ public class HHSSAdventure {
 
        HHSSAdventure game = new HHSSAdventure();
        
-        
+       
         
 
     }
@@ -77,6 +78,7 @@ public class HHSSAdventure {
     }
     
     public void turnRight(){
+        if(currentDirection!=null){
         if(currentDirection.equals("N") ){
            currentDirection = "E" ;
         }else if(currentDirection.equals("E")){
@@ -88,9 +90,11 @@ public class HHSSAdventure {
         }
         gui.setDirection(currentDirection);
         gui.setPicture(this.getLocation(currentLocation).getScene(currentDirection).getImage());
+        }
     }
     
     public void turnLeft(){
+       if(currentDirection!=null){
     if(currentDirection.equals("N")){
            currentDirection = "W" ;
         }else if(currentDirection.equals("E")){
@@ -102,12 +106,15 @@ public class HHSSAdventure {
         }
     gui.setDirection(currentDirection);
     gui.setPicture(this.getLocation(currentLocation).getScene(currentDirection).getImage());
+       }
 }
     public void Advance(){
      if(this.getLocation(currentLocation).getScene(currentDirection).getForward()){
-         currentLocation = this.getLocation(currentLocation).getScene(currentDirection).getnextLocation();
-         currentDirection = this.getLocation(currentLocation).getScene(currentDirection).getnextDirection();
-         System.out.println(currentDirection);
+        String d = currentDirection;
+        currentDirection = this.getLocation(currentLocation).getScene(d).getnextDirection();
+        currentLocation = this.getLocation(currentLocation).getScene(d).getnextLocation();
+        
+         
          gui.setDirection(currentDirection);
          gui.setLocationName(currentLocation);
          gui.setPicture(this.getLocation(currentLocation).getScene(currentDirection).getImage());
