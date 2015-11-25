@@ -15,18 +15,24 @@ import java.util.Scanner;
  */
 public class Locations {
     private String name;
+
     private Scenes[] scenes;
     
-
+    
     Locations(Scanner input) {
         for(int i = 0; i < scenes.length; i++){
             scenes[i] = input.next();
         }
     }
-    
-    
+      
     public void getImage(){
         
+    public Locations(Scanner input) {
+        name = input.nextLine();
+        for (int i = 0; i < 4; i++) {
+            Scenes s = new Scenes(input);
+            scenes[i] = s;
+        }
     }
     
     public BufferedImage getImage(int dir){
