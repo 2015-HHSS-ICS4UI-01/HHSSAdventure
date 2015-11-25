@@ -15,8 +15,25 @@ import javax.imageio.ImageIO;
  */
 public class Scenes {
 
+    private String dir;
+    private String picName;
+    private boolean isFrontBlocked;
+    private String nextLocation;
+    private String nextDir;
+    private String description;
+    
     Scenes(Scanner input) {
-        
+        dir = input.next();
+        picName = input.next();
+        String check = input.next();
+        if (check.equals("false")) {
+            isFrontBlocked = false;
+            nextLocation = input.next();
+        }else{
+            isFrontBlocked = true;    
+        }
+        description = input.next();
+        input.nextLine();
     }
     
 
@@ -52,4 +69,11 @@ public class Scenes {
     public void getNextDirection(){
         
     }
+
+    public String getDirection(){
+        return dir;
+    }
+
 }
+
+
