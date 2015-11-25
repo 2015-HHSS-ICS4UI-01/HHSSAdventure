@@ -36,14 +36,14 @@ public class HHSSAdventure {
         //keep scanning as long as there is somthing to scan
         while (input.hasNext()) {
             //creating a class from a file
-            Locations c = new Locations(input);
+            Class c = new Class(input);
             //adding the class to the list
-            locations.add(c);
+            classes.add(c);
         }
-
-        gui = new InterfaceGame(this);
+        
+        gui = new Interface(this);
         //set the text for the next class
-        Class c = locations.get(classNum);
+        Class c = classes.get(classNum);
         gui.setClassName(c.getCourseCode());
         //show it
         gui.setVisible(true);
