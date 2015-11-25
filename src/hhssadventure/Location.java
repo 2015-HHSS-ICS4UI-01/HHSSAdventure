@@ -13,19 +13,22 @@ import java.util.Scanner;
 public class Location {
     private String locationName;
     private Scene[] scenes; 
-    
+    private String nextLocation;
     
     
     public Location(Scanner input){
         locationName = input.nextLine();
         
-        scenes = new Scene[3];
+        scenes = new Scene[4];
         for (int i = 0; i < 4; i++) {
+            //creats a scene
             Scene s = new Scene(input);
-            s[i] = input.next(); 
-            
+            //puts scene in the list
+            scenes[i] = s;
+            System.out.println(locationName);
+            System.out.println(scenes[i]);
+
         }
-        
     }
     
 
@@ -33,15 +36,7 @@ public class Location {
         
     }
     
-    public boolean isFrontBlocked(){
-        
-    }
-    
     public String getDesciption(){
-       
-    }
-    
-    public void getNextDirection(){
-        
+       return this.locationName;
     }
 }
