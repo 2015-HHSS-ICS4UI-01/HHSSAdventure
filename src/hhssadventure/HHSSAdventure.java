@@ -43,8 +43,8 @@ public class HHSSAdventure {
         
         gui = new Interface(this);
         //set the text for the next class
-        Class c = classes.get(classNum);
-        gui.setClassName(c.getCourseCode());
+        Location c = classes.get(classNum);
+        gui.setPictureName(c.getDescription());
         //show it
         gui.setVisible(true);
     }

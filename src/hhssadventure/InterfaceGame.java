@@ -29,9 +29,10 @@ public class InterfaceGame extends javax.swing.JFrame {
     }
     
     
-    public void setClassName(String name){
+    public void setPictureName(String name){
         pichure.setText(name);
     }
+
     
     
     /**

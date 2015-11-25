@@ -13,14 +13,14 @@ import java.util.Scanner;
 public class Location {
 
     private String name;
+    private int numOfPictures;
     private Scene[] scenes;
 
     public Location(Scanner input) {
         name = input.nextLine();
         scenes = new Scene[4];
-
-
-        for (int i = 0; i < 4; i++) {
+        numOfPictures = 4;
+        for (int i = 0; i < numOfPictures; i++) {
             Scene s = new Scene(input);
             scenes[i] = s;
         }
