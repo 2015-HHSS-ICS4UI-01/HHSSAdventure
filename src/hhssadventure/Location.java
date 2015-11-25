@@ -9,7 +9,7 @@ import java.util.Scanner;
 
 /**
  *
- * @author simma1980
+ * @author simma1980 and kampn2687
  */
 public class Location {
 
@@ -26,5 +26,5 @@ public class Location {
 
     public String getName() {
         return name;
-    }
+    } 
 }
