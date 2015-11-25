@@ -22,7 +22,7 @@
               <Component id="East" min="-2" max="-2" attributes="0"/>
           </Group>
           <Group type="102" alignment="1" attributes="0">
-              <EmptySpace pref="172" max="32767" attributes="0"/>
+              <EmptySpace pref="349" max="32767" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
                   <Component id="North" min="-2" max="-2" attributes="0"/>
                   <Component id="South" min="-2" max="-2" attributes="0"/>
@@ -40,7 +40,7 @@
                   <Component id="West" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="East" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace pref="119" max="32767" attributes="0"/>
+              <EmptySpace pref="134" max="32767" attributes="0"/>
               <Component id="South" min="-2" max="-2" attributes="0"/>
           </Group>
       </Group>
