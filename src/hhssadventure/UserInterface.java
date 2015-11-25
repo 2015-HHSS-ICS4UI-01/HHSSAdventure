@@ -85,7 +85,6 @@ public class UserInterface extends JComponent implements MouseMotionListener, Ke
     }
     
     /**
-
      * Makes the mouse cursor visible.
      */
     private void showCursor()
@@ -155,23 +154,23 @@ public class UserInterface extends JComponent implements MouseMotionListener, Ke
     public void keyPressed(KeyEvent k) {
         int KeyCode = k.getKeyCode();
         if(KeyCode == KeyEvent.VK_W) {
-            if (!currentScene.isBlocked())
+            if (!currentScene.isBlocked() && inGame)
             {
                 setScene(currentScene.getForward());
             }
         } else if (KeyCode == KeyEvent.VK_A) {
-            if (!currentScene.getLeft().isBlocked())
+            if (!currentScene.getLeft().isBlocked() && inGame)
             {
                 setScene(currentScene.getLeft().getForward().getRight());
             }
         } else if (KeyCode == KeyEvent.VK_S) {
-            if (!currentScene.getLeft().getLeft().isBlocked())
+            if (!currentScene.getLeft().getLeft().isBlocked() && inGame)
             {
                 setScene(currentScene.getLeft().getLeft().getForward().getRight().getRight());
             }
             
         } else if (KeyCode == KeyEvent.VK_D) {
-            if (!currentScene.getRight().isBlocked())
+            if (!currentScene.getRight().isBlocked() && inGame)
             {
                 setScene(currentScene.getRight().getForward().getLeft());
             }
@@ -179,7 +178,6 @@ public class UserInterface extends JComponent implements MouseMotionListener, Ke
             if(!escapeDown) 
             {
                 inGame = inGame ? false: true;
-                System.out.println(inGame);
                 if(inGame) {
                     hideCursor();
                 } else {
