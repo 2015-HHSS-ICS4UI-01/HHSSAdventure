@@ -40,7 +40,11 @@ public class HHSSAdventure {
         }
         
         gui = new AdventureInterface(this);
+<<<<<<< HEAD
 
+=======
+                     
+>>>>>>> branch 'master' of https://github.com/janaj4926/HHSSAdventure
     }
     
     
@@ -49,6 +53,12 @@ public class HHSSAdventure {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
+<<<<<<< HEAD
 
+=======
+        //current direction
+        //current location
+        //locations[]
+>>>>>>> branch 'master' of https://github.com/janaj4926/HHSSAdventure
     }
 }
