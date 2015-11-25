@@ -32,6 +32,10 @@ public class AdventureFrame extends javax.swing.JFrame {
        locationName.setText(name);
     }
     
+    public void setDirection(String D){
+        Direction.setText(D);
+    }
+    
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -47,6 +51,7 @@ public class AdventureFrame extends javax.swing.JFrame {
         Right = new javax.swing.JButton();
         Left = new javax.swing.JButton();
         locationName = new javax.swing.JLabel();
+        Direction = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -73,6 +78,8 @@ public class AdventureFrame extends javax.swing.JFrame {
 
         locationName.setText("jLabel1");
 
+        Direction.setText("jLabel1");
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -80,20 +87,21 @@ public class AdventureFrame extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addComponent(Left)
                 .addGap(118, 118, 118)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(locationName, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Advance))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 138, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(Advance)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 138, Short.MAX_VALUE)
-                        .addComponent(Right))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(locationName, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 0, Short.MAX_VALUE))))
+                    .addComponent(Right, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(Direction, javax.swing.GroupLayout.Alignment.TRAILING)))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(locationName, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(locationName, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Direction))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 211, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(Advance)
@@ -122,7 +130,7 @@ public class AdventureFrame extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void LeftActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LeftActionPerformed
-    
+    Controller.turnLeft();
     }//GEN-LAST:event_LeftActionPerformed
 
     private void AdvanceActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AdvanceActionPerformed
@@ -130,12 +138,13 @@ public class AdventureFrame extends javax.swing.JFrame {
     }//GEN-LAST:event_AdvanceActionPerformed
 
     private void RightActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RightActionPerformed
-
+    Controller.turnRight();
     }//GEN-LAST:event_RightActionPerformed
 
    
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton Advance;
+    private javax.swing.JLabel Direction;
     private javax.swing.JButton Left;
     private javax.swing.JButton Right;
     private javax.swing.JPanel jPanel1;

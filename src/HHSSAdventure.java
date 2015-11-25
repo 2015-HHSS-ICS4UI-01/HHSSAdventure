@@ -16,9 +16,9 @@ import java.util.Scanner;
 public class HHSSAdventure {
 
     private AdventureFrame frame;
-    private String startLocation;
-    private String startDirection;
-    private Location currentLocation;
+    private String currentLocation;
+    private String currentDirection;
+    
     private ArrayList<Location> locations;
     private AdventureFrame gui;
     public HHSSAdventure(){
@@ -33,8 +33,8 @@ public class HHSSAdventure {
         }
 
         Scanner input = new Scanner(file);
-        startLocation = input.nextLine();
-        startDirection = input.nextLine();
+        currentLocation = input.nextLine();
+        currentDirection = input.nextLine();
 
 
         while (input.hasNext()) {
@@ -45,9 +45,9 @@ public class HHSSAdventure {
         gui = new AdventureFrame(this);
         gui.setVisible(true);
         
-        currentLocation = this.getLocation(startLocation);
-  
-        gui.setLocationName(startLocation);
+        
+        gui.setDirection(currentDirection);
+        gui.setLocationName(currentLocation);
         
 
     }
@@ -75,6 +75,32 @@ public class HHSSAdventure {
         return locations.get(i);
        
     }
+    
+    public void turnRight(){
+        if(currentDirection == "N"){
+           currentDirection = "E" ;
+        }else if(currentDirection == "E"){
+           currentDirection = "S" ;
+        }else if(currentDirection == "S"){
+           currentDirection = "W" ;
+        }else if(currentDirection == "W"){
+           currentDirection = "N" ;
+        }
+        gui.setDirection(currentDirection);
+    }
+    
+    public void turnLeft(){
+    if(currentDirection == "N"){
+           currentDirection = "W" ;
+        }else if(currentDirection == "E"){
+           currentDirection = "N" ;
+        }else if(currentDirection == "S"){
+           currentDirection = "E" ;
+        }else if(currentDirection == "W"){
+           currentDirection = "S" ;
+        }
+    gui.setDirection(currentDirection);
+}
     
     
     }
