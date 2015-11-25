@@ -50,14 +50,33 @@ public class HHSSAdventure {
     }
 
     public void nextLocation() {
+        //set the text for the next class
+        Class c = classes.get(classNum);
+        gui.setClassName(c.getCourseCode());
+    }
+    
+    public void turnLeft(){
         //if classNum  is less than numClasses -1
-        if (classNum < classes.size() - 1) {
+        if(classNum < classes.size()-1){
             //advance to next class
             classNum++;
         }
         //set the text for the next class
         Class c = classes.get(classNum);
         gui.setClassName(c.getCourseCode());
+    }
+    
+    
+    public void turnRight(){
+        //if classNum is >0
+        if(classNum > 0){
+            //decrease class
+            classNum--;
+        }
+        //set the text for the class name
+        Class c = classes.get(classNum);
+        gui.setClassName(c.getCourseCode());
+        
     }
 
     /**
