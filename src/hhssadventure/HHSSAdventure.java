@@ -22,8 +22,8 @@ public class HHSSAdventure {
     private Interface gui;
     private int num = 0;
     
-    public String startingLocation = null;
-    public String startingDirection = null;
+    public String currentLocation = null;
+    public String currentDirection = null;
     
 
     public HHSSAdventure() {
@@ -42,8 +42,8 @@ public class HHSSAdventure {
         Scanner input = new Scanner(file);
        
         //read the starting location and direction
-        startingLocation = input.nextLine();
-        startingDirection = input.nextLine();
+        currentLocation = input.nextLine();
+        currentDirection = input.nextLine();
 
         while(input.hasNext()){
             Location l = new Location(input);
@@ -53,9 +53,9 @@ public class HHSSAdventure {
         
         gui = new Interface(this);
         for(int i = 0; i < locations.size(); i++){
-            if(startingLocation.equals(locations.get(i).getName())){
+            if(currentLocation.equals(locations.get(i).getName())){
                 Location l = locations.get(i);
-                gui.setDescription(l.getSceneDescription(this.startingDirection));
+                gui.setDescription(l.getSceneDescription(this.currentDirection));
             }
         }
         
@@ -65,24 +65,31 @@ public class HHSSAdventure {
     }
     
     
-    public void nextRoom(){
+    public void turnRight(){
         if(num < locations.size() - 1){
             num++;
         }
         Location l = locations.get(num);
-        gui.setDescription(l.getSceneDescription(this.startingDirection));
+        gui.setDescription(l.getSceneDescription(this.currentDirection));
     }
     
-    public void previousRoom(){
+    public void turnLeft(){
         if(num > 0){
             num--;
         }
         Location l = locations.get(num);
-        gui.setDescription(l.getSceneDescription(this.startingDirection));
+        gui.setDescription(l.getSceneDescription(this.currentDirection));
     }
     
     public void advance(){
-        //move to the next location
+        for(int i = 0; i < locations.size(); i++){
+            if(currentLocation.equals(locations.get(i).getName())){
+                Location l = locations.get(i);
+                currentLocation = l.getSceneNextLocation(currentDirection);
+                currentDirection = l.getSceneNextDirection(currentDirection);
+                //gui.setImage();
+            }
+        }
     }
     
     

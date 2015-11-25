@@ -4,6 +4,8 @@
  */
 package hhssadventure;
 
+import java.awt.image.BufferedImage;
+
 /**
  *
  * @author donet6376
@@ -25,6 +27,10 @@ public class Interface extends javax.swing.JFrame {
     
     public void setDescription(String name){
         description.setText(name);
+    }
+    
+    public void setImage(BufferedImage image){
+        
     }
 
     /**
@@ -122,12 +128,12 @@ public class Interface extends javax.swing.JFrame {
 
     private void leftTurnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_leftTurnActionPerformed
         // TODO add your handling code here:
-        controller.previousRoom();
+        controller.turnLeft();
     }//GEN-LAST:event_leftTurnActionPerformed
 
     private void rightTurnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rightTurnActionPerformed
         // TODO add your handling code here:
-        controller.nextRoom();
+        controller.turnRight();
     }//GEN-LAST:event_rightTurnActionPerformed
 
     /**

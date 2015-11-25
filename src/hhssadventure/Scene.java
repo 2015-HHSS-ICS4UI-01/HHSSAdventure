@@ -77,4 +77,16 @@ Exception {
           return description;
       }
       
+      public boolean isFrontBlocked(){
+          return frontBlocked;
+      }
+      
+      public String getNextLocation(){
+          return nextLocation;
+      }
+      
+      public String getNextDirection(){
+          return nextDirection;
+      }
+      
 } 
