@@ -21,8 +21,12 @@ public class Location {
     
     public Location(Scanner input){
         name = input.nextLine();
-        direction = input.nextLine();
+
+       
+        
+        
         scenes = new Scene[4];
+
         
         for(int i = 0; i < 4; i ++){
             Scene s = new Scene(input);

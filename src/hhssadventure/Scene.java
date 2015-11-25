@@ -13,10 +13,8 @@ import javax.imageio.ImageIO;
  *
  * @author yaol9270
  */
-
-            
-
 public class Scene {
+
     private String direction;
     private String name;
     private String picture;
@@ -25,67 +23,59 @@ public class Scene {
     private BufferedImage img;
     private String here;
     private boolean blocked;
-    
-    
-    
-    
-    public Scene(Scanner input){
-        
-        
-            
-           
-            
-        
-            
-            direction = input.next();
-            picture = input.next();
-             img = null;
-                try{
-                img = ImageIO.read(new File(picture));
-                    }catch(Exception e){
-                e.printStackTrace();
-                System.exit(0);
-            }   
-            here = input.nextLine();
-            if(here.equals("true")){
-                blocked = true;
-                nextPicture = input.next();
-                nextDirection = input.next();
-            }
-            else{
-                blocked = false;
-            }
-            input.nextLine();
-            
-        
-        
-        
+
+    public Scene(Scanner input) {
+
+        direction = input.next();
+
+        picture = input.next();
+        System.out.println(picture);
+        img = null;
+        try {
+            img = ImageIO.read(new File("images/" + picture));
+        } catch (Exception e) {
+            e.printStackTrace();
+            System.exit(0);
+        }
+        here = input.next();
+        if (here.equals("true")) {
+            blocked = true;
+            nextPicture = input.next();
+            nextDirection = input.next();
+
+        } else {
+            blocked = false;
+
+        }
+        input.nextLine();
+
+
+
+
+
     }
-    
-    
-    public BufferedImage picture(){
+
+    public BufferedImage picture() {
         return this.img;
     }
-    
-    public String direction(){
+
+    public String direction() {
         return this.direction;
     }
-    
-    public boolean frontBlocked(){
+
+    public boolean frontBlocked() {
         return this.blocked;
     }
-    
-    public String nextLocation(){
+
+    public String nextLocation() {
         return this.nextPicture;
     }
-    
-    public String description(){
+
+    public String description() {
         return this.name;
     }
-    
-    public String nextDirection(){
+
+    public String nextDirection() {
         return this.nextDirection;
     }
-    
-    
 }
