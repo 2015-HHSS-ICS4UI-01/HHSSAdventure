@@ -48,6 +48,9 @@ public class HHSSAdventure {
         main.run();
     }
     
+    /**
+     * Read file and store all scenes
+     */
     private void readFile()
     {
         HashMap<String, String[]> locationScenes = new HashMap<>();

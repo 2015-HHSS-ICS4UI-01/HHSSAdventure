@@ -35,14 +35,14 @@ public class Scene {
     
     /**
      * 
-     * @param s the scene to set as the left 
+     * @param s the scene to set as the left. 
      */
     public void setLeft(Scene s) {
         this.left = s;
     }
     
     /**
-     * @param s the scene to set as the left 
+     * @param s the scene to set as the left.
      */
     public void setRight(Scene s) {
         this.right = s;
@@ -50,7 +50,7 @@ public class Scene {
     
     /**
      * 
-     * @param s 
+     * @param s the scene to set forward.
      */
     public void setForward(Scene s) {
         this.forward = s;
@@ -58,7 +58,7 @@ public class Scene {
     
     /**
      * 
-     * @return 
+     * @return the scene that is forward to the current one.
      */
     public Scene getForward()
     {
@@ -67,7 +67,7 @@ public class Scene {
     
     /**
      * 
-     * @return 
+     * @return the scene that is to the right of the current one.
      */
     public Scene getRight()
     {
@@ -76,7 +76,7 @@ public class Scene {
     
     /**
      * 
-     * @return 
+     * @return the scene that is to the left of the current scene
      */
     public Scene getLeft()
     {
@@ -84,7 +84,7 @@ public class Scene {
     }
     
     /**
-     * gets the image from the scene.
+     * Gets the image from the scene.
      * @return the image.
      */
     public BufferedImage getImage() 
@@ -100,11 +100,21 @@ public class Scene {
         return image;
     }
     
+    /**
+     * Gets the name of the image.
+     * 
+     * @return the name of the image.
+     */
     public String getImagePath()
     {
         return imagePath;
     }
     
+    /**
+     * Checks if the front is blocked
+     * 
+     * @return if front is blocked
+     */
     public boolean isBlocked() {
         return frontBlocked;
     }
