@@ -33,6 +33,7 @@ public class HHSSAdventure {
         boolean done = false;
         
         while(!done) {
+            UI.updateScene();
             UI.repaint();
             try {
                 Thread.sleep(1);

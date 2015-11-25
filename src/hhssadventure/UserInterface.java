@@ -5,6 +5,7 @@
 package hhssadventure;
 
 import java.awt.AWTException;
+import java.awt.Color;
 import java.awt.Cursor;
 import java.awt.Dimension;
 import java.awt.Graphics;
@@ -15,9 +16,6 @@ import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseMotionListener;
-import java.io.IOException;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javax.swing.JComponent;
 import javax.swing.JFrame;
 
@@ -28,8 +26,9 @@ import javax.swing.JFrame;
 public class UserInterface extends JComponent implements MouseMotionListener, KeyListener {
 
     private JFrame window;
-    private int HIEGHT;
-    private int WIDTH;
+    private int SCREEN_HEIGHT;
+    private int SCREEN_WIDTH;
+    private final int IMAGE_HEIGHT;
     private Scene currentScene;
     //create variables for centre of the screen
     private int centerX;
@@ -51,18 +50,20 @@ public class UserInterface extends JComponent implements MouseMotionListener, Ke
         currentScene = s;
         inGame = true;
 
-        HIEGHT = 945;
-        WIDTH = 1265;
+        SCREEN_HEIGHT = 945;
+        SCREEN_WIDTH = 1265;
+        
+        IMAGE_HEIGHT = (int)(SCREEN_HEIGHT*0.9);
 
-        centerX = WIDTH / 2;
-        centerY = HIEGHT / 2;
+        centerX = SCREEN_WIDTH / 2;
+        centerY = SCREEN_HEIGHT / 2;
         hDisplacement = 0;
         // initialize window stuff
         window = new JFrame("HHSS Adventure");
         window.add(this);
         
         window.setVisible(true);
-        this.setPreferredSize(new Dimension(WIDTH, HIEGHT));
+        this.setPreferredSize(new Dimension(SCREEN_WIDTH, SCREEN_HEIGHT));
         window.pack();
         window.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.addMouseMotionListener(this);
@@ -105,10 +106,31 @@ public class UserInterface extends JComponent implements MouseMotionListener, Ke
     
     @Override
     public void paintComponent(Graphics g) {
-        g.drawImage(currentScene.getImage(), -hDisplacement, 0, WIDTH, HIEGHT, null);
-        g.drawImage(currentScene.getLeft().getImage(), -hDisplacement-currentScene.getLeft().getImage().getWidth(), 0, null);
-        g.drawImage(currentScene.getLeft().getImage(), -hDisplacement=currentScene.getImage().getWidth() + currentScene().getRight().getImage(), 0, null);
-        
+        g.setColor(Color.GREEN);
+        g.fillRect(-hDisplacement, 0, SCREEN_WIDTH, SCREEN_HEIGHT);
+        g.drawImage(currentScene.getImage(), -hDisplacement, (SCREEN_HEIGHT-IMAGE_HEIGHT)/2, SCREEN_WIDTH, IMAGE_HEIGHT, null);
+        g.drawImage(currentScene.getLeft().getImage(), -hDisplacement-SCREEN_WIDTH, (SCREEN_HEIGHT-IMAGE_HEIGHT)/2, SCREEN_WIDTH, IMAGE_HEIGHT, null);
+        g.drawImage(currentScene.getRight().getImage(), -hDisplacement+SCREEN_WIDTH, (SCREEN_HEIGHT-IMAGE_HEIGHT)/2, SCREEN_WIDTH, IMAGE_HEIGHT, null);
+    }
+    
+    public void updateScene()
+    {
+        if (inGame)
+        {
+            if (Math.abs(hDisplacement) > centerX)
+            {
+                if (hDisplacement < 0)
+                {
+                    setScene(currentScene.getLeft());
+                    hDisplacement += SCREEN_WIDTH;
+                }
+                else if (hDisplacement > 0)
+                {
+                    setScene(currentScene.getRight());
+                    hDisplacement -= SCREEN_WIDTH;
+                }
+            }
+        }
     }
 
     /**
