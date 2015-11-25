@@ -5,6 +5,8 @@
 package hhssadventure;
 
 import java.awt.image.BufferedImage;
+import java.io.File;
+import javax.imageio.ImageIO;
 import java.util.Scanner;
 
 /**
@@ -12,30 +14,35 @@ import java.util.Scanner;
  * @author janaj4926
  */
 public class Locations {
-    private String name;
+    private String place;
     private Scenes[] scenes = new Scenes[4];
+    private BufferedImage image;
+    private boolean isFrontBlocked;
+    private String description;
+    
 
     public Locations(Scanner input) {
-        name = input.nextLine();
+        place = input.nextLine();
+        input.nextLine();
         for (int i = 0; i < 4; i++) {
             Scenes s = new Scenes(input);
             scenes[i] = s;
         }
     }
     
-    public BufferedImage getImage(int dir){
-
+    public BufferedImage getImage(){
+        return image;
     }
             
-    public boolean isFrontBlocked(int dir){
-        
+    public boolean isFrontBlocked(){
+        return isFrontBlocked;
     }
     
-    public String getDescription(int dir){
-        
+    public String getDescription(){
+        return description;
     }
     
-    public String nextLocation(int dir){
+    public String nextLocation(Scanner input){
         
     }
 }
