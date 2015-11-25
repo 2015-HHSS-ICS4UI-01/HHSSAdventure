@@ -23,6 +23,7 @@ public class Scene {
     private String nextPicture;
     private String nextDirection;
     private BufferedImage img;
+    private String here;
     private boolean blocked;
     
     
@@ -45,10 +46,14 @@ public class Scene {
                 e.printStackTrace();
                 System.exit(0);
             }   
-            blocked = input.nextBoolean();
-            if(blocked == false){
+            here = input.nextLine();
+            if(here.equals("true")){
+                blocked = true;
                 nextPicture = input.next();
                 nextDirection = input.next();
+            }
+            else{
+                blocked = false;
             }
             input.nextLine();
             
