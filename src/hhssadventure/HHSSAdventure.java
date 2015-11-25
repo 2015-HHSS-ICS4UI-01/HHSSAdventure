@@ -16,8 +16,8 @@ import java.util.Scanner;
 public class HHSSAdventure {
 
     private ArrayList<Location> locations = new ArrayList<>();
-    private String location;
-    private String dir;
+    private String location, dir;
+    private int locNum = 0;
 
     public HHSSAdventure() {
         FileReader file = null;
@@ -35,7 +35,10 @@ public class HHSSAdventure {
             locations.add(l);
         }
     }
-
+    
+    public void nextLocation() {
+    }
+    
     /**
      * @param args the command line arguments
      */
