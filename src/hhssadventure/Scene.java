@@ -32,7 +32,7 @@ public class Scene {
             input.next();
         }
         description = input.next();
-        
+
     }
 
     public String getDirection() {
@@ -54,8 +54,8 @@ public class Scene {
     public String getNextDirection() {
         return this.nextDirection;
     }
-    
-    public String getDescription(){
+
+    public String getDescription() {
         return this.description;
     }
 }

@@ -13,28 +13,24 @@ public class InterfaceGame extends javax.swing.JFrame {
     /**
      * Creates new form InterfaceGame
      */
-
-    
     private HHSSAdventure controller;
-    
-    public InterfaceGame(HHSSAdventure c){
+
+    public InterfaceGame(HHSSAdventure c) {
         this(); //callling the old constructor(bellow)
         controller = c;
     }
+
     /**
      * Creates new form Interface
      */
     public InterfaceGame() {
         initComponents();
     }
-    
-    
-    public void setPictureName(String name){
+
+    public void setPictureName(String name) {
         pichure.setText(name);
     }
 
-    
-    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -119,7 +115,6 @@ public class InterfaceGame extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        
         controller.turnLeft();
     }//GEN-LAST:event_jButton1ActionPerformed
 

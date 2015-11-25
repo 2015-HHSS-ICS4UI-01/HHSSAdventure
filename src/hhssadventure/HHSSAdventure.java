@@ -40,7 +40,7 @@ public class HHSSAdventure {
             //adding the class to the list
             locations.add(c);
         }
-        
+
         gui = new InterfaceGame(this);
         //set the text for the next class
         Location c = locations.get(numOfPictures);
@@ -54,33 +54,32 @@ public class HHSSAdventure {
         Location c = locations.get(getNextLocation);
         gui.setClassName(c.getCourseCode());
     }
-    
-    public void turnLeft(){
+
+    public void turnLeft() {
         //if classNum  is less than numClasses -1
-        if(numOfPictures > 0 && numOfPictures <= 4){
+        if (numOfPictures > 0 && numOfPictures <= 4) {
             //decrease class
             numOfPictures--;
-        }else{
+        } else {
             numOfPictures = 4;
         }
         //set the text for the next class
         Location c = locations.get(numOfPictures);
         gui.setText(c.getDescription());
     }
-    
-    
-    public void turnRight(){
+
+    public void turnRight() {
         //if classNum is >0
-        if(numOfPictures >= 0 && numOfPictures < 4){
+        if (numOfPictures >= 0 && numOfPictures < 4) {
             //decrease class
             numOfPictures++;
-        }else{
+        } else {
             numOfPictures = 0;
         }
         //set the text for the class name
         Location c = locations.get(numOfPictures);
         gui.setText(c.getDescription());
-        
+
     }
 
     /**
