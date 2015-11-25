@@ -64,8 +64,8 @@ public class HHSSAdventure {
             numOfPictures = 4;
         }
         //set the text for the next class
-        Class c = locations.get(numOfPictures);
-        gui.setClassName(c.getCourseCode());
+        Location c = locations.get(numOfPictures);
+        gui.setText(c.getDescription());
     }
     
     
@@ -78,8 +78,8 @@ public class HHSSAdventure {
             numOfPictures = 0;
         }
         //set the text for the class name
-        Class c = locations.get(numOfPictures);
-        gui.setClassName(c.getDescription());
+        Location c = locations.get(numOfPictures);
+        gui.setText(c.getDescription());
         
     }
 
