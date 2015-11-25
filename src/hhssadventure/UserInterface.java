@@ -32,12 +32,12 @@ public class UserInterface extends JComponent implements MouseMotionListener, Ke
     private int WIDTH;
     private Scene currentScene;
     //create variables for centre of the screen
-    int centerX;
-    int centerY;
-    int hDisplacement;
+    private int centerX;
+    private int centerY;
+    private int hDisplacement;
 
-    boolean inGame;
-    boolean escapeDown;
+    private boolean inGame;
+    private boolean escapeDown;
     
     // To keep the mouse in the center of the screen
     private Robot robot;
@@ -49,7 +49,7 @@ public class UserInterface extends JComponent implements MouseMotionListener, Ke
     public UserInterface(Scene s) throws AWTException {
         //sets the current scene to display
         currentScene = s;
-
+        inGame = true;
 
         HIEGHT = 945;
         WIDTH = 1265;
@@ -107,10 +107,11 @@ public class UserInterface extends JComponent implements MouseMotionListener, Ke
     @Override
     public void paintComponent(Graphics g) {
         try {
-            g.drawImage(currentScene.getImage(), 0, 0, WIDTH, HIEGHT, this);
+            g.drawImage(currentScene.getImage(), -hDisplacement, 0, WIDTH, HIEGHT, this);
         } catch (IOException ex) {
             Logger.getLogger(UserInterface.class.getName()).log(Level.SEVERE, null, ex);
         }
+        
     }
 
     /**
@@ -128,6 +129,7 @@ public class UserInterface extends JComponent implements MouseMotionListener, Ke
     public void displayMouse() {
         if(inGame) {
             centerMouse();
+            System.out.println("plssss");
         }
     }
 
@@ -138,8 +140,7 @@ public class UserInterface extends JComponent implements MouseMotionListener, Ke
 
     @Override
     public void mouseMoved(MouseEvent e) {
-        hDisplacement = e.getX() - centerX;
-
+        hDisplacement += e.getX() - centerX;
     }
 
     @Override
@@ -174,6 +175,7 @@ public class UserInterface extends JComponent implements MouseMotionListener, Ke
             if(!escapeDown) 
             {
                 inGame = inGame ? false: true;
+                System.out.println(inGame);
                 if(inGame) {
                     hideCursor();
                 } else {
