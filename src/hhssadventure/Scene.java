@@ -2,7 +2,6 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-
 package hhssadventure;
 
 import java.io.FileReader;
@@ -12,7 +11,8 @@ import java.util.Scanner;
  *
  * @author rayan4858
  */
-public class Scene{
+public class Scene {
+
     private String direction;
     private Scene[] Scenes;
     private String imageName;
@@ -20,45 +20,38 @@ public class Scene{
     private String nextLocation;
     private String nextDirection;
     private boolean block = false;
-    
-    
-    
+
     //constructor 
-    public Scene(Scanner input){
-        
-          direction = input.next();
-          imageName = input.next();
-          blocked = input.next();
-          if (blocked.equals("false")) {
-              block = false;
+    public Scene(Scanner input) {
+
+        direction = input.next();
+        imageName = input.next();
+        blocked = input.next();
+
+        if (blocked.equals("false")) {
+            block = false;
             nextLocation = input.next();
             nextDirection = input.next();
-          }else{
-              block = true;
-              input.nextLine();
-          }
+        } else {
+            block = true;
+            input.nextLine();
+        }
 
-    } 
-    
-    
-    public boolean frontBlocked( ){
+    }
+
+    public boolean frontBlocked() {
         return this.block;
     }
-    
-    
-    
-    public String nextLocation( ){
+
+    public String nextLocation() {
         return this.nextLocation;
     }
-    
-    
-    
-    public String getDirection(){
+
+    public String getDirection() {
         return this.nextDirection;
     }
-    
-    public String nextDirection(){
-       return this.nextDirection;
+
+    public String nextDirection() {
+        return this.nextDirection;
     }
-    
 }
