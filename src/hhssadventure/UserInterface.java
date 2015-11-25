@@ -105,11 +105,9 @@ public class UserInterface extends JComponent implements MouseMotionListener, Ke
     
     @Override
     public void paintComponent(Graphics g) {
-        try {
-            g.drawImage(currentScene.getImage(), -hDisplacement, 0, WIDTH, HIEGHT, this);
-        } catch (IOException ex) {
-            Logger.getLogger(UserInterface.class.getName()).log(Level.SEVERE, null, ex);
-        }
+        g.drawImage(currentScene.getImage(), -hDisplacement, 0, WIDTH, HIEGHT, null);
+        g.drawImage(currentScene.getLeft().getImage(), -hDisplacement-currentScene.getLeft().getImage().getWidth(), 0, null);
+        g.drawImage(currentScene.getLeft().getImage(), -hDisplacement=currentScene.getImage().getWidth() + currentScene().getRight().getImage(), 0, null);
         
     }
 
