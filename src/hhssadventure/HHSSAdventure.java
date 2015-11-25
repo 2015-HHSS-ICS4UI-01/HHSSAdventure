@@ -56,27 +56,27 @@ public class HHSSAdventure {
     }
 
     public void turnLeft() {
-        //if classNum  is less than numClasses -1
+        //if classNum in in bounds
         if (numOfPictures > 0 && numOfPictures <= 4) {
-            //decrease class
+            //turns left
             numOfPictures--;
         } else {
             numOfPictures = 4;
         }
-        //set the text for the next class
+        //sets description for next photo
         Location c = locations.get(numOfPictures);
         gui.setText(c.getDescription());
     }
 
     public void turnRight() {
-        //if classNum is >0
+        //if classNum is in bounds
         if (numOfPictures >= 0 && numOfPictures < 4) {
-            //decrease class
+            //turn right
             numOfPictures++;
         } else {
             numOfPictures = 0;
         }
-        //set the text for the class name
+        //set description for next photo
         Location c = locations.get(numOfPictures);
         gui.setText(c.getDescription());
 
