@@ -31,7 +31,7 @@ public class Scene {
             nextLocation = input.next();
             nextDirection = input.nextLine();
         }
-        //description = input.nextLine();
+        description = input.nextLine();
         
         
     }

@@ -22,111 +22,197 @@ Upstairs3
 N IMG_0054.JPG false Upstairs2 N
 A hallway lined with lockers. There are two doorways along the left wall
 E IMG_0055.JPG false Glass E
-A hallway lined with many lockers and doorways. A few students inhabit this hallway. There are restrooms to the left of you
+A hallway lined with many lockers, doorways, and a few students. There are restrooms to the left of you
 S IMG_0056.JPG true
+A door with two signs: one reads "WELCOME" and one reads "MRS VICKERS MATH". There is a small poster to the left of the door.
 W IMG_0057.JPG false Math1 W
+A hallway lined with lockers. There are a few doorways along each wall.
 Math1 
 N IMG_0058.JPG true
+A wooden door. A sign to its right reads "2703". Through the window, you see students sitting at rows of computers.
 E IMG_0059.JPG false Upstairs3 E
+A hallway lined with lockers. There is a large glass display at the left wall. Up ahead, students are walking towards you.
 S IMG_0060.JPG true
+Two doors with small windows allowing you to peek in. The left door has two posters: one reads "2604", the other has a picture of a building on it.
 W IMG_0062.JPG false Math2 W
+A hallway lined with lockers and doorways. It feels empty.
 Math2
 N IMG_0063.JPG true
+Through the window, you see various world maps on the room's ceiling. There is a lone television sitting on a stand. Beyond that, you can also see into two classrooms.
 E IMG_0064.JPG false Math1 E
+A hallway lined with lockers and doorways. In the distance, one person is walking towards you, and one person away from you.
 S IMG_0065.JPG true
+You try to look through the window, but the blinds are almost fully closed. What a shame.
 W IMG_0066.JPG false Math3 W
+A hallway that leads to a large window; you see the road and other buildings outside. There is a doorway to your left and right.
 Math3
 N IMG_0067.JPG true
+A white wall with two posters; one has a fancy building on it, the other shows people holding balloons. The latter poster reads at the top, "GUTSY WALK". 
 E IMG_0068.JPG false Math2 E
+A long hallway, lined with doorways and lockers. Up ahead, two people are walking down the hallway.
 S IMG_0069.JPG false Eng1 N
+A stairway leading downwards. There is a grey wall with a poster in the distance.
 W IMG_0070.JPG true
+
 Eng1
 N IMG_0071.JPG true
+
 E IMG_0072.JPG false Eng2 E
+
 S IMG_0073.JPG false Math3 N
+
 W IMG_0074.JPG true
+
 Eng2
 N IMG_0075.JPG true
+
 E IMG_0076.JPG false Eng3 E
+
 S IMG_0077.JPG true
+
 W IMG_0078.JPG false Eng1 W
+
 Eng3
 N IMG_0079.JPG false Dowstairs N
+
 E IMG_0080.JPG false Caf1 E
+
 S IMG_0081.JPG  true
+
 W IMG_0082.JPG false Eng2 W
+
 Caf1
 N IMG_0083.JPG true
+You see a cafeteria. Groups of students sit at some at the tables; the rest are empty. A large window at the back allows you to see outside of the school.
 E IMG_0084.JPG false Caf3 E
+
 S IMG_0085.JPG false Caf2 S
+
 W IMG_0086.JPG false Eng3 W
+
 Caf2
 N IMG_0087.JPG false Caf1 N
+
 E IMG_0088.JPG true
+
 S IMG_0089.JPG true
+
 W IMG_0090.JPG true
+
 Caf3
 N IMG_0091.JPG true
+
 E IMG_0092.JPG false Gym E
+
 S IMG_0093.JPG true
+
 W IMG_0094.JPG false Caf2 W
+
 Gym
 N IMG_0095.JPG false Music1 N
+
 E IMG_0096.JPG true
+
 S IMG_0097.JPG true
+
 W IMG_0098.JPG false Caf3 W
+
 Music1
 N IMG_0099.JPG false Music2 N
+
 E IMG_0100.JPG false Tech1 E
+
 S IMG_0102.JPG false Gym S
+
 W IMG_0107.JPG true
+
 Music2
 N IMG_0103.JPG true
+
 E IMG_0104.JPG true
+
 S IMG_0105.JPG false Music1 S
+
 W IMG_0106.JPG false Art1 E
+
 Tech1
 N IMG_0107.JPG true
+
 E IMG_0108.JPG false Tech2 E
+
 S IMG_0109.JPG true
+
 W IMG_0110.JPG false Music1 W
+
 Tech2
 N IMG_0140.JPG false Science1 S
+
 E IMG_0141.JPG true
+
 S IMG_0142.JPG true
+
 W IMG_0143.JPG false Tech1 W
+
 Art1
 N IMG_0111.JPG true
+
 E IMG_0112.JPG true
+
 S IMG_0113.JPG false Art2 S
+
 W IMG_0114.JPG false Music1 E
+
 Art2
 N IMG_0118.JPG false Art1 N
+
 E IMG_0115.JPG false Science2 E
+
 S IMG_0116.JPG false Staff S
+
 W IMG_0117.JPG true
+
 Science2
 N IMG_0123.JPG true
+
 E IMG_0119.JPG false Science1 E
+
 S IMG_0120.JPG true
+
 W IMG_0121.JPG false Art2 W
+
 Science1
 N IMG_0127.JPG false Tech2 S
+
 E IMG_0124.JPG true
+
 S IMG_0125.JPG true
+
 W IMG_0126.JPG false Science2 W
+
 Staff
 N IMG_0128.JPG false Art2 N
+
 E IMG_0129.JPG true
+
 S IMG_0130.JPG true
+
 W IMG_0131.JPG false Glass W
+
 Glass
 N IMG_0132.JPG true
+
 E IMG_0133.JPG false Staff E
+
 S IMG_0134.JPG true
+
 W IMG_0135.JPG false Upstairs3 W
+
 Dowstairs
 N IMG_0136.JPG false Upstairs1 S
+
 E IMG_0137.JPG true
+
 S IMG_0138.JPG false Eng3 S
+
 W IMG_0139.JPG true
+

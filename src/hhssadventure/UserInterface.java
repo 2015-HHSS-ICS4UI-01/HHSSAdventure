@@ -1,6 +1,8 @@
 package hhssadventure;
 
 import java.awt.image.BufferedImage;
+import java.io.File;
+import javax.imageio.ImageIO;
 
 /**
  *
@@ -20,6 +22,34 @@ public class UserInterface extends javax.swing.JFrame {
     public UserInterface() {
         initComponents();
     }
+    
+    public void setForward(){
+        
+    }
+    
+    public void setDescription(String description){
+        sceneDescript.setText(description);
+    }
+    
+    /**
+     * Sets a picture to display in the user interface.
+     * @param image the file name of the picture to show.
+     */
+    public void setImage(String image){
+        //initialize the scene's picture
+        BufferedImage img = null;
+        //display to show the scene's picture
+        PicturePanel imageDisplay = new PicturePanel();
+        //imports the picture
+        try{
+            img = ImageIO.read(new File("images/" + image));
+        }catch(Exception e){
+            e.printStackTrace();
+            System.exit(0);
+        }
+        imageDisplay.setImage(img);
+        
+    }
 
     /** This method is called from within the constructor to
      * initialize the form.
@@ -34,7 +64,7 @@ public class UserInterface extends javax.swing.JFrame {
         leftScene = new javax.swing.JButton();
         rightScene = new javax.swing.JButton();
         sceneImage = new javax.swing.JLabel();
-        jLabel1 = new javax.swing.JLabel();
+        sceneDescript = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -54,7 +84,7 @@ public class UserInterface extends javax.swing.JFrame {
 
         rightScene.setText("Right");
 
-        jLabel1.setText("DESCRIPTION");
+        sceneDescript.setText("DESCRIPTION");
 
         org.jdesktop.layout.GroupLayout layout = new org.jdesktop.layout.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -63,29 +93,27 @@ public class UserInterface extends javax.swing.JFrame {
             .add(layout.createSequentialGroup()
                 .add(layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
                     .add(layout.createSequentialGroup()
-                        .addContainerGap()
-                        .add(sceneImage, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .add(layout.createSequentialGroup()
-                        .add(163, 163, 163)
-                        .add(layout.createParallelGroup(org.jdesktop.layout.GroupLayout.TRAILING)
-                            .add(jLabel1)
-                            .add(layout.createSequentialGroup()
-                                .add(leftScene)
-                                .addPreferredGap(org.jdesktop.layout.LayoutStyle.UNRELATED)
-                                .add(forwardScene)))
-                        .addPreferredGap(org.jdesktop.layout.LayoutStyle.UNRELATED)
+                        .add(279, 279, 279)
+                        .add(leftScene)
+                        .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
+                        .add(forwardScene)
+                        .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
                         .add(rightScene)
-                        .add(0, 153, Short.MAX_VALUE)))
+                        .add(279, 279, 279))
+                    .add(layout.createSequentialGroup()
+                        .addContainerGap()
+                        .add(sceneDescript, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .add(org.jdesktop.layout.GroupLayout.TRAILING, sceneImage, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
             .add(org.jdesktop.layout.GroupLayout.TRAILING, layout.createSequentialGroup()
                 .addContainerGap()
-                .add(sceneImage, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 385, Short.MAX_VALUE)
-                .addPreferredGap(org.jdesktop.layout.LayoutStyle.UNRELATED)
-                .add(jLabel1, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 14, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                .add(10, 10, 10)
+                .add(sceneImage, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 465, Short.MAX_VALUE)
+                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
+                .add(sceneDescript, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 31, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
                 .add(layout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
                     .add(leftScene)
                     .add(forwardScene)
@@ -141,9 +169,9 @@ public class UserInterface extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton forwardScene;
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JButton leftScene;
     private javax.swing.JButton rightScene;
+    private javax.swing.JLabel sceneDescript;
     private javax.swing.JLabel sceneImage;
     // End of variables declaration//GEN-END:variables
 

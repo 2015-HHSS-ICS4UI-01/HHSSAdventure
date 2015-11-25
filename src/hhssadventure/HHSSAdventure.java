@@ -43,8 +43,16 @@ public class HHSSAdventure {
         }
         
         gui = new UserInterface(this);
-        
-        
+        Location currentLoc = null;
+        for(int i = 0; i < locations.size(); i++){
+            if(currentLocation.equals(locations.get(i).getName())){
+                currentLoc = locations.get(i);
+                break;
+            }
+        }
+        gui.setDescription(currentLoc.getDescription(currentDirection));
+        gui.setImage(currentLoc.getImage(currentDirection));
+        gui.setVisible(true);
     }
     
     /**
