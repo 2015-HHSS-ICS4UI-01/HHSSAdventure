@@ -14,48 +14,38 @@ import java.util.Scanner;
  * @author janaj4926
  */
 public class Locations {
-    private String name;
-<<<<<<< HEAD
-    private Scenes[] scenes;
-    
-=======
+    private String place;
     private Scenes[] scenes = new Scenes[4];
->>>>>>> branch 'master' of https://github.com/janaj4926/HHSSAdventure
+    private BufferedImage image;
+    private boolean isFrontBlocked;
+    private String description;
+    private
+    
 
-<<<<<<< HEAD
-    Locations(Scanner input) {
-        for(int i = 0; i < scenes.length; i++){
-            scenes[i] = input.next();
-        }
-    }
-    
-    
-    public void getImage(){
-        
-=======
     public Locations(Scanner input) {
-        name = input.nextLine();
+        place = input.nextLine();
         for (int i = 0; i < 4; i++) {
             Scenes s = new Scenes(input);
+            
+            s.description();
             scenes[i] = s;
         }
->>>>>>> branch 'master' of https://github.com/janaj4926/HHSSAdventure
     }
     
-    public BufferedImage getImage(int dir){
-        
+    public BufferedImage getImage(){
+        return image;
     }
             
     public boolean isFrontBlocked(int dir){
-        
+        return isFrontBlocked;
     }
     
     public String getDescription(int dir){
-        
+        return description;
     }
     
     public String nextLocation(int dir){
-        
+        return 
     }
 }
 
