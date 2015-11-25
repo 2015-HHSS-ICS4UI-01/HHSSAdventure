@@ -140,7 +140,11 @@ public class UserInterface extends JComponent implements MouseMotionListener, Ke
 
     @Override
     public void mouseMoved(MouseEvent e) {
-        hDisplacement += e.getX() - centerX;
+        if (inGame)
+        {
+            hDisplacement += e.getX() - centerX;
+            centerMouse();
+        }
     }
 
     @Override
