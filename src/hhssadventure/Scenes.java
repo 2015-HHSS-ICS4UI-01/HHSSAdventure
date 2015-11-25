@@ -7,7 +7,6 @@ package hhssadventure;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.util.Scanner;
-
 import javax.imageio.ImageIO;
 
 
@@ -16,6 +15,28 @@ import javax.imageio.ImageIO;
  * @author janaj4926
  */
 public class Scenes {
+
+    private String dir;
+    private String picName;
+    private boolean isFrontBlocked;
+    private String nextLocation;
+    private String nextDir;
+    private String description;
+    
+    Scenes(Scanner input) {
+        dir = input.next();
+        picName = input.next();
+        String check = input.next();
+        if (check.equals("false")) {
+            isFrontBlocked = false;
+            nextLocation = input.next();
+        }else{
+            isFrontBlocked = true;    
+        }
+        description = input.next();
+        input.nextLine();
+    }
+    
 
     private String currentDirection;
     private BufferedImage image = null;
@@ -52,4 +73,11 @@ public class Scenes {
     public void getNextDirection(Scanner input){
         
     }
+
+    public String getDirection(){
+        return dir;
+    }
+
 }
+
+
