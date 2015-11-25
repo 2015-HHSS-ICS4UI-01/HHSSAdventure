@@ -29,6 +29,7 @@ public class Scenes {
         if (check.equals("false")) {
             isFrontBlocked = false;
             nextLocation = input.next();
+            nextDir = input.next();
         }else{
             isFrontBlocked = true;    
         }
@@ -36,8 +37,19 @@ public class Scenes {
         input.nextLine();
     }
     
-
-    public String getpic(String picName) {
+    public boolean isFrontBlocked(){
+        return isFrontBlocked;
+    }
+    
+    public String getNextLocation(){
+        return nextLocation;
+    }
+    
+    public String description(){
+        return description;
+    }
+    
+    public BufferedImage getpic(String picName) {
         BufferedImage img = null;
         try{
             ImageIO.read(new File("picName"));
@@ -45,35 +57,6 @@ public class Scenes {
             e.printStackTrace();
             System.exit(0);
         }
-        return 
+        return img;
     }
-
-    //waiting for the interface
-    public int direction(String d) {
-        if
-        return c;
-    }
-    
-    public boolean isFrontBlocked(){
-        return true;
-    }
-    
-    public void getNextLocation(){
-        
-    }
-    
-    public void description(){
-        
-    }
-    
-    public void getNextDirection(){
-        
-    }
-
-    public String getDirection(){
-        return dir;
-    }
-
 }
-
-
