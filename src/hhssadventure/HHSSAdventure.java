@@ -16,7 +16,9 @@ import java.util.Scanner;
 public class HHSSAdventure {
     ArrayList<Locations> locations = new ArrayList<>();
     private AdventureInterface gui;
-
+    private String currentPlace;
+    private String currentDirection;
+    
     public HHSSAdventure(){
         FileReader file = null;
         try {
@@ -34,6 +36,7 @@ public class HHSSAdventure {
         //
 
 
+        
         while (input.hasNext()) {
             Locations l = new Locations(input);
             locations.add(l);

@@ -19,15 +19,13 @@ public class Locations {
     private BufferedImage image;
     private boolean isFrontBlocked;
     private String description;
-    private
     
 
     public Locations(Scanner input) {
         place = input.nextLine();
+        input.nextLine();
         for (int i = 0; i < 4; i++) {
             Scenes s = new Scenes(input);
-            
-            s.description();
             scenes[i] = s;
         }
     }
@@ -36,16 +34,16 @@ public class Locations {
         return image;
     }
             
-    public boolean isFrontBlocked(int dir){
+    public boolean isFrontBlocked(){
         return isFrontBlocked;
     }
     
-    public String getDescription(int dir){
+    public String getDescription(){
         return description;
     }
     
-    public String nextLocation(int dir){
-        return 
+    public String nextLocation(Scanner input){
+        
     }
 }
 
