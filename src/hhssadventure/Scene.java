@@ -8,7 +8,7 @@ import java.util.Scanner;
 
 /**
  *
- * @author simma1980
+ * @author NathanKampzEtAndrewSSS
  */
 public class Scene {
 
