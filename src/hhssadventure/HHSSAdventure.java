@@ -14,6 +14,8 @@ import java.util.Scanner;
  * @author lamon
  */
 public class HHSSAdventure {
+    
+    private UserInterface gui;
 
     public HHSSAdventure() {
         FileReader file = null;
@@ -24,11 +26,17 @@ public class HHSSAdventure {
         }
         Scanner input = new Scanner(file);
     }
+    
+    public void nextDescription(){
+        gui.setDescription(getDescription())
+    }
 
     /**
      * @param args the command line arguments
      */
     public static void main(String[] args) {
+        
+        HHSSAdventure f = new HHSSAdventure();
         
     }
    
