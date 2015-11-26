@@ -57,7 +57,6 @@ public class HHSSAdventure {
                 storedLocation = locations.get(i);
             }
         }
-        System.out.println(storedLocation.getName());
         
         gui = new Interface(this);
         
@@ -91,11 +90,19 @@ public class HHSSAdventure {
     }
     
     public void advance(){
+        if(storedLocation.isFrontBlocked(currentDirection)){
+        currentLocation = storedLocation.getSceneNextLocation(currentDirection);
+        currentDirection = storedLocation.getSceneNextDirection(currentDirection);
         
-                currentLocation = storedLocation.getSceneNextLocation(currentDirection);
-                currentDirection = storedLocation.getSceneNextDirection(currentDirection);
-                //gui.setImage();
+        for(int i = 0; i < locations.size(); i++){
+            if(currentLocation.equals(locations.get(i).getName())){
+                storedLocation = locations.get(i);
             }
+        }
+        gui.setDescription(storedLocation.getSceneDescription(this.currentDirection));
+                //gui.setImage();
+        }
+}
         
     
     
