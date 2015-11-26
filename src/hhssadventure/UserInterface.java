@@ -13,6 +13,12 @@ public class UserInterface extends javax.swing.JFrame {
         public boolean leftButton = false;
         public boolean rightButton = false;
         
+        public HHSSAdventure Controller;
+        
+       
+        
+        
+        
     /**
      * Creates new form UserInterface
      */
@@ -88,15 +94,15 @@ public class UserInterface extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void forwardActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_forwardActionPerformed
-       forwardButton = true; 
+        Controller.forward();
     }//GEN-LAST:event_forwardActionPerformed
 
     private void leftActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_leftActionPerformed
-        leftButton = true;
+        Controller.turnLeft();
     }//GEN-LAST:event_leftActionPerformed
 
     private void rightActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rightActionPerformed
-        rightButton = true;
+        Controller.turnRight();
     }//GEN-LAST:event_rightActionPerformed
 
     /**
