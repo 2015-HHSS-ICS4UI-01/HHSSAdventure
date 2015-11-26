@@ -29,12 +29,12 @@ public class Scene extends Panel {
     private String[] compass = {"N","S","E","W"};
     
   public Scene(Scanner constructor) {
-      direction = constructor.nextLine();
-      imageName = constructor.nextLine();
+      direction = constructor.next();
+      imageName = constructor.next();
       frontBlocked = constructor.nextBoolean();
       if(frontBlocked == false){
-          nextLocation = constructor.nextLine();
-          nextDirection = constructor.nextLine();
+          nextLocation = constructor.next();
+          nextDirection = constructor.next();
       }
       
   }   
