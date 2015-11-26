@@ -34,7 +34,7 @@ public class Locations {
         return image;
     }
             
-    public boolean isFrontBlocked(){
+    public boolean getIsFrontBlocked(){
         return isFrontBlocked;
     }
     
@@ -42,7 +42,7 @@ public class Locations {
         return description;
     }
     
-    public String nextLocation(){
+    public String getNextLocation(){
         return nextLocation.getNextLocation();
     }
     
