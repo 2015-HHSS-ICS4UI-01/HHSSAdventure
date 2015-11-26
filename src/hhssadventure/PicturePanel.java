@@ -8,7 +8,7 @@ import javax.swing.JComponent;
 
 /**
  * A custom JComponent that will contain an image
- * @author simma1980 and kampn2687
+ * @author NathanKampzEtAndrewSSS
  */
 public class PicturePanel extends JComponent {
     private BufferedImage image = null;

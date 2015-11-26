@@ -4,17 +4,19 @@
  */
 package hhssadventure;
 
+import java.awt.image.BufferedImage;
 import java.util.ArrayList;
 import java.util.Scanner;
 
 /**
  *
- * @author simma1980 and kampn2687
+ * @author NathanKampzEtAndrewSSS
  */
 public class Location {
 
     private String name;
     private ArrayList<Scene> scenes = new ArrayList<>();
+    private int sceneNum = 0;
 
     public Location(Scanner in) {
         name = in.nextLine();
@@ -26,5 +28,9 @@ public class Location {
 
     public String getName() {
         return name;
-    } 
+    }
+    
+    public String nextDir() {
+        return scenes.get(sceneNum).getNextDir();
+    }
 }

@@ -11,13 +11,14 @@ import java.util.Scanner;
 
 /**
  *
- * @author simma1980 and kampn2687
+ * @author NathanKampzEtAndrewSSS
  */
 public class HHSSAdventure {
 
     private ArrayList<Location> locations = new ArrayList<>();
     private String location, dir;
     private int locNum = 0;
+    private Interface GUI;
 
     public HHSSAdventure() {
         FileReader file = null;
@@ -34,9 +35,16 @@ public class HHSSAdventure {
             Location l = new Location(in);
             locations.add(l);
         }
+        GUI = new Interface(this);
+        GUI.setVisible(true);
+    }
+    
+    public String getDir() {
+        return dir;
     }
     
     public void nextLocation() {
+        dir = locations.get(locNum).nextDir();
     }
     
     /**

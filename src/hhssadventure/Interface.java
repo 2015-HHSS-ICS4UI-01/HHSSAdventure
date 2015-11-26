@@ -6,13 +6,20 @@ package hhssadventure;
 
 /**
  *
- * @author simma1980 and kampn2687
+ * @author NathanKampzEtAndrewSSS
  */
 public class Interface extends javax.swing.JFrame {
 
     /**
      * Creates new form Interface
      */
+    
+    private HHSSAdventure controller;
+    
+    public Interface(HHSSAdventure hhssa) {
+        this();
+        controller = hhssa;
+    }
     public Interface() {
         initComponents();
     }
@@ -34,6 +41,11 @@ public class Interface extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         leftButton.setText("Left");
+        leftButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                leftButtonActionPerformed(evt);
+            }
+        });
 
         forwardButton.setText("Forward");
         forwardButton.addActionListener(new java.awt.event.ActionListener() {
@@ -83,12 +95,16 @@ public class Interface extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void forwardButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_forwardButtonActionPerformed
-        
+        controller.nextLocation();
     }//GEN-LAST:event_forwardButtonActionPerformed
 
     private void rightButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rightButtonActionPerformed
-        
+        // TODO add your handling code here:
     }//GEN-LAST:event_rightButtonActionPerformed
+
+    private void leftButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_leftButtonActionPerformed
+        
+    }//GEN-LAST:event_leftButtonActionPerformed
 
     /**
      * @param args the command line arguments
