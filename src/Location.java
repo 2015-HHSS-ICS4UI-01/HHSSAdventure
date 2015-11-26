@@ -16,15 +16,17 @@ public class Location {
 
     public Location(Scanner input) {
         name = input.nextLine();
+        name = name.trim();
         Scenes = new Scene[4];
-
+        //System.out.println("Location: " + name);
         for (int i = 0; i < 4; i++) {
 
             Scene s = new Scene(input);
             //put student in list
             Scenes[i] = s;
+            
         }
-
+        
 
     }
 

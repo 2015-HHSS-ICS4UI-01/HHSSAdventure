@@ -41,6 +41,9 @@ public class HHSSAdventure {
             //creating class from file
             Location c = new Location(input);
             locations.add(c);
+         
+           
+            
         }
         gui = new AdventureFrame(this);
         gui.setVisible(true);
@@ -50,7 +53,7 @@ public class HHSSAdventure {
         gui.setLocationName(currentLocation);
         gui.setPicture(this.getLocation(currentLocation).getScene(currentDirection).getImage());
         
-
+        
     }
     
     /**
@@ -120,6 +123,7 @@ public class HHSSAdventure {
          gui.setPicture(this.getLocation(currentLocation).getScene(currentDirection).getImage());
      }   
     }
+    
     
     }
 

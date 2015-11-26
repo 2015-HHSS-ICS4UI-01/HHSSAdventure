@@ -25,7 +25,7 @@ public class Scene {
         direction = input.next();
 
         image = input.next();
-       
+        //System.out.println("D: " + direction + "     i: " + image);
         try{
             picture = ImageIO.read(new File("images/" + image));
         }catch(Exception e){
@@ -55,7 +55,12 @@ public class Scene {
     }
 
     public BufferedImage getImage() {
+        
         return this.picture;
+        
+    }
+    public String getImageName(){
+        return this.image;
     }
 
     public boolean getForward() {
