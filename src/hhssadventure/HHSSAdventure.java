@@ -43,7 +43,7 @@ public class HHSSAdventure {
 
         gui = new InterfaceGame(this);
         //set the text for the next class
-        Location c = locations.get(getImage);
+        Location c = locations.get(numOfPictures);
         gui.setPictureName(c.getDescription());
         //show it
         gui.setVisible(true);
@@ -51,8 +51,8 @@ public class HHSSAdventure {
 
     public void nextLocation() {
         //set the text for the next class
-        Location c = locations.get(getNextLocation);
-        gui.setClassName(c.getCourseCode());
+        Location c = locations.get(getNextLocation());
+        gui.setPictureName(c.getCourseCode());
     }
 
     public void turnLeft() {
@@ -65,7 +65,7 @@ public class HHSSAdventure {
         }
         //sets description for next photo
         Location c = locations.get(numOfPictures);
-        gui.setText(c.getDescription());
+        gui.setPictureName(c.getDescription());
     }
 
     public void turnRight() {
@@ -78,7 +78,7 @@ public class HHSSAdventure {
         }
         //set description for next photo
         Location c = locations.get(numOfPictures);
-        gui.setText(c.getDescription());
+        gui.setPictureName(c.getDescription());
 
     }
 
