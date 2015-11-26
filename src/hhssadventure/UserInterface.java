@@ -98,15 +98,15 @@ public class UserInterface extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void upActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_upActionPerformed
-        controller.forward();
+        controller.buttonForward();
     }//GEN-LAST:event_upActionPerformed
 
     private void leftActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_leftActionPerformed
-        controller.left();
+        controller.buttonLeft();
     }//GEN-LAST:event_leftActionPerformed
 
     private void rightActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rightActionPerformed
-        controller.right();
+        controller.buttonRight();
     }//GEN-LAST:event_rightActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

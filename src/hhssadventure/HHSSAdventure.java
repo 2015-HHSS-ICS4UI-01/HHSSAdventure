@@ -16,6 +16,7 @@ import java.util.Scanner;
 public class HHSSAdventure {
     
     private UserInterface gui;
+    
 
     public HHSSAdventure() {
         FileReader file = null;
@@ -28,7 +29,19 @@ public class HHSSAdventure {
     }
     
     public void nextDescription(){
-        gui.setDescription(getDescription())
+     
+    }
+    
+    public void buttonForward(){
+        
+    }
+    
+    public void buttonLeft(){
+        
+    }
+    
+    public void buttonRight(){
+        
     }
 
     /**
