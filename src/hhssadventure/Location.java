@@ -22,9 +22,6 @@ public class Location {
     public Location(Scanner input){
         name = input.nextLine();
 
-       
-        
-        
         scenes = new Scene[4];
 
         
@@ -67,6 +64,10 @@ public class Location {
             dirNum = 3;
         }
         return scenes[dirNum].frontBlocked();
+    }
+    
+    public String getLocation(String dir){
+        return this.name;
     }
     
     public String getDescription(String dir){

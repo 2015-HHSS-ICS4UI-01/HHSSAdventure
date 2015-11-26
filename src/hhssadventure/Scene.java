@@ -29,7 +29,7 @@ public class Scene {
         direction = input.next();
 
         picture = input.next();
-        System.out.println(picture);
+
         img = null;
         try {
             img = ImageIO.read(new File("images/" + picture));
@@ -38,15 +38,16 @@ public class Scene {
             System.exit(0);
         }
         here = input.next();
-        if (here.equals("true")) {
-            blocked = true;
+        if (here.equals("false")) {
+            blocked = false;
             nextPicture = input.next();
             nextDirection = input.next();
 
         } else {
-            blocked = false;
+            blocked = true;
 
         }
+        
         input.nextLine();
 
 

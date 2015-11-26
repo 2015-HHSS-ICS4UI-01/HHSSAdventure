@@ -24,6 +24,11 @@ public class HHSSAdventure {
     
     private ArrayList<Location> location = new ArrayList<>();
     private int locationNum = 0;
+    private String currentLocation;
+    private String currentDir;
+    
+    private Location Location;
+    private Scene Scene;
     
     
     public HHSSAdventure(){
@@ -48,8 +53,47 @@ public class HHSSAdventure {
                      location.add(l);
                   }
             
-            
+            currentDir = startingDirection;
+            currentLocation = startingLocation;
 }
+   
+    public void forward(){
+        if(!Location.isFrontBlocked(currentDir)){
+            currentLocation = Location.NextLocation(currentLocation);
+            currentDir = Scene.nextDirection();
+        }
+        
+
+    }
+    public void turnRight(){
+        if(currentDir == "N"){
+            currentDir = "E";
+        }
+        else if(currentDir == "E"){
+            currentDir = "S";
+        }
+        else if(currentDir == "S"){
+            currentDir = "W";
+        }
+        else if(currentDir == "W"){
+            currentDir = "N";
+        }
+    }
+    public void turnLeft(){
+        if(currentDir == "N"){
+            currentDir = "W";
+        }
+        else if(currentDir == "E"){
+            currentDir = "N";
+        }
+        else if(currentDir == "S"){
+            currentDir = "E";
+        }
+        else if(currentDir == "W"){
+            currentDir = "S";
+        }
+    }
+    
     
     
     public static void main(String[] args) {
