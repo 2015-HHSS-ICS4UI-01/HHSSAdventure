@@ -20,10 +20,10 @@ public class Locations {
     private boolean isFrontBlocked;
     private String description;
     private Scenes nextLocation;
-
+    
+    
     public Locations(Scanner input) {
         place = input.nextLine();
-        input.nextLine();
         for (int i = 0; i < 4; i++) {
             Scenes s = new Scenes(input);
             scenes[i] = s;
@@ -44,6 +44,10 @@ public class Locations {
     
     public String nextLocation(){
         return nextLocation.getNextLocation();
+    }
+    
+    public String getPlace(String p){
+        return "";
     }
 }
 

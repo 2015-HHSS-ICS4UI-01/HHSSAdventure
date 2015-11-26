@@ -18,6 +18,7 @@ public class HHSSAdventure {
     private AdventureInterface gui;
     private String currentPlace;
     private String currentDirection;
+    private Locations forward;
     
     public HHSSAdventure(){
         FileReader file = null;
@@ -47,7 +48,7 @@ public class HHSSAdventure {
 
     }
     public void turnLeft(){
-        //turn left
+        
     }
     
     public void turnRight(){
@@ -55,7 +56,9 @@ public class HHSSAdventure {
     }
     
     public void goForward(){
-        
+        if(forward.isFrontBlocked()){
+            currentPlace = forward.nextLocation();
+        }
     }
     
     

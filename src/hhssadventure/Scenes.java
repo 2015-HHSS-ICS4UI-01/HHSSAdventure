@@ -22,10 +22,12 @@ public class Scenes {
     private String nextLocation;
     private String nextDir;
     private String description;
+    private BufferedImage image;
     
     Scenes(Scanner input) {
         dir = input.next();
         picName = input.next();
+        loadPic(picName);
         String check = input.next();
         if (check.equals("false")) {
             isFrontBlocked = false;
@@ -34,8 +36,7 @@ public class Scenes {
         }else{
             isFrontBlocked = true;    
         }
-        description = input.next();
-        input.nextLine();
+        description = input.nextLine();
     }
     
     public boolean isFrontBlocked(){
@@ -50,14 +51,17 @@ public class Scenes {
         return description;
     }
     
-    public BufferedImage getpic(String picName) {
-        BufferedImage img = null;
+    private void loadPic(String picName) {
+        image = null;
         try{
-            ImageIO.read(new File("picName"));
+            image = ImageIO.read(new File(picName));
         }catch(Exception e){
             e.printStackTrace();
             System.exit(0);
         }
-        return img;
+    }
+    
+    public BufferedImage getPic(){
+        return image;
     }
 }
