@@ -15,7 +15,7 @@ N IMG_0054.JPG false Upstairs2 N
 E IMG_0055.JPG false Glass E
 S IMG_0056.JPG true
 W IMG_0057.JPG false Math1 W
-Math1 
+Math1
 N IMG_0058.JPG true
 E IMG_0059.JPG false Upstairs3 E
 S IMG_0060.JPG true

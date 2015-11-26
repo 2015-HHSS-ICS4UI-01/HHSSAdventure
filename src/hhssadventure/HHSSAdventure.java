@@ -19,7 +19,7 @@ public class HHSSAdventure {
     private String startingDirection;
     private String currentLocation;
     private String currentDirection;
-    
+    private UserInterface gui;
     /**
      * @param args the command line arguments
      */
