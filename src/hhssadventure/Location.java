@@ -18,13 +18,12 @@ public class Location {
     
     
     public Location(Scanner input){
-        
         scenes = new Scene[3];
         name = input.nextLine();
-        for (int i = 0; i < 4; i++){
+        for (int i = 0; i < 3; i++){
          Scene s = new Scene(input);
          scenes[i] = s;
-        } input.next();
+        } input.nextLine();
         
         
     }
