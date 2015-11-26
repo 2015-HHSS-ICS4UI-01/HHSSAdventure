@@ -15,7 +15,10 @@ public class UserInterface extends javax.swing.JFrame {
         
         public HHSSAdventure Controller;
         
-       
+        public UserInterface(HHSSAdventure Controller){
+            this.Controller = Controller;
+            
+        }
         
         
         
