@@ -14,7 +14,7 @@ import java.util.Scanner;
  */
 public class Location {
 
-    private Scene[] scenes = new Scene[3];
+    private Scene[] scenes = new Scene[4];
     private String name;
 
     public Location(Scanner constructor) {
