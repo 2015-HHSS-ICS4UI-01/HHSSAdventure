@@ -45,7 +45,7 @@ public class AdventureInterface extends javax.swing.JFrame {
         RightButton = new javax.swing.JButton();
         LeftButton = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
-        Description = new javax.swing.JTextArea();
+        description = new javax.swing.JTextArea();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -76,9 +76,9 @@ public class AdventureInterface extends javax.swing.JFrame {
         picturePanel1.add(LeftButton);
         LeftButton.setBounds(0, 220, 51, 23);
 
-        Description.setColumns(20);
-        Description.setRows(5);
-        jScrollPane1.setViewportView(Description);
+        description.setColumns(20);
+        description.setRows(5);
+        jScrollPane1.setViewportView(description);
 
         picturePanel1.add(jScrollPane1);
         jScrollPane1.setBounds(0, 250, 482, 50);
@@ -97,19 +97,20 @@ public class AdventureInterface extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    public void setDescription(String Description){
+        description.setText(Description);
+    }
+    
     private void RightButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RightButtonActionPerformed
-        
-        
+        controller.turnRight();
     }//GEN-LAST:event_RightButtonActionPerformed
 
     private void ForwardButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ForwardButtonActionPerformed
-        
-        
+        controller.goForward();
     }//GEN-LAST:event_ForwardButtonActionPerformed
 
     private void LeftButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LeftButtonActionPerformed
-        
-        
+        controller.turnLeft();
     }//GEN-LAST:event_LeftButtonActionPerformed
 
     /**
@@ -147,10 +148,10 @@ public class AdventureInterface extends javax.swing.JFrame {
         });
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JTextArea Description;
     private javax.swing.JButton ForwardButton;
     private javax.swing.JButton LeftButton;
     private javax.swing.JButton RightButton;
+    private javax.swing.JTextArea description;
     private javax.swing.JScrollPane jScrollPane1;
     private hhssadventure.PicturePanel picturePanel1;
     // End of variables declaration//GEN-END:variables

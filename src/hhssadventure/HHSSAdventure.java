@@ -36,7 +36,8 @@ public class HHSSAdventure {
         //
 
 
-        
+        currentPlace = input.nextLine();
+        currentDirection = input.nextLine();
         while (input.hasNext()) {
             Locations l = new Locations(input);
             locations.add(l);
@@ -44,6 +45,17 @@ public class HHSSAdventure {
         
         gui = new AdventureInterface(this);
 
+    }
+    public void turnLeft(){
+        //turn left
+    }
+    
+    public void turnRight(){
+        
+    }
+    
+    public void goForward(){
+        
     }
     
     
