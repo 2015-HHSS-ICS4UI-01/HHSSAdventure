@@ -105,7 +105,7 @@ public class HHSSAdventure {
         //currentLocation
         //switchLocation(name,direction)
         
-//        HHSSAdventure f = new HHSSAdventure();
+        HHSSAdventure f = new HHSSAdventure();
     }
     
 }
