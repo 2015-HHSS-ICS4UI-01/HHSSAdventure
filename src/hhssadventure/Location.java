@@ -17,19 +17,22 @@ public class Location {
     
     
     
-     public void getImage(direction){
+     public String getImage(int direction){
+        return this.Images;
+    }
+    
+    public void isFrontBlocked(int direction){
+        while (frontBlocked == true){
+            
+        }
         
     }
     
-    public boolean isFontBlocked(direction){
+    public void getDescription(int direction){
         
     }
     
-    public void getDescription(direction){
-        
-    }
-    
-    public void getNextLocation(direction){
-        
+    public void getNextLocation(int direction){
+        return scene[direction].getName()
     }
 }

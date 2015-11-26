@@ -7,6 +7,7 @@ package hhssadventure;
 
 
 import java.io.FileReader;
+import java.util.ArrayList;
 import java.util.Scanner;
 
 /**
@@ -14,18 +15,31 @@ import java.util.Scanner;
  * @author lamon
  */
 public class HHSSAdventure {
-
-    public HHSSAdventure() {
-        try {
-            FileReader file = new FileReader("file.txt");
-            Scanner s = new Scanner(file);
-            while (s.hasNext()) {
-                System.out.println(s.nextInt());
-            }
-        } catch (Exception e) {
+        // an array List to store classes
+        // just like our list AUT lessons
+        ArrayList<Class> classes = new ArrayList<Class>();
+        private UserInterface gui;
+        private int classNum = 0;
+        
+        public HHSSAdventure(){
+        // used to help read a file
+        FileReader file = null;
+        try{
+            file = new FileReader("students/students.txt");
+        }catch(Exception e){
+            // prints out the error message
             e.printStackTrace();
+            // stops the program
+            System.exit(0);
         }
+        // creates a scanner to read the file
+        Scanner input = new Scanner(file);
+        // keeps scanning as long as there is something to scan in
+        while(input.hasNext()){
+
     }
+        }
+        
 
     /**
      * @param args the command line arguments
@@ -33,5 +47,16 @@ public class HHSSAdventure {
     public static void main(String[] args) {
     }
    
-    
+        
+        
+     public void forward(){
+         
+     }
+     
+      public void left(){
+          
+      }
+       public void right(){
+           
+       }
 }
