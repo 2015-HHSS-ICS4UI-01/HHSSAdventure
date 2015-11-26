@@ -52,7 +52,7 @@ public class HHSSAdventure {
     public void nextLocation() {
         //set the text for the next class
         Location c = locations.get(getNextLocation());
-        gui.setPictureName(c.getCourseCode());
+        gui.setPictureName(c.getDescription());
     }
 
     public void turnLeft() {
