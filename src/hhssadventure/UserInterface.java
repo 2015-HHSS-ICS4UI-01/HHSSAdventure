@@ -9,10 +9,10 @@ package hhssadventure;
  * @author yaol9270
  */
 public class UserInterface extends javax.swing.JFrame {
-        boolean f = false;
-        boolean l = false;
-        boolean r = false;
-
+        public boolean forwardButton = false;
+        public boolean leftButton = false;
+        public boolean rightButton = false;
+        
     /**
      * Creates new form UserInterface
      */
@@ -88,15 +88,15 @@ public class UserInterface extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void forwardActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_forwardActionPerformed
-        // TODO add your handling code here:
+       forwardButton = true; 
     }//GEN-LAST:event_forwardActionPerformed
 
     private void leftActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_leftActionPerformed
-        // TODO add your handling code here:
+        leftButton = true;
     }//GEN-LAST:event_leftActionPerformed
 
     private void rightActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rightActionPerformed
-        // TODO add your handling code here:
+        rightButton = true;
     }//GEN-LAST:event_rightActionPerformed
 
     /**
