@@ -26,12 +26,15 @@ public class Location {
         }
     }
 
-    public String getImage() {
+
+    
+    public String getImage(int position) {
         return scenes[position].getPicture();
     }
 
     public boolean isFrontBlocked() {
-        return n.getClass;
+        Scene c = new Scene();
+        return c.isFrontBlocked;
     }
 
     public String getDescription() {
