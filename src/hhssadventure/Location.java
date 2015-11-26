@@ -24,7 +24,7 @@ public class Location {
         for (int i = 0; i < 4; i++){
          Scene s = new Scene(input);
          scenes[i] = s;
-        } input.next();
+        } input.nextLine();
         
         
     }

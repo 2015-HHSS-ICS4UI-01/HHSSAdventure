@@ -6,6 +6,7 @@
 package hhssadventure;
 
 import java.io.FileReader;
+import java.util.ArrayList;
 import java.util.Scanner;
 
 /**
@@ -17,28 +18,56 @@ public class HHSSAdventure {
     /**
      * @param args the command line arguments
      */
-    public static void main(String[] args) {
-      FileReader file = null;
-        
-        try
-        {
-           file = new FileReader("images/pics.txt");
-          
-        }catch(Exception e)
-     {
-          e.printStackTrace();
-     }
-       
-        Scanner s = new Scanner(file);
+    int counter = 0;
+    private ArrayList<Class> locations = new ArrayList<>();
+    private String startingLocation;
+    private String startDirection;
+    public HHSSAdventure() {
+        FileReader file = null;
+
+        try {
+            file = new FileReader("images/pics.txt");
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        Scanner input = new Scanner(file);
 //          while(s.hasNext())
 //          {
 //             System.out.println(s.nextLine());
 //          }
-          
-           Location v = new Location(s);
-           Scene c = new Scene(s);
-           
-           System.out.println(c.getDirection());
+
+        startingLocation = input.nextLine();
+        startDirection = input.nextLine();
+        System.out.println(startingLocation);
+        System.out.println(startDirection);
+         Location c = new Location(input);
+        Location w = new Location(input);
+        Scene t = new Scene(input);
+        
+        System.out.println(c.name());
+        System.out.println(t.getDirection());
+        
+    }
+
+    public void startLocation(Scanner input) {
+        if (counter == 0) {
+        }
+    }
+
+    public void currentLocation() {
+    }
+
+    public void currentDirection() {
+    }
+
+    public void findLocation() {
+    }
+
+    public static void main(String[] args) {
+        HHSSAdventure game = new HHSSAdventure();
+        
         
     }
 }
