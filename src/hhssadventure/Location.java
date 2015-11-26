@@ -13,26 +13,18 @@ import java.util.Scanner;
  */
 public class Location {
 
-    private String name;
+    private String location;
     private ArrayList<Scene> scenes = new ArrayList<>();
-    private int sceneNum = 0;
-     
 
     public Location(Scanner in) {
-        name = in.nextLine();
+        location = in.nextLine();
         for (int i = 0; i < 4; i++) {
             Scene s = new Scene(in);
             scenes.add(s);
         }
     }
 
-    public String getName() {
-        return name;
+    public String location() {
+        return location();
     }
-    
-    public String nextDir() {
-        return scenes.get(sceneNum).getNextDir();
-    }
-    
-    
 }
