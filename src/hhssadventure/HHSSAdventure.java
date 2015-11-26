@@ -47,6 +47,8 @@ public class HHSSAdventure {
                      Location l = new Location(input);
                      location.add(l);
                   }
+            
+            
 }
     
     
