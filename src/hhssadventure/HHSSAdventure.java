@@ -20,6 +20,11 @@ public class HHSSAdventure {
     private String currentLocation;
     private String currentDirection;
     private UserInterface gui;
+    private int locationNumber = 0;
+    
+    
+    
+    
     /**
      * @param args the command line arguments
      */
@@ -55,6 +60,12 @@ public class HHSSAdventure {
             locations.add(a);
         }
         
+        gui = new UserInterface(this);
+        //set the text for the class name
+        Location l = locations.get(locationNumber);
+        
+        //show it
+        gui.setVisible(true);
         
     }
 }

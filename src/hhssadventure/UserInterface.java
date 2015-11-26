@@ -11,12 +11,25 @@ package hhssadventure;
  */
 public class UserInterface extends javax.swing.JFrame {
 
+    private HHSSAdventure controller; 
+    public UserInterface(HHSSAdventure a){
+       this();
+       controller = a;
+    }
     /**
      * Creates new form UserInterface
      */
     public UserInterface() {
         initComponents();
     }
+    
+    public void setLocationName(String name){
+        
+        locationName.setText(name);
+    }
+
+    
+   
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -27,38 +40,46 @@ public class UserInterface extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
+        next = new javax.swing.JButton();
+        prev = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jButton1.setText("jButton1");
+        next.setText("Next");
 
-        jButton2.setText("jButton2");
+        prev.setText("Prev");
+        prev.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                prevActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jButton2)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 534, Short.MAX_VALUE)
-                .addComponent(jButton1)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(prev)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 580, Short.MAX_VALUE)
+                .addComponent(next)
                 .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(320, Short.MAX_VALUE)
+                .addContainerGap(466, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton1)
-                    .addComponent(jButton2))
-                .addGap(157, 157, 157))
+                    .addComponent(prev)
+                    .addComponent(next))
+                .addContainerGap())
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void prevActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_prevActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_prevActionPerformed
 
     /**
      * @param args the command line arguments
@@ -96,7 +117,7 @@ public class UserInterface extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
+    private javax.swing.JButton next;
+    private javax.swing.JButton prev;
     // End of variables declaration//GEN-END:variables
 }
