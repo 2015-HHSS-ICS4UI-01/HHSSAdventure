@@ -98,15 +98,18 @@ public class AdventureInterface extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void RightButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RightButtonActionPerformed
-        // TODO add your handling code here:
+        
+        
     }//GEN-LAST:event_RightButtonActionPerformed
 
     private void ForwardButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ForwardButtonActionPerformed
-        // TODO add your handling code here:
+        
+        
     }//GEN-LAST:event_ForwardButtonActionPerformed
 
     private void LeftButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LeftButtonActionPerformed
-        // TODO add your handling code here:
+        
+        
     }//GEN-LAST:event_LeftButtonActionPerformed
 
     /**

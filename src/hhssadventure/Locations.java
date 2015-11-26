@@ -19,7 +19,7 @@ public class Locations {
     private BufferedImage image;
     private boolean isFrontBlocked;
     private String description;
-    
+    private Scenes nextLocation;
 
     public Locations(Scanner input) {
         place = input.nextLine();
@@ -42,8 +42,8 @@ public class Locations {
         return description;
     }
     
-    public String nextLocation(Scanner input){
-        return "";
+    public String nextLocation(){
+        return nextLocation.getNextLocation();
     }
 }
 
