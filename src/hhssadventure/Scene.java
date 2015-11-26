@@ -20,6 +20,7 @@ import javax.swing.JFrame;
 public class Scene extends Panel {
     
     private String direction;
+    private String frontBlockedString;
     private boolean frontBlocked;
     private String nextLocation;
     private String description;
@@ -31,13 +32,18 @@ public class Scene extends Panel {
   public Scene(Scanner constructor) {
       direction = constructor.next();
       imageName = constructor.next();
-      frontBlocked = constructor.nextBoolean();
-      if(frontBlocked == false){
+      frontBlockedString = constructor.next();
+      if(frontBlockedString.equals("false")){
+          frontBlocked = false;
           nextLocation = constructor.next();
-          nextDirection = constructor.next();
+          nextDirection = constructor.next();    
       }
-      constructor.nextLine();
-  }   
+//      if(frontBlocked == false){
+//          nextLocation = constructor.next();
+//          nextDirection = constructor.next();
+//      }
+      constructor.nextLine(); 
+  }
      
   public Scene(){
   try {
