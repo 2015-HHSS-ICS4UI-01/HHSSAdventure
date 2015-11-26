@@ -21,6 +21,7 @@ public class HHSSAdventure {
     private ArrayList<Location> locations = new ArrayList<>();
     private Interface gui;
     private int num = 0;
+    private Location storedLocation;
     
     public String currentLocation = null;
     public String currentDirection = null;
@@ -51,6 +52,12 @@ public class HHSSAdventure {
             locations.add(l);
         }
         
+        for(int i = 0; i < locations.size(); i++){
+            if(currentLocation.equals(locations.get(i).getName())){
+                Location l = locations.get(i);
+            }
+        }
+        
         gui = new Interface(this);
         for(int i = 0; i < locations.size(); i++){
             if(currentLocation.equals(locations.get(i).getName())){
@@ -61,7 +68,7 @@ public class HHSSAdventure {
         
         
         gui.setVisible(true);
-        
+        System.out.println(storedLocation.getName());
     }
     
     
@@ -82,15 +89,13 @@ public class HHSSAdventure {
     }
     
     public void advance(){
-        for(int i = 0; i < locations.size(); i++){
-            if(currentLocation.equals(locations.get(i).getName())){
-                Location l = locations.get(i);
-                currentLocation = l.getSceneNextLocation(currentDirection);
-                currentDirection = l.getSceneNextDirection(currentDirection);
+        
+                currentLocation = storedLocation.getSceneNextLocation(currentDirection);
+                currentDirection = storedLocation.getSceneNextDirection(currentDirection);
                 //gui.setImage();
             }
-        }
-    }
+        
+    
     
     
         
