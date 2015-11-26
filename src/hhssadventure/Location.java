@@ -16,6 +16,8 @@ public class Location {
     private int numOfPictures;
     private Scene[] scenes;
     private Scene c = new Scene();
+    
+
 
     public Location(Scanner input) {
         name = input.nextLine();

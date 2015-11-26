@@ -43,7 +43,7 @@ public class HHSSAdventure {
 
         gui = new InterfaceGame(this);
         //set the text for the next class
-        Location c = locations.get(numOfPictures);
+        Location c = locations.get(getImage());
         gui.setPictureName(c.getDescription());
         //show it
         gui.setVisible(true);
