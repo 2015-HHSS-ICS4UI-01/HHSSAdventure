@@ -13,7 +13,7 @@ public class UserInterface extends javax.swing.JPanel {
      private HHSSAdventure controller;
      
      
-      public Interface(HHSSAdventure c){
+      public UserInterface(HHSSAdventure c){
         this(); // calling the old constructor below
         controller = c;
       }
@@ -24,6 +24,9 @@ public class UserInterface extends javax.swing.JPanel {
         initComponents();
     }
 
+    public void setDescription(String name){
+        Description.setText("noob");
+    }
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -36,6 +39,7 @@ public class UserInterface extends javax.swing.JPanel {
         right = new javax.swing.JButton();
         left = new javax.swing.JButton();
         up = new javax.swing.JButton();
+        Description = new javax.swing.JLabel();
 
         right.setText("Right");
         right.addActionListener(new java.awt.event.ActionListener() {
@@ -58,6 +62,8 @@ public class UserInterface extends javax.swing.JPanel {
             }
         });
 
+        Description.setText("description");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
@@ -70,11 +76,17 @@ public class UserInterface extends javax.swing.JPanel {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 41, Short.MAX_VALUE)
                 .addComponent(right)
                 .addGap(83, 83, 83))
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(Description, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap(257, Short.MAX_VALUE)
+                .addContainerGap()
+                .addComponent(Description, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 232, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(left)
@@ -98,6 +110,7 @@ public class UserInterface extends javax.swing.JPanel {
     }//GEN-LAST:event_rightActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel Description;
     private javax.swing.JButton left;
     private javax.swing.JButton right;
     private javax.swing.JButton up;

@@ -52,12 +52,15 @@ public class HHSSAdventure {
         
      public void forward(){
          
+         
      }
      
       public void left(){
           
       }
+      
        public void right(){
            
        }
+       
 }

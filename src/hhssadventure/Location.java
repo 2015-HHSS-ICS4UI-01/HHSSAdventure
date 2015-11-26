@@ -12,8 +12,6 @@ public class Location {
     
     int[] Scene;
     
-    Scene[] = new int[4];
-    
     
     
     
@@ -33,6 +31,6 @@ public class Location {
     }
     
     public void getNextLocation(int direction){
-        return scene[direction].getName()
+        return scene[direction].getName();
     }
 }
