@@ -1,3 +1,4 @@
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -25,7 +26,7 @@ public class HHSSAdventure {
         // used to help read a file
         FileReader file = null;
         try{
-            file = new FileReader("students/students.txt");
+            file = new FileReader("file.txt");
         }catch(Exception e){
             // prints out the error message
             e.printStackTrace();
