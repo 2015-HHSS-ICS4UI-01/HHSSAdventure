@@ -46,4 +46,8 @@ public class Location {
     public String getNextLocation() {
         return c.getNextLocation();
     }
+    
+    public int getNumOfPictures() {
+        return this.numOfPictures;
+    }
 }
