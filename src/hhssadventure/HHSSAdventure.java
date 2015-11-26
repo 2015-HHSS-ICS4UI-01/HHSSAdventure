@@ -39,12 +39,8 @@ public class HHSSAdventure {
         GUI.setVisible(true);
     }
     
-    public String getDir() {
-        return dir;
-    }
-    
-    public void nextLocation() {
-        dir = locations.get(locNum).nextDir();
+    public void switchLocation() {
+        
     }
     
     /**
