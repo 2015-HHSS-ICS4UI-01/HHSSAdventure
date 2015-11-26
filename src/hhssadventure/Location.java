@@ -34,7 +34,7 @@ public class Location {
 
     public boolean isFrontBlocked() {
         Scene c = new Scene();
-        return c.isFrontBlocked;
+        return c.getIsFrontBlocked();
     }
 
     public String getDescription() {
@@ -42,6 +42,7 @@ public class Location {
     }
 
     public String getNextLocation() {
-        return Scene.getClass(getNextLocation);
+        Scene c = new Scene();
+        return c.getNextLocation();
     }
 }
