@@ -36,7 +36,7 @@ public class Scene extends Panel {
           nextLocation = constructor.next();
           nextDirection = constructor.next();
       }
-      
+      constructor.nextLine();
   }   
      
   public Scene(){

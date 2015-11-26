@@ -45,7 +45,7 @@ public class HHSSAdventure {
         //read the starting location and direction
         currentLocation = input.nextLine();
         currentDirection = input.nextLine();
-
+        
         while(input.hasNext()){
             Location l = new Location(input);
             
@@ -54,11 +54,13 @@ public class HHSSAdventure {
         
         for(int i = 0; i < locations.size(); i++){
             if(currentLocation.equals(locations.get(i).getName())){
-                Location l = locations.get(i);
+                storedLocation = locations.get(i);
             }
         }
+        System.out.println(storedLocation.getName());
         
         gui = new Interface(this);
+        
         for(int i = 0; i < locations.size(); i++){
             if(currentLocation.equals(locations.get(i).getName())){
                 Location l = locations.get(i);
@@ -68,7 +70,7 @@ public class HHSSAdventure {
         
         
         gui.setVisible(true);
-        System.out.println(storedLocation.getName());
+        
     }
     
     
