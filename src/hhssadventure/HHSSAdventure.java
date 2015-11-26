@@ -44,7 +44,7 @@ public class HHSSAdventure {
     }
     
     public void nextLocation() {
-        dir = locations.get(locNum).nextDir();
+        
     }
     
     /**

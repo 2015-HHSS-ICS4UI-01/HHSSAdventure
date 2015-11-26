@@ -4,7 +4,6 @@
  */
 package hhssadventure;
 
-import java.awt.image.BufferedImage;
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -17,6 +16,7 @@ public class Location {
     private String name;
     private ArrayList<Scene> scenes = new ArrayList<>();
     private int sceneNum = 0;
+     
 
     public Location(Scanner in) {
         name = in.nextLine();
@@ -33,4 +33,6 @@ public class Location {
     public String nextDir() {
         return scenes.get(sceneNum).getNextDir();
     }
+    
+    
 }
