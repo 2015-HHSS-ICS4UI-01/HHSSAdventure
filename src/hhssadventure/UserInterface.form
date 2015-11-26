@@ -16,56 +16,60 @@
   <Layout>
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Group type="102" alignment="1" attributes="0">
-              <Component id="West" min="-2" max="-2" attributes="0"/>
-              <EmptySpace max="32767" attributes="0"/>
-              <Component id="East" min="-2" max="-2" attributes="0"/>
-          </Group>
-          <Group type="102" alignment="1" attributes="0">
-              <EmptySpace pref="349" max="32767" attributes="0"/>
-              <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="North" min="-2" max="-2" attributes="0"/>
-                  <Component id="South" min="-2" max="-2" attributes="0"/>
-              </Group>
-              <EmptySpace min="-2" pref="167" max="-2" attributes="0"/>
+          <Group type="102" alignment="0" attributes="0">
+              <EmptySpace min="-2" pref="82" max="-2" attributes="0"/>
+              <Component id="left" min="-2" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="41" max="-2" attributes="0"/>
+              <Component id="up" min="-2" max="-2" attributes="0"/>
+              <EmptySpace pref="41" max="32767" attributes="0"/>
+              <Component id="right" min="-2" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="83" max="-2" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
     <DimensionLayout dim="1">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Group type="102" alignment="0" attributes="0">
-              <Component id="North" min="-2" max="-2" attributes="0"/>
-              <EmptySpace min="-2" pref="112" max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="West" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="East" alignment="3" min="-2" max="-2" attributes="0"/>
+          <Group type="102" attributes="0">
+              <EmptySpace pref="257" max="32767" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="103" alignment="1" groupAlignment="3" attributes="0">
+                      <Component id="left" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="right" alignment="3" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <Group type="102" alignment="1" attributes="0">
+                      <Component id="up" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
+                  </Group>
               </Group>
-              <EmptySpace pref="134" max="32767" attributes="0"/>
-              <Component id="South" min="-2" max="-2" attributes="0"/>
+
           </Group>
       </Group>
     </DimensionLayout>
   </Layout>
   <SubComponents>
-    <Component class="javax.swing.JButton" name="East">
+    <Component class="javax.swing.JButton" name="right">
       <Properties>
-        <Property name="text" type="java.lang.String" value="East"/>
+        <Property name="text" type="java.lang.String" value="Right"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="rightActionPerformed"/>
+      </Events>
     </Component>
-    <Component class="javax.swing.JButton" name="West">
+    <Component class="javax.swing.JButton" name="left">
       <Properties>
-        <Property name="text" type="java.lang.String" value="West"/>
+        <Property name="text" type="java.lang.String" value="Left"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="leftActionPerformed"/>
+      </Events>
     </Component>
-    <Component class="javax.swing.JButton" name="North">
+    <Component class="javax.swing.JButton" name="up">
       <Properties>
-        <Property name="text" type="java.lang.String" value="North"/>
+        <Property name="text" type="java.lang.String" value="Up"/>
       </Properties>
-    </Component>
-    <Component class="javax.swing.JButton" name="South">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="South"/>
-      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="upActionPerformed"/>
+      </Events>
     </Component>
   </SubComponents>
 </Form>
