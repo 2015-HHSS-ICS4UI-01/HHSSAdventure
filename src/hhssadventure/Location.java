@@ -23,4 +23,8 @@ public class Location {
             scenes.add(s);
         }
     }
+
+    public String location() {
+        return location();
+    }
 }

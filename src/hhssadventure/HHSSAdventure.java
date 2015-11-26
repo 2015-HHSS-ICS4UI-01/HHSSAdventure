@@ -17,7 +17,8 @@ public class HHSSAdventure {
 
     private ArrayList<Location> locations = new ArrayList<>();
     private String location, dir;
-    private int locNum = 0;
+    private Location currentLocation;
+    private Scene currentScene;
     private Interface GUI;
 
     public HHSSAdventure() {
@@ -29,14 +30,19 @@ public class HHSSAdventure {
             System.exit(0);
         }
         Scanner in = new Scanner(file);
-        location = in.nextLine();
+        location = in.nextLine(); 
         dir = in.nextLine();
         while (in.hasNext()) {
             Location l = new Location(in);
+            if(location.equals(l.location())) {
+                currentLocation = l;
+                
+            }
             locations.add(l);
         }
         GUI = new Interface(this);
         GUI.setVisible(true);
+        
     }
     
     public void switchLocation() {
