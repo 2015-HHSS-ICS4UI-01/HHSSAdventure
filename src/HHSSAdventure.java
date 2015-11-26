@@ -69,7 +69,7 @@ public class HHSSAdventure {
     public Location getLocation(String name){
         int i = 0;
         
-        while(i<locations.size()-1&&!name.equals(locations.get(i).getName())){
+        while(i<locations.size()-1 &&!name.equals(locations.get(i).getName())){
          i++;
         }
         
@@ -118,6 +118,8 @@ public class HHSSAdventure {
          gui.setDirection(currentDirection);
          gui.setLocationName(currentLocation);
          gui.setPicture(this.getLocation(currentLocation).getScene(currentDirection).getImage());
+         System.out.println(currentLocation);
+         
      }   
     }
     
