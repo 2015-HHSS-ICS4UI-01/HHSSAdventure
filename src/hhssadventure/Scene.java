@@ -11,21 +11,20 @@ import java.util.Scanner;
  * @author isles3536
  */
 public class Scene {
-    private String name;
+    
     private String direction;
     private String image;
+    private String isBlocked;
     private boolean blocked;
     private String nextLocation;
     private String nextDirection;
     
     public Scene(Scanner input){
-      
-                
-        name = input.nextLine();
-        input.nextLine();
-        direction = input.next();
+       
+        direction = input.nextLine();
         image = input.next();
-        if(direction.equals("true")){
+        isBlocked = input.next();
+        if(isBlocked.equals("true")){
             blocked = true;
             input.nextLine();
         }else{
@@ -40,9 +39,6 @@ public class Scene {
             return this.direction;
         }
     
-    public String getName(){
-        return this.name;
-    }
     
     public String getImage(){
         return this.image;
