@@ -10,9 +10,7 @@ package hhssadventure;
  */
 public class Location {
     
-    int[] Scene;
-    
-    Scene[] = new int[4];
+   int[] Scene = new int[4];
     
     
     

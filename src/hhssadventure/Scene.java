@@ -34,22 +34,22 @@ public class Scene {
     }
 
     public String getDirection() {
-        return nextDirection;
+        return this.nextDirection;
     }
 
     public String getDescription() {
-        return desc;
+        return this.desc;
     }
     
     public String getCurrentDirection(){
-        return direction;
+        return this.direction;
     }
     
     public String getPicture(){
-        return picture;
+        return this.picture;
     }
 
     public boolean frontBlocked() {
-        return frontBlocked;
+        return this.frontBlocked;
     }
 }
