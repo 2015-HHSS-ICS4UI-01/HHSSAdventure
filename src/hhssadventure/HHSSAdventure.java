@@ -47,14 +47,12 @@ public class HHSSAdventure {
         Scene t = new Scene(input);
         
         System.out.println(c.name());
+        System.out.println("");
         System.out.println(t.getDirection());
         
     }
 
-    public void startLocation(Scanner input) {
-        if (counter == 0) {
-        }
-    }
+   
 
     public void currentLocation() {
     }
