@@ -39,6 +39,5 @@ public class HHSSAdventure {
         HHSSAdventure f = new HHSSAdventure();
         
     }
-   
-    
 }
+   
