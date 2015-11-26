@@ -21,7 +21,7 @@ public class Scene {
     
     public Scene(Scanner input){
        
-        direction = input.nextLine();
+        direction = input.next();
         image = input.next();
         isBlocked = input.next();
         if(isBlocked.equals("true")){
