@@ -10,8 +10,6 @@ import javax.imageio.ImageIO;
  */
 public class UserInterface extends javax.swing.JFrame {
     private HHSSAdventure controller;
-    private BufferedImage[] picture;
-    private String description;
     
     public UserInterface(HHSSAdventure c){
         this(); //calling the old constructor below
@@ -23,10 +21,19 @@ public class UserInterface extends javax.swing.JFrame {
         initComponents();
     }
     
-    public void setForward(){
+    public void setForward(boolean isBlocked){
+        if(isBlocked){
+            forwardScene.setText("Blocked");
+        }else{
+            forwardScene.setText("Forward");
+        }
         
     }
     
+    /**
+     * Sets a description of the scene in the user interface.
+     * @param description the description of the current scene.
+     */
     public void setDescription(String description){
         sceneDescript.setText(description);
     }
@@ -38,8 +45,6 @@ public class UserInterface extends javax.swing.JFrame {
     public void setImage(String image){
         //initialize the scene's picture
         BufferedImage img = null;
-        //display to show the scene's picture
-        PicturePanel imageDisplay = new PicturePanel();
         //imports the picture
         try{
             img = ImageIO.read(new File("images/" + image));
@@ -47,7 +52,6 @@ public class UserInterface extends javax.swing.JFrame {
             e.printStackTrace();
             System.exit(0);
         }
-        imageDisplay.setImage(img);
         
     }
 
@@ -83,6 +87,11 @@ public class UserInterface extends javax.swing.JFrame {
         });
 
         rightScene.setText("Right");
+        rightScene.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                rightSceneActionPerformed(evt);
+            }
+        });
 
         sceneDescript.setText("DESCRIPTION");
 
@@ -125,12 +134,26 @@ public class UserInterface extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void leftSceneActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_leftSceneActionPerformed
-        
+        //move to the left
+        controller.prevScene();
     }//GEN-LAST:event_leftSceneActionPerformed
 
     private void forwardSceneActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_forwardSceneActionPerformed
-        
+        //if the area forward is blocked
+        if(forwardScene.getText().equals("Blocked")){
+            //do nothing
+        }
+        //if the area forward is not blocked
+        else{
+            //move forward
+            //controller.switchLocation("Caf3", "E");
+        }
     }//GEN-LAST:event_forwardSceneActionPerformed
+
+    private void rightSceneActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rightSceneActionPerformed
+        //move to the right
+        controller.nextScene();
+    }//GEN-LAST:event_rightSceneActionPerformed
 
     /**
      * @param args the command line arguments

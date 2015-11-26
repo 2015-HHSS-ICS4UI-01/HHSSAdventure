@@ -42,7 +42,7 @@ public class HHSSAdventure {
             locations.add(l);
         }
         
-        gui = new UserInterface(this);
+        gui = new UserInterface(this);        
         Location currentLoc = null;
         for(int i = 0; i < locations.size(); i++){
             if(currentLocation.equals(locations.get(i).getName())){
@@ -52,6 +52,7 @@ public class HHSSAdventure {
         }
         gui.setDescription(currentLoc.getDescription(currentDirection));
         gui.setImage(currentLoc.getImage(currentDirection));
+        gui.setForward(currentLoc.isBlocked(currentDirection));
         gui.setVisible(true);
     }
     
@@ -62,12 +63,56 @@ public class HHSSAdventure {
         if(currentDirection.equals("N")){
             currentDirection = "W";
         }
+        else if(currentDirection.equals("W")){
+            currentDirection = "S";
+        }
+        else if(currentDirection.equals("S")){
+            currentDirection = "E";
+        }
+        else{
+            currentDirection = "N";
+        }
+        
+        Location currentLoc = null;
+        for(int i = 0; i < locations.size(); i++){
+            if(currentLocation.equals(locations.get(i).getName())){
+                currentLoc = locations.get(i);
+                break;
+            }
+        }
+        gui.setDescription(currentLoc.getDescription(currentDirection));
+        gui.setImage(currentLoc.getImage(currentDirection));
+        gui.setForward(currentLoc.isBlocked(currentDirection));
     }
     
     /**
      * Moves the user to the scene right of their current direction.
      */
     public void nextScene(){
+        if(currentDirection.equals("N")){
+            currentDirection = "E";
+        }
+        else if(currentDirection.equals("E")){
+            currentDirection = "S";
+        }
+        else if(currentDirection.equals("S")){
+            currentDirection = "W";
+        }
+        else{
+            currentDirection = "N";
+        }
+        
+        Location currentLoc = null;
+        for(int i = 0; i < locations.size(); i++){
+            if(currentLocation.equals(locations.get(i).getName())){
+                currentLoc = locations.get(i);
+                break;
+            }
+        }
+        System.out.println(currentDirection);
+        gui.setDescription(currentLoc.getDescription(currentDirection));
+        gui.setImage(currentLoc.getImage(currentDirection));
+        gui.setForward(currentLoc.isBlocked(currentDirection));
         
     }
     
@@ -77,7 +122,18 @@ public class HHSSAdventure {
      * @param direction the direction the user will face in the new location.
      */
     public void switchLocation(String name, String direction){
-        
+        currentLocation = name;
+        currentDirection = direction;
+        Location currentLoc = null;
+        for(int i = 0; i < locations.size(); i++){
+            if(currentLocation.equals(locations.get(i).getName())){
+                currentLoc = locations.get(i);
+                break;
+            }
+        } 
+        gui.setDescription(currentLoc.getDescription(currentDirection));
+        gui.setImage(currentLoc.getImage(currentDirection));
+        gui.setForward(currentLoc.isBlocked(currentDirection));
     }
         
     /**

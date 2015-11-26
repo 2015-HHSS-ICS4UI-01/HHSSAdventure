@@ -85,11 +85,11 @@ Caf1
 N IMG_0083.JPG true
 You see a cafeteria. Groups of students sit at some at the tables; the rest are empty. A large window at the back allows you to see outside of the school.
 E IMG_0084.JPG false Caf3 E
-
+An open hallway. To your left is the cafeteria. Up ahead to the right is the office. There is a photo on the wall above the office.
 S IMG_0085.JPG false Caf2 S
-
+The foyer. There are benches forming an "X" around a garbage can. There is a row of doors up ahead. Wait... up above... are those camels?
 W IMG_0086.JPG false Eng3 W
-
+There is custodial equipment, and a pile of garbage at the sides of this hallway. Up ahead, a student is walking towards your direction.
 Caf2
 N IMG_0087.JPG false Caf1 N
 
