@@ -43,7 +43,7 @@ public class Locations {
     }
     
     public String nextLocation(Scanner input){
-        
+        return "";
     }
 }
 

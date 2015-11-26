@@ -6,6 +6,8 @@ package hhssadventure;
 
 import java.awt.image.BufferedImage;
 
+
+
 /**
  *
  * @author janaj4926
@@ -13,9 +15,12 @@ import java.awt.image.BufferedImage;
 public class AdventureInterface extends javax.swing.JFrame {
 
     
+    private HHSSAdventure controller;
+    
     public AdventureInterface(HHSSAdventure c){
         this();
         controller = c;
+        
     }
     
     /**
@@ -35,21 +40,74 @@ public class AdventureInterface extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        picturePanel1 = new hhssadventure.PicturePanel();
+        ForwardButton = new javax.swing.JButton();
+        RightButton = new javax.swing.JButton();
+        LeftButton = new javax.swing.JButton();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        Description = new javax.swing.JTextArea();
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        ForwardButton.setText("Forward");
+        ForwardButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ForwardButtonActionPerformed(evt);
+            }
+        });
+        picturePanel1.add(ForwardButton);
+        ForwardButton.setBounds(200, 210, 73, 23);
+
+        RightButton.setText("Right");
+        RightButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                RightButtonActionPerformed(evt);
+            }
+        });
+        picturePanel1.add(RightButton);
+        RightButton.setBounds(410, 220, 57, 23);
+
+        LeftButton.setText("Left");
+        LeftButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                LeftButtonActionPerformed(evt);
+            }
+        });
+        picturePanel1.add(LeftButton);
+        LeftButton.setBounds(0, 220, 51, 23);
+
+        Description.setColumns(20);
+        Description.setRows(5);
+        jScrollPane1.setViewportView(Description);
+
+        picturePanel1.add(jScrollPane1);
+        jScrollPane1.setBounds(0, 250, 482, 50);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addComponent(picturePanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 482, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addComponent(picturePanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void RightButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RightButtonActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_RightButtonActionPerformed
+
+    private void ForwardButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ForwardButtonActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_ForwardButtonActionPerformed
+
+    private void LeftButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LeftButtonActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_LeftButtonActionPerformed
 
     /**
      * @param args the command line arguments
@@ -86,5 +144,11 @@ public class AdventureInterface extends javax.swing.JFrame {
         });
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JTextArea Description;
+    private javax.swing.JButton ForwardButton;
+    private javax.swing.JButton LeftButton;
+    private javax.swing.JButton RightButton;
+    private javax.swing.JScrollPane jScrollPane1;
+    private hhssadventure.PicturePanel picturePanel1;
     // End of variables declaration//GEN-END:variables
 }
