@@ -75,40 +75,40 @@ public class AdventureFrame extends javax.swing.JFrame {
         locationName.setForeground(new java.awt.Color(255, 0, 0));
         locationName.setText("jLabel1");
         picturePaint1.add(locationName);
-        locationName.setBounds(210, 30, 160, 33);
+        locationName.setBounds(270, 10, 160, 33);
 
         Direction.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         Direction.setForeground(new java.awt.Color(255, 0, 0));
         Direction.setText("jLabel1");
         picturePaint1.add(Direction);
-        Direction.setBounds(220, 10, 56, 22);
+        Direction.setBounds(270, 40, 56, 22);
 
-        Advance.setText("^");
+        Advance.setText("Forward");
         Advance.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 AdvanceActionPerformed(evt);
             }
         });
         picturePaint1.add(Advance);
-        Advance.setBounds(220, 320, 41, 23);
+        Advance.setBounds(290, 500, 90, 50);
 
-        Right.setText(">");
+        Right.setText("Right");
         Right.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 RightActionPerformed(evt);
             }
         });
         picturePaint1.add(Right);
-        Right.setBounds(440, 320, 41, 23);
+        Right.setBounds(570, 500, 90, 50);
 
-        Left.setText("<");
+        Left.setText("Left");
         Left.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 LeftActionPerformed(evt);
             }
         });
         picturePaint1.add(Left);
-        Left.setBounds(0, 320, 41, 23);
+        Left.setBounds(0, 500, 80, 50);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -117,15 +117,15 @@ public class AdventureFrame extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(189, Short.MAX_VALUE))
             .addComponent(picturePaint1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addComponent(picturePaint1, javax.swing.GroupLayout.PREFERRED_SIZE, 350, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(picturePaint1, javax.swing.GroupLayout.PREFERRED_SIZE, 556, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
 
