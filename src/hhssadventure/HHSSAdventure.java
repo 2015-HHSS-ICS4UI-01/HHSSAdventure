@@ -22,6 +22,9 @@ public class HHSSAdventure {
     private ArrayList<Class> locations = new ArrayList<>();
     private String startingLocation;
     private String startDirection;
+    private String currentDirection;
+    private String currentLocation;
+    
     public HHSSAdventure() {
         FileReader file = null;
 
@@ -45,25 +48,25 @@ public class HHSSAdventure {
         
         Location c = new Location(input);
         Location w = new Location(input);
-
         
         
-        System.out.println(c.isFrontBlocked("E"));
+        System.out.println(c.isFrontBlocked("W"));
 
         System.out.println(w.getNextLocation("N"));
+        
         
         
     }
 
    
 
-    public void currentLocation() {
-    }
-
-    public void currentDirection() {
-    }
+    
 
     public void findLocation() {
+        
+    }
+    public void switchLocation(String name, String dir){
+        
     }
 
     public static void main(String[] args) {

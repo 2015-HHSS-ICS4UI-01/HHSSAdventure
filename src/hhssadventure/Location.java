@@ -49,6 +49,14 @@ public class Location {
         }
         return "";
     }
+    public BufferedImage getImage(String dir){
+        for(int i = 0; i < 3; i++){
+            if(scenes[i].getDirection().equals(dir)){
+                return scenes[i].getImage();
+            }
+        }
+        return null;
+    }
     
     public BufferedImage getImage(String dir){
         for(int i = 0; i < 3; i++){
