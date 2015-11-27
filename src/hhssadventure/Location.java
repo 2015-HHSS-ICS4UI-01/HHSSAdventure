@@ -14,13 +14,17 @@ import java.util.Scanner;
 public class Location {
 
     private String location;
-    private ArrayList<Scene> scenes = new ArrayList<>();
+    private Scene[] scenes = new Scene[4];
+    private Scene currentScene;
 
-    public Location(Scanner in) {
+    public Location(Scanner in, String dir) {
         location = in.nextLine();
-        for (int i = 0; i < 4; i++) {
+        for (int i = 0; i < scenes.length; i++) {
             Scene s = new Scene(in);
-            scenes.add(s);
+            if (s.getDir().equals(dir)) {
+                currentScene = s;
+            }
+            scenes[i] = s;
         }
     }
 
