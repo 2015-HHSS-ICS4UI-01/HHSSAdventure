@@ -16,12 +16,12 @@ import java.util.Scanner;
 public class Locations {
     private String place;
     private Scenes[] scenes = new Scenes[4];
-    private BufferedImage image;
+    private Scenes getimage;
     private boolean isFrontBlocked;
     private String description;
     private Scenes nextLocation;
     
-    
+    //making scenes
     public Locations(Scanner input) {
         place = input.nextLine();
         for (int i = 0; i < 4; i++) {
@@ -30,8 +30,9 @@ public class Locations {
         }
     }
     
+    //
     public BufferedImage getImage(){
-        return image;
+        return getimage.getPic();
     }
             
     public boolean getIsFrontBlocked(){
@@ -49,5 +50,7 @@ public class Locations {
     public String getPlace(String p){
         return "";
     }
+    
+    public String getNextDirection
 }
 

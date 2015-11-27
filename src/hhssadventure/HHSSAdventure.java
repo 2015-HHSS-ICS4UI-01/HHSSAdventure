@@ -17,8 +17,10 @@ public class HHSSAdventure {
     ArrayList<Locations> locations = new ArrayList<>();
     private AdventureInterface gui;
     private String currentPlace;
-    private String currentDirection;
+    private Locations currentDirection;
     private Locations forward;
+    private Locations turn;
+    
     
     public HHSSAdventure(){
         FileReader file = null;
@@ -45,10 +47,10 @@ public class HHSSAdventure {
         }
         
         gui = new AdventureInterface(this);
-
-    }
-    public void turnLeft(){
         
+        
+    public void turnLeft(){
+        currentDirection.get
     }
     
     public void turnRight(){
