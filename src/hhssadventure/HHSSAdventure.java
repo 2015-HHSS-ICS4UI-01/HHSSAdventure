@@ -198,9 +198,9 @@ public class HHSSAdventure {
     }
     
     /**
-     * Converts 
-     * @param direction
-     * @return 
+     * Converts a direction (N, E, S, W) to a direction (0, 1, 2, 3)
+     * @param direction a character representing Nort, West, East, or South
+     * @return the corresponding index (0, 1, 2, 3)
      */
     public int convertDirectionToIndex(char direction)
     {
@@ -218,6 +218,4 @@ public class HHSSAdventure {
                 return -1;
         }
     }
-    
-    
 }
