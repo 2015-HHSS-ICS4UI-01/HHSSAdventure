@@ -46,7 +46,7 @@ public class HHSSAdventure {
         gui.setVisible(true);
         
         
-        gui.setDirection(currentDirection);
+        gui.setDirection(this.Direction(currentDirection));
         gui.setLocationName(currentLocation);
         gui.setPicture(this.getLocation(currentLocation).getScene(currentDirection).getImage());
         
@@ -88,7 +88,7 @@ public class HHSSAdventure {
         }else if(currentDirection.equals("W")){
            currentDirection = "N" ;
         }
-        gui.setDirection(currentDirection);
+        gui.setDirection(this.Direction(currentDirection));
         gui.setPicture(this.getLocation(currentLocation).getScene(currentDirection).getImage());
         }
     }
@@ -104,7 +104,7 @@ public class HHSSAdventure {
         }else if(currentDirection.equals("W")){
            currentDirection = "S" ;
         }
-    gui.setDirection(currentDirection);
+    gui.setDirection(this.Direction(currentDirection));
     gui.setPicture(this.getLocation(currentLocation).getScene(currentDirection).getImage());
        }
 }
@@ -115,12 +115,26 @@ public class HHSSAdventure {
         currentLocation = this.getLocation(currentLocation).getScene(d).getnextLocation();
         
          
-         gui.setDirection(currentDirection);
+         gui.setDirection(this.Direction(currentDirection));
          gui.setLocationName(currentLocation);
          gui.setPicture(this.getLocation(currentLocation).getScene(currentDirection).getImage());
          
          
      }   
+    }
+    
+    public String Direction(String d){
+        if(d.equals("N")){
+          d = "North";  
+        }else if(d.equals("S")){        
+          d = "South";
+        }else if(d.equals("E")){        
+         d = "East";
+        }else if(d.equals("W")){        
+         d = "West";
+        }
+            
+        return d;
     }
     
     }
