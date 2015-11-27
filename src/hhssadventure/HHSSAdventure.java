@@ -20,8 +20,8 @@ public class HHSSAdventure {
 
     private ArrayList<Location> locations = new ArrayList<>();
     private Interface gui;
-    private int num = 0;
     private Location storedLocation;
+    private String[] compass = {"N","S","E","W"};
     
     public String currentLocation = null;
     public String currentDirection = null;
@@ -57,7 +57,7 @@ public class HHSSAdventure {
                 storedLocation = locations.get(i);
             }
         }
-        
+        System.out.println(storedLocation.getName());
         gui = new Interface(this);
         
         for(int i = 0; i < locations.size(); i++){
@@ -74,22 +74,29 @@ public class HHSSAdventure {
     
     
     public void turnRight(){
-        if(num < locations.size() - 1){
-            num++;
+        if(currentDirection.equals("W")){
+            currentDirection = "N";
+        }else {
+            for(int i = 0; i < compass.length; i++){
+                if(compass[i].equals(currentDirection)){
+                    currentDirection = compass[i + 1];
+                }
+            }
         }
-        Location l = locations.get(num);
-        gui.setDescription(l.getSceneDescription(this.currentDirection));
+        
+        gui.setDescription(storedLocation.getSceneDescription(this.currentDirection));
+        System.out.println(storedLocation.getName());
     }
     
     public void turnLeft(){
-        if(num > 0){
-            num--;
-        }
-        Location l = locations.get(num);
-        gui.setDescription(l.getSceneDescription(this.currentDirection));
+        
+        
+        gui.setDescription(storedLocation.getSceneDescription(this.currentDirection));
+        System.out.println(storedLocation.getName());
     }
     
     public void advance(){
+        System.out.println(storedLocation.getName());
         if(storedLocation.isFrontBlocked(currentDirection)){
         currentLocation = storedLocation.getSceneNextLocation(currentDirection);
         currentDirection = storedLocation.getSceneNextDirection(currentDirection);
@@ -99,6 +106,7 @@ public class HHSSAdventure {
                 storedLocation = locations.get(i);
             }
         }
+            System.out.println(storedLocation.getName());
         gui.setDescription(storedLocation.getSceneDescription(this.currentDirection));
                 //gui.setImage();
         }

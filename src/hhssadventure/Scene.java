@@ -27,7 +27,7 @@ public class Scene extends Panel {
     private String nextDirection;
     private String imageName;
     private BufferedImage  image;
-    private String[] compass = {"N","S","E","W"};
+    
     
   public Scene(Scanner constructor) {
       direction = constructor.next();
@@ -94,5 +94,6 @@ Exception {
       public String getNextDirection(){
           return nextDirection;
       }
+      
       
 } 
