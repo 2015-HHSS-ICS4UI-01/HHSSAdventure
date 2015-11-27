@@ -68,4 +68,22 @@ public class HHSSAdventure {
         gui.setVisible(true);
         
     }
+    
+    boolean canGoPrev = true;
+    boolean canGoNext = true;
+    
+    public void nextLocation(){
+        Location l = locations.get(locationNumber);
+        locationNumber ++;
+ 
+  
+        gui.setLocationName(l.getDesciption());
+    }
+    
+    public void prevLocation(){
+        Location l = locations.get(locationNumber);
+        locationNumber --;
+     
+        gui.setLocationName(l.getDesciption());
+    }
 }

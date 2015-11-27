@@ -27,11 +27,11 @@ public class Location {
             //puts scene in the list
             scenes[i] = s;
             
-            System.out.println(scenes[i].getDirection());
-            System.out.println(scenes[i].frontBlocked());
-            System.out.println(scenes[i].nextLocation());
-            System.out.println(scenes[i].nextDirection());
-            System.out.println("");
+//            System.out.println(scenes[i].getDirection());
+//            System.out.println(scenes[i].frontBlocked());
+//            System.out.println(scenes[i].nextLocation());
+//            System.out.println(scenes[i].nextDirection());
+//            System.out.println("");
             
         }
         System.out.println("");
