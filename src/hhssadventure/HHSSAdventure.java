@@ -20,6 +20,7 @@ public class HHSSAdventure {
     private Location currentLocation;
     private Scene currentScene;
     private Interface GUI;
+    
 
     public HHSSAdventure() {
         FileReader file = null;
@@ -43,6 +44,9 @@ public class HHSSAdventure {
         GUI = new Interface(this);
         GUI.setVisible(true);
         
+        
+        
+        
     }
     
     public void switchLocation() {
@@ -56,4 +60,5 @@ public class HHSSAdventure {
         
         HHSSAdventure adv = new HHSSAdventure();
     }
+    
 }
