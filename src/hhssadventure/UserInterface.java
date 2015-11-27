@@ -180,7 +180,14 @@ public class UserInterface extends JComponent implements MouseMotionListener, Ke
     
     @Override
     public void mouseDragged(MouseEvent e) {
-        
+        // only adjust the view if the user is in game
+        if (inGame)
+        {
+            // the horizontal mouse movement is the difference between the mouse and the center
+            hDisplacement += e.getX() - CENTER_X;
+            // now center the mouse since it has been moved away from the center
+            centerMouse();
+        }
     }
 
     @Override
