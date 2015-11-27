@@ -63,7 +63,7 @@ public class HHSSAdventure {
         gui = new UserInterface(this);
         //set the text for the class name
         Location l = locations.get(locationNumber);
-        
+        gui.setLocationName(l.getDesciption());
         //show it
         gui.setVisible(true);
         
