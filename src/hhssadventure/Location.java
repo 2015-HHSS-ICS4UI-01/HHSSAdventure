@@ -66,7 +66,7 @@ public class Location {
         return scenes[dirNum].frontBlocked();
     }
     
-    public String getLocation(String dir){
+    public String getLocation(){
         return this.name;
     }
     
