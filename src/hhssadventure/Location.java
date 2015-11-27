@@ -18,7 +18,9 @@ public class Location {
     private Scene c = new Scene();
 
     public Location(Scanner input) {
+        //get the name of the location
         name = input.nextLine();
+        //getting the picture of the scene
         scenes = new Scene[4];
         numOfPictures = 4;
         for (int i = 0; i < numOfPictures; i++) {
@@ -28,17 +30,18 @@ public class Location {
     }
 
     /**
+     * getting the scene from Scene class
      *
-     * @param position
-     * @return
+     * @param position getting the position of the picture 1 through 4
+     * @return the position of the scene
      */
     public String getImage(int position) {
         return scenes[position].getPicture();
     }
 
     /**
-     *
-     * @return
+     *get the 
+     * @return isFrontBlocked
      */
     public boolean isFrontBlocked() {
         return c.getIsFrontBlocked();
