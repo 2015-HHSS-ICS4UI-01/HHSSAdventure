@@ -42,7 +42,8 @@ public class Scene {
     }
     
     /**
-     * @param s the scene to set as the left.
+     * 
+     * @param s 
      */
     public void setRight(Scene s) {
         this.right = s;

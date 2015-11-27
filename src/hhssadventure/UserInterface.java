@@ -49,10 +49,10 @@ public class UserInterface extends JComponent implements MouseMotionListener, Ke
         //sets the current scene to display
         currentScene = s;
         inGame = true;
-
+        
         SCREEN_HEIGHT = 945;
         SCREEN_WIDTH = 1265;
-        
+        //Sets the image size
         IMAGE_HEIGHT = (int)(SCREEN_HEIGHT*0.9);
 
         centerX = SCREEN_WIDTH / 2;
@@ -70,14 +70,14 @@ public class UserInterface extends JComponent implements MouseMotionListener, Ke
         window.addKeyListener(this);
         // center cursor
         robot = new Robot();
+        //Start off by hiding and entering the scene
         hideCursor();
         centerMouse();
-        
     }
 
     
     /**
-     * Hides the mouse cursor
+     * Hides the mouse cursor.
      */
     private void hideCursor()
     {
@@ -106,6 +106,7 @@ public class UserInterface extends JComponent implements MouseMotionListener, Ke
     
     @Override
     public void paintComponent(Graphics g) {
+        //checks which color to m
         if (!currentScene.isBlocked())
         {
             g.setColor(Color.GREEN);
