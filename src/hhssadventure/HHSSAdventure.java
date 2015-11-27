@@ -19,6 +19,7 @@ public class HHSSAdventure {
     private String currentPlace;
     private String currentDirection;
     private Locations forward;
+    private int locationNum = 9;
     
     public HHSSAdventure(){
         FileReader file = null;
@@ -30,12 +31,8 @@ public class HHSSAdventure {
             //stops the program
             System.exit(0);
         }
-
         //creates a scanner to read a file
         Scanner input = new Scanner(file);
-
-        //
-
 
         currentPlace = input.nextLine();
         currentDirection = input.nextLine();
@@ -56,8 +53,15 @@ public class HHSSAdventure {
     }
     
     public void goForward(){
+        
         if(forward.isFrontBlocked()){
             currentPlace = forward.nextLocation();
+        }
+        
+        if(locationNum < locations.size()-1){
+            locationNum++;
+        }else if(locationNum == locations.size() -1){
+            locationNum = 0;
         }
     }
     
@@ -68,9 +72,6 @@ public class HHSSAdventure {
      */
     public static void main(String[] args) {
 
-        //current direction
-        //current location
-        //locations[]
 
     }
 }

@@ -30,20 +30,23 @@ public class Locations {
         }
     }
     
-    public BufferedImage getImage(){
+    public BufferedImage getImage(String dir){
         return image;
     }
             
-    public boolean getIsFrontBlocked(){
+    public boolean getIsFrontBlocked(String dir){
         return isFrontBlocked;
     }
     
-    public String getDescription(){
+    public String getDescription(String dir){
         return description;
     }
     
-    public String getNextLocation(){
-        return nextLocation.getNextLocation();
+    public String getNextLocation(String dir){
+       if(dir.equals('N')){
+           return scenes[0].getNextLocation();
+       }
+
     }
     
     public String getPlace(String p){
