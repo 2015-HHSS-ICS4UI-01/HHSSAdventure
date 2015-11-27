@@ -106,7 +106,14 @@ public class UserInterface extends JComponent implements MouseMotionListener, Ke
     
     @Override
     public void paintComponent(Graphics g) {
-        g.setColor(Color.GREEN);
+        if (!currentScene.isBlocked())
+        {
+            g.setColor(Color.GREEN);
+        }
+        else
+        {
+            g.setColor(Color.RED);
+        }
         g.fillRect(-hDisplacement, 0, SCREEN_WIDTH, SCREEN_HEIGHT);
         g.drawImage(currentScene.getImage(), -hDisplacement, (SCREEN_HEIGHT-IMAGE_HEIGHT)/2, SCREEN_WIDTH, IMAGE_HEIGHT, null);
         g.drawImage(currentScene.getLeft().getImage(), -hDisplacement-SCREEN_WIDTH, (SCREEN_HEIGHT-IMAGE_HEIGHT)/2, SCREEN_WIDTH, IMAGE_HEIGHT, null);
