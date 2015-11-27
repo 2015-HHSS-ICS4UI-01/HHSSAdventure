@@ -118,7 +118,7 @@ public class HHSSAdventure {
          gui.setDirection(currentDirection);
          gui.setLocationName(currentLocation);
          gui.setPicture(this.getLocation(currentLocation).getScene(currentDirection).getImage());
-         System.out.println(currentLocation);
+         
          
      }   
     }
