@@ -22,7 +22,7 @@ public class Location {
         for (int i = 0; i < 4; i++) {
             Scene s = new Scene(constructor);
             scenes[i] = s;
-            s.setDescription(name + s.getDirection());
+            s.setDescription(name + " facing " + s.getDirection());
         }
     }
 
