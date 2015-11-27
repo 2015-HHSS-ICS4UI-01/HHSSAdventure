@@ -21,9 +21,13 @@ public class HHSSAdventure {
     
     private ArrayList<Location> locations;
     private AdventureFrame gui;
+    /**
+     * constructor method
+     */
     public HHSSAdventure(){
+        //array list for location 
         locations = new ArrayList<>();
-
+        //import text file
         FileReader file = null;
         try {
             file = new FileReader("Images/pics.txt");
@@ -31,23 +35,29 @@ public class HHSSAdventure {
             e.printStackTrace();
             System.exit(0);
         }
-
+        //scanner for text file
         Scanner input = new Scanner(file);
+        //starting location
         currentLocation = input.nextLine();
+        //start direction
         currentDirection = input.nextLine();
 
-
+        //move text into the location array
         while (input.hasNext()) {
-            //creating class from file
+            
             Location c = new Location(input);
             locations.add(c);
         }
+        //set the user interface
         gui = new AdventureFrame(this);
+        //make it visible
         gui.setVisible(true);
         
-        
+        //set the visible direction
         gui.setDirection(this.Direction(currentDirection));
+        //set the visible location
         gui.setLocationName(currentLocation);
+        //set the picture
         gui.setPicture(this.getLocation(currentLocation).getScene(currentDirection).getImage());
         
 
@@ -65,10 +75,14 @@ public class HHSSAdventure {
         
 
     }
-    
+    /**
+     * get a location from the array list using a String instead of index
+     * @param name
+     * @return 
+     */
     public Location getLocation(String name){
         int i = 0;
-        
+        //find the index at the name
         while(i<locations.size()-1 &&!name.equals(locations.get(i).getName())){
          i++;
         }
@@ -76,9 +90,13 @@ public class HHSSAdventure {
         return locations.get(i);
        
     }
-    
+    /**
+     * turn right at current location
+     */
     public void turnRight(){
+        //check direction is null
         if(currentDirection!=null){
+        //reassign the directions based on right turn
         if(currentDirection.equals("N") ){
            currentDirection = "E" ;
         }else if(currentDirection.equals("E")){
@@ -88,12 +106,17 @@ public class HHSSAdventure {
         }else if(currentDirection.equals("W")){
            currentDirection = "N" ;
         }
+        //reset the visible direction
         gui.setDirection(this.Direction(currentDirection));
+        //reset the picture
         gui.setPicture(this.getLocation(currentLocation).getScene(currentDirection).getImage());
         }
     }
-    
+    /**
+     * turn left at current location
+     */
     public void turnLeft(){
+        //same as right turn except based on left turn
        if(currentDirection!=null){
     if(currentDirection.equals("N")){
            currentDirection = "W" ;
@@ -108,21 +131,34 @@ public class HHSSAdventure {
     gui.setPicture(this.getLocation(currentLocation).getScene(currentDirection).getImage());
        }
 }
+    /**
+     * Move forward
+     */
     public void Advance(){
+        //check if player is able to move forward 
      if(this.getLocation(currentLocation).getScene(currentDirection).getForward()){
+         //temp direction
         String d = currentDirection;
+        //direction is equal to next direction
         currentDirection = this.getLocation(currentLocation).getScene(d).getnextDirection();
+        //location is equal to next location
         currentLocation = this.getLocation(currentLocation).getScene(d).getnextLocation();
         
-         
+         //reset visible direction
          gui.setDirection(this.Direction(currentDirection));
+         //reset visible location
          gui.setLocationName(currentLocation);
+         //reset picture
          gui.setPicture(this.getLocation(currentLocation).getScene(currentDirection).getImage());
          
          
      }   
     }
-    
+    /**
+     * to convert text file characters into full directions for interface
+     * @param d
+     * @return 
+     */
     public String Direction(String d){
         if(d.equals("N")){
           d = "North";  
