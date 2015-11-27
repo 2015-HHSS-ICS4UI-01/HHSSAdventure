@@ -5,6 +5,7 @@
  */
 package hhssadventure;
 
+import java.awt.image.BufferedImage;
 import java.io.FileReader;
 import java.util.ArrayList;
 import java.util.Scanner;
@@ -129,6 +130,11 @@ public class HHSSAdventure {
 
         }
     }
+    
+    public BufferedImage getImage(){
+        return storedLocation.getSceneImage(currentLocation);
+    }
+    
 
     /**
      * @param args the command line arguments
