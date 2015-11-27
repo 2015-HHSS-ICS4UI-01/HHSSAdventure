@@ -18,7 +18,7 @@ public class HHSSAdventure {
     /**
      * @param args the command line arguments
      */
-    int counter = 0;
+    
     private ArrayList<Class> locations = new ArrayList<>();
     private String startingLocation;
     private String startDirection;
@@ -48,7 +48,7 @@ public class HHSSAdventure {
 
         
         
-        System.out.println(c.getNextLocation("W"));
+        System.out.println(c.isFrontBlocked("E"));
 
         System.out.println(w.getNextLocation("N"));
         
