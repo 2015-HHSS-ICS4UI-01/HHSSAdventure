@@ -12,7 +12,8 @@ import java.util.logging.Logger;
 import javax.imageio.ImageIO;
 
 /**
- *
+ * The image the user is facing.
+ * 
  * @author johns6971
  */
 public class Scene {
