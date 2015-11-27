@@ -45,26 +45,56 @@ public class Scene {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
+    /**
+     * the direction of the picture
+     *
+     * @return direction
+     */
     public String getDirection() {
         return this.direction;
     }
 
+    /**
+     * the actual picture of the set scene
+     *
+     * @return picture
+     */
     public String getPicture() {
         return this.picture;
     }
 
+    /**
+     * is front of the picture blocked
+     *
+     * @return isFrontBlocked
+     */
     public boolean getIsFrontBlocked() {
         return this.isFrontBlocked;
     }
 
+    /**
+     * getting the next location to a picture
+     *
+     * @return nextLocation
+     */
     public String getNextLocation() {
         return this.nextLocation;
     }
 
+    /**
+     * getting the next direction of the next location
+     *
+     * @return getNextDirection
+     */
     public String getNextDirection() {
         return this.nextDirection;
     }
 
+    /**
+     * getting the description of the picture
+     *
+     * @return getDescription
+     */
     public String getDescription() {
         return this.description;
     }
