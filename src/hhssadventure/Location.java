@@ -36,13 +36,14 @@ public class Location {
     }
     
     public String getNextLocation(String dir){
-        for(int i = 0; i < 4; i++){
+        for(int i = 0; i < 3; i++){
             if(scenes[i].getDirection().equals(dir)){
                 return scenes[i].getNextLocation();
             }
         }
         return "";
     }
+    
     
     public String name(){
         return this.name;

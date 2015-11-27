@@ -45,12 +45,12 @@ public class HHSSAdventure {
         
         Location c = new Location(input);
         Location w = new Location(input);
-
         
         
         System.out.println(c.getNextLocation("N"));
 
-        System.out.println(w.name());
+        System.out.println(w.getNextLocation("N"));
+        
         
         
     }
