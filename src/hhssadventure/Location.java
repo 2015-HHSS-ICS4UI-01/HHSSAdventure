@@ -4,7 +4,6 @@
  */
 package hhssadventure;
 
-import java.util.ArrayList;
 import java.util.Scanner;
 
 /**
@@ -28,7 +27,15 @@ public class Location {
         }
     }
 
-    public String location() {
-        return location();
+    public String getLocation() {
+        return location;
+    }
+
+    public Scene getCurrentScene() {
+        return currentScene;
+    }
+
+    public void setCurrentScene(Scene s) {
+        currentScene = s;
     }
 }

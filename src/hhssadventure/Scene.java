@@ -34,7 +34,6 @@ public class Scene {
 
     /**
      * gets the current direction
-     *
      * @return direction
      */
     public String getDir() {
@@ -43,7 +42,6 @@ public class Scene {
 
     /**
      * gets the current image name
-     *
      * @return image name
      */
     public String getImage() {
@@ -52,7 +50,6 @@ public class Scene {
 
     /**
      * gets whether or not the front passage is blocked or not
-     *
      * @return true or false
      */
     public boolean getFrontBlocked() {
@@ -61,7 +58,6 @@ public class Scene {
 
     /**
      * gets the next location
-     *
      * @return the next location
      */
     public String getNextLocation() {
@@ -70,8 +66,8 @@ public class Scene {
 
     /**
      * gets next direction
-     *
-     * @return next direction
+
+.* @return next direction
      */
     public String getNextDir() {
         return nextDir;

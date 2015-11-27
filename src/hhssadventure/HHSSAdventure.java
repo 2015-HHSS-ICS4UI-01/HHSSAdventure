@@ -30,30 +30,40 @@ public class HHSSAdventure {
             System.exit(0);
         }
         Scanner in = new Scanner(file);
-        location = in.nextLine(); 
+        location = in.nextLine();
         dir = in.nextLine();
         while (in.hasNext()) {
             Location l = new Location(in, dir);
-            if(location.equals(l.location())) {
+            if (location.equals(l.getLocation())) {
                 currentLocation = l;
                 currentScene = currentLocation.getCurrentScene();
             }
             locations.add(l);
         }
+        currentLocation.setCurrentScene(currentScene);
         GUI = new Interface(this);
         GUI.setVisible(true);
-        
+
     }
-    
+
     public void switchLocation() {
-        
+        location = currentScene.getNextLocation();
+        dir = currentScene.getNextDir();
+        for (int i = 0; i < locations.size(); i++) {
+            if (location.equals(locations.get(i).getLocation())) {
+                currentLocation = locations.get(i);
+                for (int j = 0; j < 4; j++) {
+                }
+                break;
+            }
+        }
     }
-    
+
     /**
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        
+
         HHSSAdventure adv = new HHSSAdventure();
     }
 }
