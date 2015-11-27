@@ -4,6 +4,7 @@
  */
 package hhssadventure;
 
+import java.awt.image.BufferedImage;
 import java.util.Scanner;
 
 /**
@@ -32,6 +33,11 @@ public class Location {
     
     
     public boolean isFrontBlocked(String dir){
+        for(int i = 0; i < 3; i++){
+            if(scenes[i].getDirection().equals(dir)){
+                return scenes[i].isBlocked();
+            }
+        }
         return true;
     }
     
@@ -43,7 +49,14 @@ public class Location {
         }
         return "";
     }
-    
+    public BufferedImage getImage(String dir){
+        for(int i = 0; i < 3; i++){
+            if(scenes[i].getDirection().equals(dir)){
+                return scenes[i].getImage();
+            }
+        }
+        return null;
+    }
     
     public String name(){
         return this.name;
