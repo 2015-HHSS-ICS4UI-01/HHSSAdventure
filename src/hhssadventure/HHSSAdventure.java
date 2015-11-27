@@ -86,6 +86,7 @@ public class HHSSAdventure {
         }
         System.out.println(currentDirection);
         gui.setDescription(storedLocation.getSceneDescription(this.currentDirection));
+        gui.setImage(getImage());
         System.out.println(storedLocation.getName());
     }
 
@@ -110,6 +111,7 @@ public class HHSSAdventure {
         }
         System.out.println(currentDirection);
         gui.setDescription(storedLocation.getSceneDescription(this.currentDirection));
+        gui.setImage(getImage());
         System.out.println(storedLocation.getName());
     }
 
@@ -127,7 +129,7 @@ public class HHSSAdventure {
             }
             System.out.println(storedLocation.getName());
             gui.setDescription(storedLocation.getSceneDescription(this.currentDirection));
-
+            gui.setImage(getImage());
         }
     }
     
