@@ -4,33 +4,37 @@
  */
 package hhssadventure;
 
+import java.util.Scanner;
+
 /**
  *
  * @author millg1278
  */
 public class Location {
-    
-   int[] Scene = new int[4];
-    
-    
-    
-    
-     public String getImage(int direction){
-        return this.Images;
-    }
-    
-    public void isFrontBlocked(int direction){
-        while (frontBlocked == true){
-            
-        }
+
+    private Scene[] scene;
+    private String image;
+    private String imageDirection;
+    private String directionFrontBlocked;
+
+    public Location(Scanner input) {
+        Scene scene = new Scene(input);
+        image = scene.getPicture();
+        imageDirection = scene.getDirection();
+        directionFrontBlocked = imageDirection;
+        
+        Scene Scene[] = new Scene[4]; 
         
     }
-    
-    public void getDescription(int direction){
-        
+    public String getImage(){
+        return this.image;
     }
     
-    public void getNextLocation(int direction){
-        return scene[direction].getName();
+    public String getDirection(){
+        return this.imageDirection;
+    }
+    
+    public String direcFrontBlocked() {
+        return this.directionFrontBlocked;
     }
 }
