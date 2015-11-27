@@ -41,6 +41,11 @@ public class UserInterface extends javax.swing.JFrame {
     public UserInterface() {
         initComponents();
     }
+    
+    
+    public void description(String name){
+        description.setText(name);
+    }
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -54,6 +59,7 @@ public class UserInterface extends javax.swing.JFrame {
         forward = new javax.swing.JButton();
         left = new javax.swing.JButton();
         right = new javax.swing.JButton();
+        description = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -78,12 +84,19 @@ public class UserInterface extends javax.swing.JFrame {
             }
         });
 
+        description.setText("jTextField1");
+        description.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                descriptionActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap(594, Short.MAX_VALUE)
+                .addContainerGap(428, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addComponent(forward, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -92,7 +105,10 @@ public class UserInterface extends javax.swing.JFrame {
                         .addComponent(left, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(97, 97, 97)
                         .addComponent(right, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap())))
+                        .addContainerGap())
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(description, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(380, 380, 380))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -103,7 +119,9 @@ public class UserInterface extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(left, javax.swing.GroupLayout.PREFERRED_SIZE, 58, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(right, javax.swing.GroupLayout.PREFERRED_SIZE, 58, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(60, 60, 60))
+                .addGap(18, 18, 18)
+                .addComponent(description, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(22, 22, 22))
         );
 
         pack();
@@ -120,6 +138,10 @@ public class UserInterface extends javax.swing.JFrame {
     private void rightActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rightActionPerformed
         Controller.turnRight();
     }//GEN-LAST:event_rightActionPerformed
+
+    private void descriptionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_descriptionActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_descriptionActionPerformed
 
     /**
      * @param args the command line arguments
@@ -157,6 +179,7 @@ public class UserInterface extends javax.swing.JFrame {
 
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JTextField description;
     private javax.swing.JButton forward;
     private javax.swing.JButton left;
     private javax.swing.JButton right;
