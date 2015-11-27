@@ -30,7 +30,7 @@ public class Interface extends javax.swing.JFrame {
     }
     
     public void setImage(BufferedImage image){
-//        picturePanel1.getImage();
+        picturePanel1.setImage(image);
     }
 
     /**
