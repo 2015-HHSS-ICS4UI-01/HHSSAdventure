@@ -12,87 +12,99 @@ import java.util.logging.Logger;
 import javax.imageio.ImageIO;
 
 /**
- *
+ * The image the user is facing.
+ * 
  * @author johns6971
  */
 public class Scene {
+    //Name of the image in scene.
     private String imagePath;
+    //The stored image of the scene.
     private BufferedImage image;
-    private char direction;
-    private String location;
+    //Whether or not the user can go forward from this scene
     private boolean frontBlocked;
-    
+    //The scene to the left of the current one.
     private Scene left;
+    //The scene to the right of the current one.
     private Scene right;
+    //The scene in front of the current one.
     private Scene forward;
-    
-    public Scene(String location, String picture, boolean frontBlocked, char direction) {
-        this.imagePath = picture;
-        this.direction = direction;
-        this.frontBlocked = frontBlocked;
-        this.location = location;
-    }
-    
+
     /**
+     * Initializes the scene
      * 
-     * @param s the scene to set as the left. 
+     * @param imagePath the file name of the image associated with the scene.
+     * @param frontBlocked Whether or not the scene has a possible scene in front of it.
+     */
+    public Scene(String imagePath, boolean frontBlocked) {
+        this.imagePath = imagePath;
+        this.frontBlocked = frontBlocked;
+    }
+
+    /**
+     * sets the scene to the left of the current scene.
+     *
+     * @param s the scene to set as left.
      */
     public void setLeft(Scene s) {
         this.left = s;
     }
-    
+
     /**
-     * 
-     * @param s 
+     * Sets the scene to the right of the current scene.
+     *
+     * @param s the scene to set as right.
      */
     public void setRight(Scene s) {
         this.right = s;
     }
-    
+
     /**
-     * 
-     * @param s the scene to set forward.
+     * Sets the scene in front of the current scene
+     *
+     * @param s the scene to set as forward.
      */
     public void setForward(Scene s) {
         this.forward = s;
     }
-    
+
     /**
-     * 
-     * @return the scene that is forward to the current one.
+     * Gets the scene in front of the current scene.
+     *
+     * @return the forward scene.
      */
-    public Scene getForward()
-    {
+    public Scene getForward() {
         return forward;
     }
-    
+
     /**
-     * 
-     * @return the scene that is to the right of the current one.
+     * Gets the scene to the right of the current scene.
+     *
+     * @return the right scene.
      */
-    public Scene getRight()
-    {
+    public Scene getRight() {
         return right;
     }
-    
+
     /**
-     * 
-     * @return the scene that is to the left of the current scene
+     * Gets the scene to the left of the current scene.
+     *
+     * @return the left scene.
      */
-    public Scene getLeft()
-    {
+    public Scene getLeft() {
         return left;
     }
-    
+
     /**
      * Gets the image from the scene.
+     *
      * @return the image.
      */
-    public BufferedImage getImage() 
-    {
-        if (image == null)
-        {
+    public BufferedImage getImage() {
+        //If there is no image stored
+        if (image == null) {
             try {
+                //Find the image and store it
                 image = ImageIO.read(new File("images\\" + imagePath));
             } catch (IOException ex) {
                 Logger.getLogger(Scene.class.getName()).log(Level.SEVERE, null, ex);
@@ -102,26 +114,11 @@ public class Scene {
     }
     
     /**
-     * Gets the name of the image.
-     * 
-     * @return the name of the image.
-     */
-    public String getImagePath()
-    {
-        return imagePath;
-    }
-    
-    /**
-     * Checks if the front is blocked
-     * 
-     * @return if front is blocked
+     * Checks if there is space in front to move.
+     *
+     * @return if front is blocked.
      */
     public boolean isBlocked() {
         return frontBlocked;
     }
-    
-    
-    
-    
-    
 }
