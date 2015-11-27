@@ -76,7 +76,7 @@ public class UserInterface extends JComponent implements MouseMotionListener, Ke
         this.setPreferredSize(new Dimension(SCREEN_WIDTH, SCREEN_HEIGHT));
         window.add(this);
         window.pack();
-        
+        window.setResizable(false);
         window.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         // add event listeners
         this.addMouseMotionListener(this);
