@@ -40,7 +40,8 @@ public class Location {
     }
 
     /**
-     *get the Scene isFrontBlocked
+     * get the Scene isFrontBlocked
+     *
      * @return isFrontBlocked
      */
     public boolean isFrontBlocked() {
@@ -48,7 +49,8 @@ public class Location {
     }
 
     /**
-     *get the description of the photo
+     * get the description of the photo
+     *
      * @return name
      */
     public String getDescription() {
@@ -56,7 +58,8 @@ public class Location {
     }
 
     /**
-     *get the next location from Scene
+     * get the next location from Scene
+     *
      * @return getNextLocation
      */
     public String getNextLocation() {
@@ -64,7 +67,8 @@ public class Location {
     }
 
     /**
-     *get the number of the picture
+     * get the number of the picture
+     *
      * @return numOfPictures
      */
     public int getNumOfPictures() {
