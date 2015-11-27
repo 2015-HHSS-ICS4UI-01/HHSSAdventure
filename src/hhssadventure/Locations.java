@@ -31,20 +31,58 @@ public class Locations {
     }
     
     public BufferedImage getImage(String dir){
-        return image;
+        if(dir.equals('N')){
+            return scenes[0].getPic();
+        }else if(dir.equals('E')){
+            return scenes[1].getPic();
+        }else if(dir.equals('S')){
+            return scenes[2].getPic();
+        }else if(dir.equals('W')){
+            return scenes[3].getPic();
+        }else{
+            return null;
+        }    
     }
             
     public boolean getIsFrontBlocked(String dir){
-        return isFrontBlocked;
+        if(dir.equals('N')){
+            return scenes[0].isFrontBlocked();
+        }else if(dir.equals('E')){
+            return scenes[1].isFrontBlocked();
+        }else if(dir.equals('S')){
+            return scenes[2].isFrontBlocked();
+        }else if(dir.equals('W')){
+            return scenes[3].isFrontBlocked();
+        }else{
+            return false;
+        }
     }
     
     public String getDescription(String dir){
-        return description;
+        if(dir.equals('N')){
+            return scenes[0].description();
+        }else if(dir.equals('E')){
+            return scenes[1].description();
+        }else if(dir.equals('S')){
+            return scenes[2].description();
+        }else if(dir.equals('W')){
+            return scenes[3].description();
+        }else{
+            return "";
+        } 
     }
     
     public String getNextLocation(String dir){
        if(dir.equals('N')){
            return scenes[0].getNextLocation();
+       }else if(dir.equals('E')){
+           return scenes[1].getNextLocation();
+       }else if(dir.equals('S')){
+           return scenes[2].getNextLocation();
+       }else if(dir.equals('W')){
+           return scenes[3].getNextLocation();
+       }else{
+           return "";
        }
 
     }
