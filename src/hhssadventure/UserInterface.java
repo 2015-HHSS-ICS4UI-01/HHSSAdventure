@@ -4,24 +4,37 @@
  */
 package hhssadventure;
 
+import java.awt.image.BufferedImage;
+
 /**
  *
  * @author yaol9270
  */
 public class UserInterface extends javax.swing.JFrame {
-        public boolean forwardButton = false;
-        public boolean leftButton = false;
-        public boolean rightButton = false;
+
+    public boolean forwardButton = false;
+    public boolean leftButton = false;
+    public boolean rightButton = false;
+    public HHSSAdventure Controller;
+    public HHSSAdventure Scene;
+    public HHSSAdventure Location;
+   
+
+    public UserInterface(HHSSAdventure Controller) {
+        this.Controller = Controller;
+        initComponents();
+    }
+    
+    
+
+    public BufferedImage displayPicture() {
         
-        public HHSSAdventure Controller;
+    }
+
+    public void description() {
         
-        public UserInterface(HHSSAdventure Controller){
-            this.Controller = Controller;
-            initComponents();
-        }
-        
-        
-        
+    }
+
     /**
      * Creates new form UserInterface
      */
@@ -141,7 +154,7 @@ public class UserInterface extends javax.swing.JFrame {
                 new UserInterface().setVisible(true);
             }
         });
-        
+
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton forward;
@@ -149,4 +162,3 @@ public class UserInterface extends javax.swing.JFrame {
     private javax.swing.JButton right;
     // End of variables declaration//GEN-END:variables
 }
-
