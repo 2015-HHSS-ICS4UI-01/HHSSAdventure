@@ -48,9 +48,9 @@ public class HHSSAdventure {
 
         
         
-        System.out.println(c.getNextLocation("N"));
+        System.out.println(c.getNextLocation("W"));
 
-        System.out.println(w.name());
+        System.out.println(w.getNextLocation("N"));
         
         
     }

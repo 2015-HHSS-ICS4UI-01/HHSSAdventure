@@ -37,8 +37,7 @@ public class Scene {
         if(isBlocked.equals("true")){
             blocked = true;
             input.nextLine();
-        }else if(isBlocked.equals("false")){
-            blocked = false;
+        }else{
         nextLocation = input.next();
         nextDirection = input.next();
         input.nextLine();
