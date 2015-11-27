@@ -68,6 +68,22 @@ public class HHSSAdventure {
         }
         return Location;
     }
+    
+    public Scene getScene() {
+        int i = 0;
+        
+        while(i < 4){
+            
+            if(!Scene.direction().equals(currentDir)){
+                i++;
+            }
+            else{
+                break;
+            }
+        }
+        return Scene;
+    }
+    
 
     public void forward() {
         if (!Location.isFrontBlocked(currentDir)) {
