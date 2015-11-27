@@ -40,15 +40,18 @@ public class HHSSAdventure {
 
         startingLocation = input.nextLine();
         startDirection = input.nextLine();
-        System.out.println(startingLocation);
-        System.out.println(startDirection);
-         Location c = new Location(input);
-        Location w = new Location(input);
-        Scene t = new Scene(input);
+       
         
-        System.out.println(c.name());
-        System.out.println("");
-        System.out.println(t.getDirection());
+        
+        Location c = new Location(input);
+        Location w = new Location(input);
+
+        
+        
+        System.out.println(c.getNextLocation("N"));
+
+        System.out.println(w.name());
+        
         
     }
 
