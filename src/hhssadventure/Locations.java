@@ -51,9 +51,11 @@ public class Locations {
     }
     
     public String getPlace(String p){
-        return "";
+        return place;
     }
     
-    public String getNextDirection
+    public String getDirection(String p){
+        return 
+    }
 }
 
