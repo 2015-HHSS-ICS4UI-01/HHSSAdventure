@@ -19,7 +19,7 @@ public class HHSSAdventure {
      * @param args the command line arguments
      */
     
-    private ArrayList<Class> locations = new ArrayList<>();
+    private ArrayList<Location> locations = new ArrayList<>();
     private String startingLocation;
     private String startDirection;
     private String currentDirection;
@@ -36,23 +36,26 @@ public class HHSSAdventure {
         }
 
         Scanner input = new Scanner(file);
-//          while(s.hasNext())
-//          {
-//             System.out.println(s.nextLine());
-//          }
-
         startingLocation = input.nextLine();
         startDirection = input.nextLine();
+        
+          while(input.hasNext())
+          {
+             Location s = new Location(input);
+             System.out.println(s.getName());
+             locations.add(s);
+          }
+          
+
+        currentDirection = startDirection;
+        currentLocation = startingLocation;
        
         
         
-        Location c = new Location(input);
-        Location w = new Location(input);
-        
-        
-        System.out.println(c.isFrontBlocked("W"));
 
-        System.out.println(w.getNextLocation("N"));
+        
+
+
         
         
         
@@ -62,11 +65,19 @@ public class HHSSAdventure {
 
     
 
-    public void findLocation() {
+    public void currentLocation() {
         
     }
-    public void switchLocation(String name, String dir){
+    
+    public void currentDir(){
         
+    }
+    
+    
+    public void switchLocation(String name, String dir){
+//        for (int i = 0; i < locations.size(); i ++){
+//           
+//        }
     }
 
     public static void main(String[] args) {
