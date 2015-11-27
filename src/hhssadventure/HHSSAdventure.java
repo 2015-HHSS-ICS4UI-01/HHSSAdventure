@@ -33,10 +33,10 @@ public class HHSSAdventure {
         location = in.nextLine(); 
         dir = in.nextLine();
         while (in.hasNext()) {
-            Location l = new Location(in);
+            Location l = new Location(in, dir);
             if(location.equals(l.location())) {
                 currentLocation = l;
-                
+                currentScene = currentLocation.getCurrentScene();
             }
             locations.add(l);
         }
@@ -54,6 +54,6 @@ public class HHSSAdventure {
      */
     public static void main(String[] args) {
         
-        HHSSAdventure hhssa = new HHSSAdventure();
+        HHSSAdventure adv = new HHSSAdventure();
     }
 }
