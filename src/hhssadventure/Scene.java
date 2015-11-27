@@ -23,7 +23,7 @@ public class Scene {
     private String nextDirection;
 
     public Scene(Scanner input) {
-
+        
         direction = input.next();
         String img = input.next();
         image = null;
