@@ -1,4 +1,5 @@
 
+import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.image.BufferedImage;
 import javax.swing.JComponent;
@@ -21,6 +22,7 @@ public class AdventureFrame extends javax.swing.JFrame {
     public AdventureFrame(HHSSAdventure Controller) {
         this.Controller = Controller;
         initComponents();
+        BackGround.setBackground(Color.black);
     }
 
     public void setLocationName(String name) {
@@ -47,11 +49,12 @@ public class AdventureFrame extends javax.swing.JFrame {
 
         jPanel1 = new javax.swing.JPanel();
         picturePaint1 = new PicturePaint();
-        locationName = new javax.swing.JLabel();
-        Direction = new javax.swing.JLabel();
         Advance = new javax.swing.JButton();
         Right = new javax.swing.JButton();
         Left = new javax.swing.JButton();
+        BackGround = new javax.swing.JPanel();
+        locationName = new javax.swing.JLabel();
+        Direction = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -65,18 +68,6 @@ public class AdventureFrame extends javax.swing.JFrame {
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 0, Short.MAX_VALUE)
         );
-
-        locationName.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        locationName.setForeground(new java.awt.Color(255, 0, 0));
-        locationName.setText("jLabel1");
-        picturePaint1.add(locationName);
-        locationName.setBounds(270, 10, 160, 33);
-
-        Direction.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        Direction.setForeground(new java.awt.Color(255, 0, 0));
-        Direction.setText("jLabel1");
-        picturePaint1.add(Direction);
-        Direction.setBounds(270, 40, 56, 22);
 
         Advance.setText("Forward");
         Advance.addActionListener(new java.awt.event.ActionListener() {
@@ -104,6 +95,40 @@ public class AdventureFrame extends javax.swing.JFrame {
         });
         picturePaint1.add(Left);
         Left.setBounds(0, 500, 80, 50);
+
+        locationName.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        locationName.setForeground(new java.awt.Color(255, 255, 255));
+        locationName.setText("jLabel1");
+
+        Direction.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        Direction.setForeground(new java.awt.Color(255, 255, 255));
+        Direction.setText("jLabel1");
+
+        javax.swing.GroupLayout BackGroundLayout = new javax.swing.GroupLayout(BackGround);
+        BackGround.setLayout(BackGroundLayout);
+        BackGroundLayout.setHorizontalGroup(
+            BackGroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(BackGroundLayout.createSequentialGroup()
+                .addContainerGap(20, Short.MAX_VALUE)
+                .addGroup(BackGroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, BackGroundLayout.createSequentialGroup()
+                        .addComponent(locationName, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap())
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, BackGroundLayout.createSequentialGroup()
+                        .addComponent(Direction)
+                        .addGap(28, 28, 28))))
+        );
+        BackGroundLayout.setVerticalGroup(
+            BackGroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(BackGroundLayout.createSequentialGroup()
+                .addComponent(locationName, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(Direction)
+                .addGap(0, 19, Short.MAX_VALUE))
+        );
+
+        picturePaint1.add(BackGround);
+        BackGround.setBounds(240, 10, 190, 80);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -146,6 +171,7 @@ public class AdventureFrame extends javax.swing.JFrame {
     }//GEN-LAST:event_RightActionPerformed
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton Advance;
+    private javax.swing.JPanel BackGround;
     private javax.swing.JLabel Direction;
     private javax.swing.JButton Left;
     private javax.swing.JButton Right;

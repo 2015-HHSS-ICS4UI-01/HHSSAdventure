@@ -27,8 +27,8 @@ import javax.swing.JComponent;
         super.paintComponent(g);
         if(image != null){
             g.drawImage(image, 0, 0, this.getWidth(), this.getHeight(), this);
-            System.out.println(this.getWidth());
-            System.out.println(this.getHeight());
+            //System.out.println(this.getWidth());
+            //System.out.println(this.getHeight());
         }
     }
     
