@@ -20,17 +20,23 @@ public class Scene {
     private String description;
 
     public Scene(Scanner input) {
+        //getting the direction of the picture
         direction = input.next();
+        //getting the picture from that direction
         picture = input.next();
+        //cheking if the front is blocked of not
         String check = input.next();
         if (check.equals("false")) {
             isFrontBlocked = false;
+            //if not get the next location
             nextLocation = input.next();
+            //get the next direction
             nextDirection = input.next();
         } else {
             isFrontBlocked = true;
             input.next();
         }
+        //get description
         description = input.next();
 
     }
