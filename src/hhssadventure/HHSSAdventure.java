@@ -109,14 +109,13 @@ public class HHSSAdventure {
 
             }
         }
-        System.out.println(currentDirection);
         gui.setDescription(storedLocation.getSceneDescription(this.currentDirection));
         gui.setImage(getImage());
-        System.out.println(storedLocation.getName());
+      
     }
 
     public void advance() {
-        System.out.println(storedLocation.getName());
+    
         if (!storedLocation.isFrontBlocked(currentDirection)) {
             currentLocation = storedLocation.getSceneNextLocation(currentDirection);
             currentDirection = storedLocation.getSceneNextDirection(currentDirection);
@@ -129,12 +128,13 @@ public class HHSSAdventure {
             }
             System.out.println(storedLocation.getName());
             gui.setDescription(storedLocation.getSceneDescription(this.currentDirection));
+            System.out.println(getImage());
             gui.setImage(getImage());
         }
     }
     
     public BufferedImage getImage(){
-        return storedLocation.getSceneImage(currentLocation);
+        return storedLocation.getSceneImage(currentDirection);
     }
     
 
