@@ -24,7 +24,6 @@ public class UserInterface extends javax.swing.JFrame {
     }
     
     public void setLocationName(String name){
-        
         locationName.setText(name);
     }
 
@@ -42,10 +41,18 @@ public class UserInterface extends javax.swing.JFrame {
 
         next = new javax.swing.JButton();
         prev = new javax.swing.JButton();
+        locationName = new javax.swing.JLabel();
+        picturePanel1 = new hhssadventure.PicturePanel();
+        picturePanel2 = new hhssadventure.PicturePanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         next.setText("Next");
+        next.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                nextActionPerformed(evt);
+            }
+        });
 
         prev.setText("Prev");
         prev.addActionListener(new java.awt.event.ActionListener() {
@@ -54,23 +61,34 @@ public class UserInterface extends javax.swing.JFrame {
             }
         });
 
+        locationName.setFont(new java.awt.Font("Calibri", 1, 18)); // NOI18N
+        locationName.setText("Location");
+
+        picturePanel1.add(picturePanel2);
+        picturePanel2.setBounds(0, 0, 700, 400);
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addComponent(prev)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 580, Short.MAX_VALUE)
+                .addGap(255, 255, 255)
+                .addComponent(locationName)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 260, Short.MAX_VALUE)
                 .addComponent(next)
                 .addContainerGap())
+            .addComponent(picturePanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(466, Short.MAX_VALUE)
+                .addComponent(picturePanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 459, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(prev)
-                    .addComponent(next))
+                    .addComponent(next)
+                    .addComponent(locationName))
                 .addContainerGap())
         );
 
@@ -79,7 +97,13 @@ public class UserInterface extends javax.swing.JFrame {
 
     private void prevActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_prevActionPerformed
         // TODO add your handling code here:
+        controller.prevLocation();
     }//GEN-LAST:event_prevActionPerformed
+
+    private void nextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nextActionPerformed
+        // TODO add your handling code here:
+        controller.nextLocation();
+    }//GEN-LAST:event_nextActionPerformed
 
     /**
      * @param args the command line arguments
@@ -117,7 +141,10 @@ public class UserInterface extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel locationName;
     private javax.swing.JButton next;
+    private hhssadventure.PicturePanel picturePanel1;
+    private hhssadventure.PicturePanel picturePanel2;
     private javax.swing.JButton prev;
     // End of variables declaration//GEN-END:variables
 }
