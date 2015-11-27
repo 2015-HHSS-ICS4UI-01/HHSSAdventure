@@ -31,8 +31,4 @@ public class Location {
     public String location() {
         return location();
     }
-    
-    public Scene getCurrentScene() {
-        return currentScene;
-    }
 }
