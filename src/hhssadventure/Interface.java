@@ -26,11 +26,11 @@ public class Interface extends javax.swing.JFrame {
     }
     
     public void setDescription(String name){
-        description.setText(name);
+        description.setText("You are at location " + name);
     }
     
     public void setImage(BufferedImage image){
-//        image.getImage();
+//        picturePanel1.getImage();
     }
 
     /**
@@ -43,6 +43,7 @@ public class Interface extends javax.swing.JFrame {
     private void initComponents() {
 
         image = new javax.swing.JPanel();
+        picturePanel1 = new hhssadventure.PicturePanel();
         leftTurn = new javax.swing.JButton();
         forward = new javax.swing.JButton();
         rightTurn = new javax.swing.JButton();
@@ -54,11 +55,11 @@ public class Interface extends javax.swing.JFrame {
         image.setLayout(imageLayout);
         imageLayout.setHorizontalGroup(
             imageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 658, Short.MAX_VALUE)
+            .addComponent(picturePanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         imageLayout.setVerticalGroup(
             imageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 436, Short.MAX_VALUE)
+            .addComponent(picturePanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 436, Short.MAX_VALUE)
         );
 
         leftTurn.setText("Turn Left");
@@ -175,6 +176,7 @@ public class Interface extends javax.swing.JFrame {
     private javax.swing.JButton forward;
     private javax.swing.JPanel image;
     private javax.swing.JButton leftTurn;
+    private hhssadventure.PicturePanel picturePanel1;
     private javax.swing.JButton rightTurn;
     // End of variables declaration//GEN-END:variables
 }
