@@ -60,14 +60,31 @@ public class HHSSAdventure {
 
         while (i < location.size()) {
 
-            if (!Location.getLocation().equals(currentLocation)) {
+            if (!location.get(i).getLocation().equals(currentLocation)) {
                 i++;
             }else{
+                
                 break;
             }
         }
-        return Location;
+        return location.get(i);
     }
+    
+    public Scene getScene() {
+        int i = 0;
+        
+        while(i < 4){
+            
+            if(!Scene.get(i).getDirection().equals(currentDir)){
+                i++;
+            }
+            else{
+                break;
+            }
+        }
+        return Scene;
+    }
+    
 
     public void forward() {
         if (!Location.isFrontBlocked(currentDir)) {
@@ -90,6 +107,7 @@ public class HHSSAdventure {
         } else if (currentDir == "W") {
             currentDir = "N";
         }
+        Scene = getScene();
     }
 
     public void turnLeft() {
@@ -102,6 +120,7 @@ public class HHSSAdventure {
         } else if (currentDir == "W") {
             currentDir = "S";
         }
+        Scene = getScene();
     }
 
     public static void main(String[] args) {
