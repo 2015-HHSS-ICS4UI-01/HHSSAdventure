@@ -7,7 +7,6 @@ import javax.swing.JComponent;
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-
 /**
  *
  * @author muirw5809
@@ -15,31 +14,27 @@ import javax.swing.JComponent;
 public class AdventureFrame extends javax.swing.JFrame {
 
     private HHSSAdventure Controller;
-    
+
     /**
      * Creates new form AdventureFrame
      */
     public AdventureFrame(HHSSAdventure Controller) {
-        this.Controller = Controller;     
+        this.Controller = Controller;
         initComponents();
     }
 
+    public void setLocationName(String name) {
 
-
-    
-    public void setLocationName(String name){
-      
-       locationName.setText(name);
+        locationName.setText(name);
     }
-    
-    public void setDirection(String D){
+
+    public void setDirection(String D) {
         Direction.setText(D);
     }
-    
-    public void setPicture(BufferedImage i){
+
+    public void setPicture(BufferedImage i) {
         picturePaint1.setImage(i);
     }
-    
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -131,21 +126,24 @@ public class AdventureFrame extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
+    //Method for left button
     private void LeftActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LeftActionPerformed
-    Controller.turnLeft();
+        //when the button is pressed
+        //change the direction and scene picture
+        Controller.turnLeft();
     }//GEN-LAST:event_LeftActionPerformed
-
+    //Method for advance button
     private void AdvanceActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AdvanceActionPerformed
-    Controller.Advance();
+         //when the button is pressed
+        //change the location and scene picture
+        Controller.Advance();
     }//GEN-LAST:event_AdvanceActionPerformed
-
+    //Method for right button
     private void RightActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RightActionPerformed
-    Controller.turnRight();
-       
+         //when the button is pressed
+        //change the direction and scene picture
+        Controller.turnRight();
     }//GEN-LAST:event_RightActionPerformed
-
-   
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton Advance;
     private javax.swing.JLabel Direction;
