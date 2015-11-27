@@ -37,6 +37,8 @@ public class Scene extends Panel {
           frontBlocked = false;
           nextLocation = constructor.next();
           nextDirection = constructor.next();    
+      }else{
+          frontBlocked = true;
       }
 //      if(frontBlocked == false){
 //          nextLocation = constructor.next();
