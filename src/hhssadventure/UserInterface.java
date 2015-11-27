@@ -18,6 +18,7 @@ public class UserInterface extends javax.swing.JFrame {
     public HHSSAdventure Controller;
     public HHSSAdventure Scene;
     public HHSSAdventure Location;
+    private BufferedImage pic;
    
 
     public UserInterface(HHSSAdventure Controller) {
@@ -27,7 +28,7 @@ public class UserInterface extends javax.swing.JFrame {
     
     
 
-    public BufferedImage displayPicture() {
+    public BufferedImage picture(){
         
     }
 
