@@ -129,7 +129,7 @@ public class HHSSAdventure {
                             }
                             
                             // create the current scene and add it to the scenes map
-                            scenes.put(image, new Scene(location, image, blocked, direction.charAt(0)));
+                            scenes.put(image, new Scene(image, blocked));
                             // populate scenes array for each location (N E S W)
                             scenesArray[i] = image;
                             // add the information about this scene's forward stuff to the sceneForwards map
