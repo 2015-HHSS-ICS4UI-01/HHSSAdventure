@@ -24,6 +24,7 @@ public class HHSSAdventure {
     private String startDirection;
     private String currentDirection;
     private String currentLocation;
+    private Interface gui;
     
     public HHSSAdventure() {
         FileReader file = null;
@@ -46,21 +47,30 @@ public class HHSSAdventure {
              locations.add(s);
           }
       
-        
-        
-        
-      
+         gui = new Interface();
+         gui.setVisible(true);
         
         currentDirection = startDirection;
         currentLocation = startingLocation;
+        
+        
+       
     }
         
    
     public void switchLocation(String name, String dir){
         for(int i = 0; i < locations.size(); i++){
-            
+            if (locations.get(i).getName().equals(name)){
+                currentLocation = name;
+                System.out.println(currentLocation);
+                currentDirection = dir;
+                System.out.println(currentDirection);
+                
+            }
         }
+        
     }
+    
 
     public static void main(String[] args) {
         HHSSAdventure game = new HHSSAdventure();

@@ -36,6 +36,8 @@ public class Location {
                 return scenes[i].isBlocked();
             }
     }
+       return true; 
+  }
 
     public String getNextLocation(String dir) {
         for (int i = 0; i < 4; i++) {
