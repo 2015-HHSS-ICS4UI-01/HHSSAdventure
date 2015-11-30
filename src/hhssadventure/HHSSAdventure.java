@@ -109,11 +109,9 @@ public class HHSSAdventure {
                 break;
             }
         }
-        System.out.println(currentDirection);
         gui.setDescription(currentLoc.getDescription(currentDirection));
         gui.setImage(currentLoc.getImage(currentDirection));
-        gui.setForward(currentLoc.isBlocked(currentDirection));
-        
+        gui.setForward(currentLoc.isBlocked(currentDirection));       
     }
     
     /**

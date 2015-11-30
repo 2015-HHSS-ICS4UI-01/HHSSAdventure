@@ -52,6 +52,10 @@ public class UserInterface extends javax.swing.JFrame {
             e.printStackTrace();
             System.exit(0);
         }
+        PicturePanel imageFrame = new PicturePanel();
+        
+        imageFrame.setImage(img);
+        sceneImage.add(imageFrame);   
         
     }
 
