@@ -66,10 +66,10 @@ public class Scenes {
         return nextLocation;
     }
     
-    /**
-     * looks for the description if there is one
-     * @return description
-     */
+    public String getNextDir(){
+        return nextDir;
+    }
+    
     public String description(){
         return description;
     }

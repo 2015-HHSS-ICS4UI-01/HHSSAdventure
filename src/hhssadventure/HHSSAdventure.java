@@ -87,10 +87,21 @@ public class HHSSAdventure {
             }
         }
     }
-
-    public void goForward() {
-
-        if (forward.getIsFrontBlocked(currentPlace)) {
+    
+    public void goForward(){
+        
+        for (Locations l: locations){
+            if(l.getPlace().equals(currentPlace)){
+                if(!l.getIsFrontBlocked(currentDirection)){
+                    currentPlace = l.getNextLocation(currentDirection);
+                    currentDirection = l.getNextDirection(currentDirection);
+                    //give interface new picture and refresh it
+                }
+            }
+        }
+        
+        
+        if(forward.getIsFrontBlocked(currentPlace)){
             currentPlace = forward.getNextLocation(currentDirection);
         }
 

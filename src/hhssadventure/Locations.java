@@ -114,15 +114,25 @@ public class Locations {
        }else{
            return "";
        }
-
     }
     
-    /**
-     * used to find the name of the place in the array
-     * @return the name of the place
-     */
+    public String getNextDirection(String dir){
+       if(dir.equals('N')){
+           return scenes[0].getNextDir();
+       }else if(dir.equals('E')){
+           return scenes[1].getNextDir();
+       }else if(dir.equals('S')){
+           return scenes[2].getNextDir();
+       }else if(dir.equals('W')){
+           return scenes[3].getNextDir();
+       }else{
+           return "";
+       }
+    }
+    
     public String getPlace(){
         return place;
     }
+ 
 }
 
