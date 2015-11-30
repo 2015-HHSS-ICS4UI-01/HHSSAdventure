@@ -33,14 +33,19 @@ public class HHSSAdventure {
         Scanner in = new Scanner(file);
         location = in.nextLine();
         String temp = in.nextLine();
-        if (temp.equals("N")) {
-            dir = 0;
-        } else if (temp.equals("E")) {
-            dir = 1;
-        } else if (temp.equals("S")) {
-            dir = 2;
-        } else {
-            dir = 3;
+        switch (temp) {
+            case "N":
+                dir = 0;
+                break;
+            case "E":
+                dir = 1;
+                break;
+            case "S":
+                dir = 2;
+                break;
+            default :
+                dir = 3;
+                break;
         }
         while (in.hasNext()) {
             Location l = new Location(in);

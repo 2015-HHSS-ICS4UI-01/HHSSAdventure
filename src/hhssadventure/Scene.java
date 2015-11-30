@@ -76,14 +76,19 @@ public class Scene {
     }
     
     public int convert(String temp, int dir) {
-        if (temp.equals("N")) {
-            dir = 0;
-        } else if (temp.equals("E")) {
-            dir = 1;
-        } else if (temp.equals("S")) {
-            dir = 2;
-        } else {
-            dir = 3;
+        switch (temp) {
+            case "N":
+                dir = 0;
+                break;
+            case "E":
+                dir = 1;
+                break;
+            case "S":
+                dir = 2;
+                break;
+            default:
+                dir = 3;
+                break;
         }
         return dir;
     }
