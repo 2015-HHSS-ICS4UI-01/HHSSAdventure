@@ -5,28 +5,27 @@ package Example;
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
 /**
  *
  * @author alimu
  */
 public class Interface extends javax.swing.JFrame {
-    
+
     private FileInputExample controller;
-    
-    public Interface(FileInputExample c){
+
+    public Interface(FileInputExample c) {
         this(); //calling the old constructor 
         controller = c;
     }
-    
+
     /**
      * Creates new form Interface
      */
     public Interface() {
         initComponents();
     }
-    
-    public void setClassName(String name){
+
+    public void setClassName(String name) {
         classTitle.setText(name);
     }
 
@@ -131,7 +130,6 @@ public class Interface extends javax.swing.JFrame {
             }
         });
     }
-
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton Back;
     private javax.swing.JButton Next;

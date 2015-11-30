@@ -1,6 +1,5 @@
 package Example;
 
-
 import Example.Interface;
 import java.io.FileReader;
 import java.util.ArrayList;
@@ -22,6 +21,7 @@ public class FileInputExample {
     private ArrayList<Class> classes = new ArrayList<Class>();
     private Interface gui;
     private int classNum = 0;
+
     public FileInputExample() {
 
         //used to help read a file
@@ -45,7 +45,7 @@ public class FileInputExample {
             //addint the clas to the list
             classes.add(c);
         }
-        
+
         gui = new Interface(this);
         //set the text for the next class name
         Class c = classes.get(classNum);
@@ -53,24 +53,24 @@ public class FileInputExample {
         //show it
         gui.setVisible(true);
     }
-    
-    public void nextClass(){
+
+    public void nextClass() {
         //if classNum +1 is less than numClasses
-        
-        if(classNum < classes.size()-1){
+
+        if (classNum < classes.size() - 1) {
             //advance to next class
             classNum++;
         }
         //set the text for the next class name
         Class c = classes.get(classNum);
-        
+
         gui.setClassName(c.getCourseCode());
     }
-    
-    public void prevClass(){
-         //if classNum +1 is less than numClasses
-        
-        if(classNum > 0){
+
+    public void prevClass() {
+        //if classNum +1 is less than numClasses
+
+        if (classNum > 0) {
             //advance to next class
             classNum--;
         }
@@ -85,5 +85,4 @@ public class FileInputExample {
     public static void main(String[] args) {
         FileInputExample f = new FileInputExample();
     }
-
 }

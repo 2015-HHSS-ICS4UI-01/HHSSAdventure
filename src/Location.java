@@ -13,10 +13,12 @@ public class Location {
 
     private Scene[] Scenes;
     private String name;
-/**
- * constructor method
- * @param input 
- */
+
+    /**
+     * constructor method
+     *
+     * @param input
+     */
     public Location(Scanner input) {
         //set location name
         name = input.nextLine();
@@ -32,24 +34,27 @@ public class Location {
 
 
     }
+
     /**
      * get location name
-     * @return 
+     *
+     * @return
      */
     public String getName() {
         return this.name;
     }
+
     /**
      * get scene using name instead of index
+     *
      * @param direction
-     * @return 
+     * @return
      */
     public Scene getScene(String direction) {
         int i = 0;
-        while(i<Scenes.length-1 && !Scenes[i].getDirection().equals(direction)){
+        while (i < Scenes.length - 1 && !Scenes[i].getDirection().equals(direction)) {
             i++;
         }
         return Scenes[i];
     }
-    
 }

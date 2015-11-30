@@ -159,13 +159,13 @@ public class AdventureFrame extends javax.swing.JFrame {
     }//GEN-LAST:event_LeftActionPerformed
     //Method for advance button
     private void AdvanceActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AdvanceActionPerformed
-         //when the button is pressed
+        //when the button is pressed
         //change the location and scene picture
         Controller.Advance();
     }//GEN-LAST:event_AdvanceActionPerformed
     //Method for right button
     private void RightActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RightActionPerformed
-         //when the button is pressed
+        //when the button is pressed
         //change the direction and scene picture
         Controller.turnRight();
     }//GEN-LAST:event_RightActionPerformed
