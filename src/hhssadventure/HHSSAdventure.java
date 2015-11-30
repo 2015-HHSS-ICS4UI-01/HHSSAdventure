@@ -76,8 +76,9 @@ public class HHSSAdventure {
         }else{
             dir --;
         }
+        currentScene = currentLocation.getCurrentScene(dir);
     }
-    public void switchLocation() {
+    public void forward() {
         location = currentScene.getNextLocation();
         dir = currentScene.getNextDir();
         switchLocation();
