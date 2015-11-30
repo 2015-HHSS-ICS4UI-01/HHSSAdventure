@@ -63,12 +63,30 @@ public class HHSSAdventure {
                     currentDirection = "N";
                     l.getImage(currentDirection);
                 }
+                //give the interface the new image and refresh it
             }  
         }
     }
     
     public void turnRight(){
-        
+        for(Locations l: locations){
+            if(l.getPlace().equals(currentPlace)){
+                if(currentDirection.equals("N")){
+                    currentDirection = "E";
+                    l.getImage(currentDirection);
+                }else if(currentDirection.equals("E")){
+                    currentDirection = "S";
+                    l.getImage(currentDirection);
+                }else if(currentDirection.equals("S")){
+                    currentDirection = "W";
+                    l.getImage(currentDirection);
+                }else if(currentDirection.equals("W")){
+                    currentDirection = "N";
+                    l.getImage(currentDirection);
+                }
+                //give the interface the new image and refresh it
+            }  
+        }
     }
     
     public void goForward(){
