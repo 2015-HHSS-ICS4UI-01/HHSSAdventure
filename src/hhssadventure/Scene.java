@@ -12,33 +12,32 @@ import java.util.Scanner;
  */
 public class Scene {
     
-    private String dir;
+    private int dir;
     private String image;
     private boolean frontBlocked;
     private String nextLocation;
-    private String nextDir;
-    
+    private int nextDir;
     
     public Scene(Scanner in) {
-        dir = in.next();
+        String temp = in.nextLine();
         image = in.next();
         String test = in.next();
         if (test.equals("false")) {
             frontBlocked = false;
             nextLocation = in.next();
-            nextDir = in.nextLine();
+            nextDir = in.nextInt();
+            in.nextLine();
         } else {
             frontBlocked = true;
             in.nextLine();
         }
-        
     }
 
     /**
      * gets the current direction
      * @return direction
      */
-    public String getDir() {
+    public int getDir() {
         return dir;
     }
 
@@ -71,7 +70,7 @@ public class Scene {
 
 .* @return next direction
      */
-    public String getNextDir() {
+    public int getNextDir() {
         return nextDir;
     }
 }

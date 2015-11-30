@@ -122,11 +122,11 @@ public class Interface extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void forwardButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_forwardButtonActionPerformed
-        controller.switchLocation();
+        controller.forward();
     }//GEN-LAST:event_forwardButtonActionPerformed
 
     private void rightButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rightButtonActionPerformed
-        // TODO add your handling code here:
+        controller.right();
     }//GEN-LAST:event_rightButtonActionPerformed
 
     private void leftButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_leftButtonActionPerformed

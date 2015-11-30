@@ -19,7 +19,8 @@ import javax.imageio.ImageIO;
 public class HHSSAdventure {
 
     private ArrayList<Location> locations = new ArrayList<>();
-    private String location, dir;
+    private String location;
+    private int dir;
     private Location currentLocation;
     private Scene currentScene;
     private Interface GUI;
@@ -35,12 +36,21 @@ public class HHSSAdventure {
         }
         Scanner in = new Scanner(file);
         location = in.nextLine();
-        dir = in.nextLine();
+        String temp = in.nextLine();
+        if (temp.equals("N")) {
+            dir = 0;
+        } else if (temp.equals("E")) {
+            dir = 1;
+        } else if (temp.equals("S")) {
+            dir = 2;
+        } else {
+            dir = 3;
+        }
         while (in.hasNext()) {
-            Location l = new Location(in, dir);
+            Location l = new Location(in);
             if (location.equals(l.getLocation())) {
                 currentLocation = l;
-                currentScene = currentLocation.getCurrentScene();
+                currentScene = currentLocation.getCurrentScene(dir);
             }
             locations.add(l);
         }
@@ -70,6 +80,19 @@ public class HHSSAdventure {
     public void switchLocation() {
         location = currentScene.getNextLocation();
         dir = currentScene.getNextDir();
+        switchLocation();
+    }
+    
+    public void right() {
+        if (dir < 3) {
+            dir++;
+        } else {
+            dir = 0;
+        }
+        currentScene = currentLocation.getCurrentScene(dir);
+    }
+
+    public void switchLocation() {
         for (int i = 0; i < locations.size(); i++) {
             if (location.equals(locations.get(i).getLocation())) {
                 currentLocation = locations.get(i);
@@ -79,8 +102,6 @@ public class HHSSAdventure {
             }
         }
     }
-    
-    
 
     /**
      * @param args the command line arguments
