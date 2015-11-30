@@ -24,7 +24,9 @@ public class Scenes {
     private boolean isFrontBlocked;
     //next location I can go to
     private String nextLocation;
-    //description
+    //next direction i face when i move
+    private String nextDir;
+    //the description
     private String description;
     //the image
     private BufferedImage image;
