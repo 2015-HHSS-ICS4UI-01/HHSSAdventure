@@ -47,23 +47,21 @@ public class HHSSAdventure {
             case "S":
                 dir = 2;
                 break;
-            default :
+            default:
                 dir = 3;
                 break;
         }
         while (in.hasNext()) {
             Location l = new Location(in);
-            if (location.equals(l.getLocation())) {
-                currentLocation = l;
-                currentScene = currentLocation.getCurrentScene(dir);
-            }
             locations.add(l);
         }
+        updateLocation();
         GUI = new Interface(this);
         GUI.setVisible(true);
 
     }
-    public void updateImage(){
+
+    public void updateImage() {
         try {
             img = ImageIO.read(new File(currentScene.getImage()));
         } catch (Exception e) {
@@ -72,23 +70,21 @@ public class HHSSAdventure {
         }
     }
 
-    
-    
-    
-    public void left(){
-        if(dir == 0){
+    public void left() {
+        if (dir == 0) {
             dir = 3;
-        }else{
-            dir --;
+        } else {
+            dir--;
         }
         currentScene = currentLocation.getCurrentScene(dir);
     }
+
     public void forward() {
         location = currentScene.getNextLocation();
         dir = currentScene.getNextDir();
-        switchLocation();
+        updateLocation();
     }
-    
+
     public void right() {
         if (dir < 3) {
             dir++;
@@ -98,13 +94,11 @@ public class HHSSAdventure {
         currentScene = currentLocation.getCurrentScene(dir);
     }
 
-    public void switchLocation() {
-        for (int i = 0; i < locations.size(); i++) {
-            if (location.equals(locations.get(i).getLocation())) {
-                currentLocation = locations.get(i);
-                for (int j = 0; j < 4; j++) {
-                }
-                break;
+    public void updateLocation() {
+        for (Location l : locations) {
+            if (l.getLocationName().equals(location)) {
+                currentLocation = l;
+                currentScene = currentLocation.getCurrentScene(dir);
             }
         }
     }

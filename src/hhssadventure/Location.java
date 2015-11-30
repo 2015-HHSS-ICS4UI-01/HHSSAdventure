@@ -23,7 +23,7 @@ public class Location {
         }
     }
 
-    public String getLocation() {
+    public String getLocationName() {
         return location;
     }
 

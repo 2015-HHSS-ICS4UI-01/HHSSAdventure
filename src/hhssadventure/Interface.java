@@ -23,7 +23,7 @@ public class Interface extends javax.swing.JFrame {
     public Interface() {
         initComponents();
     }
-
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -121,6 +121,10 @@ public class Interface extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    public void updateImage() {
+//        picturePanel1.setImage(controller.updateImage());
+    }
+    
     private void forwardButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_forwardButtonActionPerformed
         controller.forward();
     }//GEN-LAST:event_forwardButtonActionPerformed
