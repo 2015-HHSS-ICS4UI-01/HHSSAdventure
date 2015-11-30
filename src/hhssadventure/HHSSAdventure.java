@@ -14,6 +14,7 @@ import java.util.Scanner;
  * @author lamon
  */
 public class HHSSAdventure {
+
     ArrayList<Locations> locations = new ArrayList<>();
     private AdventureInterface gui;
     private String currentPlace;
@@ -21,8 +22,8 @@ public class HHSSAdventure {
     private Locations forward;
     private int locationNum = 9;
     private Locations t;
-    
-    public HHSSAdventure(){
+
+    public HHSSAdventure() {
         FileReader file = null;
         try {
             file = new FileReader("images/pics.txt");
@@ -41,43 +42,68 @@ public class HHSSAdventure {
             Locations l = new Locations(input);
             locations.add(l);
         }
-        
+
         gui = new AdventureInterface(this);
     }
-        
-        
-        
-    public void turnLeft(){
-        for(Locations l: locations){
-            
-            l.getPlace(currentDirection);
+
+    public void turnLeft() {
+        for (Locations l : locations) {
+            if (l.getPlace().equals(currentPlace)) {
+                if (l.getPlace().equals(currentPlace)) {
+                    if (currentDirection.equals("N")) {
+                        currentDirection = "W";
+                        l.getImage(currentDirection);
+                    } else if (currentDirection.equals("S")) {
+                        currentDirection = "E";
+                        l.getImage(currentDirection);
+                    } else if (currentDirection.equals("E")) {
+                        currentDirection = "N";
+                        l.getImage(currentDirection);
+                    } else if (currentDirection.equals("W")) {
+                        currentDirection = "S";
+                        l.getImage(currentDirection);
+                    }
+                }
+            }
         }
     }
-    
-    public void turnRight(){
-        
+
+    public void turnRight() {
+        for (Locations l : locations) {
+            if (l.getPlace().equals(currentPlace)) {
+                if (currentDirection.equals("N")) {
+                    currentDirection = "E";
+                    l.getImage(currentDirection);
+                } else if (currentDirection.equals("S")) {
+                    currentDirection = "W";
+                    l.getImage(currentDirection);
+                } else if (currentDirection.equals("E")) {
+                    currentDirection = "S";
+                    l.getImage(currentDirection);
+                } else if (currentDirection.equals("W")) {
+                    currentDirection = "N";
+                    l.getImage(currentDirection);
+                }
+            }
+        }
     }
-    
-    public void goForward(){
-        
-        if(forward.getIsFrontBlocked(currentPlace)){
+
+    public void goForward() {
+
+        if (forward.getIsFrontBlocked(currentPlace)) {
             currentPlace = forward.getNextLocation(currentDirection);
         }
-        
-        if(locationNum < locations.size()-1){
+
+        if (locationNum < locations.size() - 1) {
             locationNum++;
-        }else if(locationNum == locations.size() -1){
+        } else if (locationNum == locations.size() - 1) {
             locationNum = 0;
         }
     }
-    
-    
-    
+
     /**
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-
-
     }
 }

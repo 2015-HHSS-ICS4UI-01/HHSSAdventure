@@ -16,14 +16,23 @@ import javax.imageio.ImageIO;
  */
 public class Scenes {
 
+    //direction
     private String dir;
+    //name of the pic
     private String picName;
+    //is the front is blocked?
     private boolean isFrontBlocked;
+    //next location I can go to
     private String nextLocation;
-    private String nextDir;
+    //description
     private String description;
+    //the image
     private BufferedImage image;
     
+    /**
+     * creates each individual scene
+     * @param input the scanner
+     */
     Scenes(Scanner input) {
         dir = input.next();
         picName = input.next();
@@ -39,18 +48,34 @@ public class Scenes {
         description = input.nextLine();
     }
     
+    /**
+     * looks for a boolean to see if i can go forward
+     * @return true or false
+     */
     public boolean isFrontBlocked(){
         return isFrontBlocked;
     }
     
+    /**
+     * finds the next location to go to
+     * @return next location
+     */
     public String getNextLocation(){
         return nextLocation;
     }
     
+    /**
+     * looks for the description if there is one
+     * @return description
+     */
     public String description(){
         return description;
     }
     
+    /**
+     * loads in the pictures
+     * @param picName the name of the pic to look for
+     */
     private void loadPic(String picName) {
         image = null;
         try{
@@ -61,6 +86,10 @@ public class Scenes {
         }
     }
     
+    /**
+     * returns a pic
+     * @return picture
+     */
     public BufferedImage getPic(){
         return image;
     }
