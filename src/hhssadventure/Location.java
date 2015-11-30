@@ -70,9 +70,21 @@ public class Location {
         return this.name;
     }
     
-    public String getScene(){
-        
-    }
+    public Scene getScene(String dir){
+        if(dir == "N"){
+            dirNum = 0;
+        }
+        else if(dir == "E"){
+            dirNum = 1;
+        }
+        else if(dir == "S"){
+            dirNum = 2;
+        }
+        else if(dir == "W"){
+            dirNum = 3;
+        }
+        return scenes[dirNum];
+    } 
     
     public String getDescription(String dir){
         if(dir == "N"){

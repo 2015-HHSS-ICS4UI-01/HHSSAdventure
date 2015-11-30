@@ -78,7 +78,7 @@ public class HHSSAdventure {
             currentDir = Scene.nextDirection();
             //going through to find the actual location
             Location = getLocation();
-            Scene = getScene();
+            Scene = Location.getScene(currentDir);
         }
 
 
@@ -94,7 +94,7 @@ public class HHSSAdventure {
         } else if (currentDir == "W") {
             currentDir = "N";
         }
-        Scene = getScene();
+        Scene = Location.getScene(currentDir);
     }
 
     public void turnLeft() {
@@ -107,7 +107,7 @@ public class HHSSAdventure {
         } else if (currentDir == "W") {
             currentDir = "S";
         }
-        Scene = getScene();
+        Scene = Location.getScene(currentDir);
     }
 
     public static void main(String[] args) {
