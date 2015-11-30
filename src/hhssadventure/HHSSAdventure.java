@@ -49,8 +49,21 @@ public class HHSSAdventure {
         
     public void turnLeft(){
         for(Locations l: locations){
-            
-            l.getPlace(currentDirection);
+            if(l.getPlace().equals(currentPlace)){
+                if(currentDirection.equals("N")){
+                    currentDirection = "W";
+                    l.getImage(currentDirection);
+                }else if(currentDirection.equals("W")){
+                    currentDirection = "S";
+                    l.getImage(currentDirection);
+                }else if(currentDirection.equals("S")){
+                    currentDirection = "E";
+                    l.getImage(currentDirection);
+                }else if(currentDirection.equals("E")){
+                    currentDirection = "N";
+                    l.getImage(currentDirection);
+                }
+            }  
         }
     }
     
@@ -59,6 +72,17 @@ public class HHSSAdventure {
     }
     
     public void goForward(){
+        
+        for (Locations l: locations){
+            if(l.getPlace().equals(currentPlace)){
+                if(!l.getIsFrontBlocked(currentDirection)){
+                    currentPlace = l.getNextLocation(currentDirection);
+                    currentDirection = l.getNextDirection(currentDirection);
+                    //give interface new picture and refresh it
+                }
+            }
+        }
+        
         
         if(forward.getIsFrontBlocked(currentPlace)){
             currentPlace = forward.getNextLocation(currentDirection);

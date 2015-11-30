@@ -47,6 +47,10 @@ public class Scenes {
         return nextLocation;
     }
     
+    public String getNextDir(){
+        return nextDir;
+    }
+    
     public String description(){
         return description;
     }
