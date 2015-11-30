@@ -5,9 +5,12 @@
  */
 package hhssadventure;
 
+import java.awt.image.BufferedImage;
+import java.io.File;
 import java.io.FileReader;
 import java.util.ArrayList;
 import java.util.Scanner;
+import javax.imageio.ImageIO;
 
 /**
  *
@@ -20,6 +23,7 @@ public class HHSSAdventure {
     private Location currentLocation;
     private Scene currentScene;
     private Interface GUI;
+    private BufferedImage img = null;
 
     public HHSSAdventure() {
         FileReader file = null;
@@ -44,7 +48,25 @@ public class HHSSAdventure {
         GUI.setVisible(true);
 
     }
+    public void updateImage(){
+        try {
+            img = ImageIO.read(new File(currentScene.getImage()));
+        } catch (Exception e) {
+            e.printStackTrace();
+            System.exit(0);
+        }
+    }
 
+    
+    
+    
+    public void left(){
+        if(dir == 0){
+            dir = 3;
+        }else{
+            dir --;
+        }
+    }
     public void switchLocation() {
         location = currentScene.getNextLocation();
         dir = currentScene.getNextDir();
