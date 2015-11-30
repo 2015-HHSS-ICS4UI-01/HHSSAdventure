@@ -35,7 +35,7 @@ public class Location {
      * @param position getting the position of the picture 1 through 4
      * @return the position of the scene
      */
-    public String getImage(String position) {
+    public String getImage(int position) {
         return scenes[position].getPicture();
     }
 
@@ -44,8 +44,8 @@ public class Location {
      *
      * @return isFrontBlocked
      */
-    public boolean isFrontBlocked(String position) {
-        return getIsFrontBlocked();
+    public boolean isFrontBlocked(int position) {
+        return scenes[position].getIsFrontBlocked();
     }
 
     /**
@@ -62,8 +62,8 @@ public class Location {
      *
      * @return getNextLocation
      */
-    public String nextLocation() {
-        return getNextLocation();
+    public String nextLocation(int position) {
+        return scenes[position].nextLocation();
     }
 
     /**
