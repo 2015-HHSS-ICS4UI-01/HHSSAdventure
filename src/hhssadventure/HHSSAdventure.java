@@ -67,16 +67,15 @@ public class HHSSAdventure {
         //show it
         gui.setVisible(true);
         
+        
     }
     
     boolean canGoPrev = true;
     boolean canGoNext = true;
     
     public void nextLocation(){
-        Location l = locations.get(locationNumber);
-        locationNumber ++;
- 
-  
+        Location l = locations.get(locationNumber);   
+        locationNumber ++; 
         gui.setLocationName(l.getDesciption());
     }
     

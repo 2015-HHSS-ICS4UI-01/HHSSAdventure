@@ -26,6 +26,8 @@ public class UserInterface extends javax.swing.JFrame {
     public void setLocationName(String name){
         locationName.setText(name);
     }
+    
+    
 
     
    
@@ -39,11 +41,12 @@ public class UserInterface extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        picturePanel1 = new hhssadventure.PicturePanel();
         next = new javax.swing.JButton();
         prev = new javax.swing.JButton();
         locationName = new javax.swing.JLabel();
-        picturePanel1 = new hhssadventure.PicturePanel();
         picturePanel2 = new hhssadventure.PicturePanel();
+        Forward = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -64,27 +67,35 @@ public class UserInterface extends javax.swing.JFrame {
         locationName.setFont(new java.awt.Font("Calibri", 1, 18)); // NOI18N
         locationName.setText("Location");
 
-        picturePanel1.add(picturePanel2);
-        picturePanel2.setBounds(0, 0, 700, 400);
+        Forward.setText("Forward");
+        Forward.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ForwardActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(picturePanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(layout.createSequentialGroup()
                 .addComponent(prev)
-                .addGap(255, 255, 255)
-                .addComponent(locationName)
+                .addGap(257, 257, 257)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(Forward)
+                    .addComponent(locationName))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 260, Short.MAX_VALUE)
-                .addComponent(next)
-                .addContainerGap())
-            .addComponent(picturePanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(next))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addComponent(picturePanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 459, Short.MAX_VALUE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addContainerGap()
+                .addComponent(picturePanel2, javax.swing.GroupLayout.DEFAULT_SIZE, 463, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(Forward)
+                .addGap(1, 1, 1)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(prev)
                     .addComponent(next)
@@ -104,6 +115,10 @@ public class UserInterface extends javax.swing.JFrame {
         // TODO add your handling code here:
         controller.nextLocation();
     }//GEN-LAST:event_nextActionPerformed
+
+    private void ForwardActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ForwardActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_ForwardActionPerformed
 
     /**
      * @param args the command line arguments
@@ -141,6 +156,7 @@ public class UserInterface extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton Forward;
     private javax.swing.JLabel locationName;
     private javax.swing.JButton next;
     private hhssadventure.PicturePanel picturePanel1;

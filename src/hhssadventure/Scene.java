@@ -40,6 +40,7 @@ public class Scene {
             System.exit(0);
         }
         
+        
         blocked = input.next();
         if (blocked.equals("false")) {
             block = false;
