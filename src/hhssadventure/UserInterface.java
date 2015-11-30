@@ -1,32 +1,36 @@
+package hhssadventure;
+
 /*
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-package hhssadventure;
 
 /**
  *
- * @author millg1278
+ * @author thomt9963
  */
-public class UserInterface extends javax.swing.JPanel {
-
-     private HHSSAdventure controller;
-     
-     
-      public UserInterface(HHSSAdventure c){
-        this(); // calling the old constructor below
+public class UserInterface extends javax.swing.JFrame {
+    
+    private HHSSAdventure controller;
+    
+    public UserInterface(HHSSAdventure c){
+        this();
         controller = c;
-      }
+    }
+        
+
     /**
      * Creates new form UserInterface
      */
     public UserInterface() {
         initComponents();
     }
-
+    
     public void setDescription(String name){
-        Description.setText("noob");
+        Desc.setText("Turtle");
     }
+
+
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -36,83 +40,129 @@ public class UserInterface extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        right = new javax.swing.JButton();
-        left = new javax.swing.JButton();
-        up = new javax.swing.JButton();
-        Description = new javax.swing.JLabel();
+        picturePanel1 = new hhssadventure.PicturePanel();
+        Left = new javax.swing.JButton();
+        Forward = new javax.swing.JButton();
+        Right = new javax.swing.JButton();
+        Desc = new javax.swing.JLabel();
 
-        right.setText("Right");
-        right.addActionListener(new java.awt.event.ActionListener() {
+        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        Left.setText("Left");
+        Left.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                rightActionPerformed(evt);
+                LeftActionPerformed(evt);
             }
         });
 
-        left.setText("Left");
-        left.addActionListener(new java.awt.event.ActionListener() {
+        Forward.setText("Forward");
+        Forward.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                leftActionPerformed(evt);
+                ForwardActionPerformed(evt);
             }
         });
 
-        up.setText("Up");
-        up.addActionListener(new java.awt.event.ActionListener() {
+        Right.setText("Right");
+        Right.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                upActionPerformed(evt);
+                RightActionPerformed(evt);
             }
         });
 
-        Description.setText("description");
+        Desc.setFont(new java.awt.Font("Arial Black", 0, 18)); // NOI18N
+        Desc.setText("jLabel1");
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
-        this.setLayout(layout);
+        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
+        getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(82, 82, 82)
-                .addComponent(left)
-                .addGap(41, 41, 41)
-                .addComponent(up)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 41, Short.MAX_VALUE)
-                .addComponent(right)
-                .addGap(83, 83, 83))
+                .addGap(125, 125, 125)
+                .addComponent(Left)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(Right)
+                .addGap(125, 125, 125))
+            .addComponent(picturePanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(Description, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
+                .addGap(250, 250, 250)
+                .addComponent(Forward)
+                .addContainerGap(250, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(Desc, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(250, 250, 250))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(Description, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 232, Short.MAX_VALUE)
+                .addComponent(Desc, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(picturePanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 359, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(Forward)
+                .addGap(0, 0, 0)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(left)
-                        .addComponent(right))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(up)
-                        .addGap(20, 20, 20))))
+                    .addComponent(Right)
+                    .addComponent(Left))
+                .addContainerGap())
         );
+
+        pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void upActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_upActionPerformed
-        controller.buttonForward();
-    }//GEN-LAST:event_upActionPerformed
-
-    private void leftActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_leftActionPerformed
-        controller.buttonLeft();
-    }//GEN-LAST:event_leftActionPerformed
-
-    private void rightActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rightActionPerformed
+    private void RightActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RightActionPerformed
         controller.buttonRight();
-    }//GEN-LAST:event_rightActionPerformed
+    }//GEN-LAST:event_RightActionPerformed
 
+    private void ForwardActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ForwardActionPerformed
+        controller.buttonForward();
+    }//GEN-LAST:event_ForwardActionPerformed
+
+    private void LeftActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LeftActionPerformed
+        controller.buttonLeft();
+    }//GEN-LAST:event_LeftActionPerformed
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String args[]) {
+        /* Set the Nimbus look and feel */
+        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
+        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
+         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
+         */
+        try {
+            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
+                if ("Nimbus".equals(info.getName())) {
+                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
+                    break;
+                }
+            }
+        } catch (ClassNotFoundException ex) {
+            java.util.logging.Logger.getLogger(UserInterface.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (InstantiationException ex) {
+            java.util.logging.Logger.getLogger(UserInterface.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (IllegalAccessException ex) {
+            java.util.logging.Logger.getLogger(UserInterface.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
+            java.util.logging.Logger.getLogger(UserInterface.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        }
+        //</editor-fold>
+
+        /* Create and display the form */
+        java.awt.EventQueue.invokeLater(new Runnable() {
+            public void run() {
+                new UserInterface().setVisible(true);
+            }
+        });
+    }
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel Description;
-    private javax.swing.JButton left;
-    private javax.swing.JButton right;
-    private javax.swing.JButton up;
+    private javax.swing.JLabel Desc;
+    private javax.swing.JButton Forward;
+    private javax.swing.JButton Left;
+    private javax.swing.JButton Right;
+    private hhssadventure.PicturePanel picturePanel1;
     // End of variables declaration//GEN-END:variables
 }
+

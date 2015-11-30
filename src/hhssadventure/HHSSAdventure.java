@@ -21,11 +21,18 @@ public class HHSSAdventure {
     public HHSSAdventure() {
         FileReader file = null;
         try {
-             file = new FileReader("file.txt");   
+             file = new FileReader("images/pics.txt");   
         } catch (Exception e) {
             e.printStackTrace();
         }
         Scanner input = new Scanner(file);
+        
+        gui = new UserInterface(this);
+        gui.setVisible(true);
+    }
+    
+    public void SetScene(){
+        
     }
     
     public void nextDescription(){
@@ -50,6 +57,7 @@ public class HHSSAdventure {
     public static void main(String[] args) {
         
         HHSSAdventure f = new HHSSAdventure();
+       
         
     }
 }
