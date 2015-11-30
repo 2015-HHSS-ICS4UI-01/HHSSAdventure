@@ -50,7 +50,7 @@ public class HHSSAdventure {
     }
 
     public void nextLocation() {
-        //set the text for the next class
+        //set the text for the next location
         Location c = locations.get(getNextLocation());
         gui.setPictureName(c.getDescription());
     }
