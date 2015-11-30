@@ -41,8 +41,6 @@ public class Scene {
 
     }
 
-
-
     /**
      * the direction of the picture
      *

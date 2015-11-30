@@ -16,7 +16,6 @@ public class Location {
     private int numOfPictures;
     private Scene[] scenes;
 
-
     public Location(Scanner input) {
         //get the name of the location
         name = input.nextLine();
@@ -41,6 +40,7 @@ public class Location {
 
     /**
      * getting a answer to see if front is blocked
+     *
      * @param position to get the position of the next location
      * @return is front blocked with the position
      */
@@ -59,6 +59,7 @@ public class Location {
 
     /**
      * to get the next location
+     *
      * @param position to get the position of the next location
      * @return the next location position
      */

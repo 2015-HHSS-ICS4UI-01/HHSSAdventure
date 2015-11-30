@@ -35,14 +35,14 @@ public class HHSSAdventure {
 
         //keep scanning as long as there is somthing to scan
         while (input.hasNext()) {
-            //creating a class from a file
+            //creating a location from a file
             Location c = new Location(input);
-            //adding the class to the list
+            //adding the locations to the list
             locations.add(c);
         }
 
         gui = new InterfaceGame(this);
-        //set the text for the next class
+        //set the text for the next image
         Location c = locations.get(getImage());
         gui.setPictureName(c.getDescription());
         //show it
