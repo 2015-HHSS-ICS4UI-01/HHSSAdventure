@@ -11,25 +11,34 @@ import java.awt.image.BufferedImage;
  * @author donet6376
  */
 public class Interface extends javax.swing.JFrame {
+
     private HHSSAdventure controller;
-    
-    public Interface(HHSSAdventure l){
+
+    public Interface(HHSSAdventure l) {
         this(); // calling the old constructor (below)
         controller = l;
     }
-    
+
     /**
      * Creates new form Interface
      */
     public Interface() {
         initComponents();
     }
-    
-    public void setDescription(String name){
+
+    /**
+     * set the description to display where the player is
+     * @param name the name of the room the player is in
+     */
+    public void setDescription(String name) {
         description.setText("You are at location " + name);
     }
-    
-    public void setImage(BufferedImage image){
+
+    /**
+     * set the room image
+     * @param image the room image
+     */
+    public void setImage(BufferedImage image) {
         picturePanel1.setImage(image);
     }
 
@@ -97,11 +106,11 @@ public class Interface extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(image, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(leftTurn, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(leftTurn, javax.swing.GroupLayout.DEFAULT_SIZE, 128, Short.MAX_VALUE)
                         .addGap(136, 136, 136)
-                        .addComponent(forward, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 138, Short.MAX_VALUE)
-                        .addComponent(rightTurn, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(forward, javax.swing.GroupLayout.DEFAULT_SIZE, 128, Short.MAX_VALUE)
+                        .addGap(138, 138, 138)
+                        .addComponent(rightTurn, javax.swing.GroupLayout.DEFAULT_SIZE, 128, Short.MAX_VALUE))
                     .addComponent(description, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
         );
@@ -112,7 +121,7 @@ public class Interface extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(image, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(leftTurn, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 128, Short.MAX_VALUE)
                     .addComponent(forward, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(rightTurn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
@@ -123,17 +132,17 @@ public class Interface extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void forwardActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_forwardActionPerformed
-        // TODO add your handling code here:
+        //when forward button is pressed goto advance method
         controller.advance();
     }//GEN-LAST:event_forwardActionPerformed
 
     private void leftTurnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_leftTurnActionPerformed
-        // TODO add your handling code here:
+        //when left button is pressed goto turnLeft method
         controller.turnLeft();
     }//GEN-LAST:event_leftTurnActionPerformed
 
     private void rightTurnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rightTurnActionPerformed
-        // TODO add your handling code here:
+        //when right button is pressed goto turnRight method
         controller.turnRight();
     }//GEN-LAST:event_rightTurnActionPerformed
 

@@ -24,19 +24,19 @@
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" attributes="0">
-              <EmptySpace max="-2" attributes="0"/>
+              <EmptySpace min="-2" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
                   <Component id="image" max="32767" attributes="0"/>
                   <Group type="102" attributes="0">
-                      <Component id="leftTurn" min="-2" pref="128" max="-2" attributes="0"/>
+                      <Component id="leftTurn" pref="128" max="32767" attributes="0"/>
                       <EmptySpace min="-2" pref="136" max="-2" attributes="0"/>
-                      <Component id="forward" min="-2" pref="128" max="-2" attributes="0"/>
-                      <EmptySpace pref="138" max="32767" attributes="0"/>
-                      <Component id="rightTurn" min="-2" pref="128" max="-2" attributes="0"/>
+                      <Component id="forward" pref="128" max="32767" attributes="0"/>
+                      <EmptySpace min="-2" pref="138" max="-2" attributes="0"/>
+                      <Component id="rightTurn" pref="128" max="32767" attributes="0"/>
                   </Group>
                   <Component id="description" alignment="0" max="32767" attributes="0"/>
               </Group>
-              <EmptySpace max="-2" attributes="0"/>
+              <EmptySpace min="-2" max="-2" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -44,15 +44,15 @@
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="0" attributes="0">
               <Component id="description" min="-2" pref="35" max="-2" attributes="0"/>
-              <EmptySpace max="-2" attributes="0"/>
+              <EmptySpace min="-2" max="-2" attributes="0"/>
               <Component id="image" max="32767" attributes="0"/>
-              <EmptySpace max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="0" max="-2" attributes="0">
+              <EmptySpace min="-2" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
                   <Component id="leftTurn" alignment="1" pref="128" max="32767" attributes="0"/>
                   <Component id="forward" alignment="1" max="32767" attributes="0"/>
                   <Component id="rightTurn" max="32767" attributes="0"/>
               </Group>
-              <EmptySpace max="-2" attributes="0"/>
+              <EmptySpace min="-2" max="-2" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
