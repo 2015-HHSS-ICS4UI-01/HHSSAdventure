@@ -125,4 +125,22 @@ public class Location {
         return scenes[dir].getNextLocation();
     }
     
+    public String getNextDirection(String direction){
+        int dir = 0;
+        if(direction.equals("N")){
+            dir = 0;
+        }
+        if(direction.equals("E")){
+            dir = 1;
+        }
+        if(direction.equals("S")){
+            dir = 2;
+        }
+        if(direction.equals("W")){
+            dir = 3;
+        }
+        
+        return scenes[dir].getNextDirection();
+    }
+    
 }

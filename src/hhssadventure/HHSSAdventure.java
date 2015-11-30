@@ -21,6 +21,7 @@ public class HHSSAdventure {
     private UserInterface gui;
     private String currentLocation;
     private String currentDirection;
+    private Location currentLoc;
     
     public HHSSAdventure(){        
         FileReader file = null;
@@ -43,7 +44,6 @@ public class HHSSAdventure {
         }
         
         gui = new UserInterface(this);        
-        Location currentLoc = null;
         for(int i = 0; i < locations.size(); i++){
             if(currentLocation.equals(locations.get(i).getName())){
                 currentLoc = locations.get(i);
@@ -72,17 +72,10 @@ public class HHSSAdventure {
         else{
             currentDirection = "N";
         }
-        
-        Location currentLoc = null;
-        for(int i = 0; i < locations.size(); i++){
-            if(currentLocation.equals(locations.get(i).getName())){
-                currentLoc = locations.get(i);
-                break;
-            }
-        }
         gui.setDescription(currentLoc.getDescription(currentDirection));
         gui.setImage(currentLoc.getImage(currentDirection));
         gui.setForward(currentLoc.isBlocked(currentDirection));
+        
     }
     
     /**
@@ -101,14 +94,6 @@ public class HHSSAdventure {
         else{
             currentDirection = "N";
         }
-        
-        Location currentLoc = null;
-        for(int i = 0; i < locations.size(); i++){
-            if(currentLocation.equals(locations.get(i).getName())){
-                currentLoc = locations.get(i);
-                break;
-            }
-        }
         gui.setDescription(currentLoc.getDescription(currentDirection));
         gui.setImage(currentLoc.getImage(currentDirection));
         gui.setForward(currentLoc.isBlocked(currentDirection));       
@@ -119,16 +104,20 @@ public class HHSSAdventure {
      * @param name the name of the new location.
      * @param direction the direction the user will face in the new location.
      */
-    public void switchLocation(String name, String direction){
-        currentLocation = name;
-        currentDirection = direction;
-        Location currentLoc = null;
+    public void switchLocation(){    
+        //sets current location to the new location
+        currentLocation = currentLoc.getNextLocation(currentDirection);
         for(int i = 0; i < locations.size(); i++){
             if(currentLocation.equals(locations.get(i).getName())){
                 currentLoc = locations.get(i);
                 break;
             }
-        } 
+        }
+        
+        //use the new location to determine the new direction faced
+        currentDirection = currentLoc.getNextDirection(currentDirection);
+        
+        //update the user interface
         gui.setDescription(currentLoc.getDescription(currentDirection));
         gui.setImage(currentLoc.getImage(currentDirection));
         gui.setForward(currentLoc.isBlocked(currentDirection));

@@ -3,6 +3,7 @@ package hhssadventure;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import javax.imageio.ImageIO;
+import javax.swing.ImageIcon;
 
 /**
  *
@@ -14,6 +15,7 @@ public class UserInterface extends javax.swing.JFrame {
     public UserInterface(HHSSAdventure c){
         this(); //calling the old constructor below
         controller = c;
+        
     }
     
     /** Creates new form UserInterface */
@@ -52,11 +54,9 @@ public class UserInterface extends javax.swing.JFrame {
             e.printStackTrace();
             System.exit(0);
         }
-        PicturePanel imageFrame = new PicturePanel();
-        
-        imageFrame.setImage(img);
-        sceneImage.add(imageFrame);   
-        
+        ImageIcon icon = new ImageIcon(img);
+        //sceneImage.add(imageFrame);
+        sceneImage.setIcon(icon);
     }
 
     /** This method is called from within the constructor to
@@ -150,7 +150,7 @@ public class UserInterface extends javax.swing.JFrame {
         //if the area forward is not blocked
         else{
             //move forward
-            //controller.switchLocation("Caf3", "E");
+            controller.switchLocation();
         }
     }//GEN-LAST:event_forwardSceneActionPerformed
 
