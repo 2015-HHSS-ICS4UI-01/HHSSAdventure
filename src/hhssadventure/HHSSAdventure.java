@@ -50,7 +50,7 @@ public class HHSSAdventure {
         currentDir = startingDirection;
         currentLocation = startingLocation;
         //going through to find the actual location
-
+        
 
 
     }
@@ -69,21 +69,7 @@ public class HHSSAdventure {
         }
         return location.get(i);
     }
-    
-    public Scene getScene() {
-        int i = 0;
-        
-        while(i < 4){
-            
-            if(!Scene.get(i).getDirection().equals(currentDir)){
-                i++;
-            }
-            else{
-                break;
-            }
-        }
-        return Scene;
-    }
+
     
 
     public void forward() {
@@ -92,6 +78,7 @@ public class HHSSAdventure {
             currentDir = Scene.nextDirection();
             //going through to find the actual location
             Location = getLocation();
+            Scene = getScene();
         }
 
 
@@ -130,3 +117,4 @@ public class HHSSAdventure {
 
     }
 }
+

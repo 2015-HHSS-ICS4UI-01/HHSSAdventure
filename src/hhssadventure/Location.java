@@ -70,6 +70,10 @@ public class Location {
         return this.name;
     }
     
+    public String getScene(){
+        
+    }
+    
     public String getDescription(String dir){
         if(dir == "N"){
             dirNum = 0;

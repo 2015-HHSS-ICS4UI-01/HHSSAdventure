@@ -27,7 +27,7 @@ public class UserInterface extends javax.swing.JFrame {
     
     
 
-    public BufferedImage displayPicture() {
+    public void displayPicture(BufferedImage img) {
         
     }
 
