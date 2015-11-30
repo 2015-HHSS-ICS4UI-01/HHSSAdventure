@@ -43,7 +43,7 @@ public class HHSSAdventure {
         }
         
         gui = new AdventureInterface(this);
-        
+    }
         
         
         
@@ -60,8 +60,8 @@ public class HHSSAdventure {
     
     public void goForward(){
         
-        if(forward.isFrontBlocked()){
-            currentPlace = forward.nextLocation();
+        if(forward.getIsFrontBlocked(currentPlace)){
+            currentPlace = forward.getNextLocation(currentDirection);
         }
         
         if(locationNum < locations.size()-1){
