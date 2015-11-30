@@ -19,14 +19,15 @@ public class Scene {
     private int nextDir;
     
     public Scene(Scanner in) {
-        String temp = in.nextLine();
+        String temp = in.next();
+        dir = convert(temp, dir);
         image = in.next();
         String test = in.next();
         if (test.equals("false")) {
             frontBlocked = false;
             nextLocation = in.next();
-            nextDir = in.nextInt();
-            in.nextLine();
+            temp = in.nextLine();
+            nextDir = convert(temp, nextDir);
         } else {
             frontBlocked = true;
             in.nextLine();
@@ -72,5 +73,18 @@ public class Scene {
      */
     public int getNextDir() {
         return nextDir;
+    }
+    
+    public int convert(String temp, int dir) {
+        if (temp.equals("N")) {
+            dir = 0;
+        } else if (temp.equals("E")) {
+            dir = 1;
+        } else if (temp.equals("S")) {
+            dir = 2;
+        } else {
+            dir = 3;
+        }
+        return dir;
     }
 }
