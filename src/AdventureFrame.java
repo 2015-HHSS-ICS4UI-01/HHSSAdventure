@@ -24,7 +24,7 @@ public class AdventureFrame extends javax.swing.JFrame {
         initComponents();
         BackGround.setBackground(Color.black);
     }
-
+//slhsl
     public void setLocationName(String name) {
 
         locationName.setText(name);
