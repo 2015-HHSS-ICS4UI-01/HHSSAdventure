@@ -40,7 +40,6 @@ public class HHSSAdventure {
             }
             locations.add(l);
         }
-        currentLocation.setCurrentScene(currentScene);
         GUI = new Interface(this);
         GUI.setVisible(true);
 
@@ -58,6 +57,8 @@ public class HHSSAdventure {
             }
         }
     }
+    
+    
 
     /**
      * @param args the command line arguments

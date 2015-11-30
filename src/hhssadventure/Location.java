@@ -34,12 +34,4 @@ public class Location {
     public Scene getCurrentScene() {
         return currentScene;
     }
-
-    public void setCurrentScene(Scene s) {
-        currentScene = s;
-    }
-    
-    public Scene getCurrentScene(){
-        return currentScene;
-    }
 }
