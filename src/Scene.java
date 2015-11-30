@@ -13,7 +13,7 @@ import javax.imageio.ImageIO;
  * @author vonhn0812
  */
 public class Scene {
-    //variables
+    //variables  
     private String direction;
     private String image;
     private boolean moveForward;
