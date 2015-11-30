@@ -21,7 +21,7 @@ public class HHSSAdventure {
     private ArrayList<Location> locations = new ArrayList<>();
     private Interface gui;
     private Location storedLocation;
-    private String[] compass = {"N", "S", "E", "W"};
+    private String[] compass = {"N", "E", "S", "W"};
     public String currentLocation = null;
     public String currentDirection = null;
 
@@ -55,10 +55,11 @@ public class HHSSAdventure {
                 storedLocation = locations.get(i);
             }
         }
-        System.out.println(storedLocation.getName());
+        
         gui = new Interface(this);
 
-
+        gui.setDescription(storedLocation.getSceneDescription(this.currentDirection));
+        gui.setImage(getImage());
 
 
         gui.setVisible(true);
@@ -84,10 +85,10 @@ public class HHSSAdventure {
 
             }
         }
-        System.out.println(currentDirection);
+        
         gui.setDescription(storedLocation.getSceneDescription(this.currentDirection));
         gui.setImage(getImage());
-        System.out.println(storedLocation.getName());
+        
     }
 
     public void turnLeft() {
@@ -119,16 +120,16 @@ public class HHSSAdventure {
         if (!storedLocation.isFrontBlocked(currentDirection)) {
             currentLocation = storedLocation.getSceneNextLocation(currentDirection);
             currentDirection = storedLocation.getSceneNextDirection(currentDirection);
-            System.out.println("NexLoc: " + currentLocation);
-            System.out.println("NextDir: " + currentDirection);
+            
+            
             for (int i = 0; i < locations.size(); i++) {
                 if (currentLocation.equals(locations.get(i).getName())) {
                     storedLocation = locations.get(i);
                 }
             }
-            System.out.println(storedLocation.getName());
+            
             gui.setDescription(storedLocation.getSceneDescription(this.currentDirection));
-            System.out.println(getImage());
+            
             gui.setImage(getImage());
         }
     }
