@@ -49,10 +49,12 @@ public class HHSSAdventure {
 
         currentDir = startingDirection;
         currentLocation = startingLocation;
+        Location = getLocation();
         //going through to find the actual location
-        
+        gui = new UserInterface(this);
+        gui.setVisible(true);
 
-
+        gui.displayPicture(Location.getImage(currentDir));
     }
 
     public Location getLocation() {
@@ -68,6 +70,7 @@ public class HHSSAdventure {
             }
         }
         return location.get(i);
+        
     }
 
     
@@ -75,39 +78,42 @@ public class HHSSAdventure {
     public void forward() {
         if (!Location.isFrontBlocked(currentDir)) {
             currentLocation = Location.NextLocation(currentLocation);
-            currentDir = Scene.nextDirection();
+            //currentDir = Scene.nextDirection();
             //going through to find the actual location
             Location = getLocation();
             Scene = Location.getScene(currentDir);
+            gui.displayPicture(Location.getImage(currentDir));
         }
 
 
     }
 
     public void turnRight() {
-        if (currentDir == "N") {
+        if (currentDir.equals("N")) {
             currentDir = "E";
-        } else if (currentDir == "E") {
+        } else if (currentDir.equals("E")) {
             currentDir = "S";
-        } else if (currentDir == "S") {
+        } else if (currentDir.equals("S")) {
             currentDir = "W";
-        } else if (currentDir == "W") {
+        } else if (currentDir.equals("W")) {
             currentDir = "N";
         }
         Scene = Location.getScene(currentDir);
+        gui.displayPicture(Location.getImage(currentDir));
     }
 
     public void turnLeft() {
-        if (currentDir == "N") {
+        if (currentDir.equals("N")) {
             currentDir = "W";
-        } else if (currentDir == "E") {
+        } else if (currentDir.equals("E")) {
             currentDir = "N";
-        } else if (currentDir == "S") {
+        } else if (currentDir.equals("S")) {
             currentDir = "E";
-        } else if (currentDir == "W") {
+        } else if (currentDir.equals("W")) {
             currentDir = "S";
         }
         Scene = Location.getScene(currentDir);
+        gui.displayPicture(Location.getImage(currentDir));
     }
 
     public static void main(String[] args) {
