@@ -22,7 +22,7 @@ public class HHSSAdventure {
         //help file read
         FileReader file = null;
         try {
-            file = new FileReader("students/students.txt");
+            file = new FileReader("images/pics.txt");
         } catch (Exception e) {
             //prints out messege
             e.printStackTrace();
@@ -43,7 +43,7 @@ public class HHSSAdventure {
 
         gui = new InterfaceGame(this);
         //set the text for the next image
-        Location c = locations.get(getImage());
+        Location c = locations.get(getImage);
         gui.setPictureName(c.getDescription());
         //show it
         gui.setVisible(true);
