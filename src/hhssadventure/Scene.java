@@ -17,8 +17,8 @@ import javax.swing.JFrame;
  *
  * @author donet6376
  */
-public class Scene extends Panel {
-    
+public class Scene {
+
     private String direction;
     private String frontBlockedString;
     private boolean frontBlocked;
@@ -26,76 +26,62 @@ public class Scene extends Panel {
     private String description;
     private String nextDirection;
     private String imageName;
-    private BufferedImage  image;
-    
-    
-  public Scene(Scanner constructor) {
-      direction = constructor.next();
-      imageName = constructor.next();
-      frontBlockedString = constructor.next();
-      if(frontBlockedString.equals("false")){
-          frontBlocked = false;
-          nextLocation = constructor.next();
-          nextDirection = constructor.next();    
-      }else{
-          frontBlocked = true;
-      }
+    private BufferedImage image;
+
+    public Scene(Scanner constructor) {
+        direction = constructor.next();
+        imageName = constructor.next();
+        frontBlockedString = constructor.next();
+        if (frontBlockedString.equals("false")) {
+            frontBlocked = false;
+            nextLocation = constructor.next();
+            nextDirection = constructor.next();
+        } else {
+            frontBlocked = true;
+        }
+
+        try {
+            File input = new File("images/" + imageName);
+            image = ImageIO.read(input);
+        } catch (IOException ie) {
+            System.out.println("Error:" + ie.getMessage());
+        }
 //      if(frontBlocked == false){
 //          nextLocation = constructor.next();
 //          nextDirection = constructor.next();
 //      }
-      constructor.nextLine(); 
-  }
-     
-  public Scene(){
-  try {
-  File input = new File("images/" + imageName);
-  image = ImageIO.read(input);
-  } catch (IOException ie) {
-  System.out.println("Error:"+ie.getMessage());
-  }
-  }
+        constructor.nextLine();
+    }
 
-  public void paint(Graphics g) {
-  g.drawImage( image, 0, 0, null);
-  }
+    public void paint(Graphics g) {
+        g.drawImage(image, 0, 0, null);
+    }
 
-  static public void main(String args[]) throws
-Exception {
-  JFrame frame = new JFrame("Display image");
-  Panel panel = new Scene();
-  frame.getContentPane().add(panel);
-  frame.setSize(1200, 800);
-  frame.setVisible(true);
-  }
-  
-      public BufferedImage getImage(){
+    public BufferedImage getImage() {
         return this.image;
+    }
+
+    public String getDirection() {
+        return this.direction;
+    }
+
+    public void setDescription(String temp) {
+        description = temp;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public boolean isFrontBlocked() {
+        return frontBlocked;
+    }
+
+    public String getNextLocation() {
+        return nextLocation;
+    }
+
+    public String getNextDirection() {
+        return nextDirection;
+    }
 }
-      
-      public String getDirection(){
-          return this.direction;
-      }
-  
-      public void setDescription(String temp){
-          description = temp;
-      }
-      
-      public String getDescription(){
-          return description;
-      }
-      
-      public boolean isFrontBlocked(){
-          return frontBlocked;
-      }
-      
-      public String getNextLocation(){
-          return nextLocation;
-      }
-      
-      public String getNextDirection(){
-          return nextDirection;
-      }
-      
-      
-} 
