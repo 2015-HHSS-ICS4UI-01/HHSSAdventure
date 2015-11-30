@@ -40,9 +40,9 @@ public class Location {
     }
 
     /**
-     * get the Scene isFrontBlocked
-     *
-     * @return isFrontBlocked
+     * getting a answer to see if front is blocked
+     * @param position to get the position of the next location
+     * @return is front blocked with the position
      */
     public boolean isFrontBlocked(int position) {
         return scenes[position].getIsFrontBlocked();
@@ -58,9 +58,9 @@ public class Location {
     }
 
     /**
-     * get the next location from Scene
-     *
-     * @return getNextLocation
+     * to get the next location
+     * @param position to get the position of the next location
+     * @return the next location position
      */
     public String nextLocation(int position) {
         return scenes[position].nextLocation();
