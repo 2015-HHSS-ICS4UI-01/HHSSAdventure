@@ -41,9 +41,7 @@ public class Scene {
 
     }
 
-    Scene() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
+
 
     /**
      * the direction of the picture
@@ -77,7 +75,7 @@ public class Scene {
      *
      * @return nextLocation
      */
-    public String getNextLocation() {
+    public String nextLocation() {
         return this.nextLocation;
     }
 

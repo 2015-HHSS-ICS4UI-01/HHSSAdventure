@@ -15,7 +15,7 @@ public class Location {
     private String name;
     private int numOfPictures;
     private Scene[] scenes;
-    private Scene c = new Scene();
+
 
     public Location(Scanner input) {
         //get the name of the location
@@ -35,7 +35,7 @@ public class Location {
      * @param position getting the position of the picture 1 through 4
      * @return the position of the scene
      */
-    public String getImage(int position) {
+    public String getImage(String position) {
         return scenes[position].getPicture();
     }
 
@@ -44,8 +44,8 @@ public class Location {
      *
      * @return isFrontBlocked
      */
-    public boolean isFrontBlocked() {
-        return c.getIsFrontBlocked();
+    public boolean isFrontBlocked(String position) {
+        return getIsFrontBlocked();
     }
 
     /**
@@ -62,8 +62,8 @@ public class Location {
      *
      * @return getNextLocation
      */
-    public String getNextLocation() {
-        return c.getNextLocation();
+    public String nextLocation() {
+        return getNextLocation();
     }
 
     /**
