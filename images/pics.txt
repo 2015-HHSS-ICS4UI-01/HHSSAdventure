@@ -81,7 +81,7 @@ E IMG_0108.JPG false Tech2 E
 S IMG_0109.JPG true
 W IMG_0110.JPG false Music1 W
 Tech2
-N IMG_0140.JPG false Science1 S
+N IMG_0140.JPG false Science1 W
 E IMG_0141.JPG true
 S IMG_0142.JPG true
 W IMG_0143.JPG false Tech1 W
@@ -89,7 +89,7 @@ Art1
 N IMG_0111.JPG true
 E IMG_0112.JPG true
 S IMG_0113.JPG false Art2 S
-W IMG_0114.JPG false Music2 S
+W IMG_0114.JPG false Music2 E
 Art2
 N IMG_0118.JPG false Art1 N
 E IMG_0115.JPG false Science2 E
