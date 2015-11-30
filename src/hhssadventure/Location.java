@@ -4,6 +4,7 @@
  */
 package hhssadventure;
 
+
 import java.util.Scanner;
 
 /**
@@ -38,11 +39,17 @@ public class Location {
     }
     
 
-    public void getImage(){
-        
+    public Scene getSceneImage(String sceneDirection){
+        int i = 0;
+        while(i < 3 && scenes[i].getDirection() != sceneDirection) {
+            i++;
+        }
+        return scenes[i];
     }
     
     public String getDesciption(){
        return this.locationName;
     }
+    
+    
 }

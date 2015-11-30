@@ -23,7 +23,7 @@ public class Scene {
     private String nextLocation;
     private String nextDirection;
     private boolean block = false;
-  
+    private BufferedImage img = null;
 
     //constructor 
     public Scene(Scanner input) {
@@ -32,7 +32,7 @@ public class Scene {
         
         imageName = input.next();
         
-        BufferedImage img = null;
+        
         try{
             img = ImageIO.read(new File("images/" + imageName));
         }catch (Exception e){
@@ -66,5 +66,9 @@ public class Scene {
 
     public String nextDirection() {
         return this.nextDirection;
+    }
+    
+    public BufferedImage getImage(){
+        return this.img;
     }
 }

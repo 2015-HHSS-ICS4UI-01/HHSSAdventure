@@ -64,25 +64,37 @@ public class HHSSAdventure {
         //set the text for the class name
         Location l = locations.get(locationNumber);
         gui.setLocationName(l.getDesciption());
+        
+        
+        //showing the image the person is at
+        gui.showImage(l.getSceneImage(startingDirection).getImage());
         //show it
         gui.setVisible(true);
         
-        
     }
     
-    boolean canGoPrev = true;
-    boolean canGoNext = true;
     
-    public void nextLocation(){
-        Location l = locations.get(locationNumber);   
-        locationNumber ++; 
-        gui.setLocationName(l.getDesciption());
+    public void right(){
+//        Location l = locations.get(locationNumber);   
+//        if () {
+//            
+//        }
+//        gui.showImage(l.getSceneImage(currentDirection).getImage());
+//        gui.setLocationName(l.getDesciption());
     }
     
-    public void prevLocation(){
+    public void left(){
         Location l = locations.get(locationNumber);
         locationNumber --;
-     
+        gui.showImage(l.getSceneImage(currentDirection).getImage());
         gui.setLocationName(l.getDesciption());
+    }
+    
+    public void forward(){
+        Location l = locations.get(locationNumber);
+        locationNumber --;
+        gui.showImage(l.getSceneImage(currentDirection).getImage());
+        gui.setLocationName(l.getDesciption());
+        
     }
 }
