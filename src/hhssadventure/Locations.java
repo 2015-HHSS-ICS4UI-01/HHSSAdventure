@@ -92,7 +92,7 @@ public class Locations {
     }
     
     public String getDirection(String p){
-        return 
+        return p;
     }
 }
 
