@@ -36,48 +36,30 @@ public class HHSSAdventure {
         }
 
         Scanner input = new Scanner(file);
+        
         startingLocation = input.nextLine();
         startDirection = input.nextLine();
-        
           while(input.hasNext())
           {
              Location s = new Location(input);
-             System.out.println(s.getName());
+              System.out.println(s.getName());
              locations.add(s);
           }
-          
-
+      
+        
+        
+        
+      
+        
         currentDirection = startDirection;
         currentLocation = startingLocation;
-       
-        
-        
-
-        
-
-
-        
-        
-        
     }
-
+        
    
-
-    
-
-    public void currentLocation() {
-        
-    }
-    
-    public void currentDir(){
-        
-    }
-    
-    
     public void switchLocation(String name, String dir){
-//        for (int i = 0; i < locations.size(); i ++){
-//           
-//        }
+        for(int i = 0; i < locations.size(); i++){
+            
+        }
     }
 
     public static void main(String[] args) {
