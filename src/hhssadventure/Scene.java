@@ -4,10 +4,7 @@
  */
 package hhssadventure;
 
-import java.awt.image.BufferedImage;
-import java.io.File;
 import java.util.Scanner;
-import javax.imageio.ImageIO;
 
 /**
  *
@@ -15,30 +12,24 @@ import javax.imageio.ImageIO;
  */
 public class Scene {
     
-    private String dir;
+    private int dir;
     private String image;
     private boolean frontBlocked;
     private String nextLocation;
-    private String nextDir;
-    private BufferedImage img = null;
+    private int nextDir;
     
     public Scene(Scanner in) {
-        dir = in.next();
+        String temp = in.nextLine();
         image = in.next();
         String test = in.next();
         if (test.equals("false")) {
             frontBlocked = false;
             nextLocation = in.next();
-            nextDir = in.nextLine();
+            nextDir = in.nextInt();
+            in.nextLine();
         } else {
             frontBlocked = true;
             in.nextLine();
-        }
-        try {
-            img = ImageIO.read(new File(image));
-        } catch (Exception e) {
-            e.printStackTrace();
-            System.exit(0);
         }
     }
 
@@ -46,7 +37,7 @@ public class Scene {
      * gets the current direction
      * @return direction
      */
-    public String getDir() {
+    public int getDir() {
         return dir;
     }
 
@@ -79,7 +70,7 @@ public class Scene {
 
 .* @return next direction
      */
-    public String getNextDir() {
+    public int getNextDir() {
         return nextDir;
     }
 }

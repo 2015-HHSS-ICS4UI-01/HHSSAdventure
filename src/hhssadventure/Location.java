@@ -14,15 +14,11 @@ public class Location {
 
     private String location;
     private Scene[] scenes = new Scene[4];
-    private Scene currentScene;
 
-    public Location(Scanner in, String dir) {
+    public Location(Scanner in) {
         location = in.nextLine();
         for (int i = 0; i < scenes.length; i++) {
             Scene s = new Scene(in);
-            if (s.getDir().equals(dir)) {
-                currentScene = s;
-            }
             scenes[i] = s;
         }
     }
@@ -31,7 +27,7 @@ public class Location {
         return location;
     }
 
-    public Scene getCurrentScene() {
-        return currentScene;
+    public Scene getCurrentScene(int dir) {
+        return scenes[dir];
     }
 }
