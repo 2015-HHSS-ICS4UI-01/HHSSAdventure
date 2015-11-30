@@ -70,7 +70,7 @@ public class HHSSAdventure {
     
     
     
-    public void left(){
+    public void left(){ 
         if(dir == 0){
             dir = 3;
         }else{
