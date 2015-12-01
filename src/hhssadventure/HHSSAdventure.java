@@ -16,14 +16,14 @@ import javax.imageio.ImageIO;
  *
  * @author NathanKampzEtAndrewSSS
  */
-public class HHSSAdventure {
+public final class HHSSAdventure {
 
     private ArrayList<Location> locations = new ArrayList<>();
     private String location;
     private int dir;
     private Location currentLocation;
     private Scene currentScene;
-    private Interface GUI;
+    private final Interface GUI;
     private BufferedImage img = null;
 
     public HHSSAdventure() {
@@ -47,7 +47,7 @@ public class HHSSAdventure {
             case "S":
                 dir = 2;
                 break;
-            default:
+            case "W":
                 dir = 3;
                 break;
         }
@@ -58,34 +58,33 @@ public class HHSSAdventure {
         updateLocation();
         GUI = new Interface(this);
         GUI.setVisible(true);
-
     }
 
-    public void updateImage() {
+    public BufferedImage updateImage() {
         try {
-            img = ImageIO.read(new File(currentScene.getImage()));
+            img = ImageIO.read(new File("images/" + currentScene.getImageName()));
         } catch (Exception e) {
             e.printStackTrace();
             System.exit(0);
         }
+        return img;
     }
 
-    
-    
-    
-    public void left(){ 
-        if(dir == 0){
-            dir = 3;
-        } else {
+    public void left() {
+        if (dir > 0) {
             dir--;
+        } else {
+            dir = 3;
         }
-        currentScene = currentLocation.getCurrentScene(dir);
+        updateScene();
     }
 
     public void forward() {
-        location = currentScene.getNextLocation();
-        dir = currentScene.getNextDir();
-        updateLocation();
+        if (!currentScene.getFrontBlocked()) {
+            location = currentScene.getNextLocation();
+            dir = currentScene.getNextDir();
+            updateLocation();
+        }
     }
 
     public void right() {
@@ -94,16 +93,20 @@ public class HHSSAdventure {
         } else {
             dir = 0;
         }
-        currentScene = currentLocation.getCurrentScene(dir);
+        updateScene();
     }
 
     public void updateLocation() {
         for (Location l : locations) {
             if (l.getLocationName().equals(location)) {
                 currentLocation = l;
-                currentScene = currentLocation.getCurrentScene(dir);
+                updateScene();
             }
         }
+    }
+
+    public void updateScene() {
+        currentScene = currentLocation.getCurrentScene(dir);
     }
 
     /**

@@ -12,11 +12,11 @@ import java.util.Scanner;
  */
 public class Location {
 
-    private String location;
-    private Scene[] scenes = new Scene[4];
+    private final String locationName;
+    private final Scene[] scenes = new Scene[4];
 
     public Location(Scanner in) {
-        location = in.nextLine();
+        locationName = in.nextLine();
         for (int i = 0; i < scenes.length; i++) {
             Scene s = new Scene(in);
             scenes[i] = s;
@@ -24,7 +24,7 @@ public class Location {
     }
 
     public String getLocationName() {
-        return location;
+        return locationName;
     }
 
     public Scene getCurrentScene(int dir) {

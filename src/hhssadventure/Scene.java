@@ -10,24 +10,24 @@ import java.util.Scanner;
  *
  * @author NathanKampzEtAndrewSSS
  */
-public class Scene {
+public final class Scene {
     
-    private int dir;
-    private String image;
-    private boolean frontBlocked;
+    private final int dir;
+    private final String imageName;
+    private final boolean frontBlocked;
     private String nextLocation;
     private int nextDir;
     
     public Scene(Scanner in) {
         String temp = in.next();
-        dir = convert(temp, dir);
-        image = in.next();
+        dir = convert(temp);
+        imageName = in.next();
         String test = in.next();
         if (test.equals("false")) {
             frontBlocked = false;
             nextLocation = in.next();
             temp = in.nextLine();
-            nextDir = convert(temp, nextDir);
+            nextDir = convert(temp);
         } else {
             frontBlocked = true;
             in.nextLine();
@@ -46,8 +46,8 @@ public class Scene {
      * gets the current image name
      * @return image name
      */
-    public String getImage() {
-        return image;
+    public String getImageName() {
+        return imageName;
     }
 
     /**
@@ -68,28 +68,29 @@ public class Scene {
 
     /**
      * gets next direction
-
-.* @return next direction
+     * @return next direction
+     * 
      */
     public int getNextDir() {
         return nextDir;
     }
     
-    public int convert(String temp, int dir) {
+    public int convert(String temp) {
+        int direction;
         switch (temp) {
             case "N":
-                dir = 0;
+                direction = 0;
                 break;
             case "E":
-                dir = 1;
+                direction = 1;
                 break;
             case "S":
-                dir = 2;
+                direction = 2;
                 break;
             default:
-                dir = 3;
+                direction = 3;
                 break;
         }
-        return dir;
+        return direction;
     }
 }
