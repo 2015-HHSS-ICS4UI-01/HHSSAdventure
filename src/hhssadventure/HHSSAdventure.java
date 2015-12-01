@@ -78,7 +78,8 @@ public class HHSSAdventure {
     public void forward() {
         if (!Location.isFrontBlocked(currentDir)) {
             currentLocation = Location.NextLocation(currentLocation);
-            //currentDir = Scene.nextDirection();
+            
+            currentDir = Scene.nextDirection();
             //going through to find the actual location
             Location = getLocation();
             Scene = Location.getScene(currentDir);
