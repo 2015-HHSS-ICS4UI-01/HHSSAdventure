@@ -15,6 +15,7 @@ import java.awt.image.BufferedImage;
 public class AdventureInterface extends javax.swing.JFrame {
     
     private HHSSAdventure controller;
+    private PicturePanel setImage;
     
     public AdventureInterface(HHSSAdventure c){
         this();
