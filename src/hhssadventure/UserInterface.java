@@ -54,9 +54,7 @@ public class UserInterface extends javax.swing.JFrame {
             e.printStackTrace();
             System.exit(0);
         }
-        ImageIcon icon = new ImageIcon(img);
-        //sceneImage.add(imageFrame);
-        sceneImage.setIcon(icon);
+        sceneImage.setImage(img);
     }
 
     /** This method is called from within the constructor to
@@ -71,8 +69,8 @@ public class UserInterface extends javax.swing.JFrame {
         forwardScene = new javax.swing.JButton();
         leftScene = new javax.swing.JButton();
         rightScene = new javax.swing.JButton();
-        sceneImage = new javax.swing.JLabel();
         sceneDescript = new javax.swing.JLabel();
+        sceneImage = new hhssadventure.PicturePanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -106,25 +104,28 @@ public class UserInterface extends javax.swing.JFrame {
             .add(layout.createSequentialGroup()
                 .add(layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
                     .add(layout.createSequentialGroup()
+                        .addContainerGap()
+                        .add(sceneDescript, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .add(layout.createSequentialGroup()
                         .add(279, 279, 279)
                         .add(leftScene)
                         .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
                         .add(forwardScene)
                         .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
                         .add(rightScene)
-                        .add(279, 279, 279))
-                    .add(layout.createSequentialGroup()
-                        .addContainerGap()
-                        .add(sceneDescript, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .add(org.jdesktop.layout.GroupLayout.TRAILING, sceneImage, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .add(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
+            .add(layout.createSequentialGroup()
+                .add(96, 96, 96)
+                .add(sceneImage, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 568, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(97, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
             .add(org.jdesktop.layout.GroupLayout.TRAILING, layout.createSequentialGroup()
-                .addContainerGap()
-                .add(sceneImage, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 465, Short.MAX_VALUE)
-                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
+                .add(32, 32, 32)
+                .add(sceneImage, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 413, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED, 37, Short.MAX_VALUE)
                 .add(sceneDescript, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 31, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
                 .add(layout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
@@ -199,7 +200,7 @@ public class UserInterface extends javax.swing.JFrame {
     private javax.swing.JButton leftScene;
     private javax.swing.JButton rightScene;
     private javax.swing.JLabel sceneDescript;
-    private javax.swing.JLabel sceneImage;
+    private hhssadventure.PicturePanel sceneImage;
     // End of variables declaration//GEN-END:variables
 
 }
