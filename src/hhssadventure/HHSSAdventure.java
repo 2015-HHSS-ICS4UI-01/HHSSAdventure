@@ -23,7 +23,7 @@ public final class HHSSAdventure {
     private int dir;
     private Location currentLocation;
     private Scene currentScene;
-    private final Interface GUI;
+    private Interface GUI;
     private BufferedImage img = null;
 
     public HHSSAdventure() {
@@ -47,7 +47,7 @@ public final class HHSSAdventure {
             case "S":
                 dir = 2;
                 break;
-            case "W":
+            default:
                 dir = 3;
                 break;
         }

@@ -12,9 +12,9 @@ import java.util.Scanner;
  */
 public final class Scene {
     
-    private final int dir;
-    private final String imageName;
-    private final boolean frontBlocked;
+    private int dir;
+    private String imageName;
+    private boolean frontBlocked;
     private String nextLocation;
     private int nextDir;
     
@@ -76,21 +76,21 @@ public final class Scene {
     }
     
     public int convert(String temp) {
-        int direction;
+        int dir;
         switch (temp) {
-            case "N":
-                direction = 0;
+            case " N":
+                dir = 0;
                 break;
-            case "E":
-                direction = 1;
+            case " E":
+                dir = 1;
                 break;
-            case "S":
-                direction = 2;
+            case " S":
+                dir = 2;
                 break;
             default:
-                direction = 3;
+                dir = 3;
                 break;
         }
-        return direction;
+        return dir;
     }
 }
