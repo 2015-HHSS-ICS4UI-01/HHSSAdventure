@@ -16,6 +16,7 @@ public class AdventureInterface extends javax.swing.JFrame {
     
     private HHSSAdventure controller;
     
+    
     public AdventureInterface(HHSSAdventure c){
         this();
         controller = c;
@@ -39,6 +40,40 @@ public class AdventureInterface extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
+        Forward.setText("Forward");
+        Forward.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ForwardActionPerformed(evt);
+            }
+        });
+        picturePanel1.add(Forward);
+        Forward.setBounds(193, 213, 100, 40);
+
+        Left.setText("Left");
+        Left.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                LeftActionPerformed(evt);
+            }
+        });
+        picturePanel1.add(Left);
+        Left.setBounds(0, 223, 80, 30);
+
+        Rigth.setText("Right");
+        Rigth.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                RigthActionPerformed(evt);
+            }
+        });
+        picturePanel1.add(Rigth);
+        Rigth.setBounds(397, 223, 80, 30);
+
+        description.setColumns(20);
+        description.setRows(5);
+        jScrollPane1.setViewportView(description);
+
+        picturePanel1.add(jScrollPane1);
+        jScrollPane1.setBounds(0, 253, 482, 40);
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -58,6 +93,10 @@ public class AdventureInterface extends javax.swing.JFrame {
         description.setText(Description);
     }
     
+    
+    public void setImage(BufferedImage image){
+        picturePanel1.setImage(image);
+    }
     /**
      * @param args the command line arguments
      */

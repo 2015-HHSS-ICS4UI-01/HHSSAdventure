@@ -19,10 +19,10 @@ public class HHSSAdventure {
     private String currentPlace;
     private String currentDirection;
     private Locations forward;
-    private int locationNum = 9;
-    private Locations t;
     
-    public HHSSAdventure(){
+
+    public HHSSAdventure() {
+
         FileReader file = null;
         try {
             file = new FileReader("images/pics.txt");
@@ -41,27 +41,56 @@ public class HHSSAdventure {
             Locations l = new Locations(input);
             locations.add(l);
         }
-        
         gui = new AdventureInterface(this);
+        gui.setVisible(true);
+        
+        
+        for (Locations l : locations) {
+            if (l.getPlace().equals(currentPlace)) {
+                gui.setImage(l.getImage(currentDirection));
+            }
+        }
+
+        
     }
-        
-        
-        
-    public void turnLeft(){
-        for(Locations l: locations){
-            if(l.getPlace().equals(currentPlace)){
-                if(currentDirection.equals("N")){
+
+    public void turnLeft() {
+        System.out.println("turned left");
+        for (Locations l : locations) {
+            if (l.getPlace().equals(currentPlace)) {
+                if (currentDirection.equals("N")) {
                     currentDirection = "W";
-                    l.getImage(currentDirection);
-                }else if(currentDirection.equals("W")){
-                    currentDirection = "S";
-                    l.getImage(currentDirection);
-                }else if(currentDirection.equals("S")){
+                    gui.setImage(l.getImage(currentDirection));
+                } else if (currentDirection.equals("S")) {
                     currentDirection = "E";
-                    l.getImage(currentDirection);
-                }else if(currentDirection.equals("E")){
+                    gui.setImage(l.getImage(currentDirection));
+                } else if (currentDirection.equals("E")) {
                     currentDirection = "N";
-                    l.getImage(currentDirection);
+                    gui.setImage(l.getImage(currentDirection));
+                } else if (currentDirection.equals("W")) {
+                    currentDirection = "S";
+                    gui.setImage(l.getImage(currentDirection));
+                }
+            }
+        }
+    }
+
+    public void turnRight() {
+        System.out.println("turned right");
+        for (Locations l : locations) {
+            if (l.getPlace().equals(currentPlace)) {
+                if (currentDirection.equals("N")) {
+                    currentDirection = "E";
+                    gui.setImage(l.getImage(currentDirection));
+                } else if (currentDirection.equals("S")) {
+                    currentDirection = "W";
+                    gui.setImage(l.getImage(currentDirection));
+                } else if (currentDirection.equals("E")) {
+                    currentDirection = "S";
+                    gui.setImage(l.getImage(currentDirection));
+                } else if (currentDirection.equals("W")) {
+                    currentDirection = "N";
+                    gui.setImage(l.getImage(currentDirection));
                 }
                 //give the interface the new image and refresh it
             }  
@@ -88,29 +117,36 @@ public class HHSSAdventure {
             }  
         }
     }
-    
-    public void goForward(){
-        
-        for (Locations l: locations){
-            if(l.getPlace().equals(currentPlace)){
-                if(!l.getIsFrontBlocked(currentDirection)){
-                    currentPlace = l.getNextLocation(currentDirection);
+
+    public void goForward() {
+        for (Locations l : locations) {
+            if (l.getPlace().equals(currentPlace)) {
+                if (!l.getIsFrontBlocked(currentDirection)) {
+                    System.out.println(currentPlace);
+                    System.out.println("not blocked");
+                    String temp = l.getNextLocation(currentDirection);
+                    
                     currentDirection = l.getNextDirection(currentDirection);
+                    gui.setImage(l.getImage(currentDirection));
                     //give interface new picture and refresh it
+                    currentPlace = temp;
+                    System.out.println(currentPlace + "1");
+                }else{
+                System.out.println("blocked");
                 }
             }
         }
         
-        
-        if(forward.getIsFrontBlocked(currentPlace)){
-            currentPlace = forward.getNextLocation(currentDirection);
-        }
-        
-        if(locationNum < locations.size()-1){
-            locationNum++;
-        }else if(locationNum == locations.size() -1){
-            locationNum = 0;
-        }
+
+//        if (forward.getIsFrontBlocked(currentPlace)) {
+//            currentPlace = forward.getNextLocation(currentDirection);
+//        }
+//
+//        if (locationNum < locations.size() - 1) {
+//            locationNum++;
+//        } else if (locationNum == locations.size() - 1) {
+//            locationNum = 0;
+//        }
     }
     
     
@@ -119,7 +155,6 @@ public class HHSSAdventure {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-
-
+        HHSSAdventure a = new HHSSAdventure();
     }
 }
