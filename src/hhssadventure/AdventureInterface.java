@@ -15,7 +15,7 @@ import java.awt.image.BufferedImage;
 public class AdventureInterface extends javax.swing.JFrame {
     
     private HHSSAdventure controller;
-    private PicturePanel setImage;
+    
     
     public AdventureInterface(HHSSAdventure c){
         this();
@@ -54,7 +54,7 @@ public class AdventureInterface extends javax.swing.JFrame {
             }
         });
         picturePanel1.add(Forward);
-        Forward.setBounds(210, 200, 73, 23);
+        Forward.setBounds(193, 213, 100, 40);
 
         Left.setText("Left");
         Left.addActionListener(new java.awt.event.ActionListener() {
@@ -63,7 +63,7 @@ public class AdventureInterface extends javax.swing.JFrame {
             }
         });
         picturePanel1.add(Left);
-        Left.setBounds(0, 200, 51, 23);
+        Left.setBounds(0, 223, 80, 30);
 
         Rigth.setText("Right");
         Rigth.addActionListener(new java.awt.event.ActionListener() {
@@ -72,14 +72,14 @@ public class AdventureInterface extends javax.swing.JFrame {
             }
         });
         picturePanel1.add(Rigth);
-        Rigth.setBounds(420, 200, 57, 23);
+        Rigth.setBounds(397, 223, 80, 30);
 
         description.setColumns(20);
         description.setRows(5);
         jScrollPane1.setViewportView(description);
 
         picturePanel1.add(jScrollPane1);
-        jScrollPane1.setBounds(0, 220, 482, 73);
+        jScrollPane1.setBounds(0, 253, 482, 40);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -112,6 +112,10 @@ public class AdventureInterface extends javax.swing.JFrame {
         description.setText(Description);
     }
     
+    
+    public void setImage(BufferedImage image){
+        picturePanel1.setImage(image);
+    }
     /**
      * @param args the command line arguments
      */

@@ -81,7 +81,7 @@ public class Scenes {
     private void loadPic(String picName) {
         image = null;
         try{
-            image = ImageIO.read(new File(picName));
+            image = ImageIO.read(new File("images/" + picName));
         }catch(Exception e){
             e.printStackTrace();
             System.exit(0);
