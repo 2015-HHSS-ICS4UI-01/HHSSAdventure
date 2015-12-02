@@ -21,9 +21,11 @@ public class HHSSAdventure {
     private UserInterface gui;
     private String currentLocation;
     private String currentDirection;
+    private String[] directions;
     private Location currentLoc;
     
-    public HHSSAdventure(){        
+    public HHSSAdventure(){       
+        directions = new String[] {"N","E","S","W"};
         FileReader file = null;
         
         try{
@@ -61,21 +63,33 @@ public class HHSSAdventure {
      */
     public void prevScene(){
         if(currentDirection.equals("N")){
-            currentDirection = "W";
+            currentDirection = "E";
         }
-        else if(currentDirection.equals("W")){
+        else if(currentDirection.equals("E")){
             currentDirection = "S";
         }
         else if(currentDirection.equals("S")){
-            currentDirection = "E";
+            currentDirection = "W";
         }
         else{
             currentDirection = "N";
-        }
+        }       
+//        if(currentDirection.equals("N")){
+//            currentDirection = "W";
+//        }else if(currentDirection.equals("W")){
+//            currentDirection = "S";
+//        }
+//        else{
+//            if(currentDirection.equals("S")){
+//                currentDirection = "E";
+//            }
+//            else if(currentDirection.equals("E")){
+//                currentDirection = "N";
+//            }
+//        }
         gui.setDescription(currentLoc.getDescription(currentDirection));
-        gui.setImage(currentLoc.getImage(currentDirection));
+        gui.setImage(currentLoc.getImage(currentDirection));  
         gui.setForward(currentLoc.isBlocked(currentDirection));
-        
     }
     
     /**
@@ -95,8 +109,8 @@ public class HHSSAdventure {
             currentDirection = "N";
         }
         gui.setDescription(currentLoc.getDescription(currentDirection));
-        gui.setImage(currentLoc.getImage(currentDirection));
-        gui.setForward(currentLoc.isBlocked(currentDirection));       
+        gui.setImage(currentLoc.getImage(currentDirection));    
+        gui.setForward(currentLoc.isBlocked(currentDirection));
     }
     
     /**
@@ -104,8 +118,8 @@ public class HHSSAdventure {
      * @param name the name of the new location.
      * @param direction the direction the user will face in the new location.
      */
-    public void switchLocation(){    
-        //sets current location to the new location
+    public void switchLocation(){        
+        //if the direction forward is not blocked, sets current location to the new location
         currentLocation = currentLoc.getNextLocation(currentDirection);
         for(int i = 0; i < locations.size(); i++){
             if(currentLocation.equals(locations.get(i).getName())){
@@ -113,13 +127,13 @@ public class HHSSAdventure {
                 break;
             }
         }
-        
+
         //use the new location to determine the new direction faced
         currentDirection = currentLoc.getNextDirection(currentDirection);
-        
+
         //update the user interface
         gui.setDescription(currentLoc.getDescription(currentDirection));
-        gui.setImage(currentLoc.getImage(currentDirection));
+        gui.setImage(currentLoc.getImage(currentDirection));  
         gui.setForward(currentLoc.isBlocked(currentDirection));
     }
         

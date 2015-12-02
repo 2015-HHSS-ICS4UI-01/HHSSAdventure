@@ -3,7 +3,6 @@ package hhssadventure;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import javax.imageio.ImageIO;
-import javax.swing.ImageIcon;
 
 /**
  *
@@ -11,6 +10,7 @@ import javax.swing.ImageIcon;
  */
 public class UserInterface extends javax.swing.JFrame {
     private HHSSAdventure controller;
+    private boolean isBlocked;
     
     public UserInterface(HHSSAdventure c){
         this(); //calling the old constructor below
@@ -23,21 +23,20 @@ public class UserInterface extends javax.swing.JFrame {
         initComponents();
     }
     
-    public void setForward(boolean isBlocked){
-        if(isBlocked){
-            forwardScene.setText("Blocked");
-        }else{
-            forwardScene.setText("Forward");
-        }
-        
-    }
-    
     /**
      * Sets a description of the scene in the user interface.
      * @param description the description of the current scene.
      */
     public void setDescription(String description){
         sceneDescript.setText(description);
+    }
+    
+    public void setForward(boolean isBlocked){
+        if(isBlocked){
+            this.isBlocked = true;
+        }else{
+            this.isBlocked = false;
+        }
     }
     
     /**
@@ -139,24 +138,22 @@ public class UserInterface extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void leftSceneActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_leftSceneActionPerformed
-        //move to the left
+        //moves to the left
         controller.prevScene();
     }//GEN-LAST:event_leftSceneActionPerformed
 
     private void forwardSceneActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_forwardSceneActionPerformed
-        //if the area forward is blocked
-        if(forwardScene.getText().equals("Blocked")){
+        if(isBlocked){
             //do nothing
-        }
-        //if the area forward is not blocked
-        else{
-            //move forward
+        }else{
+            //moves forward
             controller.switchLocation();
         }
+        
     }//GEN-LAST:event_forwardSceneActionPerformed
 
     private void rightSceneActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rightSceneActionPerformed
-        //move to the right
+        //moves to the right
         controller.nextScene();
     }//GEN-LAST:event_rightSceneActionPerformed
 

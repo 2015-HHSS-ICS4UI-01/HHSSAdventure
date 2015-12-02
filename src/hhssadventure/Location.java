@@ -82,10 +82,16 @@ public class Location {
     }
     
     /**
-     * Returns the description associated of the current scene
+     * Returns the description associated with the current scene.
      * @return the scene description.
      */
     public String getDescription(String direction){
+        
+        System.out.println(scenes[0].getDirection());
+        System.out.println(scenes[1].getDirection());
+        System.out.println(scenes[2].getDirection());
+        System.out.println(scenes[3].getDirection());
+        
         int dir = 0;
         if(direction.equals("N")){
             dir = 0;
@@ -125,6 +131,11 @@ public class Location {
         return scenes[dir].getNextLocation();
     }
     
+    /**
+     * Returns the direction that the player will face in the next location.
+     * @param direction
+     * @return 
+     */
     public String getNextDirection(String direction){
         int dir = 0;
         if(direction.equals("N")){
