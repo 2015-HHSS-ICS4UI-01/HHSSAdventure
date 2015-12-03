@@ -15,8 +15,6 @@ import java.util.Scanner;
  */
 public class HHSSAdventure {
     private ArrayList<Location> locations = new ArrayList<Location>();
-    private String startingLocation;
-    private String startingDirection;
     private String currentLocation;
     private String currentDirection;
     private UserInterface gui;
@@ -48,8 +46,8 @@ public class HHSSAdventure {
         
         Scanner reader = new Scanner(file); 
         
-        startingLocation = reader.nextLine();
-        startingDirection = reader.nextLine();
+        currentLocation = reader.nextLine();
+        currentDirection = reader.nextLine();
         
         
         //keep scanning as long as theres something to scan
@@ -62,12 +60,12 @@ public class HHSSAdventure {
         
         gui = new UserInterface(this);
         //set the text for the class name
-        Location l = locations.get(locationNumber);
-        gui.setLocationName(l.getDesciption());
         
+        gui.setLocationName(currentLocation);
+        gui.setDirection(this.Direction(currentDirection));
         
         //showing the image the person is at
-        gui.showImage(l.getSceneImage(startingDirection).getImage());
+        gui.showImage(this.getLocation(currentLocation).getSceneImage(currentDirection).getImage());
         //show it
         gui.setVisible(true);
         
@@ -75,26 +73,81 @@ public class HHSSAdventure {
     
     
     public void right(){
-//        Location l = locations.get(locationNumber);   
-//        if () {
-//            
-//        }
-//        gui.showImage(l.getSceneImage(currentDirection).getImage());
-//        gui.setLocationName(l.getDesciption());
+        //check direction is null
+        if (currentDirection != null) {
+            //reassign the directions based on right turn
+            if (currentDirection.equals("N")) {
+                currentDirection = "E";
+            } else if (currentDirection.equals("E")) {
+                currentDirection = "S";
+            } else if (currentDirection.equals("S")) {
+                currentDirection = "W";
+            } else if (currentDirection.equals("W")) {
+                currentDirection = "N";
+            }
+            //reset the visible direction
+            gui.setDirection(this.Direction(currentDirection));
+            //reset the picture
+            gui.showImage(this.getLocation(currentLocation).getSceneImage(currentDirection).getImage());
+        }
     }
     
     public void left(){
-        Location l = locations.get(locationNumber);
-        locationNumber --;
-        gui.showImage(l.getSceneImage(currentDirection).getImage());
-        gui.setLocationName(l.getDesciption());
+           //same as right turn except based on left turn
+        if (currentDirection != null) {
+            if (currentDirection.equals("N")) {
+                currentDirection = "W";
+            } else if (currentDirection.equals("E")) {
+                currentDirection = "N";
+            } else if (currentDirection.equals("S")) {
+                currentDirection = "E";
+            } else if (currentDirection.equals("W")) {
+                currentDirection = "S";
+            }
+            gui.setDirection(this.Direction(currentDirection));
+            gui.showImage(this.getLocation(currentLocation).getSceneImage(currentDirection).getImage());
+        }
     }
     
     public void forward(){
-        Location l = locations.get(locationNumber);
-        locationNumber --;
-        gui.showImage(l.getSceneImage(currentDirection).getImage());
-        gui.setLocationName(l.getDesciption());
+        //check if player is able to move forward 
+        if (this.getLocation(currentLocation).getSceneImage(currentDirection).frontBlocked()){
+            //temp direction
+            String d = currentDirection;
+            //direction is equal to next direction
+            currentDirection = this.getLocation(currentLocation).getSceneImage(d).nextDirection();
+            //location is equal to next location
+            currentLocation = this.getLocation(currentLocation).getSceneImage(d).nextLocation();
+
+            //reset visible direction
+            gui.setDirection(this.Direction(currentDirection));
+            //reset visible location
+            gui.setLocationName(currentLocation);
+            //reset picture
+            gui.showImage(this.getLocation(currentLocation).getSceneImage(currentDirection).getImage());
+        }
+       
+    }
         
+    public String Direction(String d) {
+        if (d.equals("N")) {
+            d = "North";
+        } else if (d.equals("S")) {
+            d = "South";
+        } else if (d.equals("E")) {
+            d = "East";
+        } else if (d.equals("W")) {
+            d = "West";
+        }
+
+        return d;
+    }
+    
+    public Location getLocation(String name){
+        int i = 0;
+        while (i < 3 && !name.equals(locations.get(i).getDesciption())) {
+            i++;
+        }
+        return locations.get(i);
     }
 }

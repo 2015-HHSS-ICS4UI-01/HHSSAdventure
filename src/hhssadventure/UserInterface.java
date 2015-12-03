@@ -33,6 +33,9 @@ public class UserInterface extends javax.swing.JFrame {
         picturePanel2.setImage(img);
     }
 
+    public void setDirection(String name){
+        
+    }
     
    
 

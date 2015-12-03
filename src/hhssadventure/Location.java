@@ -35,7 +35,6 @@ public class Location {
 //            System.out.println("");
             
         }
-        System.out.println("");
     }
     
 
