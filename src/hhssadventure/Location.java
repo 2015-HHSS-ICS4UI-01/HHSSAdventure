@@ -75,7 +75,7 @@ public class Location {
     
     /**
      * Returns the description associated with the current scene.
-     * @return the scene description.
+     * @return the scene's description.
      */
     public String getDescription(String direction){
         
