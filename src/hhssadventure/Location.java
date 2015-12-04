@@ -43,17 +43,12 @@ public class Location {
      */
     public String getImage(String direction){
         int dir = 0;
-        if(direction.equals("N")){
-            dir = 0;
-        }
-        if(direction.equals("E")){
-            dir = 1;
-        }
-        if(direction.equals("S")){
-            dir = 2;
-        }
-        if(direction.equals("W")){
-            dir = 3;
+        while(dir <= 3){
+            if(direction.equals(scenes[dir].getDirection())){
+                break;
+            }else{
+                dir++;
+            }
         }
         
         return scenes[dir].getPicture();
@@ -65,40 +60,48 @@ public class Location {
      */
     public boolean isBlocked(String direction){
         int dir = 0;
-        if(direction.equals("N")){
-            dir = 0;
-        }
-        if(direction.equals("E")){
-            dir = 1;
-        }
-        if(direction.equals("S")){
-            dir = 2;
-        }
-        if(direction.equals("W")){
-            dir = 3;
+        while(dir <= 3){
+            if(direction.equals(scenes[dir].getDirection())){
+                break;
+            }else{
+                dir++;
+            }
         }
         
         return scenes[dir].isBlocked();
     }
     
     /**
-     * Returns the description associated of the current scene
+     * Returns the description associated with the current scene.
      * @return the scene description.
      */
     public String getDescription(String direction){
+        
+        System.out.println(scenes[0].getDirection());
+        System.out.println(scenes[1].getDirection());
+        System.out.println(scenes[2].getDirection());
+        System.out.println(scenes[3].getDirection());
+        
         int dir = 0;
-        if(direction.equals("N")){
-            dir = 0;
+        while(dir <= 3){
+            if(direction.equals(scenes[dir].getDirection())){
+                break;
+            }else{
+                dir++;
+            }
         }
-        if(direction.equals("E")){
-            dir = 1;
-        }
-        if(direction.equals("S")){
-            dir = 2;
-        }
-        if(direction.equals("W")){
-            dir = 3;
-        }
+//        if(direction.equals("N")){
+//            dir = 0;
+//        }
+//        if(direction.equals("E")){
+//            dir = 1;
+//        }
+//        if(direction.equals("S")){
+//            dir = 2;
+//        }
+//        if(direction.equals("W")){
+//            dir = 3;
+//        }
         
         return scenes[dir].getDescription();
     }
@@ -109,36 +112,56 @@ public class Location {
      */
     public String getNextLocation(String direction){
         int dir = 0;
-        if(direction.equals("N")){
-            dir = 0;
+        while(dir <= 3){
+            if(direction.equals(scenes[dir].getDirection())){
+                break;
+            }else{
+                dir++;
+            }
+            
         }
-        if(direction.equals("E")){
-            dir = 1;
-        }
-        if(direction.equals("S")){
-            dir = 2;
-        }
-        if(direction.equals("W")){
-            dir = 3;
-        }
+//        if(direction.equals("N")){
+//            dir = 0;
+//        }
+//        if(direction.equals("E")){
+//            dir = 1;
+//        }
+//        if(direction.equals("S")){
+//            dir = 2;
+//        }
+//        if(direction.equals("W")){
+//            dir = 3;
+//        }
         
         return scenes[dir].getNextLocation();
     }
     
+    /**
+     * Returns the direction that the player will face in the next location.
+     * @param direction
+     * @return 
+     */
     public String getNextDirection(String direction){
         int dir = 0;
-        if(direction.equals("N")){
-            dir = 0;
+        while(dir <= 3){
+            if(direction.equals(scenes[dir].getDirection())){
+                break;
+            }else{
+                dir++;
+            }
         }
-        if(direction.equals("E")){
-            dir = 1;
-        }
-        if(direction.equals("S")){
-            dir = 2;
-        }
-        if(direction.equals("W")){
-            dir = 3;
-        }
+//        if(direction.equals("N")){
+//            dir = 0;
+//        }
+//        if(direction.equals("E")){
+//            dir = 1;
+//        }
+//        if(direction.equals("S")){
+//            dir = 2;
+//        }
+//        if(direction.equals("W")){
+//            dir = 3;
+//        }
         
         return scenes[dir].getNextDirection();
     }
