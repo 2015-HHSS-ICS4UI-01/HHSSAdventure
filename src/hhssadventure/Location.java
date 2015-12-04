@@ -43,17 +43,12 @@ public class Location {
      */
     public String getImage(String direction){
         int dir = 0;
-        if(direction.equals("N")){
-            dir = 0;
-        }
-        if(direction.equals("E")){
-            dir = 1;
-        }
-        if(direction.equals("S")){
-            dir = 2;
-        }
-        if(direction.equals("W")){
-            dir = 3;
+        while(dir <= 3){
+            if(direction.equals(scenes[dir].getDirection())){
+                break;
+            }else{
+                dir++;
+            }
         }
         
         return scenes[dir].getPicture();
@@ -65,17 +60,12 @@ public class Location {
      */
     public boolean isBlocked(String direction){
         int dir = 0;
-        if(direction.equals("N")){
-            dir = 0;
-        }
-        if(direction.equals("E")){
-            dir = 1;
-        }
-        if(direction.equals("S")){
-            dir = 2;
-        }
-        if(direction.equals("W")){
-            dir = 3;
+        while(dir <= 3){
+            if(direction.equals(scenes[dir].getDirection())){
+                break;
+            }else{
+                dir++;
+            }
         }
         
         return scenes[dir].isBlocked();
@@ -93,18 +83,25 @@ public class Location {
         System.out.println(scenes[3].getDirection());
         
         int dir = 0;
-        if(direction.equals("N")){
-            dir = 0;
+        while(dir <= 3){
+            if(direction.equals(scenes[dir].getDirection())){
+                break;
+            }else{
+                dir++;
+            }
         }
-        if(direction.equals("E")){
-            dir = 1;
-        }
-        if(direction.equals("S")){
-            dir = 2;
-        }
-        if(direction.equals("W")){
-            dir = 3;
-        }
+//        if(direction.equals("N")){
+//            dir = 0;
+//        }
+//        if(direction.equals("E")){
+//            dir = 1;
+//        }
+//        if(direction.equals("S")){
+//            dir = 2;
+//        }
+//        if(direction.equals("W")){
+//            dir = 3;
+//        }
         
         return scenes[dir].getDescription();
     }
@@ -115,18 +112,26 @@ public class Location {
      */
     public String getNextLocation(String direction){
         int dir = 0;
-        if(direction.equals("N")){
-            dir = 0;
+        while(dir <= 3){
+            if(direction.equals(scenes[dir].getDirection())){
+                break;
+            }else{
+                dir++;
+            }
+            
         }
-        if(direction.equals("E")){
-            dir = 1;
-        }
-        if(direction.equals("S")){
-            dir = 2;
-        }
-        if(direction.equals("W")){
-            dir = 3;
-        }
+//        if(direction.equals("N")){
+//            dir = 0;
+//        }
+//        if(direction.equals("E")){
+//            dir = 1;
+//        }
+//        if(direction.equals("S")){
+//            dir = 2;
+//        }
+//        if(direction.equals("W")){
+//            dir = 3;
+//        }
         
         return scenes[dir].getNextLocation();
     }
@@ -138,18 +143,25 @@ public class Location {
      */
     public String getNextDirection(String direction){
         int dir = 0;
-        if(direction.equals("N")){
-            dir = 0;
+        while(dir <= 3){
+            if(direction.equals(scenes[dir].getDirection())){
+                break;
+            }else{
+                dir++;
+            }
         }
-        if(direction.equals("E")){
-            dir = 1;
-        }
-        if(direction.equals("S")){
-            dir = 2;
-        }
-        if(direction.equals("W")){
-            dir = 3;
-        }
+//        if(direction.equals("N")){
+//            dir = 0;
+//        }
+//        if(direction.equals("E")){
+//            dir = 1;
+//        }
+//        if(direction.equals("S")){
+//            dir = 2;
+//        }
+//        if(direction.equals("W")){
+//            dir = 3;
+//        }
         
         return scenes[dir].getNextDirection();
     }
