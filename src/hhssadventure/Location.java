@@ -12,11 +12,13 @@ import java.util.Scanner;
  */
 public class Location {
     private String locationName;
+    private int dirCounter;
     private Scene[] scenes;
     
     
     //constructor for the locations using a text file
     public Location(Scanner input){
+        dirCounter = 0;
         locationName = input.next();
         scenes = new Scene[4];
         
@@ -42,16 +44,16 @@ public class Location {
      * @return the scene's image.
      */
     public String getImage(String direction){
-        int dir = 0;
-        while(dir <= 3){
-            if(direction.equals(scenes[dir].getDirection())){
+        dirCounter = 0;
+        while(dirCounter <= 3){
+            if(direction.equals(scenes[dirCounter].getDirection())){
                 break;
             }else{
-                dir++;
+                dirCounter++;
             }
         }
         
-        return scenes[dir].getPicture();
+        return scenes[dirCounter].getPicture();
     }
     
     /**
@@ -59,16 +61,16 @@ public class Location {
      * @return whether or not the player can move forward.
      */
     public boolean isBlocked(String direction){
-        int dir = 0;
-        while(dir <= 3){
-            if(direction.equals(scenes[dir].getDirection())){
+        dirCounter = 0;
+        while(dirCounter <= 3){
+            if(direction.equals(scenes[dirCounter].getDirection())){
                 break;
             }else{
-                dir++;
+                dirCounter++;
             }
         }
         
-        return scenes[dir].isBlocked();
+        return scenes[dirCounter].isBlocked();
     }
     
     /**
@@ -77,17 +79,20 @@ public class Location {
      */
     public String getDescription(String direction){
         
-        System.out.println(scenes[0].getDirection());
-        System.out.println(scenes[1].getDirection());
-        System.out.println(scenes[2].getDirection());
-        System.out.println(scenes[3].getDirection());
+//        System.out.println(scenes[0].getDirection());
+//        System.out.println(scenes[1].getDirection());
+//        System.out.println(scenes[2].getDirection());
+//        System.out.println(scenes[3].getDirection());
         
-        int dir = 0;
-        while(dir <= 3){
-            if(direction.equals(scenes[dir].getDirection())){
+        int dirCounter = 0;
+        System.out.println("Current " + direction);
+        System.out.println("---");
+        while(dirCounter <= 3){
+            System.out.println(scenes[dirCounter].getDirection());
+            if(direction.equals(scenes[dirCounter].getDirection())){
                 break;
             }else{
-                dir++;
+                dirCounter++;
             }
         }
 //        if(direction.equals("N")){
@@ -103,7 +108,7 @@ public class Location {
 //            dir = 3;
 //        }
         
-        return scenes[dir].getDescription();
+        return scenes[dirCounter].getDescription();
     }
     
     /**
@@ -111,12 +116,12 @@ public class Location {
      * @return the name of the location.
      */
     public String getNextLocation(String direction){
-        int dir = 0;
-        while(dir <= 3){
-            if(direction.equals(scenes[dir].getDirection())){
+        int dirCounter = 0;
+        while(dirCounter <= 3){
+            if(direction.equals(scenes[dirCounter].getDirection())){
                 break;
             }else{
-                dir++;
+                dirCounter++;
             }
             
         }
@@ -133,7 +138,7 @@ public class Location {
 //            dir = 3;
 //        }
         
-        return scenes[dir].getNextLocation();
+        return scenes[dirCounter].getNextLocation();
     }
     
     /**
@@ -142,12 +147,12 @@ public class Location {
      * @return 
      */
     public String getNextDirection(String direction){
-        int dir = 0;
-        while(dir <= 3){
-            if(direction.equals(scenes[dir].getDirection())){
+        int dirCounter = 0;
+        while(dirCounter <= 3){
+            if(direction.equals(scenes[dirCounter].getDirection())){
                 break;
             }else{
-                dir++;
+                dirCounter++;
             }
         }
 //        if(direction.equals("N")){
@@ -163,7 +168,7 @@ public class Location {
 //            dir = 3;
 //        }
         
-        return scenes[dir].getNextDirection();
+        return scenes[dirCounter].getNextDirection();
     }
     
 }

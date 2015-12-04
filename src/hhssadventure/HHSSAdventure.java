@@ -56,17 +56,6 @@ public class HHSSAdventure {
         gui.setImage(currentLoc.getImage(currentDirection));
         gui.setForward(currentLoc.isBlocked(currentDirection));
         gui.setVisible(true);
-        
-        for(int i = 0; i < locations.size(); i++){
-            System.out.println(locations.get(i).getDescription("N"));
-            System.out.println(locations.get(i).getDescription("E"));
-            System.out.println(locations.get(i).getDescription("S"));
-            System.out.println(locations.get(i).getDescription("W"));
-            System.out.println(locations.get(i).getImage("N"));
-            System.out.println(locations.get(i).getImage("E"));
-            System.out.println(locations.get(i).getImage("S"));
-            System.out.println(locations.get(i).getImage("W"));
-        }
     }
     
     /**
