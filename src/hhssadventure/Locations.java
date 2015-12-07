@@ -45,13 +45,13 @@ public class Locations {
      * @return picture in the direction im facing
      */
     public BufferedImage getImage(String dir){
-        if(dir.equals('N')){
+        if(dir.equals("N")){
             return scenes[0].getPic();
-        }else if(dir.equals('E')){
+        }else if(dir.equals("E")){
             return scenes[1].getPic();
-        }else if(dir.equals('S')){
+        }else if(dir.equals("S")){
             return scenes[2].getPic();
-        }else if(dir.equals('W')){
+        }else if(dir.equals("W")){
             return scenes[3].getPic();
         }else{
             return null;
@@ -64,13 +64,13 @@ public class Locations {
      * @return true or false
      */
     public boolean getIsFrontBlocked(String dir){
-        if(dir.equals('N')){
+        if(dir.equals("N")){
             return scenes[0].isFrontBlocked();
-        }else if(dir.equals('E')){
+        }else if(dir.equals("E")){
             return scenes[1].isFrontBlocked();
-        }else if(dir.equals('S')){
+        }else if(dir.equals("S")){
             return scenes[2].isFrontBlocked();
-        }else if(dir.equals('W')){
+        }else if(dir.equals("W")){
             return scenes[3].isFrontBlocked();
         }else{
             return false;
@@ -84,13 +84,13 @@ public class Locations {
      * @return description
      */
     public String getDescription(String dir){
-        if(dir.equals('N')){
+        if(dir.equals("N")){
             return scenes[0].description();
-        }else if(dir.equals('E')){
+        }else if(dir.equals("E")){
             return scenes[1].description();
-        }else if(dir.equals('S')){
+        }else if(dir.equals("S")){
             return scenes[2].description();
-        }else if(dir.equals('W')){
+        }else if(dir.equals("W")){
             return scenes[3].description();
         }else{
             return "";
@@ -103,13 +103,13 @@ public class Locations {
      * @return next direction
      */
     public String getNextLocation(String dir){
-       if(dir.equals('N')){
+       if(dir.equals("N")){
            return scenes[0].getNextLocation();
-       }else if(dir.equals('E')){
+       }else if(dir.equals("E")){
            return scenes[1].getNextLocation();
-       }else if(dir.equals('S')){
+       }else if(dir.equals("S")){
            return scenes[2].getNextLocation();
-       }else if(dir.equals('W')){
+       }else if(dir.equals("W")){
            return scenes[3].getNextLocation();
        }else{
            return "";
@@ -117,13 +117,13 @@ public class Locations {
     }
     
     public String getNextDirection(String dir){
-       if(dir.equals('N')){
+       if(dir.equals("N")){
            return scenes[0].getNextDir();
-       }else if(dir.equals('E')){
+       }else if(dir.equals("E")){
            return scenes[1].getNextDir();
-       }else if(dir.equals('S')){
+       }else if(dir.equals("S")){
            return scenes[2].getNextDir();
-       }else if(dir.equals('W')){
+       }else if(dir.equals("W")){
            return scenes[3].getNextDir();
        }else{
            return "";

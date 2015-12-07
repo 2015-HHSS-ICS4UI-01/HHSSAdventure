@@ -38,7 +38,7 @@ public class Scenes {
     Scenes(Scanner input) {
         dir = input.next();
         picName = input.next();
-        loadPic(picName);
+        image = loadPic(picName);
         String check = input.next();
         if (check.equals("false")) {
             isFrontBlocked = false;
@@ -48,6 +48,7 @@ public class Scenes {
             isFrontBlocked = true;    
         }
         description = input.nextLine();
+        
     }
     
     /**
@@ -78,7 +79,7 @@ public class Scenes {
      * loads in the pictures
      * @param picName the name of the pic to look for
      */
-    private void loadPic(String picName) {
+    private BufferedImage loadPic(String picName) {
         image = null;
         try{
             image = ImageIO.read(new File("images/" + picName));
@@ -86,6 +87,7 @@ public class Scenes {
             e.printStackTrace();
             System.exit(0);
         }
+        return image;
     }
     
     /**

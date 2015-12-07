@@ -83,6 +83,7 @@ public class HHSSAdventure {
                 if (currentDirection.equals("N")) {
                     currentDirection = "E";
                     gui.setImage(l.getImage(currentDirection));
+                    
                 } else if (currentDirection.equals("S")) {
                     currentDirection = "W";
                     gui.setImage(l.getImage(currentDirection));
@@ -93,6 +94,7 @@ public class HHSSAdventure {
                     currentDirection = "N";
                     gui.setImage(l.getImage(currentDirection));
                 }
+        
             }
         }
     }
