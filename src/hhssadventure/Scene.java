@@ -7,7 +7,7 @@ package hhssadventure;
 import java.util.Scanner;
 
 /**
- *
+ * The Scenes that correspond to Locations in the game.
  * @author morgennebesenschek
  */
 public class Scene {
@@ -20,13 +20,15 @@ public class Scene {
     
     public Scene(Scanner input){
         sceneDirection = input.next();
-        //figure out images, this is temp
         scenePicture = input.next();
         String check = input.next();
+        //if front of scene is blocked, go to the next scene
         if(check.equals("true")){
             isBlocked = true;
             input.nextLine();
-        }else{
+        }
+        //if not blocked, add the next location and its direction first
+        else{
             isBlocked = false;
             nextLocation = input.next();
             nextDirection = input.nextLine();
@@ -82,10 +84,5 @@ public class Scene {
      */
     public String getDescription(){
         return this.description;
-    }
-    
-    
-    
-    
-    
+    }  
 }

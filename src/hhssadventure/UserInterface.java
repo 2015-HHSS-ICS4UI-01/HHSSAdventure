@@ -5,7 +5,7 @@ import java.io.File;
 import javax.imageio.ImageIO;
 
 /**
- *
+ * A User Interface to show the current location and allow the user to move.
  * @author besem4079
  */
 public class UserInterface extends javax.swing.JFrame {
@@ -31,6 +31,10 @@ public class UserInterface extends javax.swing.JFrame {
         sceneDescript.setText(description);
     }
     
+    /**
+     * Sets whether or not the user can move forward with the user interface.
+     * @param isBlocked whether or not the area ahead of the user is blocked
+     */
     public void setForward(boolean isBlocked){
         if(isBlocked){
             this.isBlocked = true;
@@ -94,7 +98,9 @@ public class UserInterface extends javax.swing.JFrame {
             }
         });
 
+        sceneDescript.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         sceneDescript.setText("DESCRIPTION");
+        sceneDescript.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
 
         org.jdesktop.layout.GroupLayout layout = new org.jdesktop.layout.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -103,28 +109,25 @@ public class UserInterface extends javax.swing.JFrame {
             .add(layout.createSequentialGroup()
                 .add(layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
                     .add(layout.createSequentialGroup()
-                        .addContainerGap()
-                        .add(sceneDescript, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .add(layout.createSequentialGroup()
-                        .add(279, 279, 279)
+                        .add(240, 240, 240)
                         .add(leftScene)
-                        .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
+                        .add(18, 18, 18)
                         .add(forwardScene)
-                        .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
-                        .add(rightScene)
-                        .add(0, 0, Short.MAX_VALUE)))
-                .addContainerGap())
-            .add(layout.createSequentialGroup()
-                .add(96, 96, 96)
-                .add(sceneImage, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 568, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(97, Short.MAX_VALUE))
+                        .add(18, 18, 18)
+                        .add(rightScene))
+                    .add(org.jdesktop.layout.GroupLayout.TRAILING, layout.createSequentialGroup()
+                        .add(82, 82, 82)
+                        .add(layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+                            .add(sceneDescript, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 576, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                            .add(sceneImage, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 576, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))))
+                .addContainerGap(103, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
             .add(org.jdesktop.layout.GroupLayout.TRAILING, layout.createSequentialGroup()
                 .add(32, 32, 32)
                 .add(sceneImage, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 413, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED, 37, Short.MAX_VALUE)
+                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED, 19, Short.MAX_VALUE)
                 .add(sceneDescript, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 31, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
                 .add(layout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
@@ -138,22 +141,24 @@ public class UserInterface extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void leftSceneActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_leftSceneActionPerformed
-        //moves to the left
+        //move user to the left
         controller.prevScene();
     }//GEN-LAST:event_leftSceneActionPerformed
 
     private void forwardSceneActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_forwardSceneActionPerformed
+        //if area ahead of user is blocked
         if(isBlocked){
             //do nothing
-        }else{
-            //moves forward
+        }//if area ahead of user is not blocked
+        else{
+            //move user forward
             controller.switchLocation();
         }
         
     }//GEN-LAST:event_forwardSceneActionPerformed
 
     private void rightSceneActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rightSceneActionPerformed
-        //moves to the right
+        //move user to the right
         controller.nextScene();
     }//GEN-LAST:event_rightSceneActionPerformed
 

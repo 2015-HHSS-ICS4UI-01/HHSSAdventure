@@ -2,49 +2,49 @@ Caf1
 N
 Upstairs1
 N IMG_0045.JPG false Dowstairs S
-A stairway leading downwards. You can see the outside of the school, and the swamp beyond, through the window.
+A stairway leading downwards. You can see the outside of the school, and the swamp beyond.
 E IMG_0046.JPG true
 A white wall and a garbage can. Nothing special.
 S IMG_0047.JPG false Upstairs2 S
-A hallway lined with lockers. There is a garbage can and a classroom at the end of the hallway.
+Just a hallway of lockers. Oh, and a garbage can!
 W IMG_0049.JPG true
 A white wall with a sign that reads "SECOND FLOOR". Good to know.
 Upstairs2
 N IMG_0050.JPG false Upstairs1 N
-A hallway lined with lockers. Up ahead, there is a classroom on the left, another hallway on the right, and a stairway straight ahead.
+Just a hallway of lockers.
 E IMG_0051.JPG true
 A row of lockers. Nothing special, unless you know how to crack locks. Don't do that.
 S IMG_0052.JPG false Upstairs3 S
-A hallway lined with lockers. There is a garbage can and a classroom at the end of the hallway. The end of the hallway also branches out to the left and the right.
+Just a hallway of lockers. And a garbage can.
 W IMG_0053.JPG true
 A row of lockers. Breaking into them would be a bad idea.
 Upstairs3
 N IMG_0054.JPG false Upstairs2 N
-A hallway lined with lockers. There are two doorways along the left wall
+Just a hallway of lockers.
 E IMG_0055.JPG false Glass E
-A hallway lined with many lockers, doorways, and a few students. There are restrooms to the left of you
+Just a hallway of lockers, doorways, and a few students.
 S IMG_0056.JPG true
-A door with two signs: one reads "WELCOME" and one reads "MRS VICKERS MATH". There is a small poster to the left of the door.
+A door with two signs: one reads "WELCOME" and one reads "MRS VICKERS MATH".
 W IMG_0057.JPG false Math1 W
-A hallway lined with lockers. There are a few doorways along each wall.
+Just a hallway of lockers.
 Math1 
 N IMG_0058.JPG true
-A wooden door. A sign to its right reads "2703". Through the window, you see students sitting at rows of computers.
+A wooden door. A sign to its right reads "2703". You see students on computers.
 E IMG_0059.JPG false Upstairs3 E
-A hallway lined with lockers. There is a large glass display at the left wall. Up ahead, students are walking towards you.
+Just a hallway of lockers, and a large glass display to your left.
 S IMG_0060.JPG true
-Two doors with small windows allowing you to peek in. The left door has two posters: one reads "2604", the other has a picture of a building on it.
+A door with two posters: one reads "2604", the other shows a picture of a building.
 W IMG_0062.JPG false Math2 W
-A hallway lined with lockers and doorways. It feels empty.
+Just a hallway of lockers. It feels especially empty.
 Math2
 N IMG_0063.JPG true
-Through the window, you see various world maps on the room's ceiling. There is a lone television sitting on a stand. Beyond that, you can also see into two classrooms.
+Through the window, there is a lone television sitting on a stand.
 E IMG_0064.JPG false Math1 E
-A hallway lined with lockers and doorways. In the distance, one person is walking towards you, and one person away from you.
+Just a hallway. Students walk both towards and away from you.
 S IMG_0065.JPG true
 You try to look through the window, but the blinds are almost fully closed. What a shame.
 W IMG_0066.JPG false Math3 W
-A hallway that leads to a large window; you see the road and other buildings outside. There is a doorway to your left and right.
+A hallway that leads to a large window; you see the road and other buildings outside.
 Math3
 N IMG_0067.JPG true
 A white wall with two posters; one has a fancy building on it, the other shows people holding balloons. The latter poster reads at the top, "GUTSY WALK". 
@@ -83,22 +83,22 @@ W IMG_0082.JPG false Eng2 W
 
 Caf1
 N IMG_0083.JPG true
-You see a cafeteria. Groups of students sit at some at the tables; the rest are empty. A large window at the back allows you to see outside of the school.
+A cafeteria. Groups of students sit at the tables. You see a large window at the back.
 E IMG_0084.JPG false Caf3 E
-An open hallway. To your left is the cafeteria. Up ahead to the right is the office. There is a photo of somebody on the wall above the office.
+An open hallway. To your left is the cafeteria. Up ahead to the right is the office.
 S IMG_0085.JPG false Caf2 S
-The foyer. There are benches forming an "X" around a garbage can. There is a row of doors up ahead. Wait... up above... are those camels?
+There are benches forming an "X" around a garbage can. Wait... are those camels?
 W IMG_0086.JPG false Eng3 W
-There is custodial equipment, and a pile of garbage at the sides of this hallway. Up ahead, a student is walking towards your direction.
+There is custodial equipment, and a pile of garbage to the side of the hallway.
 Caf2
 N IMG_0087.JPG false Caf1 N
-
+Up ahead are benches, and the cafeteria. You can see the second floor from here.
 E IMG_0088.JPG true
-
+Displays of various Husky stuffed animals. That’s just adorable.
 S IMG_0089.JPG true
-
+Hey! School’s not done yet; don’t even think about leaving!
 W IMG_0090.JPG true
-
+The guidance office. According to the sign, it’s open!
 Caf3
 N IMG_0091.JPG true
 
@@ -106,7 +106,7 @@ E IMG_0092.JPG false Gym E
 
 S IMG_0093.JPG true
 
-W IMG_0094.JPG false Caf2 W
+W IMG_0094.JPG false Caf1 W
 
 Gym
 N IMG_0095.JPG false Music1 N
@@ -204,7 +204,7 @@ N IMG_0132.JPG true
 E IMG_0133.JPG false Staff E
 
 S IMG_0134.JPG true
-
+A camel, a palm tree, and the Eiffel Tower can be seen in the distance. Neat. 
 W IMG_0135.JPG false Upstairs3 W
 
 Dowstairs

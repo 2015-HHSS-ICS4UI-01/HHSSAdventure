@@ -7,13 +7,16 @@ package hhssadventure;
 import java.util.Scanner;
 
 /**
- *
+ * The Locations that can be explored in the game.
  * @author morgennebesenschek
  */
 public class Location {
     private String locationName;
+    //array to hold all possible directions in the game
     private String[] directions;
-    private int curDirection;
+    //tracks the current direction in integer form
+    private int currentDirection;
+    //the areas that correspond to each direction of a location
     private Scene[] scenes;
     
     //constructor for the locations using a text file
@@ -45,64 +48,69 @@ public class Location {
      */
     public String getImage(String direction){
         for(int i = 0; i < directions.length; i++){
-            if(direction.equals(directions[i])){
-                curDirection = i;
+            if(direction.contains(directions[i])){
+                currentDirection = i;
             }
         }
-        return scenes[curDirection].getPicture();
+        return scenes[currentDirection].getPicture();
     }
     
     /**
      * Returns whether the player is able to move forward to another location.
+     * @param direction the player's current direction.
      * @return whether or not the player can move forward.
      */
     public boolean isBlocked(String direction){
         for(int i = 0; i < directions.length; i++){
-            if(direction.equals(directions[i])){
-                curDirection = i;
+            if(direction.contains(directions[i])){
+                currentDirection = i;
             }
         }
-        return scenes[curDirection].isBlocked();
+        return scenes[currentDirection].isBlocked();
     }
     
     /**
      * Returns the description associated with the current scene.
+     * @param direction the 
      * @return the scene's description.
      */
     public String getDescription(String direction){
         for(int i = 0; i < directions.length; i++){
-            if(direction.equals(directions[i])){
-                curDirection = i;
+            if(direction.contains(directions[i])){
+                System.out.println(directions[i]);
+                currentDirection = i;
             }
         }
-        return scenes[curDirection].getDescription();
+        System.out.println(currentDirection);
+        return scenes[currentDirection].getDescription();
     }
     
     /**
      * Returns the location that the player can move to from this scene.
-     * @return the name of the location.
+     * @param direction the player's current direction. 
+     * @return the name of the next location.
      */
     public String getNextLocation(String direction){
         for(int i = 0; i < directions.length; i++){
-            if(direction.equals(directions[i])){
-                curDirection = i;
+            if(direction.contains(directions[i])){
+                currentDirection = i;
             }
         }
-        return scenes[curDirection].getNextLocation();
+        return scenes[currentDirection].getNextLocation();
     }
     
     /**
      * Returns the direction that the player will face in the next location.
-     * @param direction
-     * @return 
+     * @param direction the player's current direction.
+     * @return the next direction
      */
     public String getNextDirection(String direction){
         for(int i = 0; i < directions.length; i++){
-            if(direction.equals(directions[i])){
-                curDirection = i;
+            if(direction.contains(directions[i])){
+                currentDirection = i;
             }
         }
-        return scenes[curDirection].getNextDirection();
+        return scenes[currentDirection].getNextDirection();
     }
     
 }
