@@ -12,11 +12,14 @@ import java.util.Scanner;
  */
 public class Location {
     private String locationName;
+    private String[] directions;
+    private int curDirection;
     private Scene[] scenes;
-    
     
     //constructor for the locations using a text file
     public Location(Scanner input){
+        curDirection = 0;
+        directions = new String[] {"N","E","S","W"};
         locationName = input.next();
         scenes = new Scene[4];
         
@@ -42,13 +45,13 @@ public class Location {
      * @return the scene's image.
      */
     public String getImage(String direction){
-        for(int i = 0; i < scenes.length; i++){
-            if(direction.equals(scenes[i].getDirection())){
-                return scenes[i].getPicture();
+        for(int i = 0; i < directions.length; i++){
+            if(direction.equals(directions[i])){
+                curDirection = i;
+                break;
             }
         }
-        
-        return null;   
+        return scenes[curDirection].getPicture();
     }
     
     /**
@@ -56,13 +59,13 @@ public class Location {
      * @return whether or not the player can move forward.
      */
     public boolean isBlocked(String direction){
-        for(int i = 0; i < scenes.length; i++){
-            if(direction.equals(scenes[i].getDirection())){
-                return scenes[i].isBlocked();
+        for(int i = 0; i < directions.length; i++){
+            if(direction.equals(directions[i])){
+                curDirection = i;
+                break;
             }
         }
-        
-        return true;
+        return scenes[curDirection].isBlocked();
     }
     
     /**
@@ -70,13 +73,13 @@ public class Location {
      * @return the scene's description.
      */
     public String getDescription(String direction){
-        for(int i = 0; i < scenes.length; i++){
-            if(direction.equals(scenes[i].getDirection())){
-                return scenes[i].getDescription();
+        for(int i = 0; i < directions.length; i++){
+            if(direction.equals(directions[i])){
+                curDirection = i;
+                break;
             }
         }
-        
-        return null;
+        return scenes[curDirection].getDescription();
     }
     
     /**
@@ -84,13 +87,13 @@ public class Location {
      * @return the name of the location.
      */
     public String getNextLocation(String direction){
-        for(int i = 0; i < scenes.length; i++){
-            if(direction.equals(scenes[i].getDirection())){
-                return scenes[i].getNextLocation();
+        for(int i = 0; i < directions.length; i++){
+            if(direction.equals(directions[i])){
+                curDirection = i;
+                break;
             }
         }
-        
-        return null;
+        return scenes[curDirection].getNextLocation();
     }
     
     /**
@@ -98,14 +101,8 @@ public class Location {
      * @param direction
      * @return 
      */
-    public String getNextDirection(String direction){
-        for(int i = 0; i < scenes.length; i++){
-            if(direction.equals(scenes[i].getDirection())){
-                return scenes[i].getNextDirection();
-            }
-        }
-        
-        return null;
+    public String getNextDirection(int direction){
+        return scenes[direction].getNextDirection();
     }
     
 }
