@@ -77,11 +77,9 @@ public class Location {
     public String getDescription(String direction){
         for(int i = 0; i < directions.length; i++){
             if(direction.contains(directions[i])){
-                System.out.println(directions[i]);
                 currentDirection = i;
             }
         }
-        System.out.println(currentDirection);
         return scenes[currentDirection].getDescription();
     }
     
