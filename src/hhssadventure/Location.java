@@ -36,7 +36,6 @@ public class Location {
      * @return the location's name.
      */
     public String getName(){
-        System.out.println(locationName);
         return this.locationName;
     }
     
@@ -48,7 +47,6 @@ public class Location {
         for(int i = 0; i < directions.length; i++){
             if(direction.equals(directions[i])){
                 curDirection = i;
-                break;
             }
         }
         return scenes[curDirection].getPicture();
@@ -62,7 +60,6 @@ public class Location {
         for(int i = 0; i < directions.length; i++){
             if(direction.equals(directions[i])){
                 curDirection = i;
-                break;
             }
         }
         return scenes[curDirection].isBlocked();
@@ -76,10 +73,8 @@ public class Location {
         for(int i = 0; i < directions.length; i++){
             if(direction.equals(directions[i])){
                 curDirection = i;
-                break;
             }
         }
-        System.out.println(curDirection);
         return scenes[curDirection].getDescription();
     }
     
@@ -91,7 +86,6 @@ public class Location {
         for(int i = 0; i < directions.length; i++){
             if(direction.equals(directions[i])){
                 curDirection = i;
-                break;
             }
         }
         return scenes[curDirection].getNextLocation();
@@ -106,7 +100,6 @@ public class Location {
         for(int i = 0; i < directions.length; i++){
             if(direction.equals(directions[i])){
                 curDirection = i;
-                break;
             }
         }
         return scenes[curDirection].getNextDirection();
