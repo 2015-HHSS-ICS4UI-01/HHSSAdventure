@@ -53,6 +53,7 @@ public class HHSSAdventure {
             }
         }
         gui.setDescription(currentLoc.getDescription(currentDirection));
+        System.out.println(currentLoc.getImage(currentDirection));
         gui.setImage(currentLoc.getImage(currentDirection));
         gui.setForward(currentLoc.isBlocked(currentDirection));
         gui.setVisible(true);

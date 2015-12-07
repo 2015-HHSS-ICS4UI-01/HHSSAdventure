@@ -12,13 +12,11 @@ import java.util.Scanner;
  */
 public class Location {
     private String locationName;
-    private int dirCounter;
     private Scene[] scenes;
     
     
     //constructor for the locations using a text file
     public Location(Scanner input){
-        dirCounter = 0;
         locationName = input.next();
         scenes = new Scene[4];
         
@@ -44,16 +42,13 @@ public class Location {
      * @return the scene's image.
      */
     public String getImage(String direction){
-        dirCounter = 0;
-        while(dirCounter <= 3){
-            if(direction.equals(scenes[dirCounter].getDirection())){
-                break;
-            }else{
-                dirCounter++;
+        for(int i = 0; i < scenes.length; i++){
+            if(direction.equals(scenes[i].getDirection())){
+                return scenes[i].getPicture();
             }
         }
         
-        return scenes[dirCounter].getPicture();
+        return null;   
     }
     
     /**
@@ -61,16 +56,13 @@ public class Location {
      * @return whether or not the player can move forward.
      */
     public boolean isBlocked(String direction){
-        dirCounter = 0;
-        while(dirCounter <= 3){
-            if(direction.equals(scenes[dirCounter].getDirection())){
-                break;
-            }else{
-                dirCounter++;
+        for(int i = 0; i < scenes.length; i++){
+            if(direction.equals(scenes[i].getDirection())){
+                return scenes[i].isBlocked();
             }
         }
         
-        return scenes[dirCounter].isBlocked();
+        return true;
     }
     
     /**
@@ -78,37 +70,13 @@ public class Location {
      * @return the scene's description.
      */
     public String getDescription(String direction){
-        
-//        System.out.println(scenes[0].getDirection());
-//        System.out.println(scenes[1].getDirection());
-//        System.out.println(scenes[2].getDirection());
-//        System.out.println(scenes[3].getDirection());
-        
-        int dirCounter = 0;
-        System.out.println("Current " + direction);
-        System.out.println("---");
-        while(dirCounter <= 3){
-            System.out.println(scenes[dirCounter].getDirection());
-            if(direction.equals(scenes[dirCounter].getDirection())){
-                break;
-            }else{
-                dirCounter++;
+        for(int i = 0; i < scenes.length; i++){
+            if(direction.equals(scenes[i].getDirection())){
+                return scenes[i].getDescription();
             }
         }
-//        if(direction.equals("N")){
-//            dir = 0;
-//        }
-//        if(direction.equals("E")){
-//            dir = 1;
-//        }
-//        if(direction.equals("S")){
-//            dir = 2;
-//        }
-//        if(direction.equals("W")){
-//            dir = 3;
-//        }
         
-        return scenes[dirCounter].getDescription();
+        return null;
     }
     
     /**
@@ -116,29 +84,13 @@ public class Location {
      * @return the name of the location.
      */
     public String getNextLocation(String direction){
-        int dirCounter = 0;
-        while(dirCounter <= 3){
-            if(direction.equals(scenes[dirCounter].getDirection())){
-                break;
-            }else{
-                dirCounter++;
+        for(int i = 0; i < scenes.length; i++){
+            if(direction.equals(scenes[i].getDirection())){
+                return scenes[i].getNextLocation();
             }
-            
         }
-//        if(direction.equals("N")){
-//            dir = 0;
-//        }
-//        if(direction.equals("E")){
-//            dir = 1;
-//        }
-//        if(direction.equals("S")){
-//            dir = 2;
-//        }
-//        if(direction.equals("W")){
-//            dir = 3;
-//        }
         
-        return scenes[dirCounter].getNextLocation();
+        return null;
     }
     
     /**
@@ -147,28 +99,13 @@ public class Location {
      * @return 
      */
     public String getNextDirection(String direction){
-        int dirCounter = 0;
-        while(dirCounter <= 3){
-            if(direction.equals(scenes[dirCounter].getDirection())){
-                break;
-            }else{
-                dirCounter++;
+        for(int i = 0; i < scenes.length; i++){
+            if(direction.equals(scenes[i].getDirection())){
+                return scenes[i].getNextDirection();
             }
         }
-//        if(direction.equals("N")){
-//            dir = 0;
-//        }
-//        if(direction.equals("E")){
-//            dir = 1;
-//        }
-//        if(direction.equals("S")){
-//            dir = 2;
-//        }
-//        if(direction.equals("W")){
-//            dir = 3;
-//        }
         
-        return scenes[dirCounter].getNextDirection();
+        return null;
     }
     
 }
