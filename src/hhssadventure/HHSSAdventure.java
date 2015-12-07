@@ -14,7 +14,6 @@ import java.util.Scanner;
  * @author lamon
  */
 public class HHSSAdventure {
-
     ArrayList<Locations> locations = new ArrayList<>();
     private AdventureInterface gui;
     private String currentPlace;
@@ -129,7 +128,9 @@ public class HHSSAdventure {
 //            locationNum = 0;
 //        }
     }
-
+    
+    
+    
     /**
      * @param args the command line arguments
      */

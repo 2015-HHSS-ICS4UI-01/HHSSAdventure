@@ -38,13 +38,6 @@ public class AdventureInterface extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        picturePanel1 = new hhssadventure.PicturePanel();
-        Forward = new javax.swing.JButton();
-        Left = new javax.swing.JButton();
-        Rigth = new javax.swing.JButton();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        description = new javax.swing.JTextArea();
-
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         Forward.setText("Forward");
@@ -85,27 +78,15 @@ public class AdventureInterface extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(picturePanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 482, Short.MAX_VALUE)
+            .addGap(0, 482, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(picturePanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 297, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addGap(0, 297, Short.MAX_VALUE)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void LeftActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LeftActionPerformed
-        controller.turnLeft();
-    }//GEN-LAST:event_LeftActionPerformed
-
-    private void RigthActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RigthActionPerformed
-        controller.turnRight();
-    }//GEN-LAST:event_RigthActionPerformed
-
-    private void ForwardActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ForwardActionPerformed
-        controller.goForward();
-    }//GEN-LAST:event_ForwardActionPerformed
 
     //set the description of the scene
     public void setDescription(String Description){
@@ -151,11 +132,5 @@ public class AdventureInterface extends javax.swing.JFrame {
         });
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton Forward;
-    private javax.swing.JButton Left;
-    private javax.swing.JButton Rigth;
-    private javax.swing.JTextArea description;
-    private javax.swing.JScrollPane jScrollPane1;
-    private hhssadventure.PicturePanel picturePanel1;
     // End of variables declaration//GEN-END:variables
 }

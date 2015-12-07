@@ -1,50 +1,50 @@
 Caf1
 N
 Upstairs1
-N IMG_0045.JPG false Dowstairs S
-E IMG_0046.JPG true
-S IMG_0047.JPG false Upstairs2 S
-W IMG_0049.JPG true
+N IMG_0045.JPG false Dowstairs S Upstairs back parking lot stairwell. Facing down the stairwell.
+E IMG_0046.JPG true Upstairs back parking lot stairwell. Facing a wall.
+S IMG_0047.JPG false Upstairs2 S Upstairs back parking lot stairwell. Facing down the Business hall.
+W IMG_0049.JPG true Upstairs back parking lot stairwell.
 Upstairs2
-N IMG_0050.JPG false Upstairs1 N
-E IMG_0051.JPG true
-S IMG_0052.JPG false Upstairs3 S
-W IMG_0053.JPG true
+N IMG_0050.JPG false Upstairs1 N Business hall. Facing the back parking lot stairwell.
+E IMG_0051.JPG true Business hall. Facing some lockers.
+S IMG_0052.JPG false Upstairs3 S Business hall. Facing the Business/Math/Glass halls intesection. 
+W IMG_0053.JPG true Business hall. Facing some lockers.
 Upstairs3
-N IMG_0054.JPG false Upstairs2 N
-E IMG_0055.JPG false Glass E
-S IMG_0056.JPG true
-W IMG_0057.JPG false Math1 W
+N IMG_0054.JPG false Upstairs2 N Business/Math/Glass halls intersection. Facing the Business hall.
+E IMG_0055.JPG false Glass E Business/Math/Glass halls intersection. Facing the Glass walkway.
+S IMG_0056.JPG true Business/Math/Glass halls intersection. Facing Mrs Vickers' Mathroom.
+W IMG_0057.JPG false Math1 W Business/Math/Glass halls intersection. Facing the Math hall.
 Math1
-N IMG_0058.JPG true
-E IMG_0059.JPG false Upstairs3 E
-S IMG_0060.JPG true
-W IMG_0062.JPG false Math2 W
+N IMG_0058.JPG true Partly down Math hall. Facing a computer lab.
+E IMG_0059.JPG false Upstairs3 E Partly down Math hall. Facing the Business/Math/Glass halls intersection.
+S IMG_0060.JPG true Partly down Math hall. Facing a math pod.
+W IMG_0062.JPG false Math2 W Partly down Math hall. Facing the Math hall.
 Math2
-N IMG_0063.JPG true
-E IMG_0064.JPG false Math1 E
-S IMG_0065.JPG true
-W IMG_0066.JPG false Math3 W
+N IMG_0063.JPG true Mostly down the Math hall. Facing the Geography pod.
+E IMG_0064.JPG false Math1 E Mostly down the Math hall. Facing Business/Math/Glass halls intersection.
+S IMG_0065.JPG true Mostly down the Math hall. Facing a pod with closed curtins.
+W IMG_0066.JPG false Math3 W Mostly down the Math hall. Facing the Math/English stairwell.
 Math3
-N IMG_0067.JPG true
-E IMG_0068.JPG false Math2 E
-S IMG_0069.JPG false Eng1 N
-W IMG_0070.JPG true
+N IMG_0067.JPG true Upstairs Math/English stairwell. Facing a wall w/ posters.
+E IMG_0068.JPG false Math2 E Math/English stairwell. Facing the Math hall.
+S IMG_0069.JPG false Eng1 N Upstairs Math/English stairwell. Facing the stair well.
+W IMG_0070.JPG true Upstairs Math/English stairwell. Facing outside.
 Eng1
-N IMG_0071.JPG true
-E IMG_0072.JPG false Eng2 E
-S IMG_0073.JPG false Math3 N
-W IMG_0074.JPG true
+N IMG_0071.JPG true Downstairs Math/English stairwell. Facing a wall.
+E IMG_0072.JPG false Eng2 E Downstairs Math/English stairwell. Facing the English hall.
+S IMG_0073.JPG false Math3 N Downstairs Math/English stairwell. Facing the stairwell.
+W IMG_0074.JPG true Downstairs Math/English stairwell. Facing outside.
 Eng2
-N IMG_0075.JPG true
-E IMG_0076.JPG false Eng3 E
-S IMG_0077.JPG true
-W IMG_0078.JPG false Eng1 W
+N IMG_0075.JPG true English hall. Facing a classroom.
+E IMG_0076.JPG false Eng3 E English hall. Facing the Library intersection.
+S IMG_0077.JPG true English hall. Facing a classroom.
+W IMG_0078.JPG false Eng1 W English hall. Facing the Englsih/Math stairwell.
 Eng3
-N IMG_0079.JPG false Dowstairs N
-E IMG_0080.JPG false Caf1 E
-S IMG_0081.JPG  true
-W IMG_0082.JPG false Eng2 W
+N IMG_0079.JPG false Dowstairs N Library Intersection. Facing the back parking lot  stairwell.
+E IMG_0080.JPG false Caf1 E Library Intersection. Facing the Caf.
+S IMG_0081.JPG  true Library Intersection. Facing resource
+W IMG_0082.JPG false Eng2 W 
 Caf1
 N IMG_0083.JPG true
 E IMG_0084.JPG false Caf3 E
