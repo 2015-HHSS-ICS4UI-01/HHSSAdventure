@@ -18,7 +18,6 @@ public class Location {
     
     //constructor for the locations using a text file
     public Location(Scanner input){
-        curDirection = 0;
         directions = new String[] {"N","E","S","W"};
         locationName = input.next();
         scenes = new Scene[4];
@@ -37,6 +36,7 @@ public class Location {
      * @return the location's name.
      */
     public String getName(){
+        System.out.println(locationName);
         return this.locationName;
     }
     
@@ -79,6 +79,7 @@ public class Location {
                 break;
             }
         }
+        System.out.println(curDirection);
         return scenes[curDirection].getDescription();
     }
     
@@ -101,8 +102,14 @@ public class Location {
      * @param direction
      * @return 
      */
-    public String getNextDirection(int direction){
-        return scenes[direction].getNextDirection();
+    public String getNextDirection(String direction){
+        for(int i = 0; i < directions.length; i++){
+            if(direction.equals(directions[i])){
+                curDirection = i;
+                break;
+            }
+        }
+        return scenes[curDirection].getNextDirection();
     }
     
 }
