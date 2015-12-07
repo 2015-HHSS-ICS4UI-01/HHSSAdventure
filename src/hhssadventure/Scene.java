@@ -11,13 +11,17 @@ import java.util.Scanner;
  * @author NathanKampzEtAndrewSSS
  */
 public final class Scene {
-    
+
     private int dir;
     private String imageName;
     private boolean frontBlocked;
     private String nextLocation;
     private int nextDir;
-    
+
+    /**
+     * Reads in the information for each scene
+     * @param in the scanner to read the file
+     */
     public Scene(Scanner in) {
         String temp = in.next();
         dir = convert(temp);
@@ -36,6 +40,7 @@ public final class Scene {
 
     /**
      * gets the current direction
+     *
      * @return direction
      */
     public int getDir() {
@@ -44,6 +49,7 @@ public final class Scene {
 
     /**
      * gets the current image name
+     *
      * @return image name
      */
     public String getImageName() {
@@ -52,6 +58,7 @@ public final class Scene {
 
     /**
      * gets whether or not the front passage is blocked or not
+     *
      * @return true or false
      */
     public boolean getFrontBlocked() {
@@ -60,6 +67,7 @@ public final class Scene {
 
     /**
      * gets the next location
+     *
      * @return the next location
      */
     public String getNextLocation() {
@@ -68,29 +76,35 @@ public final class Scene {
 
     /**
      * gets next direction
+     *
      * @return next direction
-     * 
+     *
      */
     public int getNextDir() {
         return nextDir;
     }
     
+    /**
+     * Converts the direction to an integer
+     * @param temp the string to convert
+     * @return the direction as an integer
+     */
     public int convert(String temp) {
-        int dir;
+        int num;
         switch (temp) {
             case " N":
-                dir = 0;
+                num = 0;
                 break;
             case " E":
-                dir = 1;
+                num = 1;
                 break;
             case " S":
-                dir = 2;
+                num = 2;
                 break;
             default:
-                dir = 3;
+                num = 3;
                 break;
         }
-        return dir;
+        return num;
     }
 }
