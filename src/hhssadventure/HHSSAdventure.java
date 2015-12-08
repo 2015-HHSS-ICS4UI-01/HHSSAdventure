@@ -79,7 +79,7 @@ public class HHSSAdventure {
         if (!Location.isFrontBlocked(currentDir)) {
             currentLocation = Location.NextLocation(currentLocation);
             
-            currentDir = Scene.nextDirection();
+//            currentDir = Scene.nextDirection();
             //going through to find the actual location
             Location = getLocation();
             Scene = Location.getScene(currentDir);
@@ -106,12 +106,12 @@ public class HHSSAdventure {
     public void turnLeft() {
         if (currentDir.equals("N")) {
             currentDir = "W";
-        } else if (currentDir.equals("E")) {
-            currentDir = "N";
-        } else if (currentDir.equals("S")) {
-            currentDir = "E";
         } else if (currentDir.equals("W")) {
             currentDir = "S";
+        } else if (currentDir.equals("S")) {
+            currentDir = "E";
+        } else if (currentDir.equals("E")) {
+            currentDir = "N";
         }
         Scene = Location.getScene(currentDir);
         gui.displayPicture(Location.getImage(currentDir));
