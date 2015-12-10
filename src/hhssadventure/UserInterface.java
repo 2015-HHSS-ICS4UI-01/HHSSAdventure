@@ -124,6 +124,7 @@ public class UserInterface extends javax.swing.JFrame {
 
     private void ForwardActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ForwardActionPerformed
         // TODO add your handling code here:
+        controller.forward();
     }//GEN-LAST:event_ForwardActionPerformed
 
     /**

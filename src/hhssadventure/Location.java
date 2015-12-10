@@ -40,7 +40,7 @@ public class Location {
 
     public Scene getSceneImage(String sceneDirection){
         int i = 0;
-        while(i < 3 && scenes[i].getDirection() != sceneDirection) {
+        while(i < scenes.length-1 && !scenes[i].getDirection().equals(sceneDirection)) {
             i++;
         }
         return scenes[i];

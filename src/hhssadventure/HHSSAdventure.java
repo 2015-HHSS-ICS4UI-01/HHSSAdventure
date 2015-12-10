@@ -18,7 +18,7 @@ public class HHSSAdventure {
     private String currentLocation;
     private String currentDirection;
     private UserInterface gui;
-    private int locationNumber = 0;
+//    private int locationNumber = 0;
     
     
     
@@ -60,6 +60,7 @@ public class HHSSAdventure {
         
         gui = new UserInterface(this);
         //set the text for the class name
+            gui.setVisible(true);
         
         gui.setLocationName(currentLocation);
         gui.setDirection(this.Direction(currentDirection));
@@ -67,8 +68,7 @@ public class HHSSAdventure {
         //showing the image the person is at
         gui.showImage(this.getLocation(currentLocation).getSceneImage(currentDirection).getImage());
         //show it
-        gui.setVisible(true);
-        
+    
     }
     
     

@@ -40,7 +40,14 @@ public class Scene {
             System.exit(0);
         }
         
-        
+        String f = input.next();
+        if (input.hasNext()) {
+            if (f.equals("false")) {
+               block = true;
+               nextLocation = input.next();
+               nextDirection = input.next();
+            }
+        }
         blocked = input.next();
         if (blocked.equals("false")) {
             block = false;
@@ -48,6 +55,7 @@ public class Scene {
             nextDirection = input.next();
         } else {
             block = true;  
+            
         }
         input.nextLine();
     }
