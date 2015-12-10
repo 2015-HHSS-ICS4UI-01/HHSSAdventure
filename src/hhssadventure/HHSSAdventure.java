@@ -108,6 +108,14 @@ public final class HHSSAdventure {
     public void updateScene() {
         currentScene = currentLocation.getCurrentScene(dir);
     }
+    
+    public String getLocation() {
+        return location;
+    }
+    
+    public int getDir() {
+        return dir;
+    }
 
     /**
      * @param args the command line arguments

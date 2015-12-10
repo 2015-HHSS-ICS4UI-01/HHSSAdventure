@@ -13,24 +13,39 @@ public final class Interface extends javax.swing.JFrame {
     /**
      * Creates new form Interface
      */
-    
     private HHSSAdventure controller;
-    
+
     public Interface(HHSSAdventure hhssa) {
         this();
         controller = hhssa;
         updateImage();
     }
+
     public Interface() {
         initComponents();
     }
-    public void updateDirection(String dir){
-        dirText.setText(dir);
+
+    public void updateDirection(int dir) {
+        String temp;
+        switch (dir) {
+            case 0:
+                temp = "N";
+                break;
+            case 1:
+                temp = "E";
+                break;
+            case 2:
+                temp = "S";
+                break;
+            default:
+                temp = "W";
+        }
+        dirText.setText(temp);
     }
-    public void updateLocation(String location){
+
+    public void updateLocation(String location) {
         locText.setText(location);
     }
-    
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -133,20 +148,24 @@ public final class Interface extends javax.swing.JFrame {
     public void updateImage() {
         picturePanel1.setImage(controller.updateImage());
     }
-    
+
     private void forwardButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_forwardButtonActionPerformed
         controller.forward();
         updateImage();
+        updateLocation(controller.getLocation());
+        updateDirection(controller.getDir());
     }//GEN-LAST:event_forwardButtonActionPerformed
 
     private void rightButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rightButtonActionPerformed
         controller.right();
         updateImage();
+        updateDirection(controller.getDir());
     }//GEN-LAST:event_rightButtonActionPerformed
 
     private void leftButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_leftButtonActionPerformed
-       controller.left();
-       updateImage();
+        controller.left();
+        updateImage();
+        updateDirection(controller.getDir());
     }//GEN-LAST:event_leftButtonActionPerformed
 
     /**
