@@ -102,15 +102,10 @@ public class HHSSAdventure {
         for (Locations l : locations) {
             if (l.getPlace().equals(currentPlace)) {
                 if (!l.getIsFrontBlocked(currentDirection)) {
-                    System.out.println(currentPlace);
-                    System.out.println("not blocked");
-                    String temp = l.getNextLocation(currentDirection);
-                    
                     currentDirection = l.getNextDirection(currentDirection);
+                    currentPlace = l.getNextLocation(currentDirection);
+                    
                     gui.setImage(l.getImage(currentDirection));
-                    //give interface new picture and refresh it
-                    currentPlace = temp;
-                    System.out.println(currentPlace + "1");
                 }else{
                 System.out.println("blocked");
                 }

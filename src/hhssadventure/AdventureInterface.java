@@ -38,6 +38,12 @@ public class AdventureInterface extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        picturePanel2 = new hhssadventure.PicturePanel();
+        Forward = new javax.swing.JButton();
+        Rigth = new javax.swing.JButton();
+        Left = new javax.swing.JButton();
+        description = new javax.swing.JTextField();
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         Forward.setText("Forward");
@@ -46,17 +52,8 @@ public class AdventureInterface extends javax.swing.JFrame {
                 ForwardActionPerformed(evt);
             }
         });
-        picturePanel1.add(Forward);
-        Forward.setBounds(193, 213, 100, 40);
-
-        Left.setText("Left");
-        Left.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                LeftActionPerformed(evt);
-            }
-        });
-        picturePanel1.add(Left);
-        Left.setBounds(0, 223, 80, 30);
+        picturePanel2.add(Forward);
+        Forward.setBounds(170, 200, 100, 40);
 
         Rigth.setText("Right");
         Rigth.addActionListener(new java.awt.event.ActionListener() {
@@ -64,29 +61,49 @@ public class AdventureInterface extends javax.swing.JFrame {
                 RigthActionPerformed(evt);
             }
         });
-        picturePanel1.add(Rigth);
-        Rigth.setBounds(397, 223, 80, 30);
+        picturePanel2.add(Rigth);
+        Rigth.setBounds(370, 210, 80, 30);
 
-        description.setColumns(20);
-        description.setRows(5);
-        jScrollPane1.setViewportView(description);
-
-        picturePanel1.add(jScrollPane1);
-        jScrollPane1.setBounds(0, 253, 482, 40);
+        Left.setText("Left");
+        Left.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                LeftActionPerformed(evt);
+            }
+        });
+        picturePanel2.add(Left);
+        Left.setBounds(0, 210, 80, 30);
+        picturePanel2.add(description);
+        description.setBounds(0, 240, 450, 40);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 482, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(picturePanel2, javax.swing.GroupLayout.PREFERRED_SIZE, 446, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 297, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(picturePanel2, javax.swing.GroupLayout.DEFAULT_SIZE, 280, Short.MAX_VALUE)
+                .addContainerGap())
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void RigthActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RigthActionPerformed
+        controller.turnRight();
+    }//GEN-LAST:event_RigthActionPerformed
+
+    private void LeftActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LeftActionPerformed
+        controller.turnLeft();
+    }//GEN-LAST:event_LeftActionPerformed
+
+    private void ForwardActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ForwardActionPerformed
+        controller.goForward();
+    }//GEN-LAST:event_ForwardActionPerformed
 
     //set the description of the scene
     public void setDescription(String Description){
@@ -95,7 +112,7 @@ public class AdventureInterface extends javax.swing.JFrame {
     
     
     public void setImage(BufferedImage image){
-        picturePanel1.setImage(image);
+        picturePanel2.setImage(image);
     }
     /**
      * @param args the command line arguments
@@ -132,5 +149,10 @@ public class AdventureInterface extends javax.swing.JFrame {
         });
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton Forward;
+    private javax.swing.JButton Left;
+    private javax.swing.JButton Rigth;
+    private javax.swing.JTextField description;
+    private hhssadventure.PicturePanel picturePanel2;
     // End of variables declaration//GEN-END:variables
 }
