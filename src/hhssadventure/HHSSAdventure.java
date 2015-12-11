@@ -14,24 +14,21 @@ import java.util.Scanner;
  * @author lamon
  */
 public class HHSSAdventure {
+
     private ArrayList<Location> locations = new ArrayList<Location>();
     private String currentLocation;
     private String currentDirection;
     private UserInterface gui;
-//    private int locationNumber = 0;
-    
-    
-    
-    
+
     /**
      * @param args the command line arguments
      */
     public static void main(String[] args) {
         HHSSAdventure f = new HHSSAdventure();
-        
+
     }
 
-    public HHSSAdventure(){
+    public HHSSAdventure() {
 
         //used to help read a file
         FileReader file = null;
@@ -43,36 +40,35 @@ public class HHSSAdventure {
             //stops the program
             System.exit(0);
         }
-        
-        Scanner reader = new Scanner(file); 
-        
+
+        Scanner reader = new Scanner(file);
+
         currentLocation = reader.nextLine();
         currentDirection = reader.nextLine();
-        
-        
+
+        System.out.println(currentDirection);
         //keep scanning as long as theres something to scan
         while (reader.hasNext()) {
             //adding a class from the file
             Location a = new Location(reader);
             //addint the class to the list
             locations.add(a);
+
         }
-        
         gui = new UserInterface(this);
         //set the text for the class name
-            gui.setVisible(true);
-        
+        gui.setVisible(true);
+
         gui.setLocationName(currentLocation);
         gui.setDirection(this.Direction(currentDirection));
-        
+
         //showing the image the person is at
         gui.showImage(this.getLocation(currentLocation).getSceneImage(currentDirection).getImage());
         //show it
-    
+
     }
-    
-    
-    public void right(){
+
+    public void right() {
         //check direction is null
         if (currentDirection != null) {
             //reassign the directions based on right turn
@@ -91,9 +87,9 @@ public class HHSSAdventure {
             gui.showImage(this.getLocation(currentLocation).getSceneImage(currentDirection).getImage());
         }
     }
-    
-    public void left(){
-           //same as right turn except based on left turn
+
+    public void left() {
+        //same as right turn except based on left turn
         if (currentDirection != null) {
             if (currentDirection.equals("N")) {
                 currentDirection = "W";
@@ -108,10 +104,10 @@ public class HHSSAdventure {
             gui.showImage(this.getLocation(currentLocation).getSceneImage(currentDirection).getImage());
         }
     }
-    
-    public void forward(){
+
+    public void forward() {
         //check if player is able to move forward 
-        if (this.getLocation(currentLocation).getSceneImage(currentDirection).frontBlocked()){
+        if (this.getLocation(currentLocation).getSceneImage(currentDirection).frontBlocked()) {
             //temp direction
             String d = currentDirection;
             //direction is equal to next direction
@@ -126,9 +122,9 @@ public class HHSSAdventure {
             //reset picture
             gui.showImage(this.getLocation(currentLocation).getSceneImage(currentDirection).getImage());
         }
-       
+
     }
-        
+
     public String Direction(String d) {
         if (d.equals("N")) {
             d = "North";
@@ -142,10 +138,10 @@ public class HHSSAdventure {
 
         return d;
     }
-    
-    public Location getLocation(String name){
+
+    public Location getLocation(String name) {
         int i = 0;
-        while (i < 3 && !name.equals(locations.get(i).getDesciption())) {
+        while (i < locations.size() - 1 && !name.equals(locations.get(i).getDesciption())) {
             i++;
         }
         return locations.get(i);

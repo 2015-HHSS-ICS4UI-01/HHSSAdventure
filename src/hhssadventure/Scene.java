@@ -19,49 +19,49 @@ public class Scene {
     private String direction;
     private Scene[] Scenes;
     private String imageName;
-    private String blocked;
+    private String isBlocked;
     private String nextLocation;
     private String nextDirection;
-    private boolean block = false;
+    private boolean frontBlock = false;
     private BufferedImage img = null;
 
     //constructor 
     public Scene(Scanner input) {
 
         direction = input.next();
-        
+
         imageName = input.next();
-        
-        
-        try{
+
+        try {
             img = ImageIO.read(new File("images/" + imageName));
-        }catch (Exception e){
+        } catch (Exception e) {
             e.printStackTrace();
             System.exit(0);
         }
-        
-        String f = input.next();
-        if (input.hasNext()) {
-            if (f.equals("false")) {
-               block = true;
-               nextLocation = input.next();
-               nextDirection = input.next();
-            }
-        }
-        blocked = input.next();
-        if (blocked.equals("false")) {
-            block = false;
+
+//        String f = input.next();
+//        if (input.hasNext()) {
+//            if (f.equals("false")) {
+//               block = true;
+//               nextLocation = input.next();
+//               nextDirection = input.next();
+//            }else {
+//                block = false;
+//            }
+//      }
+        isBlocked = input.next();
+        if (isBlocked.equals("false")) {
+            frontBlock = true;
             nextLocation = input.next();
             nextDirection = input.next();
         } else {
-            block = true;  
-            
+            frontBlock = false;
         }
         input.nextLine();
     }
 
     public boolean frontBlocked() {
-        return this.block;
+        return this.frontBlock;
     }
 
     public String nextLocation() {
@@ -75,8 +75,8 @@ public class Scene {
     public String nextDirection() {
         return this.nextDirection;
     }
-    
-    public BufferedImage getImage(){
+
+    public BufferedImage getImage() {
         return this.img;
     }
 }

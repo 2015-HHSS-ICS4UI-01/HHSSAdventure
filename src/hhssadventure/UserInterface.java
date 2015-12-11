@@ -13,31 +13,31 @@ import java.awt.image.BufferedImage;
  */
 public class UserInterface extends javax.swing.JFrame {
 
-    private HHSSAdventure controller; 
-    public UserInterface(HHSSAdventure a){
-       this();
-       controller = a;
+    private HHSSAdventure controller;
+
+    public UserInterface(HHSSAdventure a) {
+        this();
+        controller = a;
     }
+
     /**
      * Creates new form UserInterface
      */
     public UserInterface() {
         initComponents();
     }
-    
-    public void setLocationName(String name){
+
+    public void setLocationName(String name) {
         locationName.setText(name);
     }
-    
-    public void showImage(BufferedImage img){
+
+    public void showImage(BufferedImage img) {
         picturePanel2.setImage(img);
     }
 
-    public void setDirection(String name){
-        
+    public void setDirection(String name) {
+
     }
-    
-   
 
     /**
      * This method is called from within the constructor to initialize the form.
