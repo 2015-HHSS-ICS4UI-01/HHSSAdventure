@@ -55,7 +55,6 @@ public class HHSSAdventure {
     }
 
     public void turnLeft() {
-        System.out.println("turned left");
         for (Locations l : locations) {
             if (l.getPlace().equals(currentPlace)) {
                 if (currentDirection.equals("N")) {
@@ -76,7 +75,6 @@ public class HHSSAdventure {
     }
 
     public void turnRight() {
-        System.out.println("turned right");
         for (Locations l : locations) {
             if (l.getPlace().equals(currentPlace)) {
                 if (currentDirection.equals("N")) {
@@ -102,26 +100,23 @@ public class HHSSAdventure {
         for (Locations l : locations) {
             if (l.getPlace().equals(currentPlace)) {
                 if (!l.getIsFrontBlocked(currentDirection)) {
-                    currentDirection = l.getNextDirection(currentDirection);
-                    currentPlace = l.getNextLocation(currentDirection);
                     
-                    gui.setImage(l.getImage(currentDirection));
+                    currentPlace = l.getNextLocation(currentDirection);
+                    currentDirection = l.getNextDirection(currentDirection);
+                    
+                    System.out.println("current dir" + currentDirection);
+                    System.out.println("current loc" + currentPlace);
+                    gui.setImage(l.getImage(l.getNextDirection(currentDirection)));
+                    break;
                 }else{
                 System.out.println("blocked");
                 }
+                
             }
+            
         }
         
-
-//        if (forward.getIsFrontBlocked(currentPlace)) {
-//            currentPlace = forward.getNextLocation(currentDirection);
-//        }
-//
-//        if (locationNum < locations.size() - 1) {
-//            locationNum++;
-//        } else if (locationNum == locations.size() - 1) {
-//            locationNum = 0;
-//        }
+        
     }
     
     
