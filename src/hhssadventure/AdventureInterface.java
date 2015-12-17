@@ -42,7 +42,8 @@ public class AdventureInterface extends javax.swing.JFrame {
         Forward = new javax.swing.JButton();
         Rigth = new javax.swing.JButton();
         Left = new javax.swing.JButton();
-        description = new javax.swing.JTextField();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        description = new javax.swing.JTextArea();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -53,7 +54,7 @@ public class AdventureInterface extends javax.swing.JFrame {
             }
         });
         picturePanel2.add(Forward);
-        Forward.setBounds(170, 200, 100, 40);
+        Forward.setBounds(170, 240, 100, 40);
 
         Rigth.setText("Right");
         Rigth.addActionListener(new java.awt.event.ActionListener() {
@@ -62,7 +63,7 @@ public class AdventureInterface extends javax.swing.JFrame {
             }
         });
         picturePanel2.add(Rigth);
-        Rigth.setBounds(370, 210, 80, 30);
+        Rigth.setBounds(360, 250, 80, 30);
 
         Left.setText("Left");
         Left.addActionListener(new java.awt.event.ActionListener() {
@@ -71,9 +72,14 @@ public class AdventureInterface extends javax.swing.JFrame {
             }
         });
         picturePanel2.add(Left);
-        Left.setBounds(0, 210, 80, 30);
-        picturePanel2.add(description);
-        description.setBounds(0, 240, 450, 40);
+        Left.setBounds(0, 250, 80, 30);
+
+        description.setColumns(20);
+        description.setRows(5);
+        jScrollPane1.setViewportView(description);
+
+        picturePanel2.add(jScrollPane1);
+        jScrollPane1.setBounds(0, 0, 460, 30);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -113,6 +119,7 @@ public class AdventureInterface extends javax.swing.JFrame {
     
     public void setImage(BufferedImage image){
         picturePanel2.setImage(image);
+        repaint();
     }
     /**
      * @param args the command line arguments
@@ -152,7 +159,8 @@ public class AdventureInterface extends javax.swing.JFrame {
     private javax.swing.JButton Forward;
     private javax.swing.JButton Left;
     private javax.swing.JButton Rigth;
-    private javax.swing.JTextField description;
+    private javax.swing.JTextArea description;
+    private javax.swing.JScrollPane jScrollPane1;
     private hhssadventure.PicturePanel picturePanel2;
     // End of variables declaration//GEN-END:variables
 }

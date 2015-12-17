@@ -100,13 +100,12 @@ public class HHSSAdventure {
         for (Locations l : locations) {
             if (l.getPlace().equals(currentPlace)) {
                 if (!l.getIsFrontBlocked(currentDirection)) {
+                    System.out.println(currentDirection);
+                    System.out.println(currentPlace);
                     
                     currentPlace = l.getNextLocation(currentDirection);
                     currentDirection = l.getNextDirection(currentDirection);
-                    
-                    System.out.println("current dir" + currentDirection);
-                    System.out.println("current loc" + currentPlace);
-                    gui.setImage(l.getImage(l.getNextDirection(currentDirection)));
+
                     break;
                 }else{
                 System.out.println("blocked");
@@ -114,6 +113,13 @@ public class HHSSAdventure {
                 
             }
             
+        }
+        
+        for (Locations l : locations) {
+            if (l.getPlace().equals(currentPlace)) {
+                gui.setImage(l.getImage(currentDirection));
+                break;
+            }
         }
         
         
