@@ -18,9 +18,7 @@ public class HHSSAdventure {
     private AdventureInterface gui;
     private String currentPlace;
     private String currentDirection;
-    private Locations forward;
     
-
     public HHSSAdventure() {
 
         FileReader file = null;
@@ -60,15 +58,19 @@ public class HHSSAdventure {
                 if (currentDirection.equals("N")) {
                     currentDirection = "W";
                     gui.setImage(l.getImage(currentDirection));
+                    gui.setDescription(l.getDescription(currentDirection));
                 } else if (currentDirection.equals("S")) {
                     currentDirection = "E";
                     gui.setImage(l.getImage(currentDirection));
+                    gui.setDescription(l.getDescription(currentDirection));
                 } else if (currentDirection.equals("E")) {
                     currentDirection = "N";
                     gui.setImage(l.getImage(currentDirection));
+                    gui.setDescription(l.getDescription(currentDirection));
                 } else if (currentDirection.equals("W")) {
                     currentDirection = "S";
                     gui.setImage(l.getImage(currentDirection));
+                    gui.setDescription(l.getDescription(currentDirection));
                 }
             }
         }
@@ -80,16 +82,20 @@ public class HHSSAdventure {
                 if (currentDirection.equals("N")) {
                     currentDirection = "E";
                     gui.setImage(l.getImage(currentDirection));
+                    gui.setDescription(l.getDescription(currentDirection));
                     
                 } else if (currentDirection.equals("S")) {
                     currentDirection = "W";
                     gui.setImage(l.getImage(currentDirection));
+                    gui.setDescription(l.getDescription(currentDirection));
                 } else if (currentDirection.equals("E")) {
                     currentDirection = "S";
                     gui.setImage(l.getImage(currentDirection));
+                    gui.setDescription(l.getDescription(currentDirection));
                 } else if (currentDirection.equals("W")) {
                     currentDirection = "N";
                     gui.setImage(l.getImage(currentDirection));
+                    gui.setDescription(l.getDescription(currentDirection));
                 }
         
             }
@@ -118,6 +124,7 @@ public class HHSSAdventure {
         for (Locations l : locations) {
             if (l.getPlace().equals(currentPlace)) {
                 gui.setImage(l.getImage(currentDirection));
+                gui.setDescription(l.getDescription(currentDirection));
                 break;
             }
         }

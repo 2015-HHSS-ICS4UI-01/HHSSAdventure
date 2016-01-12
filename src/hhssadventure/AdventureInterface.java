@@ -114,6 +114,7 @@ public class AdventureInterface extends javax.swing.JFrame {
     //set the description of the scene
     public void setDescription(String Description){
         description.setText(Description);
+        repaint();
     }
     
     
