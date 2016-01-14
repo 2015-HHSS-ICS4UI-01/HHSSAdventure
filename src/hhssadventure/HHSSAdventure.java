@@ -15,6 +15,8 @@ import java.util.Scanner;
  */
 public class HHSSAdventure {
 
+    
+    //test
     private ArrayList<Location> locations = new ArrayList<Location>();
     private String currentLocation;
     private String currentDirection;
