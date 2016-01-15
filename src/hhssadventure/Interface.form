@@ -32,7 +32,7 @@
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" attributes="0">
               <EmptySpace min="-2" pref="189" max="-2" attributes="0"/>
-              <Component id="Location" min="-2" max="-2" attributes="0"/>
+              <Component id="LocationName" min="-2" max="-2" attributes="0"/>
               <EmptySpace min="-2" pref="151" max="-2" attributes="0"/>
               <Component id="Direction" min="-2" max="-2" attributes="0"/>
               <EmptySpace max="32767" attributes="0"/>
@@ -66,7 +66,7 @@
               </Group>
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="Location" alignment="3" min="-2" pref="22" max="-2" attributes="0"/>
+                  <Component id="LocationName" alignment="3" min="-2" pref="22" max="-2" attributes="0"/>
                   <Component id="Direction" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
@@ -99,7 +99,7 @@
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="TurnRightActionPerformed"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JLabel" name="Location">
+    <Component class="javax.swing.JLabel" name="LocationName">
       <Properties>
         <Property name="text" type="java.lang.String" value="Location"/>
       </Properties>

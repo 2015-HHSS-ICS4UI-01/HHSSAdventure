@@ -43,7 +43,7 @@ public class HHSSAdventure {
           while(input.hasNext())
           {
              Location s = new Location(input);
-              System.out.println(s.getName());
+              
              locations.add(s);
           }
       
@@ -53,20 +53,22 @@ public class HHSSAdventure {
         currentDirection = startDirection;
         currentLocation = startingLocation;
         
+        switchLocation("Upstairs2", "N");
         
-       
+        gui = new Interface();
+        gui.setVisible(true);
+        gui.setLocation(currentLocation);
+        gui.setDirection(currentDirection);
     }
-        
-   
+    
     public void switchLocation(String name, String dir){
-        for(int i = 0; i < locations.size(); i++){
-            if (locations.get(i).getName().equals(name)){
-                currentLocation = name;
-                System.out.println(currentLocation);
+        for(int i = 0; i < locations.size(); i++){  
+            if(locations.get(i).getName().equals(name) ){
+                currentLocation = name; 
                 currentDirection = dir;
-                System.out.println(currentDirection);
                 
             }
+            
         }
         
     }
