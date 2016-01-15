@@ -29,6 +29,7 @@ public class HHSSAdventure {
     private Scene Scene;
 
     public HHSSAdventure() {
+        //read the text file
         FileReader file = null;
         try {
             file = new FileReader("images/pics.txt");
@@ -38,26 +39,38 @@ public class HHSSAdventure {
             e.printStackTrace();
             System.exit(0);
         }
+        //initialize the scanner
         Scanner input = new Scanner(file);
+        //read the starting location, set it
         String startingLocation = input.nextLine();
+        //read the starting direction, set it
         String startingDirection = input.nextLine();
 
+        //when there is more locations, add it to the list of locations
         while (input.hasNext()) {
             Location l = new Location(input);
             location.add(l);
         }
-
+        
+        //set the current location and direction to the starting location
         currentDir = startingDirection;
         currentLocation = startingLocation;
         Location = getLocation();
         //going through to find the actual location
+        
+        //draw everything
         gui = new UserInterface(this);
         gui.setVisible(true);
-
+        gui.description(Location.getLocation());
         gui.displayPicture(Location.getImage(currentDir));
     }
 
+    /**
+     * find the location 
+     * @return the location
+     */
     public Location getLocation() {
+        
         int i = 0;
 
         while (i < location.size()) {
@@ -74,23 +87,34 @@ public class HHSSAdventure {
     }
 
     
-
+    /**
+     * Moves forward
+     */
     public void forward() {
+        //if front is not blocked
         if (!Location.isFrontBlocked(currentDir)) {
-            currentLocation = Location.NextLocation(currentLocation);
-           
-            currentDir = Scene.direction();
+            
+            //set current location to the next location specified for the current direction
+            currentLocation = Location.NextLocation(currentDir);
+            //set current direction to the next scene's direction
+            currentDir = Scene.nextDirection();
+            
             //going through to find the actual location
             Location = getLocation();
-            Scene = Location.getScene(currentDir);
+            //draw stuff
             gui.displayPicture(Location.getImage(currentDir));
-            
+            Scene = Location.getScene(currentDir);
+            gui.description(Location.getLocation());
         }
 
 
     }
 
+    /**
+     * Turns right
+     */
     public void turnRight() {
+        //change the current direction to shift right
         if (currentDir.equals("N")) {
             currentDir = "E";
         } else if (currentDir.equals("E")) {
@@ -100,11 +124,17 @@ public class HHSSAdventure {
         } else if (currentDir.equals("W")) {
             currentDir = "N";
         }
-        Scene = Location.getScene(currentDir);
+        //draw stuff
         gui.displayPicture(Location.getImage(currentDir));
+        Scene = Location.getScene(currentDir);
+        gui.description(Location.getLocation());
     }
 
+    /**
+     * Turns left
+     */
     public void turnLeft() {
+        //change the current direction to shift left
         if (currentDir.equals("N")) {
             currentDir = "W";
         } else if (currentDir.equals("W")) {
@@ -114,8 +144,11 @@ public class HHSSAdventure {
         } else if (currentDir.equals("E")) {
             currentDir = "N";
         }
-        Scene = Location.getScene(currentDir);
+        
+        //draw stuff
         gui.displayPicture(Location.getImage(currentDir));
+        Scene = Location.getScene(currentDir);
+        gui.description(Location.getLocation());
     }
 
     public static void main(String[] args) {

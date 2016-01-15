@@ -27,13 +27,12 @@ public class UserInterface extends javax.swing.JFrame {
     }
     
     
-
+    /**
+     * draws the picture
+     * @param img the buffered image that is passed in
+     */
     public void displayPicture(BufferedImage img) {
         picturePaint1.setImage(img);
-    }
-
-    public void description() {
-        
     }
 
     /**
@@ -43,7 +42,10 @@ public class UserInterface extends javax.swing.JFrame {
         initComponents();
     }
     
-    
+    /**
+     * Sets the description
+     * @param name the text inside the description
+     */
     public void description(String name){
         description.setText(name);
     }
