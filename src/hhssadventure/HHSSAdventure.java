@@ -53,7 +53,7 @@ public class HHSSAdventure {
         currentDirection = startDirection;
         currentLocation = startingLocation;
         
-        switchLocation("Upstairs2", "N");
+        
         
         gui = new Interface();
         gui.setVisible(true);
@@ -61,22 +61,22 @@ public class HHSSAdventure {
         gui.setDirection(currentDirection);
     }
     
-    public void switchLocation(String name, String dir){
-        for(int i = 0; i < locations.size(); i++){  
-            if(locations.get(i).getName().equals(name) ){
-                currentLocation = name; 
-                currentDirection = dir;
-                
+    public void turnLeft(){
+        for (Location l : locations){
+            if (l.getName().equals(currentLocation)){
+                if (currentDirection.equals("N")){
+               
             }
-            
+          }
         }
+    }
+    
+    public void turnRight(){
         
     }
     
 
     public static void main(String[] args) {
         HHSSAdventure game = new HHSSAdventure();
-        
-        
     }
 }
