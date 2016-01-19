@@ -59,6 +59,12 @@ public class HHSSAdventure {
         gui.setVisible(true);
         gui.setLocation(currentLocation);
         gui.setDirection(currentDirection);
+        
+       for (Location l: locations){
+           if (l.getName().equals(currentDirection)){
+               gui.setImage(currentDirection);
+           }
+       }
     }
     
     public void turnLeft(){
