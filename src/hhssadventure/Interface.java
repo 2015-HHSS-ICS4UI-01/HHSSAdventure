@@ -14,6 +14,11 @@ public class Interface extends javax.swing.JFrame {
 
      
      private HHSSAdventure controller;
+     
+     public Interface(HHSSAdventure c){
+         this();
+         controller = c;
+     }
     /**
      * Creates new form Interface
      */
@@ -32,6 +37,7 @@ public class Interface extends javax.swing.JFrame {
     
      public void setLocation(String name){
          LocationName.setText(name);
+        
      }
      
      public void setDirection(String dir){
@@ -134,11 +140,11 @@ public class Interface extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_TurnLeftActionPerformed
 
+    
     public void setImage(BufferedImage image){
         picturePanel.setImage(image);
         repaint();
     }
-    
     
     /**
      * @param args the command line arguments
