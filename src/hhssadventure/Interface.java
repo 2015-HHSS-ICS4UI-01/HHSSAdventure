@@ -12,7 +12,7 @@ import java.awt.image.BufferedImage;
  */
 public class Interface extends javax.swing.JFrame {
 
-    
+     
      private HHSSAdventure controller;
      
      public Interface(HHSSAdventure c){
@@ -25,6 +25,8 @@ public class Interface extends javax.swing.JFrame {
     public Interface() {
         initComponents();
     }
+
+    
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -41,7 +43,6 @@ public class Interface extends javax.swing.JFrame {
      public void setDirection(String dir){
          Direction.setText(dir);
      }
-     
      
      
     @SuppressWarnings("unchecked")
@@ -128,7 +129,7 @@ public class Interface extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void TurnRightActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TurnRightActionPerformed
-        
+    
     }//GEN-LAST:event_TurnRightActionPerformed
 
     private void GoForwardActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_GoForwardActionPerformed

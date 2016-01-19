@@ -47,15 +47,13 @@ public class HHSSAdventure {
              locations.add(s);
           }
       
-        
-        
-        
-      
+         gui = new Interface();
+         gui.setVisible(true);
         
         currentDirection = startDirection;
         currentLocation = startingLocation;
         
-      
+        
         
         gui = new Interface();
         gui.setVisible(true);
@@ -70,13 +68,22 @@ public class HHSSAdventure {
         }
     }
     
-        
-        
+    public void turnLeft(){
+        for (Location l : locations){
+            if (l.getName().equals(currentLocation)){
+                if (currentDirection.equals("N")){
+               
+            }
+          }
+        }
+    }
     
-       
+    public void turnRight(){
+        
+    }
+    
+
     public static void main(String[] args) {
         HHSSAdventure game = new HHSSAdventure();
-        
-        
     }
 }

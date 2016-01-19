@@ -35,4 +35,6 @@ public class PicturePanel extends JComponent {
         this.image = img;
         repaint();
     }
+
+   
 }

@@ -1,4 +1,4 @@
-/*
+    /*
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
@@ -35,9 +35,9 @@ public class Location {
             if (scenes[i].getDirection().equals(dir)) {
                 return scenes[i].isBlocked();
             }
-        }
-        return true;
     }
+       return true; 
+  }
 
     public String getNextLocation(String dir) {
         for (int i = 0; i < 4; i++) {
