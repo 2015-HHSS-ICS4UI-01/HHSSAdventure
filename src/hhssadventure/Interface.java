@@ -129,7 +129,7 @@ public class Interface extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void TurnRightActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TurnRightActionPerformed
-    
+    controller.turnRight();
     }//GEN-LAST:event_TurnRightActionPerformed
 
     private void GoForwardActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_GoForwardActionPerformed
@@ -137,7 +137,7 @@ public class Interface extends javax.swing.JFrame {
     }//GEN-LAST:event_GoForwardActionPerformed
 
     private void TurnLeftActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TurnLeftActionPerformed
-        // TODO add your handling code here:
+        controller.turnLeft();
     }//GEN-LAST:event_TurnLeftActionPerformed
 
     

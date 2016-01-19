@@ -72,7 +72,21 @@ public class HHSSAdventure {
         for (Location l : locations){
             if (l.getName().equals(currentLocation)){
                 if (currentDirection.equals("N")){
-               
+               currentDirection.equals("W");
+               gui.setImage(l.getImage(currentDirection));
+               gui.setDirection(currentDirection);
+            }else if (currentDirection.equals("W")){
+                currentDirection.equals("S");
+                gui.setDirection(currentDirection);
+               gui.setImage(l.getImage(currentDirection));
+            } else if (currentDirection.equals("S")){
+                currentDirection.equals("E");
+                gui.setDirection(currentDirection);
+               gui.setImage(l.getImage(currentDirection));
+            } else if (currentDirection.equals("E")){
+                currentDirection.equals("N");
+                gui.setDirection(currentDirection);
+               gui.setImage(l.getImage(currentDirection));
             }
           }
         }
