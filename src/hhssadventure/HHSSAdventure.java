@@ -55,26 +55,25 @@ public class HHSSAdventure {
         currentDirection = startDirection;
         currentLocation = startingLocation;
         
-        switchLocation("Upstairs2", "N");
+      
         
         gui = new Interface();
         gui.setVisible(true);
         gui.setLocation(currentLocation);
         gui.setDirection(currentDirection);
+        
+        
+        for(Location l : locations){
+            if(l.getName().equals(currentLocation)){
+                gui.setImage(l.getImage(currentDirection));
+            }
+        }
     }
     
-    public void switchLocation(String name, String dir){
-        for(int i = 0; i < locations.size(); i++){  
-            if(locations.get(i).getName().equals(name) ){
-                currentLocation = name; 
-                currentDirection = dir;
-                
-            }
-            
-        }
         
-    }
-
+        
+    
+       
     public static void main(String[] args) {
         HHSSAdventure game = new HHSSAdventure();
         

@@ -4,6 +4,8 @@
  */
 package hhssadventure;
 
+import java.awt.image.BufferedImage;
+
 /**
  *
  * @author isles3536
@@ -12,6 +14,11 @@ public class Interface extends javax.swing.JFrame {
 
     
      private HHSSAdventure controller;
+     
+     public Interface(HHSSAdventure c){
+         this();
+         controller = c;
+     }
     /**
      * Creates new form Interface
      */
@@ -28,11 +35,15 @@ public class Interface extends javax.swing.JFrame {
     
      public void setLocation(String name){
          LocationName.setText(name);
+        
      }
      
      public void setDirection(String dir){
          Direction.setText(dir);
      }
+     
+     
+     
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -117,7 +128,7 @@ public class Interface extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void TurnRightActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TurnRightActionPerformed
-        // TODO add your handling code here:
+        
     }//GEN-LAST:event_TurnRightActionPerformed
 
     private void GoForwardActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_GoForwardActionPerformed
@@ -128,6 +139,12 @@ public class Interface extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_TurnLeftActionPerformed
 
+    
+    public void setImage(BufferedImage image){
+        picturePanel.setImage(image);
+        repaint();
+    }
+    
     /**
      * @param args the command line arguments
      */
