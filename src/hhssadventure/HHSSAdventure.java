@@ -47,8 +47,7 @@ public class HHSSAdventure {
              locations.add(s);
           }
       
-         gui = new Interface();
-         gui.setVisible(true);
+        
         
         currentDirection = startDirection;
         currentLocation = startingLocation;
@@ -72,19 +71,19 @@ public class HHSSAdventure {
         for (Location l : locations){
             if (l.getName().equals(currentLocation)){
                 if (currentDirection.equals("N")){
-               currentDirection.equals("W");
+               currentDirection = "W";
                gui.setImage(l.getImage(currentDirection));
-               gui.setDirection(currentDirection);
+               gui.setDirection(currentDirection); 
             }else if (currentDirection.equals("W")){
-                currentDirection.equals("S");
+                currentDirection = "S";
                 gui.setDirection(currentDirection);
                gui.setImage(l.getImage(currentDirection));
             } else if (currentDirection.equals("S")){
-                currentDirection.equals("E");
+                currentDirection = "E";
                 gui.setDirection(currentDirection);
                gui.setImage(l.getImage(currentDirection));
             } else if (currentDirection.equals("E")){
-                currentDirection.equals("N");
+                currentDirection = "N";
                 gui.setDirection(currentDirection);
                gui.setImage(l.getImage(currentDirection));
             }
@@ -93,7 +92,25 @@ public class HHSSAdventure {
     }
     
     public void turnRight(){
-        
+        for (Location l : locations){
+            if (l.getName().equals("N")){
+                currentDirection = "E";
+                gui.setImage(l.getImage(currentDirection));
+                gui.setDirection(currentDirection);
+            }else if (currentDirection.equals("E")){
+                currentDirection = "S";
+                gui.setDirection(currentDirection);
+               gui.setImage(l.getImage(currentDirection));
+            } else if (currentDirection.equals("S")){
+                currentDirection = "W";
+                gui.setDirection(currentDirection);
+               gui.setImage(l.getImage(currentDirection));
+            } else if (currentDirection.equals("W")){
+                currentDirection = "N";
+                gui.setDirection(currentDirection);
+               gui.setImage(l.getImage(currentDirection));
+            }
+        }
     }
     
 
