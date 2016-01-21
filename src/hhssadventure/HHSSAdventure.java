@@ -23,7 +23,7 @@ public class HHSSAdventure {
     private String startingLocation;
     private String startDirection;
     private String currentDirection;
-    private String currentLocation;
+    private Location currentLocation;
     private Interface gui;
     
     public HHSSAdventure() {
@@ -47,22 +47,21 @@ public class HHSSAdventure {
              locations.add(s);
           }
       
-         gui = new Interface();
-         gui.setVisible(true);
+        
         
         currentDirection = startDirection;
-        currentLocation = startingLocation;
+         
         
         
         
         gui = new Interface();
         gui.setVisible(true);
-        gui.setLocation(currentLocation);
+        gui.setLocation(currentLocation.getName());
         gui.setDirection(currentDirection);
         
         
         for(Location l : locations){
-            if(l.getName().equals(currentLocation)){
+            if(l.getName() == currentLocation.getName()){
                 gui.setImage(l.getImage(currentDirection));
             }
         }
@@ -70,21 +69,21 @@ public class HHSSAdventure {
     
     public void turnLeft(){
         for (Location l : locations){
-            if (l.getName().equals(currentLocation)){
+            if (l.getName() == currentLocation.getName()){
                 if (currentDirection.equals("N")){
-               currentDirection.equals("W");
+               currentDirection = "W";
                gui.setImage(l.getImage(currentDirection));
                gui.setDirection(currentDirection);
             }else if (currentDirection.equals("W")){
-                currentDirection.equals("S");
+                currentDirection = "S";
                 gui.setDirection(currentDirection);
                gui.setImage(l.getImage(currentDirection));
             } else if (currentDirection.equals("S")){
-                currentDirection.equals("E");
+                currentDirection = "E";
                 gui.setDirection(currentDirection);
                gui.setImage(l.getImage(currentDirection));
             } else if (currentDirection.equals("E")){
-                currentDirection.equals("N");
+                currentDirection = "N";
                 gui.setDirection(currentDirection);
                gui.setImage(l.getImage(currentDirection));
             }
@@ -93,10 +92,47 @@ public class HHSSAdventure {
     }
     
     public void turnRight(){
-        
+        for (Location l : locations){
+            if (l.getName() == currentLocation.getName()){
+                if (currentDirection.equals("N")){
+               currentDirection = "E";
+               gui.setImage(l.getImage(currentDirection));
+               gui.setDirection(currentDirection);
+            }else if (currentDirection.equals("E")){
+                currentDirection = "S";
+                gui.setDirection(currentDirection);
+               gui.setImage(l.getImage(currentDirection));
+            } else if (currentDirection.equals("S")){
+                currentDirection = "W";
+                gui.setDirection(currentDirection);
+               gui.setImage(l.getImage(currentDirection));
+            } else if (currentDirection.equals("W")){
+                currentDirection = "N";
+                gui.setDirection(currentDirection);
+               gui.setImage(l.getImage(currentDirection));
+            }
+          }
+        }
     }
     
-
+    public void goForward(){
+         for (Location l : locations){
+             if(l.getName() == currentLocation.getName()){
+                 if(l.isFrontBlocked(currentDirection)){
+                     
+                     
+                 }else{
+                     System.out.println("The way is blocked");
+                 }
+             }
+         }
+         for(Location l : locations){
+             if(l.getName().equals(currentLocation)){
+                 gui.setImage(l.getImage(currentDirection));
+                 gui.setDirection(currentDirection);
+             }
+         }
+    }
     public static void main(String[] args) {
         HHSSAdventure game = new HHSSAdventure();
     }
