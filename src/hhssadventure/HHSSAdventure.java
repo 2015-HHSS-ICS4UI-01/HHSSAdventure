@@ -73,7 +73,7 @@ public class HHSSAdventure {
                 if (currentDirection.equals("N")){
                currentDirection = "W";
                gui.setImage(l.getImage(currentDirection));
-               gui.setDirection(currentDirection);
+               gui.setDirection(currentDirection); 
             }else if (currentDirection.equals("W")){
                 currentDirection = "S";
                 gui.setDirection(currentDirection);
@@ -93,11 +93,10 @@ public class HHSSAdventure {
     
     public void turnRight(){
         for (Location l : locations){
-            if (l.getName() == currentLocation.getName()){
-                if (currentDirection.equals("N")){
-               currentDirection = "E";
-               gui.setImage(l.getImage(currentDirection));
-               gui.setDirection(currentDirection);
+            if (l.getName().equals("N")){
+                currentDirection = "E";
+                gui.setImage(l.getImage(currentDirection));
+                gui.setDirection(currentDirection);
             }else if (currentDirection.equals("E")){
                 currentDirection = "S";
                 gui.setDirection(currentDirection);
@@ -111,7 +110,6 @@ public class HHSSAdventure {
                 gui.setDirection(currentDirection);
                gui.setImage(l.getImage(currentDirection));
             }
-          }
         }
     }
     
