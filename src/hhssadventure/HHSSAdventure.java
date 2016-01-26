@@ -20,13 +20,15 @@ public class HHSSAdventure {
      */
     
     private ArrayList<Location> locations = new ArrayList<>();
-    private String startingLocation;
-    private String startDirection;
+    
+    
     private String currentDirection;
-    private Location currentLocation;
+    private String currentLocation;
     private Interface gui;
     
     public HHSSAdventure() {
+        
+        //the file reader
         FileReader file = null;
 
         try {
@@ -37,9 +39,10 @@ public class HHSSAdventure {
         }
 
         Scanner input = new Scanner(file);
-        
-        startingLocation = input.nextLine();
-        startDirection = input.nextLine();
+        //getting the starting locations
+        currentLocation = input.nextLine();
+        currentDirection = input.nextLine();
+        //adding the locations into the array
           while(input.hasNext())
           {
              Location s = new Location(input);
@@ -49,28 +52,36 @@ public class HHSSAdventure {
       
         
         
-        currentDirection = startDirection;
+        
          
         
-        
-        
-        gui = new Interface();
+        //setting up the interface
+        gui = new Interface(this);
         gui.setVisible(true);
-        gui.setLocation(currentLocation.getName());
-        gui.setDirection(currentDirection);
+        gui.setLocation(currentLocation);
+        gui.setDirection(currentDirection); 
+       
         
         
+        //setting the image on the interface to the starting location
         for(Location l : locations){
-            if(l.getName() == currentLocation.getName()){
+           
+            if(l.getName().equals(currentLocation)){
                 gui.setImage(l.getImage(currentDirection));
             }
         }
     }
-    
+    /**
+     * Creating a method to be able to turn left on the interface
+     */
     public void turnLeft(){
+        //A for loop to go through all of the locations in the locations array
         for (Location l : locations){
-            if (l.getName() == currentLocation.getName()){
-                if (currentDirection.equals("N")){
+            //when the location matches location "l" the if statement will run
+            if (l.getName().equals(currentLocation)){
+                //The if statments below checks the current direction and when the directions match the direction will change as if you turned left
+                //When the direction is changed the picture on the interface will change as well as the direction that is displayed on the interface
+             if (currentDirection.equals("N")){
                currentDirection = "W";
                gui.setImage(l.getImage(currentDirection));
                gui.setDirection(currentDirection); 
@@ -90,10 +101,13 @@ public class HHSSAdventure {
           }
         }
     }
-    
+    /**
+     * The turnRight method works the same as the turn left method just the diections are switched to correspond with turning right.
+     */
     public void turnRight(){
         for (Location l : locations){
-            if (l.getName().equals("N")){
+            if(l.getName().equals(currentLocation)){
+            if (currentDirection.equals("N")){
                 currentDirection = "E";
                 gui.setImage(l.getImage(currentDirection));
                 gui.setDirection(currentDirection);
@@ -110,27 +124,40 @@ public class HHSSAdventure {
                 gui.setDirection(currentDirection);
                gui.setImage(l.getImage(currentDirection));
             }
+            }
         }
     }
-    
+    /**
+     * The go forward method allows the player to move forward to continue moving down the hallway. If the way is not blocked.
+     */
     public void goForward(){
+        //To go through all the locations
          for (Location l : locations){
-             if(l.getName() == currentLocation.getName()){
-                 if(l.isFrontBlocked(currentDirection)){
+             //When the location for the for loop matches the current location
+             if(l.getName().equals(currentLocation)){
+                 //It checks the if the way infront is blocked
+                 if(l.isFrontBlocked(currentDirection) == false){
+                     //If the way is not blocked the picture will move forward
                      
-                     
+                     currentLocation = l.getNextLocation(currentDirection);
+                     gui.setLocation(currentLocation);
+                     //If the way is blocked the game lets the user know that the way forward is blocked
                  }else{
                      System.out.println("The way is blocked");
                  }
              }
          }
+         //The location will be updated to show the picture at their current location.
          for(Location l : locations){
              if(l.getName().equals(currentLocation)){
                  gui.setImage(l.getImage(currentDirection));
                  gui.setDirection(currentDirection);
              }
          }
+         
     }
+    
+    
     public static void main(String[] args) {
         HHSSAdventure game = new HHSSAdventure();
     }

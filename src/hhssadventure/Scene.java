@@ -21,7 +21,10 @@ public class Scene {
     private boolean blocked;
     private String nextLocation;
     private String nextDirection;
-
+/**
+ * To get the input to read the file to get things into the correct positions for the correct information
+ * @param input The file that was created for the purpose of this assignment
+ */
     public Scene(Scanner input) {
         
         direction = input.next();
@@ -34,6 +37,7 @@ public class Scene {
             System.exit(0);
         }
         isBlocked = input.next();
+        //Will continue to run if the way not blocked but if it is it will not keep running
         if (isBlocked.equals("true")) {
             blocked = true;
             input.nextLine();
@@ -44,7 +48,7 @@ public class Scene {
         }
 
     }
-
+//These are the getter methods so that the location class can call to get the information that it needs so that is is able to switch properly.
     public String getDirection() {
         return this.direction;
     }
