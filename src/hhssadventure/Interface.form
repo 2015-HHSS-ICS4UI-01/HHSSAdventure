@@ -70,10 +70,10 @@
               </Group>
               <EmptySpace type="unrelated" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
+                  <Component id="locText" alignment="0" max="32767" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="locGUI" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="dirGUI" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="locText" alignment="0" max="32767" attributes="0"/>
                   </Group>
                   <Component id="dirText" max="32767" attributes="0"/>
               </Group>
