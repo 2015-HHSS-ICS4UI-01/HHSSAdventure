@@ -77,6 +77,7 @@ public class Scene {
     
     public int convert(String temp, int dir) {
         switch (temp) {
+            //sets the direction to a number
             case "N":
                 dir = 0;
                 break;
@@ -90,6 +91,7 @@ public class Scene {
                 dir = 3;
                 break;
         }
+        //returns the direction
         return dir;
     }
 }
